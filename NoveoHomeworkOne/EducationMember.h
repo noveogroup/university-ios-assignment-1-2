@@ -10,23 +10,24 @@
 
 @protocol EducationMember <NSObject>
 
-enum {
-    kStudentDegree = 0,
-    kPostgraduateDegree = 1,
-    kLecturerDegree = 2,
-    kSeniorLecturerDegree = 3,
-    kHeadOfDepartmentDegree = 4,
-    kRectorDegree = 5
-};
+typedef enum {
+    // CR: rename all values using this style: RENAMED
+    memberDegreeStudentDegree = 0,
+    memberDegreePostgraduateDegree = 1,
+    memberDegreeLecturerDegree = 2,
+    memberDegreeSeniorLecturerDegree = 3,
+    memberDegreeHeadOfDepartmentDegree = 4,
+    memberDegreeRectorDegree = 5
+} MemberDegree;
 
 @optional
-- (void) setChief:(id)chief;
-- (id) getChief;
+- (void) setChief:(id<EducationMember>)chief; // Debuged
+- (id<EducationMember>) getChief;
 - (void) setSubordinatesList:(NSArray *)subordinateList;
 - (NSArray *) getSubordinatesList;
-- (void) addSubordinate:(id)subordinate;
+- (void) addSubordinate:(id<EducationMember>)subordinate;
 - (void) addSubordinateList:(NSArray *)subordinateList;
-- (void) removeFromSubordunateList:(id)member;
+- (void) removeFromSubordunateList:(id<EducationMember>)member;
 - (void) removeChief;
 
 @end

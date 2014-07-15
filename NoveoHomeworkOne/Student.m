@@ -12,12 +12,20 @@
 
 @synthesize degree = _degree, universityName = _universityName, departmentName = _departmentName, averagePoints = _averagePoints, lecturerList = _lecturerList, chief = _chief;
 
-NSString *const kStringStudentDegree = @"Student";
+static NSString *const kStringStudentDegree = @"Student";
 
 #pragma mark -
 #pragma mark Initializers
 
-- (id) initStudentWith:(NSString *)firstName :(NSString *)lastName :(NSString *)nickName :(NSNumber *)age :(NSNumber *)gender :(NSString *)university :(NSString *)department :(NSNumber *)averagePoints {
+// Decignated initializer
+- (id) initStudentWith:(NSString *)firstName
+                      :(NSString *)lastName
+                      :(NSString *)nickName
+                      :(NSNumber *)age
+                      :(HumanGender)gender
+                      :(NSString *)university
+                      :(NSString *)department
+                      :(NSNumber *)averagePoints {
     if (self = [super initWith:firstName :lastName :nickName :age :gender]) {
         _universityName = university;
         _departmentName = department;
@@ -42,16 +50,16 @@ NSString *const kStringStudentDegree = @"Student";
 #pragma mark -
 #pragma mark Protocol EducationMember Implementation
     
-    - (void) setChief:(id)chief {
-        if (_chief) {
-            [_chief removeFromSubordunateList:self];
-        }
-        _chief = chief;
+- (void) setChief:(id)chief {
+    if (_chief) {
+        [_chief removeFromSubordunateList:self];
     }
+    _chief = chief;
+}
 
-    - (id) getChief {
-        return _chief;
-    }
+- (id) getChief {
+    return _chief;
+}
 
 - (void) setSubordinatesList:(NSArray *)subordinateList{
     NSLog(@"Adding subordinate list error: Student can't have a subordinates");

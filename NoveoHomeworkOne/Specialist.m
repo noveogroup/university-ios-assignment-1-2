@@ -22,20 +22,21 @@ NSString *const kStringRectorDegree = @"Rector";
 #pragma mark -
 #pragma mark Initializers
 
+// Decignated initializer
 - (id) initSpicialistWith:(NSString *) firstName
                          :(NSString *) lastName
                          :(NSString *) nickName
                          :(NSNumber *) age
-                         :(NSNumber *) gender
+                         :(HumanGender) gender
                          :(NSString *) university
                          :(NSString *) department
                          :(NSNumber *) salary
-                         :(NSNumber *) degree {
+                         :(MemberDegree) degree {
     if (self = [super initWith:firstName :lastName :nickName :age :gender]) {
         _universityName = university;
         _departmentName = department;
         _salary = [NSNumber numberWithInt:[salary intValue]];
-        _degree = [NSNumber numberWithInt:[degree intValue]];
+        _degree = degree;
         _subordinatesList = [[NSMutableArray alloc]init];
         _chief = nil;
     }
@@ -47,7 +48,7 @@ NSString *const kStringRectorDegree = @"Rector";
         _universityName = @"Unknown University";
         _departmentName = @"Unknown Department";
         _salary = [NSNumber numberWithInt:0];
-        _degree = [NSNumber numberWithInt:kPostgraduateDegree]; // Least degree for unknown specialist
+        _degree = memberDegreePostgraduateDegree; // Least degree for unknown specialist
         _subordinatesList = [[NSMutableArray alloc]init];
         _chief = nil;
     }
@@ -92,8 +93,9 @@ NSString *const kStringRectorDegree = @"Rector";
     if (_chief) {
         [_chief removeFromSubordunateList:member];
     }
-    if ([member getSubordinatesList]) {
-            [_subordinatesList removeObjectsInArray:[NSArray arrayWithArray:[member getSubordinatesList]]];
+    NSArray *currentSubordinatesList = [NSArray arrayWithArray:[member getSubordinatesList]];
+    if (currentSubordinatesList) {
+            [_subordinatesList removeObjectsInArray:currentSubordinatesList];
     }
     [_subordinatesList removeObject:member];
 }

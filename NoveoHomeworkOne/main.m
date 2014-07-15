@@ -16,15 +16,15 @@ int main(int argc, const char * argv[])
         
         // Crating a hellyeah-students
         
-        Student *firstStudent = [[Student alloc]initStudentWith:@"Wesley" :@"Geer" :@"Westyle" :[NSNumber numberWithInt:17] :[NSNumber numberWithInt:kHumanGenderIsMale] :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithFloat:4.7]];
-        Student *secondStudent = [[Student alloc]initStudentWith:@"Paul" :@"Abbott" :@"Vinnie" :[NSNumber numberWithInt:19] :[NSNumber numberWithInt:kHumanGenderIsMale] :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithFloat:4.0]];
-        Student *thirdStudent = [[Student alloc]initStudentWith:@"James" :@"Heatfield" :@"Papa Heat" :[NSNumber numberWithInt:22] :[NSNumber numberWithInt:kHumanGenderIsMale] :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithFloat:3.5]];
+        Student *firstStudent = [[Student alloc]initStudentWith:@"Wesley" :@"Geer" :@"Westyle" :[NSNumber numberWithInt:17] :humanGenderIsMale :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithFloat:4.7]];
+        Student *secondStudent = [[Student alloc]initStudentWith:@"Paul" :@"Abbott" :@"Vinnie" :[NSNumber numberWithInt:19] :humanGenderIsMale :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithFloat:4.0]];
+        Student *thirdStudent = [[Student alloc]initStudentWith:@"James" :@"Heatfield" :@"Papa Heat" :[NSNumber numberWithInt:22] :humanGenderIsMale :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithFloat:3.5]];
         
         // Creating a powerful Specialists
         
-        Specialist *firstSpecialist = [[Specialist alloc]initSpicialistWith:@"Bob" :@"Dylan" :@"Old Bobby" :[NSNumber numberWithInt:70]:[NSNumber numberWithInt:kHumanGenderIsMale] :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithInt:100000] :[NSNumber numberWithInt:kSeniorLecturerDegree]];
-        Specialist *secondSpecialist = [[Specialist alloc]initSpicialistWith:@"Darrell" :@"Abbott" :@"Dimebag" :[NSNumber numberWithInt:250]:[NSNumber numberWithInt:kHumanGenderIsMale] :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithInt:150000] :[NSNumber numberWithInt:kHeadOfDepartmentDegree]];
-        Specialist *thirdSpecialist = [[Specialist alloc]initSpicialistWith:@"Wolfgang" :@"Mozart" :@"Amadeus" :[NSNumber numberWithInt:250]:[NSNumber numberWithInt:kHumanGenderIsMale] :@"Darmstadt Technische Universitat" :@"All Departments" :[NSNumber numberWithInt:150000] :[NSNumber numberWithInt:kRectorDegree]];
+        Specialist *firstSpecialist = [[Specialist alloc]initSpicialistWith:@"Bob" :@"Dylan" :@"Old Bobby" :[NSNumber numberWithInt:70]:humanGenderIsMale :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithInt:100000] :memberDegreeSeniorLecturerDegree];
+        Specialist *secondSpecialist = [[Specialist alloc]initSpicialistWith:@"Darrell" :@"Abbott" :@"Dimebag" :[NSNumber numberWithInt:250]:humanGenderIsMale :@"Darmstadt Technische Universitat" :@"Department of Rock and Roll" :[NSNumber numberWithInt:150000] :memberDegreeHeadOfDepartmentDegree];
+        Specialist *thirdSpecialist = [[Specialist alloc]initSpicialistWith:@"Wolfgang" :@"Mozart" :@"Amadeus" :[NSNumber numberWithInt:250]:humanGenderIsMale :@"Darmstadt Technische Universitat" :@"All Departments" :[NSNumber numberWithInt:150000] :memberDegreeRectorDegree];
         
         // Set all students like a slaves for a first specialist
         NSMutableArray *allStudents = [[NSMutableArray alloc]initWithObjects:firstStudent, secondStudent, thirdStudent, nil];
@@ -41,7 +41,7 @@ int main(int argc, const char * argv[])
         // So who is Big Boss in this little fun place?
         NSArray *allSpecialists = [NSArray arrayWithObjects:firstSpecialist, secondSpecialist, thirdSpecialist, nil];
         for (Specialist *currentSpec in allSpecialists) {
-            if ([[currentSpec degree]intValue]==kRectorDegree) {
+            if ([currentSpec degree]==memberDegreeRectorDegree) {
                 NSLog(@"Rector of %@ is: %@ \"%@\" %@", [currentSpec departmentName], [currentSpec firstName], [currentSpec nickName], [currentSpec lastName]);
                 NSLog(@"He has next subordinates:");
                 for (Human *currentSub in [currentSpec subordinatesList]) {

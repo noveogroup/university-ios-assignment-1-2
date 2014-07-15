@@ -12,15 +12,15 @@
 
 @synthesize firstName = _firstName, lastName =_lastName, nickName = _nickName, age =_age, gender=_gender;
 
-NSString *const kStringHumanGenderIsNotDefined = @"It";
-NSString *const kStringHumanGenderIsMale = @"Male";
-NSString *const kStringHumanGenderIsFemale = @"Female";
+static NSString *const kStringHumanGenderIsNotDefined = @"It"; // Debuged
+static NSString *const kStringHumanGenderIsMale = @"Male";
+static NSString *const kStringHumanGenderIsFemale = @"Female";
 
 #pragma mark -
 #pragma mark Initializers
 
 - (id)  init {
-    if ([self initWith:@"Kadaver" :@"Ambruasievitch" :@"Vybegallo" :[NSNumber numberWithInt:0] :[NSNumber numberWithInt:kHumanGenderIsNotDefined]]) {
+    if ([self initWith:@"Kadaver" :@"Ambruasievitch" :@"Vybegallo" :[NSNumber numberWithInt:0] :humanGenderIsMale]) {
     }
     return self;
 }
@@ -29,13 +29,13 @@ NSString *const kStringHumanGenderIsFemale = @"Female";
                :(NSString *)lastName
                :(NSString *)nickName
                :(NSNumber *)age
-               :(NSNumber *)gender {
+               :(HumanGender)gender {
     if (self=[super init]) {
         _firstName = firstName;
         _lastName = lastName;
         _nickName = nickName;
         _age = [NSNumber numberWithInt:[age intValue]];
-        _gender = [NSNumber numberWithInt:[gender intValue]];
+        _gender = humanGenderIsNotDefined;
     }
     return self;
 }
@@ -43,13 +43,14 @@ NSString *const kStringHumanGenderIsFemale = @"Female";
 #pragma mark -
 #pragma mark Custom Methods
 
-- (NSString *) getGenderAsString {
-    switch ([self.gender intValue]) {
-        case kHumanGenderIsMale:
+- (NSString *) getGenderAsString
+{
+    switch (_gender) {
+        case humanGenderIsMale:
             return kStringHumanGenderIsMale;
             break;
             
-        case kHumanGenderIsFemale:
+        case humanGenderIsFemale:
             return kStringHumanGenderIsFemale;
             break;
             

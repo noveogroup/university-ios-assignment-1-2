@@ -10,25 +10,24 @@
 
 @interface Human : NSObject
 
-enum {
-    kHumanGenderIsNotDefined = 0,
-    kHumanGenderIsMale = 1,
-    kHumanGenderIsFemale = 2
-};
+typedef enum {
+    humanGenderIsNotDefined = 0,
+    humanGenderIsMale = 1,
+    humanGenderIsFemale = 2
+} HumanGender;
 
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *nickName;
-@property (nonatomic, retain) NSNumber *age;
-@property (nonatomic, retain) NSNumber *gender;
+@property (nonatomic, strong) NSNumber *age; // Debuged
+@property (nonatomic, assign) HumanGender gender;
 
 - (id) initWith:(NSString *) firstName
                :(NSString *) lastName
                :(NSString *) nickName
                :(NSNumber *) age
-               :(NSNumber *) gender;
+               :(HumanGender) gender;
 
 - (NSString *) getGenderAsString;
-
 
 @end
