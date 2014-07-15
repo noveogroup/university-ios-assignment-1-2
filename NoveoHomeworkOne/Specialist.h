@@ -13,8 +13,6 @@
 
 @property (nonatomic, retain) NSNumber *salary;
 @property (nonatomic, assign) MemberDegree degree;
-@property (nonatomic, copy) NSString *universityName;
-@property (nonatomic, copy) NSString *departmentName;
 @property (nonatomic, retain) NSMutableArray *subordinatesList;
 @property (nonatomic, weak) id<EducationMember> chief;
 

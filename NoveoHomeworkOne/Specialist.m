@@ -58,18 +58,24 @@ NSString *const kStringRectorDegree = @"Rector";
 #pragma mark -
 #pragma mark Protocol EducationMember Implementation
 
-- (void) setChief:(id)chief {
+- (void) setChief:(id<EducationMember>)chief {
     if (_chief) {
         [_chief removeFromSubordunateList:self];
     }
+    if (chief) {
+        if (![[chief getSubordinatesList]containsObject:self]) { // Protect from duplicate addition to list
+            [chief addSubordinate:self];
+        }
+    }
     _chief = chief;
-    [chief addSubordinate:self];
-    [chief addSubordinateList:_subordinatesList];
 }
 
+// Use Default getter
+/*
 - (id) getChief {
     return _chief;
 }
+*/
 
 - (void) setSubordinatesList:(NSArray *)subordinateList{
     [_subordinatesList removeAllObjects];
@@ -81,22 +87,28 @@ NSString *const kStringRectorDegree = @"Rector";
     
 }
 
-- (void) addSubordinate:(id)subordinate{
-    [_subordinatesList addObject:subordinate];
+- (void) addSubordinate:(id<EducationMember>)subordinate{
+    if (![_subordinatesList containsObject:subordinate]) { // Protect from duplicate addition to list
+        [_subordinatesList addObject:subordinate];
+    }
 }
 
 - (void) addSubordinateList:(NSArray *)subordinateList {
     [_subordinatesList addObjectsFromArray:subordinateList];
 }
 
-- (void) removeFromSubordunateList:(id)member {
+- (void) removeFromSubordunateList:(id<EducationMember>)member {
+    // Chef must knew only nearest subordinates
+/*
     if (_chief) {
         [_chief removeFromSubordunateList:member];
     }
+    
     NSArray *currentSubordinatesList = [NSArray arrayWithArray:[member getSubordinatesList]];
     if (currentSubordinatesList) {
             [_subordinatesList removeObjectsInArray:currentSubordinatesList];
     }
+ */
     [_subordinatesList removeObject:member];
 }
 
@@ -104,5 +116,18 @@ NSString *const kStringRectorDegree = @"Rector";
     [self setChief:nil];
 }
 
+- (NSString *) universityName {
+    if (_universityName) {
+        return _universityName;
+    }
+    return [_chief universityName];
+}
+
+- (NSString *) departmentName {
+    if (_departmentName) {
+        return _departmentName;
+    }
+    return [_chief departmentName];
+}
 
 @end

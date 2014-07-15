@@ -10,6 +10,9 @@
 
 @protocol EducationMember <NSObject>
 
+@property (nonatomic, readonly, copy) NSString *universityName;
+@property (nonatomic, readonly, copy) NSString *departmentName;
+
 typedef enum {
     // CR: rename all values using this style: RENAMED
     memberDegreeStudentDegree = 0,

@@ -27,7 +27,7 @@ static NSString *const kStringStudentDegree = @"Student";
                       :(NSString *)department
                       :(NSNumber *)averagePoints {
     if (self = [super initWith:firstName :lastName :nickName :age :gender]) {
-        _universityName = university;
+        _universityName = nil;//university;
         _departmentName = department;
         _averagePoints = [NSNumber numberWithInt:[averagePoints intValue]];
         _lecturerList = [[NSMutableArray alloc]init];
@@ -50,16 +50,22 @@ static NSString *const kStringStudentDegree = @"Student";
 #pragma mark -
 #pragma mark Protocol EducationMember Implementation
     
-- (void) setChief:(id)chief {
+- (void) setChief:(id<EducationMember>)chief {
     if (_chief) {
         [_chief removeFromSubordunateList:self];
+    }
+    if (chief) {
+        [chief addSubordinate:self];
     }
     _chief = chief;
 }
 
+// Use Default getter
+/*
 - (id) getChief {
     return _chief;
 }
+ */
 
 - (void) setSubordinatesList:(NSArray *)subordinateList{
     NSLog(@"Adding subordinate list error: Student can't have a subordinates");
@@ -81,6 +87,14 @@ static NSString *const kStringStudentDegree = @"Student";
 
 - (void) removeChief {
     [self setChief:nil];
+}
+
+- (NSString *) universityName {
+    return [_chief universityName];
+}
+
+- (NSString *) departmentName {
+    return [_chief departmentName];
 }
     
 
