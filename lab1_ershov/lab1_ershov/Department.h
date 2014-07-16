@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "HasAverageMark.h"
+#import "Observer.h"
 
 @class Group;
+@class Teacher;
 
-@interface Department : NSObject <HasAverageMark>
+@interface Department : NSObject <HasAverageMark, Observer>
 
-@property (readonly) NSMutableArray *groups;
+@property (copy) NSString *name;
+@property (nonatomic, readonly, copy) NSArray *groups;
+@property (nonatomic) Teacher *headOfDepartment;
 
-//-(void)addGroup:(Group *)group;
+- (instancetype)initWithName:(NSString *)name;
+
+- (void)addGroup:(Group *)group;
+
+- (NSString *)description;
 
 @end
