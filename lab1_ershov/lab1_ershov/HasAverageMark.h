@@ -6,5 +6,9 @@
 #import <Foundation/Foundation.h>
 
 @protocol HasAverageMark <NSObject>
--(double)getAverageMark;
+
+@required
+@property (nonatomic, readonly) double averageMark;
+- (void)refreshAverageMark;
+
 @end
