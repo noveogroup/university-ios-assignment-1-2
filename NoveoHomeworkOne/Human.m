@@ -26,24 +26,20 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 #pragma mark Initializers
 
 - (id)  init {
-    if ([self initWithFirstName:defaultFirstName
-                       lastName:defaultLastName
-                       nickName:defaultNickName
-                            age:[NSNumber numberWithInt:defaultAge]
-                         gender:humanGenderIsNotDefined]) {
-    }
-    return self;
+    return [self initWithFirstName:defaultFirstName
+                          lastName:defaultLastName
+                          nickName:defaultNickName
+                               age:[NSNumber numberWithInt:defaultAge]
+                            gender:humanGenderIsNotDefined];
 }
 
 - (id) initWithFirstName:(NSString *)newFirstName
                 lastName:(NSString *)newLastName {
-    if ([self initWithFirstName:newFirstName
-                       lastName:newLastName
-                       nickName:defaultNickName
-                            age:[NSNumber numberWithInt:defaultAge]
-                         gender:humanGenderIsNotDefined]) {
-    }
-    return self;
+    return [self initWithFirstName:newFirstName
+                          lastName:newLastName
+                          nickName:defaultNickName
+                               age:[NSNumber numberWithInt:defaultAge]
+                            gender:humanGenderIsNotDefined];
 }
 
 // Decignated initializer
@@ -56,7 +52,7 @@ static NSString *const defaultNickName = @"Unknown Nickname";
         _firstName = newFirstName;
         _lastName = newLastName;
         _nickName = newNickName;
-        _age = [NSNumber numberWithInt:[newAge intValue]];
+        _age = newAge;
         _gender = newGender;
     }
     return self;

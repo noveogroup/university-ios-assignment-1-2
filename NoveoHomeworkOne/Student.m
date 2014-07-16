@@ -12,7 +12,6 @@
 
 @synthesize degree = _degree, universityName = _universityName, departmentName = _departmentName, averagePoints = _averagePoints, lecturerList = _lecturerList, chief = _chief;
 
-// static NSString *const kStringStudentDegree = @"Student";
 static NSString *const defaultStudentFirstName = @"Unknown Student Firstname";
 static NSString *const defaultStudentLastName = @"Unknown Student Lastname";
 static NSString *const defaultStudentNickName = @"Unknown Student Nickname";
@@ -51,29 +50,25 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 - (id<EducationMember>) initStudenttWithFirstName:(NSString *) newFirstName
                                          lastName:(NSString *) newLastName
                                               age:(NSNumber *) newAge {
-    if ([self initSudentWithFirstName:newFirstName
-                             lastName:newLastName
-                             nickName:defaultStudentNickName
-                                  age:newAge
-                               gender:humanGenderIsNotDefined
-                           university:nil
-                           department:nil
-                        averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]]) {
-    }
-         return self;
+    return [self initSudentWithFirstName:newFirstName
+                                lastName:newLastName
+                                nickName:defaultStudentNickName
+                                     age:newAge
+                                  gender:humanGenderIsNotDefined
+                              university:nil
+                              department:nil
+                           averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]];
 }
     
-- (id) init {
-    if ([self initSudentWithFirstName:defaultStudentFirstName
-                             lastName:defaultStudentLastName
-                             nickName:defaultStudentNickName
-                                  age:[NSNumber numberWithInt:defaultStudentAge]
-                               gender:humanGenderIsNotDefined
-                           university:nil
-                           department:nil
-                        averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]]) {
-    }
-    return self;
+- (id<EducationMember>) init {
+    return [self initSudentWithFirstName:defaultStudentFirstName
+                                lastName:defaultStudentLastName
+                                nickName:defaultStudentNickName
+                                     age:[NSNumber numberWithInt:defaultStudentAge]
+                                  gender:humanGenderIsNotDefined
+                              university:nil
+                              department:nil
+                           averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]];
 }
 
 #pragma mark -
@@ -89,12 +84,6 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
     _chief = chief;
 }
 
-// Use Default getter
-/*
-- (id) getChief {
-    return _chief;
-}
- */
 
 - (void) setSubordinatesList:(NSArray *)subordinateList{
     NSLog(@"Adding subordinate list error: Student can't have a subordinates");
@@ -124,6 +113,10 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 
 - (NSString *) departmentName {
     return [_chief departmentName];
+}
+
+- (void) setAveragePoints:(NSNumber *)averagePoints {
+    _averagePoints = averagePoints;
 }
     
 

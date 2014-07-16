@@ -21,14 +21,6 @@ static const int defaultSpecialistAge = 35;
 static const int defaultSpecialistSalary = 50000;
 static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegree;
 
-
-/* NSString *const kStringStudentDegree = @"Student";
-NSString *const kStringPostgraduateDegree = @"Postgraduate Student";
-NSString *const kStringLecturerDegree = @"Lecturer";
-NSString *const kStringSeniorLecturerDegree = @"Senior Lecturer";
-NSString *const kStringHeadOfDepartmentDegree = @"Head Of Department";
-NSString *const kStringRectorDegree = @"Rector"; */
-
 #pragma mark -
 #pragma mark Initializers
 
@@ -61,31 +53,27 @@ NSString *const kStringRectorDegree = @"Rector"; */
                                            lastName:(NSString *) newLastName
                                              degree:(MemberDegree) newDegree
                                          department:(NSString *)newDepartment{
-    if ([self initSpecialistWithFirstName:newFirstName
-                                 lastName:newLastName
-                                 nickName:defaultSpecialistNickName
-                                      age:[NSNumber numberWithInt:defaultSpecialistAge]
-                                   gender:humanGenderIsNotDefined
-                               university:nil
-                               department:newDepartment
-                                   salary:[NSNumber numberWithInt:defaultSpecialistSalary]
-                                   degree:defaultSpecialistDegree]) {
-    }
-    return self;
+    return [self initSpecialistWithFirstName:newFirstName
+                                    lastName:newLastName
+                                    nickName:defaultSpecialistNickName
+                                         age:[NSNumber numberWithInt:defaultSpecialistAge]
+                                      gender:humanGenderIsNotDefined
+                                  university:nil
+                                  department:newDepartment
+                                      salary:[NSNumber numberWithInt:defaultSpecialistSalary]
+                                      degree:defaultSpecialistDegree];
 }
 
 - (id<EducationMember>) init {
-    if ([self initSpecialistWithFirstName:defaultSpecialistFirstName
-                                 lastName:defaultSpecialistLastName
-                                 nickName:defaultSpecialistNickName
-                                      age:[NSNumber numberWithInt:defaultSpecialistAge]
-                                   gender:humanGenderIsNotDefined
-                               university:nil
-                               department:nil
-                                   salary:[NSNumber numberWithInt:defaultSpecialistSalary]
-                                   degree:defaultSpecialistDegree]) {
-    }
-    return self;
+    return [self initSpecialistWithFirstName:defaultSpecialistFirstName
+                                    lastName:defaultSpecialistLastName
+                                    nickName:defaultSpecialistNickName
+                                         age:[NSNumber numberWithInt:defaultSpecialistAge]
+                                      gender:humanGenderIsNotDefined
+                                  university:nil
+                                  department:nil
+                                      salary:[NSNumber numberWithInt:defaultSpecialistSalary]
+                                      degree:defaultSpecialistDegree];
 }
 
 #pragma mark -
@@ -102,13 +90,6 @@ NSString *const kStringRectorDegree = @"Rector"; */
     }
     _chief = chief;
 }
-
-// Use Default getter
-/*
-- (id) getChief {
-    return _chief;
-}
-*/
 
 - (void) setSubordinatesList:(NSArray *)subordinateList{
     [_subordinatesList removeAllObjects];
