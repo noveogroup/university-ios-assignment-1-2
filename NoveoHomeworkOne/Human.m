@@ -16,29 +16,52 @@ static NSString *const kStringHumanGenderIsNotDefined = @"It"; // Debuged
 static NSString *const kStringHumanGenderIsMale = @"Male";
 static NSString *const kStringHumanGenderIsFemale = @"Female";
 
+static const int defaultAge = 7;
+
+static NSString *const defaultFirstName = @"Unknown Firstname";
+static NSString *const defaultLastName = @"Unknown Lastname";
+static NSString *const defaultNickName = @"Unknown Nickname";
+
 #pragma mark -
 #pragma mark Initializers
 
 - (id)  init {
-    if ([self initWith:@"Kadaver" :@"Ambruasievitch" :@"Vybegallo" :[NSNumber numberWithInt:0] :humanGenderIsMale]) {
+    if ([self initWithFirstName:defaultFirstName
+                       lastName:defaultLastName
+                       nickName:defaultNickName
+                            age:[NSNumber numberWithInt:defaultAge]
+                         gender:humanGenderIsNotDefined]) {
     }
     return self;
 }
 
-- (id) initWith:(NSString *)firstName
-               :(NSString *)lastName
-               :(NSString *)nickName
-               :(NSNumber *)age
-               :(HumanGender)gender {
-    if (self=[super init]) {
-        _firstName = firstName;
-        _lastName = lastName;
-        _nickName = nickName;
-        _age = [NSNumber numberWithInt:[age intValue]];
-        _gender = humanGenderIsNotDefined;
+- (id) initWithFirstName:(NSString *)newFirstName
+                lastName:(NSString *)newLastName {
+    if ([self initWithFirstName:newFirstName
+                       lastName:newLastName
+                       nickName:defaultNickName
+                            age:[NSNumber numberWithInt:defaultAge]
+                         gender:humanGenderIsNotDefined]) {
     }
     return self;
 }
+
+// Decignated initializer
+- (id) initWithFirstName:(NSString *) newFirstName
+                lastName:(NSString *) newLastName
+                nickName:(NSString *) newNickName
+                     age:(NSNumber *) newAge
+                  gender:(HumanGender) newGender {
+    if (self=[super init]) {
+        _firstName = newFirstName;
+        _lastName = newLastName;
+        _nickName = newNickName;
+        _age = [NSNumber numberWithInt:[newAge intValue]];
+        _gender = newGender;
+    }
+    return self;
+}
+
 
 #pragma mark -
 #pragma mark Custom Methods

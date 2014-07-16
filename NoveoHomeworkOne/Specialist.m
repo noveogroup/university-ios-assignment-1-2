@@ -13,45 +13,77 @@
 @synthesize salary = _salary, degree = _degree, universityName = _universityName, departmentName = _departmentName;
 @synthesize subordinatesList = _subordinatesList;
 
-// NSString *const kStringStudentDegree = @"Student";
+static NSString *const defaultSpecialistFirstName = @"Unknown Specialist Firstname";
+static NSString *const defaultSpecialistLastName = @"Unknown Specialist Lastname";
+static NSString *const defaultSpecialistNickName = @"Unknown Specialist Nickname";
+
+static const int defaultSpecialistAge = 35;
+static const int defaultSpecialistSalary = 50000;
+static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegree;
+
+
+/* NSString *const kStringStudentDegree = @"Student";
 NSString *const kStringPostgraduateDegree = @"Postgraduate Student";
 NSString *const kStringLecturerDegree = @"Lecturer";
 NSString *const kStringSeniorLecturerDegree = @"Senior Lecturer";
 NSString *const kStringHeadOfDepartmentDegree = @"Head Of Department";
-NSString *const kStringRectorDegree = @"Rector";
+NSString *const kStringRectorDegree = @"Rector"; */
 
 #pragma mark -
 #pragma mark Initializers
 
 // Decignated initializer
-- (id) initSpicialistWith:(NSString *) firstName
-                         :(NSString *) lastName
-                         :(NSString *) nickName
-                         :(NSNumber *) age
-                         :(HumanGender) gender
-                         :(NSString *) university
-                         :(NSString *) department
-                         :(NSNumber *) salary
-                         :(MemberDegree) degree {
-    if (self = [super initWith:firstName :lastName :nickName :age :gender]) {
-        _universityName = university;
-        _departmentName = department;
-        _salary = [NSNumber numberWithInt:[salary intValue]];
-        _degree = degree;
+- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+                          lastName:(NSString *) newLastName
+                          nickName:(NSString *) newNickName
+                               age:(NSNumber *) newAge
+                            gender:(HumanGender) newGender
+                        university:(NSString *) newUniversity
+                        department:(NSString *) newDepartment
+                            salary:(NSNumber *) newSalary
+                            degree:(MemberDegree) newDegree {
+    if (self = [super initWithFirstName:newFirstName
+                               lastName:newLastName
+                               nickName:newNickName
+                                    age:newAge
+                                 gender:newGender]) {
+        _universityName = newUniversity;
+        _departmentName = newDepartment;
+        _salary = newSalary;
+        _degree = newDegree;
         _subordinatesList = [[NSMutableArray alloc]init];
         _chief = nil;
     }
     return self;
 }
 
-- (id) init {
-    if (self = [super init]) {
-        _universityName = @"Unknown University";
-        _departmentName = @"Unknown Department";
-        _salary = [NSNumber numberWithInt:0];
-        _degree = memberDegreePostgraduateDegree; // Least degree for unknown specialist
-        _subordinatesList = [[NSMutableArray alloc]init];
-        _chief = nil;
+- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+                                           lastName:(NSString *) newLastName
+                                             degree:(MemberDegree) newDegree
+                                         department:(NSString *)newDepartment{
+    if ([self initSpecialistWithFirstName:newFirstName
+                                 lastName:newLastName
+                                 nickName:defaultSpecialistNickName
+                                      age:[NSNumber numberWithInt:defaultSpecialistAge]
+                                   gender:humanGenderIsNotDefined
+                               university:nil
+                               department:newDepartment
+                                   salary:[NSNumber numberWithInt:defaultSpecialistSalary]
+                                   degree:defaultSpecialistDegree]) {
+    }
+    return self;
+}
+
+- (id<EducationMember>) init {
+    if ([self initSpecialistWithFirstName:defaultSpecialistFirstName
+                                 lastName:defaultSpecialistLastName
+                                 nickName:defaultSpecialistNickName
+                                      age:[NSNumber numberWithInt:defaultSpecialistAge]
+                                   gender:humanGenderIsNotDefined
+                               university:nil
+                               department:nil
+                                   salary:[NSNumber numberWithInt:defaultSpecialistSalary]
+                                   degree:defaultSpecialistDegree]) {
     }
     return self;
 }

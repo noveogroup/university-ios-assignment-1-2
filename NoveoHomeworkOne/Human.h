@@ -16,17 +16,23 @@ typedef enum {
     humanGenderIsFemale = 2
 } HumanGender;
 
+
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *nickName;
 @property (nonatomic, strong) NSNumber *age; // Debugged
 @property (nonatomic, assign) HumanGender gender;
 
-- (id) initWith:(NSString *) firstName
-               :(NSString *) lastName
-               :(NSString *) nickName
-               :(NSNumber *) age
-               :(HumanGender) gender;
+
+
+- (id) initWithFirstName:(NSString *)newFirstName
+                lastName:(NSString *)newLastName;
+
+- (id) initWithFirstName:(NSString *) newFirstName
+                lastName:(NSString *) newLastName
+                nickName:(NSString *) newNickName
+                     age:(NSNumber *) newAge
+                  gender:(HumanGender) newGender;
 
 - (NSString *) getGenderAsString;
 

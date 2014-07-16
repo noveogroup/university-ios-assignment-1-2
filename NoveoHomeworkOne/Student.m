@@ -12,37 +12,66 @@
 
 @synthesize degree = _degree, universityName = _universityName, departmentName = _departmentName, averagePoints = _averagePoints, lecturerList = _lecturerList, chief = _chief;
 
-static NSString *const kStringStudentDegree = @"Student";
+// static NSString *const kStringStudentDegree = @"Student";
+static NSString *const defaultStudentFirstName = @"Unknown Student Firstname";
+static NSString *const defaultStudentLastName = @"Unknown Student Lastname";
+static NSString *const defaultStudentNickName = @"Unknown Student Nickname";
+
+static const int defaultStudentAge = 17;
+static const float defaultStudentAveragePoints = 4.1;
+static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 
 #pragma mark -
 #pragma mark Initializers
 
 // Decignated initializer
-- (id) initStudentWith:(NSString *)firstName
-                      :(NSString *)lastName
-                      :(NSString *)nickName
-                      :(NSNumber *)age
-                      :(HumanGender)gender
-                      :(NSString *)university
-                      :(NSString *)department
-                      :(NSNumber *)averagePoints {
-    if (self = [super initWith:firstName :lastName :nickName :age :gender]) {
-        _universityName = nil;//university;
-        _departmentName = department;
-        _averagePoints = [NSNumber numberWithInt:[averagePoints intValue]];
+- (id<EducationMember>) initSudentWithFirstName:(NSString *) newFirstName
+                                       lastName:(NSString *) newLastName
+                                       nickName:(NSString *) newNickName
+                                            age:(NSNumber *) newAge
+                                         gender:(HumanGender) newGender
+                                     university:(NSString *) newUniversity
+                                     department:(NSString *) newDepartment
+                                  averagePoints:(NSNumber *) newAveragePoints {
+    if (self = [super initWithFirstName:newFirstName
+                               lastName:newLastName
+                               nickName:newNickName
+                                    age:newAge
+                                 gender:newGender]) {
+        _universityName = newUniversity;//university;
+        _departmentName = newDepartment;
+        _averagePoints = newAveragePoints;
+        _degree = defaultStudentDegree;
         _lecturerList = [[NSMutableArray alloc]init];
         _chief = nil;
     }
     return self;
 }
+
+- (id<EducationMember>) initStudenttWithFirstName:(NSString *) newFirstName
+                                         lastName:(NSString *) newLastName
+                                              age:(NSNumber *) newAge {
+    if ([self initSudentWithFirstName:newFirstName
+                             lastName:newLastName
+                             nickName:defaultStudentNickName
+                                  age:newAge
+                               gender:humanGenderIsNotDefined
+                           university:nil
+                           department:nil
+                        averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]]) {
+    }
+         return self;
+}
     
 - (id) init {
-    if (self = [super init]) {
-        _universityName = @"Unknown University";
-        _departmentName = @"Unknown Department";
-        _averagePoints = [NSNumber numberWithInt:0];
-        _lecturerList = [[NSMutableArray alloc]init];
-        _chief = nil;
+    if ([self initSudentWithFirstName:defaultStudentFirstName
+                             lastName:defaultStudentLastName
+                             nickName:defaultStudentNickName
+                                  age:[NSNumber numberWithInt:defaultStudentAge]
+                               gender:humanGenderIsNotDefined
+                           university:nil
+                           department:nil
+                        averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]]) {
     }
     return self;
 }

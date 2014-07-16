@@ -16,15 +16,20 @@
 @property (nonatomic, weak) id<EducationMember> chief;
 
 // Decignated initializer
-- (id) initSpicialistWith:(NSString *) firstName
-                         :(NSString *) lastName
-                         :(NSString *) nickName
-                         :(NSNumber *) age
-                         :(HumanGender) gender
-                         :(NSString *) university
-                         :(NSString *) department
-                         :(NSNumber *) salary
-                         :(MemberDegree) degree;
+- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+                                           lastName:(NSString *) newLastName
+                                           nickName:(NSString *) newNickName
+                                                age:(NSNumber *) newAge
+                                             gender:(HumanGender) newGender
+                                         university:(NSString *) newUniversity
+                                         department:(NSString *) newDepartment
+                                             salary:(NSNumber *) newSalary
+                                             degree:(MemberDegree) newDegree;
+
+- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+                                           lastName:(NSString *) newLastName
+                                             degree:(MemberDegree) newDegree
+                                         department:(NSString*)newDepartment;
 
 
 @end

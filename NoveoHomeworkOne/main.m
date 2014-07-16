@@ -16,15 +16,48 @@ int main(int argc, const char * argv[])
         
         // Crating a hellyeah-students
         
-        Student *firstStudent = [[Student alloc]initStudentWith:@"Wesley" :@"Geer" :@"Westyle" :[NSNumber numberWithInt:17] :humanGenderIsMale :nil :nil :[NSNumber numberWithFloat:4.7]];
-        Student *secondStudent = [[Student alloc]initStudentWith:@"Paul" :@"Abbott" :@"Vinnie" :[NSNumber numberWithInt:19] :humanGenderIsMale :nil :nil :[NSNumber numberWithFloat:4.0]];
-        Student *thirdStudent = [[Student alloc]initStudentWith:@"James" :@"Heatfield" :@"Papa Heat" :[NSNumber numberWithInt:22] :humanGenderIsMale :nil :nil :[NSNumber numberWithFloat:3.5]];
+        Student *firstStudent = [[Student alloc]initStudenttWithFirstName:@"Wesley" 
+                                                                 lastName:@"Geer"
+                                                                      age:[NSNumber numberWithInt:17]];
+        [firstStudent setNickName:@"Westyle"];
+        [firstStudent setAveragePoints:[NSNumber numberWithFloat:4.7]];
+
+        Student *secondStudent = [[Student alloc]initStudenttWithFirstName:@"Paul"
+                                                                  lastName:@"Abbott"
+                                                                       age:[NSNumber numberWithInt:19]];
+        
+        [secondStudent setNickName:@"Vinnie"];
+        [secondStudent setAveragePoints:[NSNumber numberWithFloat:4.3]];
+        
+        Student *thirdStudent = [[Student alloc]initStudenttWithFirstName:@"Paul"
+                                                                 lastName:@"Abbott"
+                                                                      age:[NSNumber numberWithInt:19]];
+        
+        [thirdStudent setNickName:@"Papa Heat"];
+        [thirdStudent setAveragePoints:[NSNumber numberWithFloat:4.5]];
+
         
         // Creating a powerful Specialists
         
-        Specialist *firstSpecialist = [[Specialist alloc]initSpicialistWith:@"Bob" :@"Dylan" :@"Old Bobby" :[NSNumber numberWithInt:70]:humanGenderIsMale :nil :@"Department of Rock and Roll" :[NSNumber numberWithInt:100000] :memberDegreeSeniorLecturerDegree];
-        Specialist *secondSpecialist = [[Specialist alloc]initSpicialistWith:@"Darrell" :@"Abbott" :@"Dimebag" :[NSNumber numberWithInt:250]:humanGenderIsMale :nil :@"Department of BlackJack and Whores" :[NSNumber numberWithInt:150000] :memberDegreeHeadOfDepartmentDegree];
-        Specialist *thirdSpecialist = [[Specialist alloc]initSpicialistWith:@"Wolfgang" :@"Mozart" :@"Amadeus" :[NSNumber numberWithInt:250]:humanGenderIsMale :@"Darmstadt Technische Universitat" :@"All Departments" :[NSNumber numberWithInt:150000] :memberDegreeRectorDegree];
+        Specialist *firstSpecialist = [[Specialist alloc]initSpecialistWithFirstName:@"Bob"
+                                                                            lastName:@"Dylan"
+                                                                              degree:memberDegreeSeniorLecturerDegree
+                                                                          department:@"Department of Rock'n'Roll"];
+        Specialist *secondSpecialist = [[Specialist alloc]initSpecialistWithFirstName:@"Darrell"
+                                                                             lastName:@"Abbott"
+                                                                               degree:memberDegreeLecturerDegree
+                                                                           department:@"Department of BlackJack and Whores"];
+ 
+        Specialist *thirdSpecialist = [[Specialist alloc]initSpecialistWithFirstName:@"Wolfgang"
+                                                                            lastName:@"Mozart"
+                                                                            nickName:@"Amadeus"
+                                                                                 age:[NSNumber numberWithInt:250]
+                                                                              gender:humanGenderIsMale
+                                                                          university:@"Darmstadt Technische Universitat"
+                                                                          department:@"All Departments"
+                                                                              salary:[NSNumber numberWithInt:150000]
+                                                                              degree:memberDegreeRectorDegree];
+
         
         // Set all students like a slaves for a first specialist
         NSMutableArray *allStudents = [[NSMutableArray alloc]initWithObjects:firstStudent, secondStudent, thirdStudent, nil];
