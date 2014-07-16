@@ -6,31 +6,87 @@
 #import "Group.h"
 #import "Student.h"
 
+@interface Group ()
+
+@property NSMutableArray *mStudents;
+@property NSMutableSet *observers;
+@property double mAverageMark;
+
+@end
 
 @implementation Group
 
-- (double)getAverageMark {
-    double summaryMark = 0;
-
-    for (Student *student in _students) {
-        summaryMark += [student getAverageMark];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.mStudents = [[NSMutableArray alloc] init];
+        self.observers = [[NSMutableSet alloc] init];
     }
 
-    return summaryMark / [_students count];
+    return self;
+}
+
+
+- (instancetype)initWithName:(NSString *)name {
+    self = [self init];
+
+    self.name = name;
+
+    return self;
+}
+
+- (void)addStudent:(Student *)student {
+    [self.mStudents addObject:student];
+    [self refreshAverageMark];
+}
+
+- (void)refreshAverageMark {
+    double summaryMark = 0;
+
+    for (Student *student in self.students) {
+        summaryMark += student.averageMark;
+    }
+
+    self.mAverageMark = summaryMark / [self.students count];
+    [self dataChanged];
+}
+
+- (double)averageMark {
+    return self.mAverageMark;
+}
+
+
+- (void)addObserver:(id <Observer>)observer {
+    [self.observers addObject:observer];
+}
+
+- (void)notifyAll {
+    for (id<Observer> observer in self.observers) {
+        [observer dataChanged];
+    }
+}
+
+- (void)dataChanged {
+    [self notifyAll];
 }
 
 - (NSString *)description {
-    NSMutableString *description = [NSMutableString stringWithFormat:@"Group \"%@\":\r", _name];
+    NSMutableString *description = [NSMutableString stringWithFormat:@"Group \"%@\":\n", _name];
 
-    [description appendFormat:@"\tAverage mark: %lf\r", self.getAverageMark];
+    [description appendFormat:@"\tAverage mark: %lf\n", self.averageMark];
 
-    [description appendString:@"\tStudents:\r"];
+    [description appendString:@"\tStudents:\n"];
 
-    for (int i = 0; i < [_students count]; ++i) {
-        [description appendFormat:@"\t%d. %@\r", i, [_students objectAtIndex:(NSUInteger) i]];
+    int i = 1;
+    for (Student *student in self.students) {
+        [description appendFormat:@"\t%d. %@\n", i++, student.name];
     }
 
     return description;
+}
+
+- (NSArray *)students {
+    return self.mStudents;
 }
 
 @end

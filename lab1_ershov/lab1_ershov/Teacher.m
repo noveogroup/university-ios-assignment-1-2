@@ -9,38 +9,36 @@
 #import "Teacher.h"
 #import "Student.h"
 
+@interface Teacher ()
+
+@property NSMutableArray *mStudents;
+
+@end
+
 @implementation Teacher
 
--(id)init {
-    self.students = [[NSMutableArray alloc] init];
+-(instancetype)init {
+    self.mStudents = [[NSMutableArray alloc] init];
     return self;
 }
 
 -(void)addStudent:(Student *)student {
-    [self.students addObject:student];
-}
-
-- (double)getAverageMark {
-    double summaryMark = 0;
-
-    for (Student *student in _students) {
-        summaryMark += [student getAverageMark];
-    }
-
-    return summaryMark / [_students count];
+    [self.mStudents addObject:student];
 }
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithString:@"Teacher:\n"];
 
     [description appendFormat:@"\tName: %@\n", self.name];
-    [description appendFormat:@"\tAge: %ld\n", self.getAge];
-    [description appendFormat:@"\tSalary: %lf\n", _salary];
+    [description appendFormat:@"\tAge: %ld\n", [self getAge]];
+    [description appendFormat:@"\tSalary: %lf\n", self.salary];
 
     [description appendString:@"\tTeaches students:\n"];
 
-    for (int i = 0; i < [_students count]; ++i) {
-        [description appendFormat:@"\t%d. %@\n", i+1, [[_students objectAtIndex:(NSUInteger) i] name]];
+    int i = 0;
+    for (Student *student in self.students) {
+        [description appendFormat:@"\t%d. %@\n", i+1, student.name];
+        i++;
     }
 
     return description;

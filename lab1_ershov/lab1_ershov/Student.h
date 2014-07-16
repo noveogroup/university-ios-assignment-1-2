@@ -9,12 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "HasAverageMark.h"
 #import "Human.h"
+#import "Observable.h"
 
+@interface Student : Human <HasAverageMark, Observable>
 
-@interface Student : Human <HasAverageMark>
-
-@property double averageMark;
-
--(Student *)initWithName:(NSString *)name Birthday:(NSDate *)birthday AverageMark:(double)averageMark;
+- (void)addMark:(int)mark;
 
 @end

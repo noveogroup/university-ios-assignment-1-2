@@ -12,10 +12,10 @@
 
 @class Student;
 
-@interface Teacher : Human <HasAverageMark>
+@interface Teacher : Human
 
-@property double salary;
-@property NSMutableArray *students;
+@property (nonatomic) double salary;
+@property (readonly, copy) NSArray *students;
 
 -(void)addStudent:(Student *)student;
 

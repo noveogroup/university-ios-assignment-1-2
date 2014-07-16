@@ -7,26 +7,67 @@
 //
 
 #import "Student.h"
+#import "Observer.h"
+
+@interface Student ()
+
+@property NSMutableArray *marks;
+@property NSMutableSet *observers;
+@property double mAverageMark;
+
+@end
 
 @implementation Student
 
-- (Student *)initWithName:(NSString *)name Birthday:(NSDate *)birthday AverageMark:(double)averageMark {
-    self.name = name;
-    self.birthday = birthday;
-    self.averageMark = averageMark;
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.marks = [[NSMutableArray alloc] init];
+        self.observers = [[NSMutableSet alloc] init];
+    }
 
     return self;
 }
 
-- (double)getAverageMark {
-    return _averageMark;
+
+- (void)addMark:(int)mark {
+    [self.marks addObject:[NSNumber numberWithInt:mark]];
+    [self refreshAverageMark];
+
+    [self notifyAll];
 }
 
+- (void)refreshAverageMark {
+    int summaryMark = 0;
+
+    for (NSNumber *mark in self.marks) {
+        summaryMark += mark.intValue;
+    }
+
+    self.mAverageMark = summaryMark / [self.marks count];
+}
+
+- (double)averageMark {
+    return self.mAverageMark;
+}
+
+- (void)addObserver:(id <Observer>)observer {
+    [self.observers addObject:observer];
+}
+
+- (void)notifyAll {
+    for (id<Observer> observer in self.observers) {
+        [observer dataChanged];
+    }
+}
 
 - (NSString *)description {
-    NSString *descriptionString = [NSString stringWithFormat:@"Student:\r\tName: %@\r\tAge: %ld\r\tAverage mark: %lf\r", [self name], [self getAge], [self averageMark]];
+    NSString *descriptionString = [NSString stringWithFormat:@"Student:\r\tName: %@\r\tAge: %ld\r\tAverage mark: %lf\r", self.name, [self getAge], self.averageMark];
 
     return descriptionString;
 }
+
+
+
 
 @end

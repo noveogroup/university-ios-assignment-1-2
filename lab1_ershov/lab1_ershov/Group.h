@@ -5,11 +5,19 @@
 
 #import <Foundation/Foundation.h>
 #import "HasAverageMark.h"
+#import "Observable.h"
+#import "Observer.h"
+
+@class Student;
 
 
-@interface Group : NSObject <HasAverageMark>
+@interface Group : NSObject <HasAverageMark, Observable, Observer>
 
-@property NSString *name;
-@property NSMutableArray *students;
+@property (copy) NSString *name;
+@property (readonly, copy) NSArray *students;
+
+- (instancetype)initWithName:(NSString *)name;
+
+- (void)addStudent:(Student *)student;
 
 @end
