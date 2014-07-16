@@ -10,8 +10,14 @@
 
 @interface Human : NSObject
 
-@property NSString* name;
-@property NSDate* birthday;
+@property (copy) NSString* name;
+@property (copy) NSDate* birthday;
+
+- (instancetype)initWithName:(NSString *)name
+                    Birthday:(NSDate *)birthday;
+
+- (instancetype)initWithName:(NSString *)name
+              BirthdayString:(NSString *)birthdayString;
 
 - (long)getAge;
 

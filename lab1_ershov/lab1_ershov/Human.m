@@ -10,6 +10,21 @@
 
 @implementation Human
 
+- (instancetype)initWithName:(NSString *)name Birthday:(NSDate *)birthday {
+    self = [self init];
+
+    self.name = name;
+    self.birthday = birthday;
+
+    return self;
+}
+
+- (instancetype)initWithName:(NSString *)name BirthdayString:(NSString *)birthdayString {
+    self = [self init];
+
+    return [self initWithName:name Birthday:[NSDate dateWithNaturalLanguageString:birthdayString]];
+}
+
 - (long)getAge {
     NSDate *startDate = [self birthday];
     NSDate *endDate = [[NSDate alloc]init];
