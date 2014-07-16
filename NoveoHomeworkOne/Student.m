@@ -11,6 +11,7 @@
 @implementation Student
 
 @synthesize degree = _degree, universityName = _universityName, departmentName = _departmentName, averagePoints = _averagePoints, lecturerList = _lecturerList, chief = _chief;
+@synthesize delegate = _delegate;
 
 static NSString *const defaultStudentFirstName = @"Unknown Student Firstname";
 static NSString *const defaultStudentLastName = @"Unknown Student Lastname";
@@ -19,6 +20,11 @@ static NSString *const defaultStudentNickName = @"Unknown Student Nickname";
 static const int defaultStudentAge = 17;
 static const float defaultStudentAveragePoints = 4.1;
 static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
+
+
+- (void) setDelegate:(id<RecalculatePointsDelegate>)aDelegate {
+    _delegate = aDelegate;
+}
 
 #pragma mark -
 #pragma mark Initializers
@@ -117,6 +123,13 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 
 - (void) setAveragePoints:(NSNumber *)averagePoints {
     _averagePoints = averagePoints;
+        if ([_delegate respondsToSelector:@selector(recalculatePoints)]) {
+            [_delegate recalculatePoints];
+        }
+}
+
+- (NSNumber *) averagePoints {
+    return _averagePoints;
 }
     
 

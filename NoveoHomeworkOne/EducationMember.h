@@ -24,14 +24,15 @@ typedef enum {
 } MemberDegree;
 
 @optional
-// DEBUG setChief -> chief
-- (void) setChief:(id<EducationMember>)chief; // Debuged
-- (id<EducationMember>) getChief;
+// DEBUGGED setChief -> chief
+- (void) setChief:(id<EducationMember>)chief; // Debugged
+- (id<EducationMember>) chief;
 - (void) setSubordinatesList:(NSArray *)subordinateList;
 - (NSArray *) getSubordinatesList;
 - (void) addSubordinate:(id<EducationMember>)subordinate;
 - (void) addSubordinateList:(NSArray *)subordinateList;
 - (void) removeFromSubordunateList:(id<EducationMember>)member;
 - (void) removeChief;
+- (NSNumber *) averagePoints;
 
 @end

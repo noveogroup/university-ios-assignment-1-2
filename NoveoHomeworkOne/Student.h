@@ -8,6 +8,7 @@
 
 #import "Human.h"
 #import "EducationMember.h"
+#import "RecalculatePointsDelegate.h"
 
 @interface Student : Human <EducationMember>
 
@@ -16,6 +17,10 @@
 @property (nonatomic, copy) NSString *departmentName;
 @property (nonatomic, strong) NSNumber *averagePoints;
 @property (nonatomic, weak) id<EducationMember> chief;
+@property (nonatomic, weak) id<RecalculatePointsDelegate> delegate;
+
+
+- (void) setDelegate:(id<RecalculatePointsDelegate>)aDelegate;
 
 // Decignated initializer
 - (id<EducationMember>) initSudentWithFirstName:(NSString *) newFirstName

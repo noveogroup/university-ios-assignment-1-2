@@ -10,4 +10,6 @@
 
 @protocol RecalculatePointsDelegate <NSObject>
 
+- (NSNumber *) recalculatePoints;
+
 @end

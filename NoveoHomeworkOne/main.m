@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Student.h"
 #import "Specialist.h"
+#import "Singleton.h"
 
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
+        
+        // Create a University singleton-instance
+        Singleton *myUniversity = [Singleton sharedInstance];
         
         // Crating a hellyeah-students
         
@@ -20,21 +24,21 @@ int main(int argc, const char * argv[])
                                                                  lastName:@"Geer"
                                                                       age:[NSNumber numberWithInt:17]];
         [firstStudent setNickName:@"Westyle"];
-        [firstStudent setAveragePoints:[NSNumber numberWithFloat:4.7]];
+        [firstStudent setAveragePoints:[NSNumber numberWithFloat:4.0]];
 
         Student *secondStudent = [[Student alloc]initStudenttWithFirstName:@"Paul"
                                                                   lastName:@"Abbott"
                                                                        age:[NSNumber numberWithInt:19]];
         
         [secondStudent setNickName:@"Vinnie"];
-        [secondStudent setAveragePoints:[NSNumber numberWithFloat:4.3]];
+        [secondStudent setAveragePoints:[NSNumber numberWithFloat:4.0]];
         
         Student *thirdStudent = [[Student alloc]initStudenttWithFirstName:@"Paul"
                                                                  lastName:@"Abbott"
                                                                       age:[NSNumber numberWithInt:19]];
         
         [thirdStudent setNickName:@"Papa Heat"];
-        [thirdStudent setAveragePoints:[NSNumber numberWithFloat:4.5]];
+        [thirdStudent setAveragePoints:[NSNumber numberWithFloat:4.0]];
 
         
         // Creating a powerful Specialists
@@ -59,18 +63,29 @@ int main(int argc, const char * argv[])
                                                                               degree:memberDegreeRectorDegree];
 
         
-        // Set all students like a slaves for a first specialist
-        NSMutableArray *allStudents = [[NSMutableArray alloc]initWithObjects:firstStudent, secondStudent, thirdStudent, nil];
-        [firstSpecialist setSubordinatesList:allStudents];
-        // Set first specialist as a Chief for all 3 students
-        for (Student *currentStudent in allStudents) {
-            [currentStudent setChief:firstSpecialist];
-        }
-        // Set second specialist like a chief for first specialist
+        // Set First and Second students like a subordinates for First Specialist
+        [firstStudent setChief:firstSpecialist];
+        [secondStudent setChief:firstSpecialist];
+       
+        // Set Third student like a suburdinate for Second Specialist
+        [thirdStudent setChief:secondSpecialist];
+        
+        // Set First specialist like a subordinate for Third specialist
         [firstSpecialist setChief:thirdSpecialist];
-        // Set third specialist like a chief for second specialist
+        // Set Second specialist like a subordinate for Third specialist
         [secondSpecialist setChief:thirdSpecialist];
         
+        
+        // Set thirdSpecialist like a University Boss
+        [myUniversity setHeadOfUniversity:thirdSpecialist];
+        
+        // Set delegate for the firstStudent
+        [firstStudent setDelegate:myUniversity];
+        
+        // Check working the delegate method when student changed average points
+        [firstStudent setAveragePoints:[NSNumber numberWithFloat:4.5]];
+        
+        /*
         // So who is Big Boss in this little fun place?
         NSArray *allSpecialists = [NSArray arrayWithObjects:firstSpecialist, secondSpecialist, thirdSpecialist, nil];
         for (Specialist *currentSpec in allSpecialists) {
@@ -103,6 +118,7 @@ int main(int argc, const char * argv[])
         
         // And finally description for Amadeus
         NSLog(@"%@", [thirdSpecialist description]);
+         */
 
     }
     return 0;

@@ -82,16 +82,5 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 - (NSString *)description {
     return @"I'm just a fun description for any Human!";
 }
-
-/*
-- (void) dealloc {
-    [_firstName release];
-    [_lastName release];
-    [_nickName release];
-    [_age release];
-    [_gender release];
-    [super dealloc];
-}
-*/
  
 @end

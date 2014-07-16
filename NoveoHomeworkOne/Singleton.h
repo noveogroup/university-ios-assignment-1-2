@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RecalculatePointsDelegate.h"
+#import "EducationMember.h"
 
-@interface Singleton : NSObject
+@interface Singleton : NSObject <RecalculatePointsDelegate>
+
+@property (nonatomic, strong) id<EducationMember> headOfUniversity;
+
++ (Singleton *)sharedInstance;
 
 @end

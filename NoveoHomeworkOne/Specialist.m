@@ -144,4 +144,13 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
     return [_chief departmentName];
 }
 
+- (NSNumber *) averagePoints {
+    float floatAveragePoints = 0;
+    for (id<EducationMember>currentSub in _subordinatesList) {
+        floatAveragePoints += [[currentSub averagePoints]floatValue];
+    }
+    floatAveragePoints/=[_subordinatesList count];
+    return [NSNumber numberWithFloat:floatAveragePoints];
+}
+
 @end
