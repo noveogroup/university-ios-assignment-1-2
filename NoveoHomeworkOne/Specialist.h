@@ -11,9 +11,8 @@
 
 @interface Specialist : Human <EducationMember>
 
-@property (nonatomic, retain) NSNumber *salary;
+@property (nonatomic, strong) NSNumber *salary;
 @property (nonatomic, assign) MemberDegree degree;
-@property (nonatomic, retain) NSMutableArray *subordinatesList;
 @property (nonatomic, weak) id<EducationMember> chief;
 
 // Decignated initializer
@@ -28,4 +27,8 @@
                          :(MemberDegree) degree;
 
 
+@end
+
+@interface Specialist ()
+    @property (nonatomic, strong) NSMutableArray *subordinatesList;
 @end

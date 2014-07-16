@@ -19,7 +19,7 @@ typedef enum {
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *nickName;
-@property (nonatomic, strong) NSNumber *age; // Debuged
+@property (nonatomic, strong) NSNumber *age; // Debugged
 @property (nonatomic, assign) HumanGender gender;
 
 - (id) initWith:(NSString *) firstName

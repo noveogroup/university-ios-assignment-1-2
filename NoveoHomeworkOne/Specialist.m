@@ -10,7 +10,8 @@
 
 @implementation Specialist
 
-@synthesize salary = _salary, degree = _degree, universityName = _universityName, departmentName = _departmentName, subordinatesList = _subordinatesList;
+@synthesize salary = _salary, degree = _degree, universityName = _universityName, departmentName = _departmentName;
+@synthesize subordinatesList = _subordinatesList;
 
 // NSString *const kStringStudentDegree = @"Student";
 NSString *const kStringPostgraduateDegree = @"Postgraduate Student";

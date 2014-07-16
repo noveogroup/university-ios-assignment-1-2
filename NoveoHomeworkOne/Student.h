@@ -11,11 +11,10 @@
 
 @interface Student : Human <EducationMember>
 
-@property (nonatomic, retain, readonly) NSNumber *degree; // Degree for Student is constantly init by 0
+@property (nonatomic, strong, readonly) NSNumber *degree; // Degree for Student is constantly init by 0
 @property (nonatomic, copy) NSString *universityName; // CR: Can be read from chief.
 @property (nonatomic, copy) NSString *departmentName;
-@property (nonatomic, retain) NSNumber *averagePoints;
-@property (nonatomic, retain) NSMutableArray *lecturerList;
+@property (nonatomic, strong) NSNumber *averagePoints;
 @property (nonatomic, weak) id<EducationMember> chief;
 
 // Decignated initializer
@@ -29,4 +28,8 @@
                       :(NSNumber *) averagePoints;
 
 
+@end
+
+@interface Student ()
+    @property (nonatomic, strong) NSMutableArray *lecturerList;
 @end
