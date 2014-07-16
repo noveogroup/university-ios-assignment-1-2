@@ -8,4 +8,8 @@
 
 @interface Teacher (HeadOfDepartment)
 
+@property (readonly) NSArray *subordinates;
+
+- (void)addSubordinate:(Teacher *)subordinate;
+
 @end

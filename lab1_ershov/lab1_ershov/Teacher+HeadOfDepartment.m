@@ -4,14 +4,46 @@
 //
 
 #import "Teacher+HeadOfDepartment.h"
+#import "Student.h"
 
+@interface Teacher ()
+
+@property NSMutableArray *mSubordinates;
+
+@end
 
 @implementation Teacher (HeadOfDepartment)
 
-+ (NSString *)description {
-    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
+- (void)addSubordinate:(Teacher *)subordinate {
+    [self.mSubordinates addObject:subordinate];
+}
 
-    [description appendString:@">"];
+- (NSArray *)subordinates {
+    return self.mSubordinates;
+}
+
+
+- (NSString *)description {
+    NSMutableString *description = [NSMutableString stringWithString:@"Teacher and Head of Department:\n"];
+
+    [description appendFormat:@"\tName: %@\n", self.name];
+    [description appendFormat:@"\tAge: %ld\n", [self getAge]];
+    [description appendFormat:@"\tSalary: %lf\n", self.salary];
+
+    [description appendString:@"\tTeaches students:\n"];
+
+    int i = 1;
+    for (Student *student in self.students) {
+        [description appendFormat:@"\t%d. %@\n", i++, student.name];
+    }
+
+    [description appendString:@"\tSuperior of:\n"];
+
+    i = 1;
+    for (Teacher *teacher in self.subordinates) {
+        [description appendFormat:@"\t%d. %@\n", i++, teacher.name];
+    }
+
     return description;
 }
 
