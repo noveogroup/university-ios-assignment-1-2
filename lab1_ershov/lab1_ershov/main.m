@@ -90,7 +90,7 @@ int main(int argc, const char * argv[])
         }
 
         for (Department *department in dataController.departments) {
-            NSLog([department description]);
+            NSLog(@"%@", [department description]);
         }
 
     }
