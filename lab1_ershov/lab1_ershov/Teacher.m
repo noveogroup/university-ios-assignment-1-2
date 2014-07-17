@@ -18,6 +18,7 @@
 @implementation Teacher
 
 -(instancetype)init {
+    self = [super init];
     self.mStudents = [[NSMutableArray alloc] init];
     return self;
 }
