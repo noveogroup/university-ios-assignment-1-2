@@ -1,5 +1,5 @@
 //
-//  Singleton.h
+//  UniversitySingleton.h
 //  NoveoHomeworkOne
 //
 //  Created by Wadim on 7/16/14.
@@ -10,10 +10,10 @@
 #import "RecalculatePointsDelegate.h"
 #import "EducationMember.h"
 
-@interface Singleton : NSObject <RecalculatePointsDelegate>
+@interface UniversitySingleton : NSObject <RecalculatePointsDelegate>
 
 @property (nonatomic, strong) id<EducationMember> headOfUniversity;
 
-+ (Singleton *)sharedInstance;
++ (UniversitySingleton *)sharedInstance;
 
 @end

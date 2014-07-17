@@ -67,13 +67,8 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
 - (id<EducationMember>) init {
     return [self initSpecialistWithFirstName:defaultSpecialistFirstName
                                     lastName:defaultSpecialistLastName
-                                    nickName:defaultSpecialistNickName
-                                         age:[NSNumber numberWithInt:defaultSpecialistAge]
-                                      gender:humanGenderIsNotDefined
-                                  university:nil
-                                  department:nil
-                                      salary:[NSNumber numberWithInt:defaultSpecialistSalary]
-                                      degree:defaultSpecialistDegree];
+                                      degree:defaultSpecialistDegree
+                                  department:nil];
 }
 
 #pragma mark -

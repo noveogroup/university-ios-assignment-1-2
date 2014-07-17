@@ -67,14 +67,9 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 }
     
 - (id<EducationMember>) init {
-    return [self initSudentWithFirstName:defaultStudentFirstName
-                                lastName:defaultStudentLastName
-                                nickName:defaultStudentNickName
-                                     age:[NSNumber numberWithInt:defaultStudentAge]
-                                  gender:humanGenderIsNotDefined
-                              university:nil
-                              department:nil
-                           averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]];
+    return [self initStudenttWithFirstName:defaultStudentFirstName
+                                  lastName:defaultStudentLastName
+                                       age:[NSNumber numberWithInt:defaultStudentAge]];
 }
 
 #pragma mark -

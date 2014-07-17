@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Student.h"
 #import "Specialist.h"
-#import "Singleton.h"
+#import "UniversitySingleton.h"
 
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
         
         // Create a University singleton-instance
-        Singleton *myUniversity = [Singleton sharedInstance];
+        UniversitySingleton *myUniversity = [UniversitySingleton sharedInstance];
         
         // Crating a hellyeah-students
         
@@ -47,6 +47,7 @@ int main(int argc, const char * argv[])
                                                                             lastName:@"Dylan"
                                                                               degree:memberDegreeSeniorLecturerDegree
                                                                           department:@"Department of Rock'n'Roll"];
+        
         Specialist *secondSpecialist = [[Specialist alloc]initSpecialistWithFirstName:@"Darrell"
                                                                              lastName:@"Abbott"
                                                                                degree:memberDegreeLecturerDegree

@@ -13,7 +13,7 @@
 		CE04E4D219740B7400E45E4E /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4D119740B7400E45E4E /* Human.m */; };
 		CE04E4F31974406E00E45E4E /* Specialist.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4F21974406E00E45E4E /* Specialist.m */; };
 		CE04E4FB197443EC00E45E4E /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4FA197443EC00E45E4E /* Student.m */; };
-		CE4B12FD197675F30015AEC2 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B12FC197675F30015AEC2 /* Singleton.m */; };
+		CE4B130F1976E0E40015AEC2 /* UniversitySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,9 +42,9 @@
 		CE04E4F21974406E00E45E4E /* Specialist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Specialist.m; sourceTree = "<group>"; };
 		CE04E4F9197443EC00E45E4E /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		CE04E4FA197443EC00E45E4E /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		CE4B12FB197675F30015AEC2 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		CE4B12FC197675F30015AEC2 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		CE4B1303197689E70015AEC2 /* RecalculatePointsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecalculatePointsDelegate.h; sourceTree = "<group>"; };
+		CE4B130D1976E0E40015AEC2 /* UniversitySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniversitySingleton.h; path = ../UniversitySingleton.h; sourceTree = "<group>"; };
+		CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniversitySingleton.m; path = ../UniversitySingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 				CE04E4F21974406E00E45E4E /* Specialist.m */,
 				CE04E4F9197443EC00E45E4E /* Student.h */,
 				CE04E4FA197443EC00E45E4E /* Student.m */,
-				CE4B12FB197675F30015AEC2 /* Singleton.h */,
-				CE4B12FC197675F30015AEC2 /* Singleton.m */,
+				CE4B130D1976E0E40015AEC2 /* UniversitySingleton.h */,
+				CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 				CE04E4D219740B7400E45E4E /* Human.m in Sources */,
 				CE04E4F31974406E00E45E4E /* Specialist.m in Sources */,
 				CE04E4FB197443EC00E45E4E /* Student.m in Sources */,
-				CE4B12FD197675F30015AEC2 /* Singleton.m in Sources */,
+				CE4B130F1976E0E40015AEC2 /* UniversitySingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

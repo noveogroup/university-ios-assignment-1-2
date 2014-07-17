@@ -27,10 +27,7 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 
 - (id)  init {
     return [self initWithFirstName:defaultFirstName
-                          lastName:defaultLastName
-                          nickName:defaultNickName
-                               age:[NSNumber numberWithInt:defaultAge]
-                            gender:humanGenderIsNotDefined];
+                          lastName:defaultLastName];
 }
 
 - (id) initWithFirstName:(NSString *)newFirstName
