@@ -14,10 +14,10 @@
 @property (nonatomic, copy) NSDate* birthday;
 
 - (instancetype)initWithName:(NSString *)name
-                    Birthday:(NSDate *)birthday;
+                    birthday:(NSDate *)birthday;
 
 - (instancetype)initWithName:(NSString *)name
-              BirthdayString:(NSString *)birthdayString;
+              birthdayString:(NSString *)birthdayString;
 
 - (long)getAge;
 

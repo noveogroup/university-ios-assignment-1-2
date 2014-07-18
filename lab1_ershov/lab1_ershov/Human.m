@@ -10,7 +10,7 @@
 
 @implementation Human
 
-- (instancetype)initWithName:(NSString *)name Birthday:(NSDate *)birthday {
+- (instancetype)initWithName:(NSString *)name birthday:(NSDate *)birthday {
     self = [self init];
 
     self.name = name;
@@ -19,10 +19,10 @@
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name BirthdayString:(NSString *)birthdayString {
+- (instancetype)initWithName:(NSString *)name birthdayString:(NSString *)birthdayString {
     self = [self init];
 
-    return [self initWithName:name Birthday:[NSDate dateWithNaturalLanguageString:birthdayString]];
+    return [self initWithName:name birthday:[NSDate dateWithNaturalLanguageString:birthdayString]];
 }
 
 - (long)getAge {

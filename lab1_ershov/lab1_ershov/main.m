@@ -18,33 +18,33 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         NSArray *students = [NSArray arrayWithObjects:
                 [[Student alloc] initWithName:@"Alex"
-                               BirthdayString:@"07/01/1994"],
+                               birthdayString:@"07/01/1994"],
                 [[Student alloc] initWithName:@"Bob"
-                               BirthdayString:@"02/02/1992"],
+                               birthdayString:@"02/02/1992"],
                 [[Student alloc] initWithName:@"Sigismund"
-                               BirthdayString:@"04/14/1992"],
+                               birthdayString:@"04/14/1992"],
                 [[Student alloc] initWithName:@"Emma"
-                               BirthdayString:@"03/23/1993"],
+                               birthdayString:@"03/23/1993"],
                 [[Student alloc] initWithName:@"John"
-                               BirthdayString:@"07/17/1994"],
+                               birthdayString:@"07/17/1994"],
                 [[Student alloc] initWithName:@"Maria"
-                               BirthdayString:@"06/06/1991"],
+                               birthdayString:@"06/06/1991"],
                 [[Student alloc] initWithName:@"Julia"
-                               BirthdayString:@"05/15/1994"],
+                               birthdayString:@"05/15/1994"],
                 [[Student alloc] initWithName:@"Abraham"
-                               BirthdayString:@"08/23/1994"],
+                               birthdayString:@"08/23/1994"],
                 [[Student alloc] initWithName:@"Geralt"
-                               BirthdayString:@"09/19/1990"],
+                               birthdayString:@"09/19/1990"],
                 [[Student alloc] initWithName:@"Triss"
-                               BirthdayString:@"10/20/1989"],
+                               birthdayString:@"10/20/1989"],
                 [[Student alloc] initWithName:@"Jennifer"
-                               BirthdayString:@"12/23/1993"],
+                               birthdayString:@"12/23/1993"],
                 [[Student alloc] initWithName:@"Leto"
-                               BirthdayString:@"11/21/1992"],
+                               birthdayString:@"11/21/1992"],
                 [[Student alloc] initWithName:@"Zoltan"
-                               BirthdayString:@"12/22/1992"],
+                               birthdayString:@"12/22/1992"],
                 [[Student alloc] initWithName:@"Vernon"
-                               BirthdayString:@"01/11/1991"],
+                               birthdayString:@"01/11/1991"],
                 nil
         ];
 
