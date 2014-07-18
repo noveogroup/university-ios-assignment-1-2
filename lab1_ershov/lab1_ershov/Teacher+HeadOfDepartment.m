@@ -8,7 +8,7 @@
 
 @interface Teacher ()
 
-@property NSMutableArray *mSubordinates;
+@property (nonatomic) NSMutableArray *mSubordinates;
 
 @end
 

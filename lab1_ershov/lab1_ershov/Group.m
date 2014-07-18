@@ -8,9 +8,9 @@
 
 @interface Group ()
 
-@property NSMutableArray *mStudents;
-@property NSMutableSet *observers;
-@property double mAverageMark;
+@property (nonatomic) NSMutableArray *mStudents;
+@property (nonatomic) NSMutableSet *observers;
+@property (nonatomic) double mAverageMark;
 
 @end
 

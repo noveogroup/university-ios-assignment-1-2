@@ -13,8 +13,8 @@
 
 @interface Group : NSObject <HasAverageMark, Observable, Observer>
 
-@property (copy) NSString *name;
-@property (readonly, copy) NSArray *students;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSArray *students;
 
 - (instancetype)initWithName:(NSString *)name;
 

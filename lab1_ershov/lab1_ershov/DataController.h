@@ -10,7 +10,8 @@
 
 @interface DataController : NSObject
 
-@property (readonly) NSArray *departments;
+@property (nonatomic, readonly) NSArray *departments;
+
 + (DataController *) sharedInstance;
 - (void)addDepartment:(Department *)department;
 

@@ -7,7 +7,7 @@
 #import "Department.h"
 
 @interface DataController ()
-@property NSMutableArray *mDepartments;
+@property (nonatomic) NSMutableArray *mDepartments;
 @end
 
 @implementation DataController

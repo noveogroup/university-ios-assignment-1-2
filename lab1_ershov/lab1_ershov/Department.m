@@ -14,8 +14,8 @@
 
 @interface Department ()
 
-@property NSMutableArray *mGroups;
-@property double mAverageMark;
+@property (nonatomic) NSMutableArray *mGroups;
+@property (nonatomic) double mAverageMark;
 
 @end
 

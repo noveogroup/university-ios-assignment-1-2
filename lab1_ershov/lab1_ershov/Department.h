@@ -15,7 +15,7 @@
 
 @interface Department : NSObject <HasAverageMark, Observer>
 
-@property (copy) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *groups;
 @property (nonatomic) Teacher *headOfDepartment;
 

@@ -8,7 +8,7 @@
 
 @interface Teacher (HeadOfDepartment)
 
-@property (readonly) NSArray *subordinates;
+@property (nonatomic, readonly) NSArray *subordinates;
 
 - (void)addSubordinate:(Teacher *)subordinate;
 

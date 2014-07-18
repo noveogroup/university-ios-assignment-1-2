@@ -11,7 +11,7 @@
 
 @interface Teacher ()
 
-@property NSMutableArray *mStudents;
+@property (nonatomic) NSMutableArray *mStudents;
 
 @end
 

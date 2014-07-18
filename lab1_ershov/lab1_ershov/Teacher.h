@@ -15,7 +15,7 @@
 @interface Teacher : Human
 
 @property (nonatomic) double salary;
-@property (readonly, copy) NSArray *students;
+@property (nonatomic, readonly, copy) NSArray *students;
 
 -(void)addStudent:(Student *)student;
 

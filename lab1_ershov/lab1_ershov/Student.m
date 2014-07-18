@@ -11,9 +11,9 @@
 
 @interface Student ()
 
-@property NSMutableArray *marks;
-@property NSMutableSet *observers;
-@property double mAverageMark;
+@property (nonatomic) NSMutableArray *marks;
+@property (nonatomic) NSMutableSet *observers;
+@property (nonatomic) double mAverageMark;
 
 @end
 
