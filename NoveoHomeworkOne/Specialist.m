@@ -24,16 +24,16 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
 #pragma mark -
 #pragma mark Initializers
 
-// Decignated initializer
+// Designated initializer
 - (instancetype) initSpecialistWithFirstName:(NSString *) newFirstName
-                          lastName:(NSString *) newLastName
-                          nickName:(NSString *) newNickName
-                               age:(NSNumber *) newAge
-                            gender:(HumanGenderId) newGenderId
-                        university:(NSString *) newUniversity
-                        department:(NSString *) newDepartment
-                            salary:(NSNumber *) newSalary
-                            degree:(MemberDegree) newDegree {
+                                    lastName:(NSString *) newLastName
+                                    nickName:(NSString *) newNickName
+                                         age:(NSNumber *) newAge
+                                      gender:(HumanGenderId) newGenderId
+                                  university:(NSString *) newUniversity
+                                  department:(NSString *) newDepartment
+                                      salary:(NSNumber *) newSalary
+                                      degree:(MemberDegree) newDegree {
     if (self = [super initWithFirstName:newFirstName
                                lastName:newLastName
                                nickName:newNickName
@@ -50,9 +50,10 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
 }
 
 - (instancetype) initSpecialistWithFirstName:(NSString *) newFirstName
-                                           lastName:(NSString *) newLastName
-                                             degree:(MemberDegree) newDegree
-                                         department:(NSString *)newDepartment{
+                                    lastName:(NSString *) newLastName
+                                      degree:(MemberDegree) newDegree
+                                  department:(NSString *)newDepartment{
+    // Return
     return [self initSpecialistWithFirstName:newFirstName
                                     lastName:newLastName
                                     nickName:defaultSpecialistNickName

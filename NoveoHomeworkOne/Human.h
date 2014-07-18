@@ -11,22 +11,22 @@
 
 @interface Human : NSObject
 
-@property (nonatomic, copy) NSString *firstName;
-@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, copy, readonly) NSString *firstName;
+@property (nonatomic, copy, readonly) NSString *lastName;
 @property (nonatomic, copy) NSString *nickName;
-@property (nonatomic, strong) NSNumber *age; // Debugged
+@property (nonatomic, strong, readonly) NSNumber *age; // Debugged
 @property (nonatomic, strong, readonly) Gender *gender;
 
 
 
 - (instancetype) initWithFirstName:(NSString *)newFirstName
-                lastName:(NSString *)newLastName;
+                          lastName:(NSString *)newLastName;
 
 - (instancetype) initWithFirstName:(NSString *) newFirstName
-                lastName:(NSString *) newLastName
-                nickName:(NSString *) newNickName
-                     age:(NSNumber *) newAge
-                  gender:(HumanGenderId) newGenderId;
+                          lastName:(NSString *) newLastName
+                          nickName:(NSString *) newNickName
+                               age:(NSNumber *) newAge
+                            gender:(HumanGenderId) newGenderId;
 
 - (NSString *) getGenderAsString;
 - (void) setGenderWithHumanGenderId: (HumanGenderId) newGenderId;

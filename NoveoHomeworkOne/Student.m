@@ -10,7 +10,7 @@
 
 @implementation Student
 
-@synthesize degree = _degree, universityName = _universityName, departmentName = _departmentName, averagePoints = _averagePoints, lecturerList = _lecturerList, chief = _chief;
+@synthesize degree = _degree, averagePoints = _averagePoints, lecturerList = _lecturerList, chief = _chief;
 @synthesize delegate = _delegate;
 
 static NSString *const defaultStudentFirstName = @"Unknown Student Firstname";
@@ -22,29 +22,22 @@ static const float defaultStudentAveragePoints = 4.1;
 static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 
 
-- (void) setDelegate:(id<RecalculatePointsDelegate>)aDelegate {
-    _delegate = aDelegate;
-}
-
 #pragma mark -
 #pragma mark Initializers
 
-// Decignated initializer
+// Designated initializer
 - (instancetype) initSudentWithFirstName:(NSString *) newFirstName
-                                       lastName:(NSString *) newLastName
-                                       nickName:(NSString *) newNickName
-                                            age:(NSNumber *) newAge
-                                         gender:(HumanGenderId) newGenderId
-                                     university:(NSString *) newUniversity
-                                     department:(NSString *) newDepartment
-                                  averagePoints:(NSNumber *) newAveragePoints {
+                                lastName:(NSString *) newLastName
+                                nickName:(NSString *) newNickName
+                                     age:(NSNumber *) newAge
+                                  gender:(HumanGenderId) newGenderId
+                           averagePoints:(NSNumber *) newAveragePoints {
+    // Start initializer
     if (self = [super initWithFirstName:newFirstName
                                lastName:newLastName
                                nickName:newNickName
                                     age:newAge
                                  gender:newGenderId]) {
-        _universityName = newUniversity;//university;
-        _departmentName = newDepartment;
         _averagePoints = newAveragePoints;
         _degree = defaultStudentDegree;
         _lecturerList = [[NSMutableArray alloc]init];
@@ -54,15 +47,14 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 }
 
 - (instancetype) initStudenttWithFirstName:(NSString *) newFirstName
-                                         lastName:(NSString *) newLastName
-                                              age:(NSNumber *) newAge {
+                                  lastName:(NSString *) newLastName
+                                       age:(NSNumber *) newAge {
+    // Return
     return [self initSudentWithFirstName:newFirstName
                                 lastName:newLastName
                                 nickName:defaultStudentNickName
                                      age:newAge
                                   gender:humanGenderIsNotDefined
-                              university:nil
-                              department:nil
                            averagePoints:@(defaultStudentAveragePoints)];
 }
     

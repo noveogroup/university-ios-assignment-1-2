@@ -27,7 +27,8 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 }
 
 - (instancetype) initWithFirstName:(NSString *)newFirstName
-                lastName:(NSString *)newLastName {
+                          lastName:(NSString *)newLastName {
+    // Return
     return [self initWithFirstName:newFirstName
                           lastName:newLastName
                           nickName:defaultNickName
@@ -35,12 +36,13 @@ static NSString *const defaultNickName = @"Unknown Nickname";
                             gender: humanGenderIsNotDefined];
 }
 
-// Decignated initializer
+// Designated initializer
 - (instancetype) initWithFirstName:(NSString *) newFirstName
-                lastName:(NSString *) newLastName
-                nickName:(NSString *) newNickName
-                     age:(NSNumber *) newAge
-                  gender:(HumanGenderId) newGenderId {
+                          lastName:(NSString *) newLastName
+                          nickName:(NSString *) newNickName
+                               age:(NSNumber *) newAge
+                            gender:(HumanGenderId) newGenderId {
+    // Start initializer
     if (self=[super init]) {
         _firstName = newFirstName;
         _lastName = newLastName;
@@ -60,7 +62,7 @@ static NSString *const defaultNickName = @"Unknown Nickname";
     return [_gender description];
 }
 
-- (NSString *)description {
+- (NSString *) description {
     return @"I'm just a fun description for any Human!";
 }
 
