@@ -25,7 +25,7 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
 #pragma mark Initializers
 
 // Decignated initializer
-- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+- (instancetype) initSpecialistWithFirstName:(NSString *) newFirstName
                           lastName:(NSString *) newLastName
                           nickName:(NSString *) newNickName
                                age:(NSNumber *) newAge
@@ -49,22 +49,22 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
     return self;
 }
 
-- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+- (instancetype) initSpecialistWithFirstName:(NSString *) newFirstName
                                            lastName:(NSString *) newLastName
                                              degree:(MemberDegree) newDegree
                                          department:(NSString *)newDepartment{
     return [self initSpecialistWithFirstName:newFirstName
                                     lastName:newLastName
                                     nickName:defaultSpecialistNickName
-                                         age:[NSNumber numberWithInt:defaultSpecialistAge]
+                                         age:@(defaultSpecialistAge)
                                       gender:humanGenderIsNotDefined
                                   university:nil
                                   department:newDepartment
-                                      salary:[NSNumber numberWithInt:defaultSpecialistSalary]
+                                      salary:@(defaultSpecialistSalary)
                                       degree:defaultSpecialistDegree];
 }
 
-- (id<EducationMember>) init {
+- (instancetype) init {
     return [self initSpecialistWithFirstName:defaultSpecialistFirstName
                                     lastName:defaultSpecialistLastName
                                       degree:defaultSpecialistDegree
@@ -107,17 +107,6 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
 }
 
 - (void) removeFromSubordunateList:(id<EducationMember>)member {
-    // Chef must knew only nearest subordinates
-/*
-    if (_chief) {
-        [_chief removeFromSubordunateList:member];
-    }
-    
-    NSArray *currentSubordinatesList = [NSArray arrayWithArray:[member getSubordinatesList]];
-    if (currentSubordinatesList) {
-            [_subordinatesList removeObjectsInArray:currentSubordinatesList];
-    }
- */
     [_subordinatesList removeObject:member];
 }
 
@@ -145,7 +134,7 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
         floatAveragePoints += [[currentSub averagePoints]floatValue];
     }
     floatAveragePoints/=[_subordinatesList count];
-    return [NSNumber numberWithFloat:floatAveragePoints];
+    return @(floatAveragePoints);
 }
 
 @end

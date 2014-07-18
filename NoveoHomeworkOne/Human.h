@@ -25,10 +25,10 @@ typedef enum {
 
 
 
-- (id) initWithFirstName:(NSString *)newFirstName
+- (instancetype) initWithFirstName:(NSString *)newFirstName
                 lastName:(NSString *)newLastName;
 
-- (id) initWithFirstName:(NSString *) newFirstName
+- (instancetype) initWithFirstName:(NSString *) newFirstName
                 lastName:(NSString *) newLastName
                 nickName:(NSString *) newNickName
                      age:(NSNumber *) newAge

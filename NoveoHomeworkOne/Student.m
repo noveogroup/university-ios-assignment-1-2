@@ -30,7 +30,7 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 #pragma mark Initializers
 
 // Decignated initializer
-- (id<EducationMember>) initSudentWithFirstName:(NSString *) newFirstName
+- (instancetype) initSudentWithFirstName:(NSString *) newFirstName
                                        lastName:(NSString *) newLastName
                                        nickName:(NSString *) newNickName
                                             age:(NSNumber *) newAge
@@ -53,7 +53,7 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
     return self;
 }
 
-- (id<EducationMember>) initStudenttWithFirstName:(NSString *) newFirstName
+- (instancetype) initStudenttWithFirstName:(NSString *) newFirstName
                                          lastName:(NSString *) newLastName
                                               age:(NSNumber *) newAge {
     return [self initSudentWithFirstName:newFirstName
@@ -63,13 +63,13 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
                                   gender:humanGenderIsNotDefined
                               university:nil
                               department:nil
-                           averagePoints:[NSNumber numberWithFloat:defaultStudentAveragePoints]];
+                           averagePoints:@(defaultStudentAveragePoints)];
 }
     
-- (id<EducationMember>) init {
+- (instancetype) init {
     return [self initStudenttWithFirstName:defaultStudentFirstName
                                   lastName:defaultStudentLastName
-                                       age:[NSNumber numberWithInt:defaultStudentAge]];
+                                       age:@(defaultStudentAge)];
 }
 
 #pragma mark -
@@ -91,9 +91,8 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 }
 
 - (NSArray *) getSubordinatesList{
-    // NSLog(@"Getting subordinate list error: Student can't have a subordinates");
+    // NSLog(@"Getting subordinate list error: Student can't have a subordinates"); 
     return nil;
-    
 }
 
 - (void) addSubordinate:(id)subordinate{
@@ -123,9 +122,6 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
         }
 }
 
-- (NSNumber *) averagePoints {
-    return _averagePoints;
-}
     
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, weak) id<EducationMember> chief;
 
 // Decignated initializer
-- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+- (instancetype) initSpecialistWithFirstName:(NSString *) newFirstName
                                            lastName:(NSString *) newLastName
                                            nickName:(NSString *) newNickName
                                                 age:(NSNumber *) newAge
@@ -26,7 +26,7 @@
                                              salary:(NSNumber *) newSalary
                                              degree:(MemberDegree) newDegree;
 
-- (id<EducationMember>) initSpecialistWithFirstName:(NSString *) newFirstName
+- (instancetype) initSpecialistWithFirstName:(NSString *) newFirstName
                                            lastName:(NSString *) newLastName
                                              degree:(MemberDegree) newDegree
                                          department:(NSString*)newDepartment;

@@ -25,12 +25,12 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 #pragma mark -
 #pragma mark Initializers
 
-- (id)  init {
+- (instancetype)  init {
     return [self initWithFirstName:defaultFirstName
                           lastName:defaultLastName];
 }
 
-- (id) initWithFirstName:(NSString *)newFirstName
+- (instancetype) initWithFirstName:(NSString *)newFirstName
                 lastName:(NSString *)newLastName {
     return [self initWithFirstName:newFirstName
                           lastName:newLastName
@@ -40,7 +40,7 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 }
 
 // Decignated initializer
-- (id) initWithFirstName:(NSString *) newFirstName
+- (instancetype) initWithFirstName:(NSString *) newFirstName
                 lastName:(NSString *) newLastName
                 nickName:(NSString *) newNickName
                      age:(NSNumber *) newAge

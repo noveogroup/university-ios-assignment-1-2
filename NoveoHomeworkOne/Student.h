@@ -23,7 +23,7 @@
 - (void) setDelegate:(id<RecalculatePointsDelegate>)aDelegate;
 
 // Decignated initializer
-- (id<EducationMember>) initSudentWithFirstName:(NSString *) newFirstName
+- (instancetype) initSudentWithFirstName:(NSString *) newFirstName
                                        lastName:(NSString *) newLastName
                                        nickName:(NSString *) newNickName
                                             age:(NSNumber *) newAge
@@ -32,7 +32,7 @@
                                      department:(NSString *) newDepartment
                                   averagePoints:(NSNumber *) newAveragePoints;
 
-- (id<EducationMember>) initStudenttWithFirstName:(NSString *) newFirstName
+- (instancetype) initStudenttWithFirstName:(NSString *) newFirstName
                                          lastName:(NSString *) newLastName
                                               age:(NSNumber *) newAge;
 
