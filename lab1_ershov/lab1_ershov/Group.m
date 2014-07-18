@@ -19,8 +19,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.mStudents = [[NSMutableArray alloc] init];
-        self.observers = [[NSMutableSet alloc] init];
+        _mStudents = [[NSMutableArray alloc] init];
+        _observers = [[NSMutableSet alloc] init];
     }
 
     return self;

@@ -31,7 +31,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.mDepartments = [[NSMutableArray alloc] init];
+        _mDepartments = [[NSMutableArray alloc] init];
     }
 
     return self;

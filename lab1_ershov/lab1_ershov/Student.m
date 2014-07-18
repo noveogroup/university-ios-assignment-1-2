@@ -22,8 +22,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.marks = [[NSMutableArray alloc] init];
-        self.observers = [[NSMutableSet alloc] init];
+        _marks = [[NSMutableArray alloc] init];
+        _observers = [[NSMutableSet alloc] init];
     }
 
     return self;
