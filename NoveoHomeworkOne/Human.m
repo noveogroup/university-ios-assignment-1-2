@@ -12,10 +12,6 @@
 
 @synthesize firstName = _firstName, lastName =_lastName, nickName = _nickName, age =_age, gender=_gender;
 
-static NSString *const kStringHumanGenderIsNotDefined = @"It"; // Debuged
-static NSString *const kStringHumanGenderIsMale = @"Male";
-static NSString *const kStringHumanGenderIsFemale = @"Female";
-
 static const int defaultAge = 7;
 
 static NSString *const defaultFirstName = @"Unknown Firstname";
@@ -36,7 +32,7 @@ static NSString *const defaultNickName = @"Unknown Nickname";
                           lastName:newLastName
                           nickName:defaultNickName
                                age:[NSNumber numberWithInt:defaultAge]
-                            gender:humanGenderIsNotDefined];
+                            gender: humanGenderIsNotDefined];
 }
 
 // Decignated initializer
@@ -44,13 +40,13 @@ static NSString *const defaultNickName = @"Unknown Nickname";
                 lastName:(NSString *) newLastName
                 nickName:(NSString *) newNickName
                      age:(NSNumber *) newAge
-                  gender:(HumanGender) newGender {
+                  gender:(HumanGenderId) newGenderId {
     if (self=[super init]) {
         _firstName = newFirstName;
         _lastName = newLastName;
         _nickName = newNickName;
         _age = newAge;
-        _gender = newGender;
+        _gender = [[Gender alloc]initGenderWithGenderId:newGenderId];
     }
     return self;
 }
@@ -61,23 +57,15 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 
 - (NSString *) getGenderAsString
 {
-    switch (_gender) {
-        case humanGenderIsMale:
-            return kStringHumanGenderIsMale;
-            break;
-            
-        case humanGenderIsFemale:
-            return kStringHumanGenderIsFemale;
-            break;
-            
-        default:
-            return kStringHumanGenderIsNotDefined;
-            break;
-    }
+    return [_gender description];
 }
 
 - (NSString *)description {
     return @"I'm just a fun description for any Human!";
+}
+
+- (void) setGenderWithHumanGenderId:(HumanGenderId)newHumanGenderId {
+    [_gender setCurrentHumanGenderId:newHumanGenderId];
 }
  
 @end

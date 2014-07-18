@@ -20,7 +20,7 @@
                                            lastName:(NSString *) newLastName
                                            nickName:(NSString *) newNickName
                                                 age:(NSNumber *) newAge
-                                             gender:(HumanGender) newGender
+                                             gender:(HumanGenderId) newGenderId
                                          university:(NSString *) newUniversity
                                          department:(NSString *) newDepartment
                                              salary:(NSNumber *) newSalary

@@ -29,7 +29,7 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
                           lastName:(NSString *) newLastName
                           nickName:(NSString *) newNickName
                                age:(NSNumber *) newAge
-                            gender:(HumanGender) newGender
+                            gender:(HumanGenderId) newGenderId
                         university:(NSString *) newUniversity
                         department:(NSString *) newDepartment
                             salary:(NSNumber *) newSalary
@@ -38,7 +38,7 @@ static const MemberDegree defaultSpecialistDegree = memberDegreePostgraduateDegr
                                lastName:newLastName
                                nickName:newNickName
                                     age:newAge
-                                 gender:newGender]) {
+                                 gender:newGenderId]) {
         _universityName = newUniversity;
         _departmentName = newDepartment;
         _salary = newSalary;

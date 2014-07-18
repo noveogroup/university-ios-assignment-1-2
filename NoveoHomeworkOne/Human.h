@@ -7,21 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Gender.h"
 
 @interface Human : NSObject
-
-typedef enum {
-    humanGenderIsNotDefined = 0,
-    humanGenderIsMale = 1,
-    humanGenderIsFemale = 2
-} HumanGender;
-
 
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *nickName;
 @property (nonatomic, strong) NSNumber *age; // Debugged
-@property (nonatomic, assign) HumanGender gender;
+@property (nonatomic, strong, readonly) Gender *gender;
 
 
 
@@ -32,8 +26,9 @@ typedef enum {
                 lastName:(NSString *) newLastName
                 nickName:(NSString *) newNickName
                      age:(NSNumber *) newAge
-                  gender:(HumanGender) newGender;
+                  gender:(HumanGenderId) newGenderId;
 
 - (NSString *) getGenderAsString;
+- (void) setGenderWithHumanGenderId: (HumanGenderId) newGenderId;
 
 @end

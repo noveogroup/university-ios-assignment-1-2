@@ -34,7 +34,7 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
                                        lastName:(NSString *) newLastName
                                        nickName:(NSString *) newNickName
                                             age:(NSNumber *) newAge
-                                         gender:(HumanGender) newGender
+                                         gender:(HumanGenderId) newGenderId
                                      university:(NSString *) newUniversity
                                      department:(NSString *) newDepartment
                                   averagePoints:(NSNumber *) newAveragePoints {
@@ -42,7 +42,7 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
                                lastName:newLastName
                                nickName:newNickName
                                     age:newAge
-                                 gender:newGender]) {
+                                 gender:newGenderId]) {
         _universityName = newUniversity;//university;
         _departmentName = newDepartment;
         _averagePoints = newAveragePoints;

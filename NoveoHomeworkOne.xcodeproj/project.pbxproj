@@ -14,6 +14,7 @@
 		CE04E4F31974406E00E45E4E /* Specialist.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4F21974406E00E45E4E /* Specialist.m */; };
 		CE04E4FB197443EC00E45E4E /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4FA197443EC00E45E4E /* Student.m */; };
 		CE4B130F1976E0E40015AEC2 /* UniversitySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */; };
+		CEF337A319790D4A0037B3B8 /* Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF337A219790D4A0037B3B8 /* Gender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,8 @@
 		CE4B1303197689E70015AEC2 /* RecalculatePointsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecalculatePointsDelegate.h; sourceTree = "<group>"; };
 		CE4B130D1976E0E40015AEC2 /* UniversitySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniversitySingleton.h; path = ../UniversitySingleton.h; sourceTree = "<group>"; };
 		CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniversitySingleton.m; path = ../UniversitySingleton.m; sourceTree = "<group>"; };
+		CEF337A119790D4A0037B3B8 /* Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gender.h; sourceTree = "<group>"; };
+		CEF337A219790D4A0037B3B8 /* Gender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gender.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 		CE04E4CE19740AF400E45E4E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEF337A119790D4A0037B3B8 /* Gender.h */,
+				CEF337A219790D4A0037B3B8 /* Gender.m */,
 				CE04E4D019740B7400E45E4E /* Human.h */,
 				CE04E4D119740B7400E45E4E /* Human.m */,
 				CE04E4F11974406E00E45E4E /* Specialist.h */,
@@ -183,6 +188,7 @@
 				CE04E4D219740B7400E45E4E /* Human.m in Sources */,
 				CE04E4F31974406E00E45E4E /* Specialist.m in Sources */,
 				CE04E4FB197443EC00E45E4E /* Student.m in Sources */,
+				CEF337A319790D4A0037B3B8 /* Gender.m in Sources */,
 				CE4B130F1976E0E40015AEC2 /* UniversitySingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
