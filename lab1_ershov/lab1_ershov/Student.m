@@ -57,7 +57,7 @@
 
 - (void)notifyAll {
     for (id<Observer> observer in self.observers) {
-        [observer dataChanged];
+        [observer dataChanged:self];
     }
 }
 

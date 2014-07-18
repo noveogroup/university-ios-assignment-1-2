@@ -37,6 +37,8 @@
 
 - (void)addStudent:(Student *)student {
     [self.mStudents addObject:student];
+    [student addObserver:self];
+    
     [self refreshAverageMark];
 }
 
@@ -48,7 +50,7 @@
     }
 
     self.mAverageMark = summaryMark / [self.students count];
-    [self dataChanged];
+    [self dataChanged:self];
 }
 
 - (double)averageMark {
@@ -62,11 +64,11 @@
 
 - (void)notifyAll {
     for (id<Observer> observer in self.observers) {
-        [observer dataChanged];
+        [observer dataChanged:self];
     }
 }
 
-- (void)dataChanged {
+- (void)dataChanged:(id<Observable>)observable {
     [self notifyAll];
 }
 

@@ -4,7 +4,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Observable.h"
 
 @protocol Observer <NSObject>
-- (void)dataChanged;
+- (void)dataChanged:(id<Observable>)observable;
 @end

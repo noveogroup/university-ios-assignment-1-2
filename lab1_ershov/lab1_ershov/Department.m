@@ -52,7 +52,7 @@
     return self.mAverageMark;
 }
 
-- (void)dataChanged {
+- (void)dataChanged:(id<Observable>)observable {
     [self refreshAverageMark];
 }
 
