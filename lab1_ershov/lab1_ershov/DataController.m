@@ -12,9 +12,11 @@
 
 @implementation DataController
 
-static DataController *instance = nil;
+
 
 + (DataController *)sharedInstance {
+    static DataController *instance = nil;
+    
     @synchronized(self)
     {
         if (instance == nil)
