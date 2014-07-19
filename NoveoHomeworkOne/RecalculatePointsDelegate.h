@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EducationMember.h"
 
 @protocol RecalculatePointsDelegate <NSObject>
 
-- (NSNumber *) recalculatePoints;
+- (NSNumber *) recalculatePoints :(__weak id<EducationMember>)sender;
 
 @end

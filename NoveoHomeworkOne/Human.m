@@ -10,7 +10,7 @@
 
 @implementation Human
 
-@synthesize firstName = _firstName, lastName =_lastName, nickName = _nickName, age =_age, gender=_gender;
+@synthesize firstName = _firstName, lastName =_lastName, nickName = _nickName, age =_age, genderId = _genderId;
 
 static const int defaultAge = 7;
 
@@ -48,7 +48,7 @@ static NSString *const defaultNickName = @"Unknown Nickname";
         _lastName = newLastName;
         _nickName = newNickName;
         _age = newAge;
-        _gender = [[Gender alloc]initGenderWithGenderId:newGenderId];
+        _genderId = newGenderId;
     }
     return self;
 }
@@ -57,17 +57,8 @@ static NSString *const defaultNickName = @"Unknown Nickname";
 #pragma mark -
 #pragma mark Custom Methods
 
-- (NSString *) getGenderAsString
-{
-    return [_gender description];
-}
-
 - (NSString *) description {
     return @"I'm just a fun description for any Human!";
-}
-
-- (void) setGenderWithHumanGenderId:(HumanGenderId)newHumanGenderId {
-    [_gender setCurrentHumanGenderId:newHumanGenderId];
 }
  
 @end

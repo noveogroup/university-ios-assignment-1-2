@@ -15,7 +15,7 @@
 @property (nonatomic, copy, readonly) NSString *lastName;
 @property (nonatomic, copy) NSString *nickName;
 @property (nonatomic, strong, readonly) NSNumber *age; // Debugged
-@property (nonatomic, strong, readonly) Gender *gender;
+@property (nonatomic, assign) HumanGenderId genderId;
 
 
 
@@ -27,8 +27,5 @@
                           nickName:(NSString *) newNickName
                                age:(NSNumber *) newAge
                             gender:(HumanGenderId) newGenderId;
-
-- (NSString *) getGenderAsString;
-- (void) setGenderWithHumanGenderId: (HumanGenderId) newGenderId;
 
 @end

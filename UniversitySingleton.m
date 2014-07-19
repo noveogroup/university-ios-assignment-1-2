@@ -12,7 +12,7 @@
 
 static UniversitySingleton *sharedSingleton_ = nil;
 
-+ (UniversitySingleton *) sharedInstance {
++ (instancetype) sharedInstance {
     @synchronized(self){
         if (sharedSingleton_==nil) {
             sharedSingleton_ = [[UniversitySingleton alloc]init];
@@ -21,7 +21,7 @@ static UniversitySingleton *sharedSingleton_ = nil;
     return sharedSingleton_;
 }
 
-- (NSNumber *)recalculatePoints {
+- (NSNumber *)recalculatePoints:(__weak id<EducationMember>)sender {
     if (!_headOfUniversity) {
         NSLog(@"University can't work w/o Rector. Please register the Rector before using University service.");
         return [NSNumber numberWithFloat:0.0];

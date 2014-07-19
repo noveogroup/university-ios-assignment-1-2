@@ -10,6 +10,7 @@
 #import "Student.h"
 #import "Specialist.h"
 #import "UniversitySingleton.h"
+#import "Gender.h"
 
 int main(int argc, const char * argv[])
 {
@@ -85,6 +86,9 @@ int main(int argc, const char * argv[])
         
         // Check working the delegate method when student changed average points
         [firstStudent setAveragePoints:@(4.5)];
+        
+        // Get student gender in string presentation
+        NSLog(@"Gender of first student is:%@", [[[Gender descriptions]objectAtIndex:[firstStudent genderId]]description]);
   
     }
     return 0;

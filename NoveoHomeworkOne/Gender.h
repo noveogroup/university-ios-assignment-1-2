@@ -16,8 +16,7 @@ typedef enum {
     humanGenderIsFemale = 2
 } HumanGenderId;
 
-@property (nonatomic, assign) HumanGenderId currentHumanGenderId;
++ (NSArray *) descriptions;
 
-- (instancetype) initGenderWithGenderId: (HumanGenderId)aGenderId;
 
 @end

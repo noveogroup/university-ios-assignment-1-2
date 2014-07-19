@@ -10,44 +10,17 @@
 
 @implementation Gender
 
-static NSString *const kStringHumanGenderIsNotDefined = @"It"; // Debugged
-static NSString *const kStringHumanGenderIsMale = @"Male";
-static NSString *const kStringHumanGenderIsFemale = @"Female";
-
-@synthesize currentHumanGenderId = _currentHumanGenderId;
-
-
 #pragma mark -
-#pragma mark Initializers
-// Designated initializer
-- (instancetype) initGenderWithGenderId: (HumanGenderId)aGenderId {
-    if (self = [super init]) {
-        _currentHumanGenderId = aGenderId;
-    }
-    return self;
-}
+#pragma Static Singleton Array
 
-- (instancetype) init {
-    return [self initGenderWithGenderId:humanGenderIsNotDefined];
-}
-
-#pragma mark -
-#pragma mark Overrided Methods
-
-- (NSString *) description {
-    switch (_currentHumanGenderId) {
-        case humanGenderIsMale:
-            return kStringHumanGenderIsMale;
-            break;
-            
-        case humanGenderIsFemale:
-            return kStringHumanGenderIsFemale;
-            break;
-            
-        default:
-            return kStringHumanGenderIsNotDefined;
-            break;
-    }
++ (NSArray *)descriptions
+{
+    static NSArray *genderNames = nil;
+    static dispatch_once_t onceToken = 0;
+    dispatch_once(&onceToken, ^{
+        genderNames = @[@"Undefined gender", @"Male", @"Female"];
+    });
+    return genderNames;
 }
 
 @end

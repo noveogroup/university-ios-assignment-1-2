@@ -109,8 +109,8 @@ static const MemberDegree defaultStudentDegree = memberDegreeStudentDegree;
 
 - (void) setAveragePoints:(NSNumber *)averagePoints {
     _averagePoints = averagePoints;
-        if ([_delegate respondsToSelector:@selector(recalculatePoints)]) {
-            [_delegate recalculatePoints];
+        if ([_delegate respondsToSelector:@selector(recalculatePoints:)]) {
+            [_delegate recalculatePoints:self];
         }
 }
 
