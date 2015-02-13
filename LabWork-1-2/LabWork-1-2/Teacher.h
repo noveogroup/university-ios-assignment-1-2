@@ -1,9 +1,11 @@
 #import "Worker.h"
 #import "HeadOfTheChair.h"
+#import "ParticipantOfEducationalProcess.h"
+#import "Student.h"
 
-@interface Teacher : Worker
+@interface Teacher : Worker <ParticipantOfEducationalProcess>
 
-@property (weak, nonatomic) NSSet *studentsList;
-@property (weak, nonatomic) HeadOfTheChair* superior;
+@property (strong, nonatomic) NSMutableSet *studentsList;
+@property (weak, nonatomic) HeadOfTheChair *superior;
 
 @end

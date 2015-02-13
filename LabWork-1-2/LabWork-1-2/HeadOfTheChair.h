@@ -1,7 +1,10 @@
 #import "Worker.h"
+#import "ParticipantOfEducationalProcess.h"
 
-@interface HeadOfTheChair : Worker
+@class Teacher;
 
-@property (weak, nonatomic) NSSet* inferiorsList;
+@interface HeadOfTheChair : Worker <ParticipantOfEducationalProcess>
+
+@property (strong, nonatomic) NSMutableSet *inferiorsList;
 
 @end

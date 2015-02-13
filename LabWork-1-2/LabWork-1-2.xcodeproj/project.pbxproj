@@ -40,6 +40,7 @@
 		B58D66BD1A8E4DE0006E650D /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		B58D66BF1A8E4EA3006E650D /* HeadOfTheChair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadOfTheChair.h; sourceTree = "<group>"; };
 		B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadOfTheChair.m; sourceTree = "<group>"; };
+		B58D66C21A8E639B006E650D /* ParticipantOfEducationalProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticipantOfEducationalProcess.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 				B58D66BD1A8E4DE0006E650D /* Teacher.m */,
 				B58D66BF1A8E4EA3006E650D /* HeadOfTheChair.h */,
 				B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */,
+				B58D66C21A8E639B006E650D /* ParticipantOfEducationalProcess.h */,
 			);
 			path = "LabWork-1-2";
 			sourceTree = "<group>";
