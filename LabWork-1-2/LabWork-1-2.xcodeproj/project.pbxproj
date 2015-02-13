@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B58D66AD1A8E488B006E650D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66AC1A8E488B006E650D /* main.m */; };
+		B58D66B51A8E4B2D006E650D /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66B41A8E4B2D006E650D /* Human.m */; };
+		B58D66B81A8E4BD1006E650D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66B71A8E4BD1006E650D /* Student.m */; };
+		B58D66BB1A8E4CFD006E650D /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66BA1A8E4CFD006E650D /* Worker.m */; };
+		B58D66BE1A8E4DE0006E650D /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66BD1A8E4DE0006E650D /* Teacher.m */; };
+		B58D66C11A8E4EA3006E650D /* HeadOfTheChair.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,16 @@
 /* Begin PBXFileReference section */
 		B58D66A91A8E488B006E650D /* LabWork-1-2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LabWork-1-2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58D66AC1A8E488B006E650D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B58D66B31A8E4B2D006E650D /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		B58D66B41A8E4B2D006E650D /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		B58D66B61A8E4BD1006E650D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		B58D66B71A8E4BD1006E650D /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		B58D66B91A8E4CFD006E650D /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
+		B58D66BA1A8E4CFD006E650D /* Worker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worker.m; sourceTree = "<group>"; };
+		B58D66BC1A8E4DE0006E650D /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		B58D66BD1A8E4DE0006E650D /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		B58D66BF1A8E4EA3006E650D /* HeadOfTheChair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadOfTheChair.h; sourceTree = "<group>"; };
+		B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadOfTheChair.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,16 @@
 			isa = PBXGroup;
 			children = (
 				B58D66AC1A8E488B006E650D /* main.m */,
+				B58D66B31A8E4B2D006E650D /* Human.h */,
+				B58D66B41A8E4B2D006E650D /* Human.m */,
+				B58D66B61A8E4BD1006E650D /* Student.h */,
+				B58D66B71A8E4BD1006E650D /* Student.m */,
+				B58D66B91A8E4CFD006E650D /* Worker.h */,
+				B58D66BA1A8E4CFD006E650D /* Worker.m */,
+				B58D66BC1A8E4DE0006E650D /* Teacher.h */,
+				B58D66BD1A8E4DE0006E650D /* Teacher.m */,
+				B58D66BF1A8E4EA3006E650D /* HeadOfTheChair.h */,
+				B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */,
 			);
 			path = "LabWork-1-2";
 			sourceTree = "<group>";
@@ -119,6 +144,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58D66AD1A8E488B006E650D /* main.m in Sources */,
+				B58D66BB1A8E4CFD006E650D /* Worker.m in Sources */,
+				B58D66B51A8E4B2D006E650D /* Human.m in Sources */,
+				B58D66BE1A8E4DE0006E650D /* Teacher.m in Sources */,
+				B58D66C11A8E4EA3006E650D /* HeadOfTheChair.m in Sources */,
+				B58D66B81A8E4BD1006E650D /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
