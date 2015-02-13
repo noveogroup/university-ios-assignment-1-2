@@ -4,4 +4,6 @@
 
 @property (strong, nonatomic) NSNumber *salary;
 
+- (instancetype)initWithName:(NSString *)name age:(NSNumber *)age salary:(NSNumber *)salary;
+
 @end
