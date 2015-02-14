@@ -13,6 +13,7 @@
 		B58D66BB1A8E4CFD006E650D /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66BA1A8E4CFD006E650D /* Worker.m */; };
 		B58D66BE1A8E4DE0006E650D /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66BD1A8E4DE0006E650D /* Teacher.m */; };
 		B58D66C11A8E4EA3006E650D /* HeadOfTheChair.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */; };
+		B58D66C51A8F5AF9006E650D /* DepartmentOfUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66C41A8F5AF9006E650D /* DepartmentOfUniversity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,9 @@
 		B58D66BF1A8E4EA3006E650D /* HeadOfTheChair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadOfTheChair.h; sourceTree = "<group>"; };
 		B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadOfTheChair.m; sourceTree = "<group>"; };
 		B58D66C21A8E639B006E650D /* ParticipantOfEducationalProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticipantOfEducationalProcess.h; sourceTree = "<group>"; };
+		B58D66C31A8F5AF9006E650D /* DepartmentOfUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentOfUniversity.h; sourceTree = "<group>"; };
+		B58D66C41A8F5AF9006E650D /* DepartmentOfUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentOfUniversity.m; sourceTree = "<group>"; };
+		B58D66C61A8F61DC006E650D /* ChangingGPAObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangingGPAObserver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,9 @@
 				B58D66BF1A8E4EA3006E650D /* HeadOfTheChair.h */,
 				B58D66C01A8E4EA3006E650D /* HeadOfTheChair.m */,
 				B58D66C21A8E639B006E650D /* ParticipantOfEducationalProcess.h */,
+				B58D66C31A8F5AF9006E650D /* DepartmentOfUniversity.h */,
+				B58D66C41A8F5AF9006E650D /* DepartmentOfUniversity.m */,
+				B58D66C61A8F61DC006E650D /* ChangingGPAObserver.h */,
 			);
 			path = "LabWork-1-2";
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58D66AD1A8E488B006E650D /* main.m in Sources */,
+				B58D66C51A8F5AF9006E650D /* DepartmentOfUniversity.m in Sources */,
 				B58D66BB1A8E4CFD006E650D /* Worker.m in Sources */,
 				B58D66B51A8E4B2D006E650D /* Human.m in Sources */,
 				B58D66BE1A8E4DE0006E650D /* Teacher.m in Sources */,

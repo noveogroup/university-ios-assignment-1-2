@@ -2,6 +2,7 @@
 #import "Student.h"
 #import "Teacher.h"
 #import "HeadOfTheChair.h"
+#import "DepartmentOfUniversity.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -44,8 +45,28 @@ int main(int argc, const char * argv[]) {
         [[students objectAtIndex:6] addSuperior:[teachers objectAtIndex:1]];
 
         // Output the result
-        NSLog(@"%@\n%@\n%@", students, teachers, head);
+        NSLog(@"All the created entities:\n%@\n%@\n%@", students, teachers, head);
         
+        // Initialize department of university and add some entities to it
+        DepartmentOfUniversity *department = [[DepartmentOfUniversity alloc] init];
+        [[[[[[[[[[department assignHeadOfTheChair:head]
+        addTeacher:[teachers objectAtIndex:0]]
+        addTeacher:[teachers objectAtIndex:1]]
+        addStudent:[students objectAtIndex:0]]
+        addStudent:[students objectAtIndex:1]]
+        addStudent:[students objectAtIndex:2]]
+        addStudent:[students objectAtIndex:3]]
+        addStudent:[students objectAtIndex:4]]
+        addStudent:[students objectAtIndex:5]]
+        addStudent:[students objectAtIndex:6]];
+        
+        // Output avarage GPA of the department
+        NSLog(@"Avarage GPA of the department: %0.2f", department.avarageGPA);
+        
+        // Change GPA of one of the department's students and output it
+        [[students objectAtIndex:0] setGradePointAverage:@5.0];
+        NSLog(@"Updated avarage GPA of the department: %0.2f", department.avarageGPA);
+
     }
     return 0;
 }
