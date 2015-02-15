@@ -3,6 +3,7 @@
 #import "Teacher.h"
 #import "HeadOfTheChair.h"
 #import "DepartmentOfUniversity.h"
+#import "University.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -66,6 +67,10 @@ int main(int argc, const char * argv[]) {
         // Change GPA of one of the department's students and output it
         [[students objectAtIndex:0] setGradePointAverage:@5.0];
         NSLog(@"Updated avarage GPA of the department: %0.2f", department.avarageGPA);
+        
+        // Initialize the university and output all it's participants
+        University *university = [University sharedInstance];
+        NSLog(@"University participants:\n%@\n%@\n%@", [university students], [university teachers], [university headsOfTheChairs]);
 
     }
     return 0;

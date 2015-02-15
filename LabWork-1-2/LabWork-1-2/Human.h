@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PlaceOfEducationalProcess.h"
 
 @interface Human : NSObject
 

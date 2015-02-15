@@ -10,12 +10,18 @@
     return [[self alloc] initWithName:name age:age];
 }
 
+- (instancetype)init {
+    self = [super init];
+    [[[PlaceOfEducationalProcess alloc] init] addParticipant:self];
+    return self;
+}
+
 - (instancetype)initWithName:(NSString *)name {
     return [self initWithName:name age:nil];
 }
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age {
-    if (self = [super init]) {
+    if (self = [self init]) {
         self.name = name;
         self.age = age;
     }
