@@ -10,4 +10,12 @@
 
 @implementation Student
 
+- (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint
+{
+    self = [self initWithFirstName:firstName lastName:lastName andAge:age];
+    self.averagePoint=aPoint;
+    return self;
+}
+
+
 @end
