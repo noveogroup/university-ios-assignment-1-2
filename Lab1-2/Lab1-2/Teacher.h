@@ -9,11 +9,15 @@
 #import "Person.h"
 #import "MemberOfEducationProcess.h"
 @class Department;
+@class Group;
 
 @interface Teacher : Person <MemberOfEducationProcess>
 
 @property (nonatomic, strong) NSNumber *salary;
-@property (nonatomic, weak) NSArray *groupsList;
+@property (nonatomic, readonly) NSMutableArray *groupsList;
 @property (nonatomic, weak) Department *departmentOfWork;
+
+- (instancetype)initTeacherWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andSalary:(NSNumber *) sal;
+- (void)addGroup:(Group *)group;
 
 @end

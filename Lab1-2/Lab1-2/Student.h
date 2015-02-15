@@ -12,10 +12,10 @@
 
 @interface Student : Person <MemberOfEducationProcess>
 
-@property (nonatomic, strong) NSNumber *averagePoint;
+@property (nonatomic) NSNumber *averagePoint;
 @property (weak) Group *group;
 
-- (void)changeAveragePoint;
+- (void)changeAveragePoint:(NSNumber *) newPoint;
 - (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint;
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "Student.h"
+#import "Group.h"
 
 @implementation Student
 
@@ -16,6 +17,22 @@
     self.averagePoint=aPoint;
     return self;
 }
+
+- (void)changeAveragePoint:(NSNumber *)newPoint
+{
+    self.averagePoint=newPoint;
+}
+
+- (NSArray *)getInferiors
+{
+    return nil;
+}
+
+- (NSArray *)getSuperiors
+{
+    return _group.teacherList;
+}
+
 
 
 @end

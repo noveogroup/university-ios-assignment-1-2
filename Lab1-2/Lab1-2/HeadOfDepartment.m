@@ -7,7 +7,18 @@
 //
 
 #import "HeadOfDepartment.h"
+#import "Department.h"
 
 @implementation HeadOfDepartment
+
+- (NSArray *)getSuperiors
+{
+    return nil;
+}
+
+- (NSArray *)getInferiors
+{
+    return self.departmentOfWork.teachers;
+}
 
 @end

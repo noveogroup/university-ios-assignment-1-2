@@ -14,8 +14,8 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *groupAveragePoint;
-@property (nonatomic, strong) NSArray *studentList;
-@property (nonatomic, weak) NSArray *teacherList;
+@property (nonatomic, strong) NSMutableArray *studentList;
+@property (nonatomic) NSMutableArray *teacherList;
 
 - (Group *)initWithName:(NSString*)name;
 - (void)addStudent:(Student *) student;
