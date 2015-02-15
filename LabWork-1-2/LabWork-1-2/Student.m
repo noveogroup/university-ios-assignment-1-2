@@ -24,7 +24,7 @@
 
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
     if (self.teachersList == nil) {
-        self.teachersList = [[NSMutableSet alloc] init];
+        _teachersList = [[NSMutableSet alloc] init];
     }
     [self.teachersList addObject:participant];
     if (![[participant getInferiorsList] containsObject:self]) {

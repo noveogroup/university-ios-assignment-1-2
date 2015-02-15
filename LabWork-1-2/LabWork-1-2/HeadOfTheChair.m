@@ -13,7 +13,7 @@
 
 - (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
     if (self.inferiorsList == nil) {
-        self.inferiorsList = [[NSMutableSet alloc] init];
+        _inferiorsList = [[NSMutableSet alloc] init];
     }
     [self.inferiorsList addObject:participant];
     if (![[participant getSuperiorsList] containsObject:self]) {

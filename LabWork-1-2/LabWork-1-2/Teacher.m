@@ -11,14 +11,14 @@
 }
 
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    self.superior = (HeadOfTheChair *)participant;
+    _superior = (HeadOfTheChair *)participant;
     if (![[participant getInferiorsList] containsObject:self]) {
         [participant addInferior:self];
     }
 }
 
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    self.superior = nil;
+    _superior = nil;
     if ([[participant getInferiorsList] containsObject:self]) {
         [participant removeInferior:self];
     }
@@ -26,7 +26,7 @@
 
 - (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
     if (self.studentsList == nil) {
-        self.studentsList = [[NSMutableSet alloc] init];
+        _studentsList = [[NSMutableSet alloc] init];
     }
     [self.studentsList addObject:participant];
     if (![[participant getSuperiorsList] containsObject:self]) {

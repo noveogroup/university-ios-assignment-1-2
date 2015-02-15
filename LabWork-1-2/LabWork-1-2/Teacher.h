@@ -5,7 +5,7 @@
 
 @interface Teacher : Worker <ParticipantOfEducationalProcess>
 
-@property (strong, nonatomic) NSMutableSet *studentsList;
-@property (weak, nonatomic) HeadOfTheChair *superior;
+@property (strong, nonatomic, readonly) NSMutableSet *studentsList;
+@property (weak, nonatomic, readonly) HeadOfTheChair *superior;
 
 @end

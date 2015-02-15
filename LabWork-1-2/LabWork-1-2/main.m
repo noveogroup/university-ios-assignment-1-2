@@ -44,7 +44,7 @@ int main(int argc, const char * argv[]) {
         [[students objectAtIndex:4] addSuperior:[teachers objectAtIndex:0]];
         [[students objectAtIndex:5] addSuperior:[teachers objectAtIndex:1]];
         [[students objectAtIndex:6] addSuperior:[teachers objectAtIndex:1]];
-
+        
         // Output the result
         NSLog(@"All the created entities:\n%@\n%@\n%@", students, teachers, head);
         
@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
         // Output avarage GPA of the department
         NSLog(@"Avarage GPA of the department: %0.2f", department.avarageGPA);
         
-        // Change GPA of one of the department's students and output it
+        // Change GPA of one of the department's students and output updated value of avarage GPA of the department
         [[students objectAtIndex:0] setGradePointAverage:@5.0];
         NSLog(@"Updated avarage GPA of the department: %0.2f", department.avarageGPA);
         
