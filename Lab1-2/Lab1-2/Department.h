@@ -25,6 +25,5 @@
 - (void)addGroup:(Group *)group;
 - (void)addTeacher:(Teacher *)teacher;
 - (void)addHeadOfDepartment:(HeadOfDepartment *) head;
-- (NSString *)description;
 
 @end

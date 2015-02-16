@@ -14,11 +14,16 @@
 {
     self = [self init];
     
-    _firsName = fName;
+    _firstName = fName;
     _lastName = lName;
     _age = age;
     
     return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Firsr name: %@, Last name: %@, age: %@", self.firstName, self.lastName, self.age];
 }
 
 @end

@@ -30,9 +30,9 @@
 
 - (void)addStudent:(Student *) student
 {
-    if (self.students == nil)
+    if (self.gStudents == nil)
     {
-        _students = [[NSMutableArray alloc] init];
+        _gStudents = [[NSMutableArray alloc] init];
     }
     [self.gStudents addObject:student];
     student.group = self;
@@ -42,9 +42,9 @@
 
 - (void)addTeacher:(Teacher *) teacher
 {
-    if (self.teachers == nil)
+    if (self.gTeachers == nil)
     {
-        _teachers = [[NSMutableArray alloc] init];
+        _gTeachers = [[NSMutableArray alloc] init];
     }
     [self.gTeachers addObject:teacher];
 }

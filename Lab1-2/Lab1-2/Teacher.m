@@ -10,6 +10,7 @@
 #import "Group.h"
 #import "Department.h"
 #import "Student.h"
+#import "HeadOfDepartment.h"
 
 @interface Teacher ()
 
@@ -28,9 +29,9 @@
 
 - (void)addGroup:(Group *)group
 {
-    if (self.groups == nil)
+    if (self.tGroups == nil)
     {
-        _groups = [[NSMutableArray alloc] init];
+        _tGroups = [[NSMutableArray alloc] init];
     }
     
     [self.tGroups addObject:group];
@@ -60,6 +61,20 @@
 - (NSArray *)groups
 {
     return self.tGroups;
+}
+
+- (NSString *)description
+{
+    NSMutableString *stringOfStudents = [NSMutableString stringWithString:@""];
+    for (Group *group in self.groups)
+    {
+        for (Student *student in group.students)
+        {
+            [stringOfStudents appendFormat:@"%@ %@;", student.firstName, student.lastName];
+        }
+
+    }
+    return [NSString stringWithFormat:@"{Teacher}: %@, salary: %@, Superior: %@ %@, students: %@", [super description], self.salary, self.departmentOfWork.headOfDepartment.firstName, self.departmentOfWork.headOfDepartment.lastName, stringOfStudents];
 }
 
 @end

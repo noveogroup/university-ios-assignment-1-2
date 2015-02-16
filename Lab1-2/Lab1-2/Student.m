@@ -8,6 +8,7 @@
 
 #import "Student.h"
 #import "Group.h"
+#import "Teacher.h"
 
 @interface Student ()
 
@@ -61,6 +62,16 @@
     {
         [observer recalculateAveragePoint];
     }
+}
+
+- (NSString *)description
+{
+    NSMutableString *stringOfTeachers = [NSMutableString stringWithString:@""];
+    for (Teacher *teacher in self.group.teachers)
+    {
+        [stringOfTeachers appendFormat:@"%@ %@;", teacher.firstName, teacher.lastName];
+    }
+    return [NSString stringWithFormat:@"{Student}: %@, Average point: %@, teachers: %@", [super description], self.averagePoint, stringOfTeachers];
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @interface Person : NSObject
 
-@property (nonatomic, copy) NSString *firsName;
+@property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, strong) NSNumber *age;
 

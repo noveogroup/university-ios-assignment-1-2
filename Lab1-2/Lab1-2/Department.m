@@ -9,6 +9,7 @@
 #import "Department.h"
 #import "Teacher.h"
 #import "Group.h"
+#import "HeadOfDepartment.h"
 
 @interface Department()
 
@@ -28,9 +29,9 @@
 
 - (void)addGroup:(Group *)group
 {
-    if (self.groups == nil)
+    if (self.dGroups == nil)
     {
-        _groups = [[NSMutableArray alloc] init];
+        _dGroups = [[NSMutableArray alloc] init];
     }
     
     [self.dGroups addObject:group];
@@ -40,9 +41,9 @@
 
 - (void)addTeacher:(Teacher *) teacher
 {
-    if (self.teachers == nil)
+    if (self.dTeachers == nil)
     {
-        _teachers = [[NSMutableArray alloc] init];
+        _dTeachers = [[NSMutableArray alloc] init];
     }
     [self.dTeachers addObject:teacher];
     teacher.departmentOfWork = self;
@@ -51,6 +52,7 @@
 - (void)addHeadOfDepartment:(HeadOfDepartment *) head
 {
     _headOfDepartment = head;
+    head.departmentOfWork = self;
 }
 
 - (void)recalculateAveragePoint
