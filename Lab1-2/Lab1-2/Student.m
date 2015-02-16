@@ -11,7 +11,7 @@
 
 @interface Student ()
 
-@property (nonatomic, strong) NSMutableArray *observersList;
+@property (nonatomic, strong) NSMutableArray *observers;
 
 @end
 
@@ -31,33 +31,33 @@
     [self notifyObservers];
 }
 
-- (NSArray *)getInferiors
+- (NSArray *)inferiors
 {
     return nil;
 }
 
-- (NSArray *)getSuperiors
+- (NSArray *)superiors
 {
-    return _group.teacherList;
+    return _group.teachers;
 }
 
 - (void)addObserverForStudent:(id<AveragePointObserver>) observer
 {
-    if (self.observersList == nil)
+    if (self.observers == nil)
     {
-        self.observersList = [[NSMutableArray alloc]init];
+        self.observers = [[NSMutableArray alloc]init];
     }
-    [self.observersList addObject:observer];
+    [self.observers addObject:observer];
 }
 
 - (void)removeObserverForStudent:(id<AveragePointObserver>) observer
 {
-    [self.observersList removeObject:observer];
+    [self.observers removeObject:observer];
 }
 
 -(void)notifyObservers
 {
-    for (id<AveragePointObserver> observer in self.observersList)
+    for (id<AveragePointObserver> observer in self.observers)
     {
         [observer recalculateAveragePoint];
     }

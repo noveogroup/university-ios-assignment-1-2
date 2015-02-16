@@ -10,6 +10,13 @@
 #import "Teacher.h"
 #import "Group.h"
 
+@interface Department()
+
+@property (nonatomic, strong) NSMutableArray *dGroups;
+@property (nonatomic, strong) NSMutableArray *dTeachers;
+
+@end
+
 @implementation Department
 
 - (Department *)initWithName:(NSString*)name
@@ -26,7 +33,7 @@
         _groups = [[NSMutableArray alloc] init];
     }
     
-    [self.groups addObject:group];
+    [self.dGroups addObject:group];
     [group addObserverForGroup:self];
     [self recalculateAveragePoint];
 }
@@ -37,7 +44,7 @@
     {
         _teachers = [[NSMutableArray alloc] init];
     }
-    [self.teachers addObject:teacher];
+    [self.dTeachers addObject:teacher];
     teacher.departmentOfWork = self;
 }
 
@@ -56,4 +63,13 @@
     self.departmentAveragePoint = @(sum / [self.groups count]);
 }
 
+- (NSArray *)groups
+{
+    return self.dGroups;
+}
+
+- (NSArray *)teachers
+{
+    return self.dTeachers;
+}
 @end

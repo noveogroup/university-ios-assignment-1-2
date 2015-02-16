@@ -14,8 +14,11 @@
 @interface Teacher : Person <MemberOfEducationProcess>
 
 @property (nonatomic, strong) NSNumber *salary;
-@property (nonatomic, readonly) NSMutableArray *groupsList;
+@property (nonatomic) NSArray *groups;
 @property (nonatomic, weak) Department *departmentOfWork;
+
+@property (nonatomic, readonly) NSArray * superiors;
+@property (nonatomic, readonly) NSArray * inferiors;
 
 - (instancetype)initTeacherWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andSalary:(NSNumber *) sal;
 - (void)addGroup:(Group *)group;

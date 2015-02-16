@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 @protocol MemberOfEducationProcess <NSObject>
 
-- (NSArray *)getSuperiors;
-- (NSArray *)getInferiors;
+
+@property (nonatomic, readonly) NSArray * superiors;
+@property (nonatomic, readonly) NSArray * inferiors;
+
 
 @end

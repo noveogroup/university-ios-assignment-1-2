@@ -16,8 +16,8 @@
 @interface Department : NSObject <AveragePointObserver>
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong, readonly) NSMutableArray *groups;
-@property (nonatomic, strong, readonly) NSMutableArray *teachers;
+@property (nonatomic, strong) NSArray *groups;
+@property (nonatomic, strong) NSArray *teachers;
 @property (nonatomic) HeadOfDepartment *headOfDepartment;
 @property (nonatomic, strong) NSNumber *departmentAveragePoint;
 

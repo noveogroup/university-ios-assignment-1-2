@@ -16,6 +16,9 @@
 @property (nonatomic) NSNumber *averagePoint;
 @property (weak) Group *group;
 
+@property (nonatomic, readonly) NSArray * superiors;
+@property (nonatomic, readonly) NSArray * inferiors;
+
 - (void)changeAveragePoint:(NSNumber *) newPoint;
 - (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint;
 

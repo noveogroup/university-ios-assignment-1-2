@@ -11,12 +11,12 @@
 
 @implementation HeadOfDepartment
 
-- (NSArray *)getSuperiors
+- (NSArray *)superiors
 {
     return nil;
 }
 
-- (NSArray *)getInferiors
+- (NSArray *)inferiors
 {
     return self.departmentOfWork.teachers;
 }

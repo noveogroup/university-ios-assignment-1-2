@@ -11,6 +11,12 @@
 #import "Department.h"
 #import "Student.h"
 
+@interface Teacher ()
+
+@property (nonatomic, strong) NSMutableArray *tGroups;
+
+@end
+
 @implementation Teacher
 
 - (instancetype)initTeacherWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andSalary:(NSNumber *) sal
@@ -22,33 +28,38 @@
 
 - (void)addGroup:(Group *)group
 {
-    if (self.groupsList == nil)
+    if (self.groups == nil)
     {
-        _groupsList = [[NSMutableArray alloc] init];
+        _groups = [[NSMutableArray alloc] init];
     }
     
-    [self.groupsList addObject:group];
+    [self.tGroups addObject:group];
     [group addTeacher:self];
 }
 
-- (NSArray *)getSuperiors
+- (NSArray *)superiors
 {
     NSMutableArray *superior = [[NSMutableArray alloc]init];
     [superior addObject:_departmentOfWork.headOfDepartment];
     return superior;
 }
 
-- (NSArray *)getInferiors
+- (NSArray *)inferiors
 {
     NSMutableArray *inferiors = [[NSMutableArray alloc]init];
-    for (Group *group in self.groupsList)
+    for (Group *group in self.groups)
     {
-        for (Student *student in group.studentList)
+        for (Student *student in group.students)
         {
             [inferiors addObject:student];
         }
     }
     return inferiors;
+}
+
+- (NSArray *)groups
+{
+    return self.tGroups;
 }
 
 @end
