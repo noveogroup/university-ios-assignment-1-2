@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AveragePointObserver.h"
 
 @class Teacher;
 @class Group;
 @class HeadOfDepartment;
 
-@interface Department : NSObject
+@interface Department : NSObject <AveragePointObserver>
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong, readonly) NSMutableArray *groups;
@@ -24,7 +25,6 @@
 - (void)addGroup:(Group *)group;
 - (void)addTeacher:(Teacher *)teacher;
 - (void)addHeadOfDepartment:(HeadOfDepartment *) head;
-- (void)changeDepartmentAveragePoint;
 - (NSString *)description;
 
 @end

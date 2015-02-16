@@ -9,6 +9,13 @@
 #import "Student.h"
 #import "Group.h"
 
+@interface Student ()
+
+@property (nonatomic, strong) NSMutableArray *observersList;
+
+@end
+
+
 @implementation Student
 
 - (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint
@@ -21,6 +28,7 @@
 - (void)changeAveragePoint:(NSNumber *)newPoint
 {
     self.averagePoint=newPoint;
+    [self notifyObservers];
 }
 
 - (NSArray *)getInferiors
@@ -33,6 +41,26 @@
     return _group.teacherList;
 }
 
+- (void)addObserverForStudent:(id<AveragePointObserver>) observer
+{
+    if (self.observersList == nil)
+    {
+        self.observersList = [[NSMutableArray alloc]init];
+    }
+    [self.observersList addObject:observer];
+}
 
+- (void)removeObserverForStudent:(id<AveragePointObserver>) observer
+{
+    [self.observersList removeObject:observer];
+}
+
+-(void)notifyObservers
+{
+    for (id<AveragePointObserver> observer in self.observersList)
+    {
+        [observer recalculateAveragePoint];
+    }
+}
 
 @end

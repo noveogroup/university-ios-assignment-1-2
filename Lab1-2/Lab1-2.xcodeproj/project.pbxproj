@@ -49,6 +49,7 @@
 		A8AF8F561A90D9EE00086D28 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		A8AF8F571A90D9EE00086D28 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		A8AF8F581A90D9EE00086D28 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		A8AF8F5F1A91D64D00086D28 /* AveragePointObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AveragePointObserver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 				A8AF8F4D1A90D9EE00086D28 /* Department.m */,
 				A8AF8F4E1A90D9EE00086D28 /* Group.h */,
 				A8AF8F4F1A90D9EE00086D28 /* Group.m */,
+				A8AF8F5F1A91D64D00086D28 /* AveragePointObserver.h */,
 				A8AF8F501A90D9EE00086D28 /* HeadOfDepartment.h */,
 				A8AF8F511A90D9EE00086D28 /* HeadOfDepartment.m */,
 				A8AF8F521A90D9EE00086D28 /* MemberOfEducationProcess.h */,

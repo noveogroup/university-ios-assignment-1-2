@@ -27,7 +27,8 @@
     }
     
     [self.groups addObject:group];
-    [self changeDepartmentAveragePoint];
+    [group addObserverForGroup:self];
+    [self recalculateAveragePoint];
 }
 
 - (void)addTeacher:(Teacher *) teacher
@@ -45,7 +46,7 @@
     _headOfDepartment = head;
 }
 
-- (void)changeDepartmentAveragePoint
+- (void)recalculateAveragePoint
 {
     double sum = 0.0;
     for (Group *group in self.groups)

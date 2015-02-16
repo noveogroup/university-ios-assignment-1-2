@@ -8,6 +8,7 @@
 
 #import "Person.h"
 #import "MemberOfEducationProcess.h"
+#import "AveragePointObserver.h"
 @class Group;
 
 @interface Student : Person <MemberOfEducationProcess>
@@ -18,5 +19,7 @@
 - (void)changeAveragePoint:(NSNumber *) newPoint;
 - (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint;
 
+- (void)addObserverForStudent:(id<AveragePointObserver>) observer;
+- (void)removeObserverForStudent:(id<AveragePointObserver>) observer;
 
 @end
