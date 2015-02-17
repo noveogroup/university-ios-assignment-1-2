@@ -4,7 +4,9 @@
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age salary:(NSNumber *)salary {
     self = [self initWithName:name age:age];
-    self.salary = salary;
+    if (self != nil) {
+        _salary = salary;
+    }
     return self;
 }
 

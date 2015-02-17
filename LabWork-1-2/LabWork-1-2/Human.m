@@ -21,9 +21,10 @@
 }
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age {
-    if (self = [self init]) {
-        self.name = name;
-        self.age = age;
+    self = [self init];
+    if (self != nil) {
+        _name = name;
+        _age = age;
     }
     return self;
 }

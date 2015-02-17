@@ -10,7 +10,9 @@
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age gradePointAverage:(NSNumber *)gradePointAverage {
     self = [self initWithName:name age:age];
-    self.gradePointAverage = gradePointAverage;
+    if (self != nil) {
+        _gradePointAverage = gradePointAverage;
+    }
     return self;
 }
 
