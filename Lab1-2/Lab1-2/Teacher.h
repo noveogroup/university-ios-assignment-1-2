@@ -21,6 +21,6 @@
 @property (nonatomic, readonly) NSArray * inferiors;
 
 - (instancetype)initTeacherWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andSalary:(NSNumber *) sal;
-- (void)addGroup:(Group *)group;
+- (void)addGroup:(Group *)group;  //Также добовляет себя в список учителей группы
 
 @end

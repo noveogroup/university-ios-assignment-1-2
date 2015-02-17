@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSMutableArray *dGroups;
 @property (nonatomic, strong) NSMutableArray *dTeachers;
 
+@property (nonatomic, strong) NSMutableArray *observers;
+
 @end
 
 @implementation Department
@@ -63,6 +65,7 @@
         sum += [group.groupAveragePoint doubleValue];
     }
     self.departmentAveragePoint = @(sum / [self.groups count]);
+    [self notifyObservers];
 }
 
 - (NSArray *)groups
@@ -74,4 +77,22 @@
 {
     return self.dTeachers;
 }
+
+- (void)addObserverForDepartment:(id<AveragePointObserver>) observer
+{
+    if (self.observers == nil)
+    {
+        self.observers = [[NSMutableArray alloc]init];
+    }
+    [self.observers addObject:observer];
+}
+
+-(void)notifyObservers
+{
+    for (id<AveragePointObserver> observer in self.observers)
+    {
+        [observer recalculateAveragePoint];
+    }
+}
+
 @end

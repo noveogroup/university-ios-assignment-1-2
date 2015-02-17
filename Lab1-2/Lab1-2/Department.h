@@ -26,4 +26,6 @@
 - (void)addTeacher:(Teacher *)teacher;
 - (void)addHeadOfDepartment:(HeadOfDepartment *) head;
 
+- (void)addObserverForDepartment:(id<AveragePointObserver>) observer;
+
 @end

@@ -16,6 +16,7 @@
 		A8AF8F5C1A90D9EE00086D28 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AF8F541A90D9EE00086D28 /* Person.m */; };
 		A8AF8F5D1A90D9EE00086D28 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AF8F561A90D9EE00086D28 /* Student.m */; };
 		A8AF8F5E1A90D9EE00086D28 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AF8F581A90D9EE00086D28 /* Teacher.m */; };
+		A8AF8F621A93328700086D28 /* University.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AF8F611A93328700086D28 /* University.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		A8AF8F571A90D9EE00086D28 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		A8AF8F581A90D9EE00086D28 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		A8AF8F5F1A91D64D00086D28 /* AveragePointObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AveragePointObserver.h; sourceTree = "<group>"; };
+		A8AF8F601A93328700086D28 /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
+		A8AF8F611A93328700086D28 /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 		A8AF8F251A90D99900086D28 /* Lab1-2 */ = {
 			isa = PBXGroup;
 			children = (
+				A8AF8F601A93328700086D28 /* University.h */,
+				A8AF8F611A93328700086D28 /* University.m */,
 				A8AF8F4C1A90D9EE00086D28 /* Department.h */,
 				A8AF8F4D1A90D9EE00086D28 /* Department.m */,
 				A8AF8F4E1A90D9EE00086D28 /* Group.h */,
@@ -236,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8AF8F5B1A90D9EE00086D28 /* HeadOfDepartment.m in Sources */,
+				A8AF8F621A93328700086D28 /* University.m in Sources */,
 				A8AF8F5E1A90D9EE00086D28 /* Teacher.m in Sources */,
 				A8AF8F5A1A90D9EE00086D28 /* Group.m in Sources */,
 				A8AF8F5C1A90D9EE00086D28 /* Person.m in Sources */,
@@ -413,6 +419,7 @@
 				A8AF8F481A90D99900086D28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8AF8F491A90D99900086D28 /* Build configuration list for PBXNativeTarget "Lab1-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +428,7 @@
 				A8AF8F4B1A90D99900086D28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
