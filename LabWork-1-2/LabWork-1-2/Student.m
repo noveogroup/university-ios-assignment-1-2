@@ -15,7 +15,7 @@
 }
 
 - (NSSet *)getSuperiorsList {
-    return self.teachersList;
+    return self.teachers;
 }
 
 - (NSSet *)getInferiorsList {
@@ -23,17 +23,17 @@
 }
 
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    if (self.teachersList == nil) {
-        _teachersList = [[NSMutableSet alloc] init];
+    if (self.teachers == nil) {
+        _teachers = [[NSMutableSet alloc] init];
     }
-    [self.teachersList addObject:participant];
+    [self.teachers addObject:participant];
     if (![[participant getInferiorsList] containsObject:self]) {
         [participant addInferior:self];
     }
 }
 
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.teachersList removeObject:participant];
+    [self.teachers removeObject:participant];
     if ([[participant getInferiorsList] containsObject:self]) {
         [participant removeInferior:self];
     }
@@ -42,7 +42,7 @@
 - (NSString *)description {
     NSMutableString *teachersListAsString = [NSMutableString stringWithString:@""];
     BOOL isFirst = YES;
-    for (Teacher *teacher in self.teachersList) {
+    for (Teacher *teacher in self.teachers) {
         if (!isFirst) {
             [teachersListAsString appendString:@", "];
         }

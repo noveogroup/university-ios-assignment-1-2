@@ -3,7 +3,7 @@
 
 @interface Human : NSObject
 
-@property (strong, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *age;
 
 + (instancetype)humanWithName:(NSString *)name;
