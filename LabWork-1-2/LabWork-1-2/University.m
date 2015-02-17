@@ -22,7 +22,7 @@
         [self.students addObject:participant];
     }
     else {
-        @throw [NSException exceptionWithName:@"IllegalParticipantClassException" reason:[NSString stringWithFormat:@"Unknown class of participant: %@.", [participant class]] userInfo:nil];
+        NSLog(@"Unknown class of participant: %@.", [participant class]);
     }
 }
 
@@ -37,7 +37,7 @@
         [self.students removeObject:participant];
     }
     else {
-        @throw [NSException exceptionWithName:@"IllegalParticipantClassException" reason:[NSString stringWithFormat:@"Unknown class of participant: %@.", [participant class]] userInfo:nil];
+        NSLog(@"Unknown class of participant: %@.", [participant class]);
     }
 }
 
