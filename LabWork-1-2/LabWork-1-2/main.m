@@ -50,16 +50,16 @@ int main(int argc, const char * argv[]) {
         
         // Initialize department of university and add some entities to it
         DepartmentOfUniversity *department = [[DepartmentOfUniversity alloc] init];
-        [[[[[[[[[[department assignHeadOfTheChair:head]
-        addTeacher:teachers[0]]
-        addTeacher:teachers[1]]
-        addStudent:students[0]]
-        addStudent:students[1]]
-        addStudent:students[2]]
-        addStudent:students[3]]
-        addStudent:students[4]]
-        addStudent:students[5]]
-        addStudent:students[6]];
+        [department assignHeadOfTheChair:head];
+        [department addTeacher:teachers[0]];
+        [department addTeacher:teachers[1]];
+        [department addStudent:students[0]];
+        [department addStudent:students[1]];
+        [department addStudent:students[2]];
+        [department addStudent:students[3]];
+        [department addStudent:students[4]];
+        [department addStudent:students[5]];
+        [department addStudent:students[6]];
         
         // Output avarage GPA of the department
         NSLog(@"Avarage GPA of the department: %0.2f", department.avarageGPA);

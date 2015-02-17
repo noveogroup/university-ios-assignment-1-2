@@ -2,52 +2,53 @@
 
 @implementation DepartmentOfUniversity
 
+- (instancetype)init {
+    self = [super init];
+    if (self != nil) {
+        _students = [[NSSet alloc] init];
+        _teachers = [[NSSet alloc] init];
+    }
+    return self;
+}
+
 - (void)recalculateGPA {
     double totalGPA = 0.0;
-    for (Student *student in self.studentsList) {
+    for (Student *student in self.students) {
         totalGPA += [student.gradePointAverage doubleValue];
     }
-    self.avarageGPA = totalGPA / [self.studentsList count];
+    self.avarageGPA = totalGPA / [self.students count];
 }
 
-- (instancetype)addStudent:(Student *)student {
-    if (self.studentsList == nil) {
-        _studentsList = [[NSMutableSet alloc] init];
-    }
-    [self.studentsList addObject:student];
+- (void)addStudent:(Student *)student {
+    _students = [self.students setByAddingObject:student];
     [student addChangingGPAObserver:self];
     [self recalculateGPA];
-    return self;
 }
 
-- (instancetype)removeStudent:(Student *)student {
-    [self.studentsList removeObject:student];
+- (void)removeStudent:(Student *)student {
+    NSMutableSet *tempSet = [self.students mutableCopy];
+    [tempSet removeObject:student];
+    _students = tempSet;
     [student removeChangingGPAObserver:self];
     [self recalculateGPA];
-    return self;
 }
 
-- (instancetype)addTeacher:(Teacher *)teacher {
-    if (self.teachersList == nil) {
-        _teachersList = [[NSMutableSet alloc] init];
-    }
-    [self.teachersList addObject:teacher];
-    return self;
+- (void)addTeacher:(Teacher *)teacher {
+    _teachers = [self.teachers setByAddingObject:teacher];
 }
 
-- (instancetype)removeTeacher:(Teacher *)teacher {
-    [self.teachersList removeObject:teacher];
-    return self;
+- (void)removeTeacher:(Teacher *)teacher {
+    NSMutableSet *tempSet = [self.teachers mutableCopy];
+    [tempSet removeObject:teacher];
+    _teachers = tempSet;
 }
 
-- (instancetype)assignHeadOfTheChair:(HeadOfTheChair *)head {
+- (void)assignHeadOfTheChair:(HeadOfTheChair *)head {
     self.head = head;
-    return self;
 }
 
-- (instancetype)removeHeadOfTheChair:head {
+- (void)removeHeadOfTheChair:head {
     self.head = nil;
-    return self;
 }
 
 @end

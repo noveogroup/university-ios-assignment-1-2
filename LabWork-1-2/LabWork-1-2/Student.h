@@ -5,7 +5,7 @@
 
 @interface Student : Human <ParticipantOfEducationalProcess>
 
-@property (strong, nonatomic, setter=setGradePointAverage:) NSNumber *gradePointAverage;
+@property (strong, nonatomic) NSNumber *gradePointAverage;
 @property (strong, nonatomic, readonly) NSMutableSet *teachers;
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age gradePointAverage:(NSNumber *)gradePointAverage;
