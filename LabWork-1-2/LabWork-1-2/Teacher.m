@@ -1,42 +1,58 @@
 #import "Teacher.h"
 
+@interface Teacher ()
+
+@property (strong, nonatomic) NSMutableSet *superiors;
+@property (strong, nonatomic) NSMutableSet *inferiors;
+
+@end
+
 @implementation Teacher
 
-- (NSSet *)getSuperiorsList {
-    return [[NSSet alloc] initWithObjects:self.superior, nil];
+- (instancetype)init {
+    self = [super init];
+    if (self != nil) {
+        _students = [[NSMutableSet alloc] init];
+    }
+    return self;
 }
 
-- (NSSet *)getInferiorsList {
+- (NSMutableSet *)superiors {
+    return [[NSMutableSet alloc] initWithObjects:self.superior, nil];
+}
+
+- (NSMutableSet *)inferiors {
     return self.students;
 }
 
+// Add received object to own superiors list and self object to inferiors list of the reveived object
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
     _superior = (HeadOfTheChair *)participant;
-    if (![[participant getInferiorsList] containsObject:self]) {
+    if (![participant.inferiors containsObject:self]) {
         [participant addInferior:self];
     }
 }
 
+// Remove received object from own superiors list and self object from inferiors list of the reveived object
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
     _superior = nil;
-    if ([[participant getInferiorsList] containsObject:self]) {
+    if ([participant.inferiors containsObject:self]) {
         [participant removeInferior:self];
     }
 }
 
+// Add received object to own inferiors list and self object to superiors list of the reveived object
 - (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
-    if (self.students == nil) {
-        _students = [[NSMutableSet alloc] init];
-    }
     [self.students addObject:participant];
-    if (![[participant getSuperiorsList] containsObject:self]) {
+    if (![participant.superiors containsObject:self]) {
         [participant addSuperior:self];
     }
 }
 
+// Remove received object from own inferiors list and self object from superiors list of the reveived object
 - (void)removeInferior:(id<ParticipantOfEducationalProcess>)participant {
     [self.students removeObject:participant];
-    if ([[participant getSuperiorsList] containsObject:self]) {
+    if ([participant.superiors containsObject:self]) {
         [participant removeSuperior:self];
     }
 }

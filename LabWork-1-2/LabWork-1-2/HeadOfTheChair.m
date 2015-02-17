@@ -1,29 +1,34 @@
 #import "HeadOfTheChair.h"
 #import "Teacher.h"
 
+@interface HeadOfTheChair ()
+
+@property (strong, nonatomic) NSMutableSet *superiors;
+
+@end
+
 @implementation HeadOfTheChair
 
-- (NSSet *)getSuperiorsList {
-    return nil;
-}
-
-- (NSSet *)getInferiorsList {
-    return self.inferiors;
-}
-
-- (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
-    if (self.inferiors == nil) {
+- (instancetype)init {
+    self = [super init];
+    if (self != nil) {
         _inferiors = [[NSMutableSet alloc] init];
     }
+    return self;
+}
+
+// Add received object to own inferiors list and self object to superiors list of the reveived object
+- (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
     [self.inferiors addObject:participant];
-    if (![[participant getSuperiorsList] containsObject:self]) {
+    if (![participant.superiors containsObject:self]) {
         [participant addSuperior:self];
     }
 }
 
+// Remove received object from own inferiors list and self object from superiors list of the reveived object
 - (void)removeInferior:(id<ParticipantOfEducationalProcess>)participant {
     [self.inferiors removeObject:participant];
-    if ([[participant getSuperiorsList] containsObject:self]) {
+    if ([participant.superiors containsObject:self]) {
         [participant removeSuperior:self];
     }
 }

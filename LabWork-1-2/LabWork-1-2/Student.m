@@ -3,10 +3,19 @@
 @interface Student ()
 
 @property (strong, nonatomic) NSMutableSet *changingGPAObserversList;
+@property (strong, nonatomic) NSMutableSet *inferiors;
 
 @end
 
 @implementation Student
+
+- (instancetype)init {
+    self = [super init];
+    if (self != nil) {
+        _teachers = [[NSMutableSet alloc] init];
+    }
+    return self;
+}
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age gradePointAverage:(NSNumber *)gradePointAverage {
     self = [self initWithName:name age:age];
@@ -16,27 +25,22 @@
     return self;
 }
 
-- (NSSet *)getSuperiorsList {
+- (NSMutableSet *)superiors {
     return self.teachers;
 }
 
-- (NSSet *)getInferiorsList {
-    return nil;
-}
-
+// Add received object to own superiors list and self object to inferiors list of the reveived object
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    if (self.teachers == nil) {
-        _teachers = [[NSMutableSet alloc] init];
-    }
     [self.teachers addObject:participant];
-    if (![[participant getInferiorsList] containsObject:self]) {
+    if (![participant.inferiors containsObject:self]) {
         [participant addInferior:self];
     }
 }
 
+// Remove received object from own superiors list and self object from inferiors list of the reveived object
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
     [self.teachers removeObject:participant];
-    if ([[participant getInferiorsList] containsObject:self]) {
+    if ([participant.inferiors containsObject:self]) {
         [participant removeInferior:self];
     }
 }
