@@ -2,8 +2,8 @@
 
 @interface Teacher ()
 
-@property (strong, nonatomic) NSMutableSet *superiors;
-@property (strong, nonatomic) NSMutableSet *inferiors;
+@property (strong, nonatomic) NSSet *superiors;
+@property (strong, nonatomic) NSSet *inferiors;
 
 @end
 
@@ -12,16 +12,16 @@
 - (instancetype)init {
     self = [super init];
     if (self != nil) {
-        _students = [[NSMutableSet alloc] init];
+        _students = [[NSSet alloc] init];
     }
     return self;
 }
 
-- (NSMutableSet *)superiors {
-    return [[NSMutableSet alloc] initWithObjects:self.superior, nil];
+- (NSSet *)superiors {
+    return [[NSSet alloc] initWithObjects:self.superior, nil];
 }
 
-- (NSMutableSet *)inferiors {
+- (NSSet *)inferiors {
     return self.students;
 }
 
@@ -43,7 +43,7 @@
 
 // Add received object to own inferiors list and self object to superiors list of the reveived object
 - (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.students addObject:participant];
+    _students = [self.students setByAddingObject:participant];
     if (![participant.superiors containsObject:self]) {
         [participant addSuperior:self];
     }
@@ -51,7 +51,9 @@
 
 // Remove received object from own inferiors list and self object from superiors list of the reveived object
 - (void)removeInferior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.students removeObject:participant];
+    NSMutableSet *tempSet = [self.students mutableCopy];
+    [tempSet removeObject:participant];
+    _students = tempSet;
     if ([participant.superiors containsObject:self]) {
         [participant removeSuperior:self];
     }

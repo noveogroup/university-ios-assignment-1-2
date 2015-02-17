@@ -1,7 +1,7 @@
 @protocol ParticipantOfEducationalProcess
 
-@property (strong, nonatomic, readonly) NSMutableSet *superiors;
-@property (strong, nonatomic, readonly) NSMutableSet *inferiors;
+@property (strong, nonatomic, readonly) NSSet *superiors;
+@property (strong, nonatomic, readonly) NSSet *inferiors;
 
 @optional
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant;

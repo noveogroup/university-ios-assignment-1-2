@@ -2,23 +2,24 @@
 
 @implementation University
 
+- (instancetype)init {
+    self = [super init];
+    if (self != nil) {
+        _headsOfTheChairs = [[NSMutableSet alloc] init];
+        _teachers = [[NSMutableSet alloc] init];
+        _students = [[NSMutableSet alloc] init];
+    }
+    return self;
+}
+
 - (void)addParticipant:(id)participant {
     if ([participant isKindOfClass:[HeadOfTheChair class]]) {
-        if (self.headsOfTheChairs == nil) {
-            self.headsOfTheChairs = [[NSMutableSet alloc] init];
-        }
         [self.headsOfTheChairs addObject:participant];
     }
     else if ([participant isKindOfClass:[Teacher class]]) {
-        if (self.teachers == nil) {
-            self.teachers = [[NSMutableSet alloc] init];
-        }
         [self.teachers addObject:participant];
     }
     else if ([participant isKindOfClass:[Student class]]) {
-        if (self.students == nil) {
-            self.students = [[NSMutableSet alloc] init];
-        }
         [self.students addObject:participant];
     }
     else {

@@ -5,6 +5,6 @@
 
 @interface HeadOfTheChair : Worker <ParticipantOfEducationalProcess>
 
-@property (strong, nonatomic, readonly) NSMutableSet *inferiors;
+@property (strong, nonatomic, readonly) NSSet *inferiors;
 
 @end

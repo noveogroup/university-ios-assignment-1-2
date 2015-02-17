@@ -3,7 +3,7 @@
 @interface Student ()
 
 @property (strong, nonatomic) NSMutableSet *changingGPAObserversList;
-@property (strong, nonatomic) NSMutableSet *inferiors;
+@property (strong, nonatomic) NSSet *inferiors;
 
 @end
 
@@ -12,7 +12,8 @@
 - (instancetype)init {
     self = [super init];
     if (self != nil) {
-        _teachers = [[NSMutableSet alloc] init];
+        _teachers = [[NSSet alloc] init];
+        _changingGPAObserversList = [[NSMutableSet alloc] init];
     }
     return self;
 }
@@ -25,13 +26,13 @@
     return self;
 }
 
-- (NSMutableSet *)superiors {
+- (NSSet *)superiors {
     return self.teachers;
 }
 
 // Add received object to own superiors list and self object to inferiors list of the reveived object
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.teachers addObject:participant];
+    _teachers = [self.teachers setByAddingObject:participant];
     if (![participant.inferiors containsObject:self]) {
         [participant addInferior:self];
     }
@@ -39,7 +40,9 @@
 
 // Remove received object from own superiors list and self object from inferiors list of the reveived object
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.teachers removeObject:participant];
+    NSMutableSet *tempSet = [self.teachers mutableCopy];
+    [tempSet removeObject:participant];
+    _teachers = tempSet;
     if ([participant.inferiors containsObject:self]) {
         [participant removeInferior:self];
     }
@@ -67,9 +70,6 @@
 
 #pragma mark - Changing GPA Observer Methods
 - (void)addChangingGPAObserver:(id<ChangingGPAObserver>)observer {
-    if (self.changingGPAObserversList == nil) {
-        self.changingGPAObserversList = [[NSMutableSet alloc] init];
-    }
     [self.changingGPAObserversList addObject:observer];
 }
 

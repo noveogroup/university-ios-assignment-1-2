@@ -3,7 +3,7 @@
 
 @interface HeadOfTheChair ()
 
-@property (strong, nonatomic) NSMutableSet *superiors;
+@property (strong, nonatomic) NSSet *superiors;
 
 @end
 
@@ -12,14 +12,14 @@
 - (instancetype)init {
     self = [super init];
     if (self != nil) {
-        _inferiors = [[NSMutableSet alloc] init];
+        _inferiors = [[NSSet alloc] init];
     }
     return self;
 }
 
 // Add received object to own inferiors list and self object to superiors list of the reveived object
 - (void)addInferior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.inferiors addObject:participant];
+    _inferiors = [self.inferiors setByAddingObject:participant];
     if (![participant.superiors containsObject:self]) {
         [participant addSuperior:self];
     }
@@ -27,7 +27,9 @@
 
 // Remove received object from own inferiors list and self object from superiors list of the reveived object
 - (void)removeInferior:(id<ParticipantOfEducationalProcess>)participant {
-    [self.inferiors removeObject:participant];
+    NSMutableSet *tempSet = [self.inferiors mutableCopy];
+    [tempSet removeObject:participant];
+    _inferiors = tempSet;
     if ([participant.superiors containsObject:self]) {
         [participant removeSuperior:self];
     }
