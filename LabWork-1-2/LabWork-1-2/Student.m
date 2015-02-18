@@ -3,7 +3,9 @@
 @interface Student ()
 
 @property (strong, nonatomic) NSMutableSet *changingGPAObserversList;
+@property (strong, nonatomic) NSSet *superiors;
 @property (strong, nonatomic) NSSet *inferiors;
+@property (strong, nonatomic) NSSet *students;
 
 @end
 
@@ -30,21 +32,21 @@
     return self.teachers;
 }
 
-// Add received object to own superiors list and self object to inferiors list of the reveived object
+// Add received object to own teachers list and self object to students list of the received object
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant {
     _teachers = [self.teachers setByAddingObject:participant];
-    if (![participant.inferiors containsObject:self]) {
-        [participant addInferior:self];
+    if (![participant.students containsObject:self]) {
+        [participant addStudent:self];
     }
 }
 
-// Remove received object from own superiors list and self object from inferiors list of the reveived object
+// Remove received object from own teachers list and self object from students list of the received object
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
     NSMutableSet *tempSet = [self.teachers mutableCopy];
     [tempSet removeObject:participant];
     _teachers = tempSet;
-    if ([participant.inferiors containsObject:self]) {
-        [participant removeInferior:self];
+    if ([participant.students containsObject:self]) {
+        [participant removeStudent:self];
     }
 }
 

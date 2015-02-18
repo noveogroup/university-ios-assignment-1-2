@@ -1,10 +1,9 @@
 #import "Worker.h"
 #import "ParticipantOfEducationalProcess.h"
+#import "Teacher.h"
 
-@class Teacher;
+@interface HeadOfTheChair : Teacher <ParticipantOfEducationalProcess>
 
-@interface HeadOfTheChair : Worker <ParticipantOfEducationalProcess>
-
-@property (strong, nonatomic, readonly) NSSet *inferiors;
+@property (strong, nonatomic, readonly) NSSet *inferiorTeachers;
 
 @end

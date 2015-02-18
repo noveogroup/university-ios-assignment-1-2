@@ -34,13 +34,15 @@ int main(int argc, const char * argv[]) {
         
         // Initialize some relations between participants of educational process
         [head addInferior:teachers[0]];
+        [head addStudent:students[0]];
+        [students[1] addSuperior:head];
         [teachers[1] addSuperior:head];
-        [teachers[0] addInferior:students[0]];
-        [teachers[0] addInferior:students[1]];
-        [teachers[0] addInferior:students[2]];
-        [teachers[1] addInferior:students[1]];
-        [teachers[1] addInferior:students[2]];
-        [teachers[1] addInferior:students[3]];
+        [teachers[0] addStudent:students[0]];
+        [teachers[0] addStudent:students[1]];
+        [teachers[0] addStudent:students[2]];
+        [teachers[1] addStudent:students[1]];
+        [teachers[1] addStudent:students[2]];
+        [teachers[1] addStudent:students[3]];
         [students[4] addSuperior:teachers[0]];
         [students[5] addSuperior:teachers[1]];
         [students[6] addSuperior:teachers[1]];

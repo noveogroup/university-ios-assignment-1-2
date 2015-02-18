@@ -1,7 +1,8 @@
 #import "Worker.h"
-#import "HeadOfTheChair.h"
 #import "ParticipantOfEducationalProcess.h"
 #import "Student.h"
+
+@class HeadOfTheChair;
 
 @interface Teacher : Worker <ParticipantOfEducationalProcess>
 
