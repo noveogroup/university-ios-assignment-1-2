@@ -38,9 +38,7 @@
 
 // Remove student from students list and remove it's department
 - (void)removeStudent:(Student *)student {
-    NSMutableSet *tempSet = [self.students mutableCopy];
-    [tempSet removeObject:student];
-    _students = tempSet;
+    _students = [self.students setByRemovingObject:student];
     student.department = nil;
     [student removeChangingGPAObserver:self];
     [self recalculateGPA];
@@ -54,9 +52,7 @@
 
 // Remove teacher from teachers list and remove it's department
 - (void)removeTeacher:(Teacher *)teacher {
-    NSMutableSet *tempSet = [self.teachers mutableCopy];
-    [tempSet removeObject:teacher];
-    _teachers = tempSet;
+    _teachers = [self.teachers setByRemovingObject:teacher];
     teacher.department = nil;
 }
 

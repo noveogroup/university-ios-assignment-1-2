@@ -42,9 +42,7 @@
 
 // Remove received object from own teachers list and self object from students list of the received object
 - (void)removeSuperior:(id<ParticipantOfEducationalProcess>)participant {
-    NSMutableSet *tempSet = [self.teachers mutableCopy];
-    [tempSet removeObject:participant];
-    _teachers = tempSet;
+    _teachers = [self.teachers setByRemovingObject:participant];
     if ([participant.students containsObject:self]) {
         [participant removeStudent:self];
     }

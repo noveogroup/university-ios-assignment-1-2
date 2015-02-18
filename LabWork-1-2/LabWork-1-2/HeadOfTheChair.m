@@ -25,9 +25,7 @@
 
 // Remove received object from own inferior teachers list and self object from superiors list of the received object
 - (void)removeInferior:(id<ParticipantOfEducationalProcess>)participant {
-    NSMutableSet *tempSet = [self.inferiorTeachers mutableCopy];
-    [tempSet removeObject:participant];
-    _inferiorTeachers = tempSet;
+    _inferiorTeachers = [self.inferiorTeachers setByRemovingObject:participant];
     if ([participant.superiors containsObject:self]) {
         [participant removeSuperior:self];
     }

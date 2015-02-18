@@ -2,6 +2,7 @@
 #import "ParticipantOfEducationalProcess.h"
 #import "Teacher.h"
 #import "ChangingGPAObserver.h"
+#import "NSSetCategory.h"
 
 @interface Student : Human <ParticipantOfEducationalProcess>
 

@@ -16,6 +16,7 @@
 		B58D66C51A8F5AF9006E650D /* DepartmentOfUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66C41A8F5AF9006E650D /* DepartmentOfUniversity.m */; };
 		B58D66CA1A907390006E650D /* University.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66C91A907390006E650D /* University.m */; };
 		B58D66CC1A907795006E650D /* PlaceOfEducationalProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66CB1A907795006E650D /* PlaceOfEducationalProcess.m */; };
+		B58D66CF1A9554CD006E650D /* NSSetCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D66CE1A9554CD006E650D /* NSSetCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,8 @@
 		B58D66C81A907390006E650D /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
 		B58D66C91A907390006E650D /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
 		B58D66CB1A907795006E650D /* PlaceOfEducationalProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfEducationalProcess.m; sourceTree = "<group>"; };
+		B58D66CD1A9554CD006E650D /* NSSetCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSetCategory.h; sourceTree = "<group>"; };
+		B58D66CE1A9554CD006E650D /* NSSetCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSetCategory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				B58D66CB1A907795006E650D /* PlaceOfEducationalProcess.m */,
 				B58D66C81A907390006E650D /* University.h */,
 				B58D66C91A907390006E650D /* University.m */,
+				B58D66CD1A9554CD006E650D /* NSSetCategory.h */,
+				B58D66CE1A9554CD006E650D /* NSSetCategory.m */,
 			);
 			path = "LabWork-1-2";
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58D66AD1A8E488B006E650D /* main.m in Sources */,
+				B58D66CF1A9554CD006E650D /* NSSetCategory.m in Sources */,
 				B58D66CA1A907390006E650D /* University.m in Sources */,
 				B58D66C51A8F5AF9006E650D /* DepartmentOfUniversity.m in Sources */,
 				B58D66BB1A8E4CFD006E650D /* Worker.m in Sources */,
