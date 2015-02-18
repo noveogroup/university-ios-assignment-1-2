@@ -9,20 +9,16 @@
 #import "Person.h"
 #import "MemberOfEducationProcess.h"
 #import "AveragePointObserver.h"
+#import "Observable.h"
 @class Group;
 
-@interface Student : Person <MemberOfEducationProcess>
+@interface Student : Person <MemberOfEducationProcess, Observable>
 
 @property (nonatomic) NSNumber *averagePoint;
 @property (weak) Group *group;
 
-@property (nonatomic, readonly) NSArray * superiors;
-@property (nonatomic, readonly) NSArray * inferiors;
 
-- (void)changeAveragePoint:(NSNumber *) newPoint;
-- (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint;
+- (instancetype)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint;
 
-- (void)addObserverForStudent:(id<AveragePointObserver>) observer;
-- (void)removeObserverForStudent:(id<AveragePointObserver>) observer;
 
 @end

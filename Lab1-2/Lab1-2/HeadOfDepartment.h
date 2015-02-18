@@ -11,7 +11,7 @@
 
 @interface HeadOfDepartment : Teacher <MemberOfEducationProcess>
 
-@property (nonatomic, readonly) NSArray * superiors;
-@property (nonatomic, readonly) NSArray * inferiors;
+@property (nonatomic, strong, readonly) NSArray * superiors;
+@property (nonatomic, strong, readonly) NSArray * inferiors;
 
 @end

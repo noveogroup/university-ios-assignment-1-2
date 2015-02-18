@@ -25,28 +25,28 @@
 - (Department *)initWithName:(NSString*)name
 {
     self = [self init];
-    _name = name;
+    if (self != nil)
+    {
+        _name = name;
+        _dGroups = [[NSMutableArray alloc] init];
+        _dTeachers = [[NSMutableArray alloc] init];
+        _observers = [[NSMutableArray alloc]init];
+    }
+    
     return self;
 }
 
 - (void)addGroup:(Group *)group
 {
-    if (self.dGroups == nil)
-    {
-        _dGroups = [[NSMutableArray alloc] init];
-    }
     
     [self.dGroups addObject:group];
-    [group addObserverForGroup:self];
-    [self recalculateAveragePoint];
+    [group addObserver:self];
+    [self recalculateAveragePoint:self];
 }
 
 - (void)addTeacher:(Teacher *) teacher
 {
-    if (self.dTeachers == nil)
-    {
-        _dTeachers = [[NSMutableArray alloc] init];
-    }
+
     [self.dTeachers addObject:teacher];
     teacher.departmentOfWork = self;
 }
@@ -57,7 +57,7 @@
     head.departmentOfWork = self;
 }
 
-- (void)recalculateAveragePoint
+- (void)recalculateAveragePoint:(id<Observable>)observer
 {
     double sum = 0.0;
     for (Group *group in self.groups)
@@ -78,20 +78,22 @@
     return self.dTeachers;
 }
 
-- (void)addObserverForDepartment:(id<AveragePointObserver>) observer
+- (void)addObserver:(id<AveragePointObserver>) observer
 {
-    if (self.observers == nil)
-    {
-        self.observers = [[NSMutableArray alloc]init];
-    }
+
     [self.observers addObject:observer];
+}
+
+- (void)removeObserver:(id<AveragePointObserver>) observer
+{
+    [self.observers removeObject:observer];
 }
 
 -(void)notifyObservers
 {
     for (id<AveragePointObserver> observer in self.observers)
     {
-        [observer recalculateAveragePoint];
+        [observer recalculateAveragePoint:self];
     }
 }
 

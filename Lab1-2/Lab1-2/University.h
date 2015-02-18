@@ -11,10 +11,10 @@
 
 @interface University : NSObject
 
-@property (nonatomic, strong) NSArray *departments;
-@property (nonatomic, strong) NSArray *students;
-@property (nonatomic, strong) NSArray *teachers;
-@property (nonatomic, strong) NSArray *headsOfDepartments;
+@property (nonatomic, strong, readonly) NSArray *departments;
+@property (nonatomic, strong, readonly) NSArray *students;
+@property (nonatomic, strong, readonly) NSArray *teachers;
+@property (nonatomic, strong, readonly) NSArray *headsOfDepartments;
 
 
 

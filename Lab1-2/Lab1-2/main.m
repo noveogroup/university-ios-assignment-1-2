@@ -86,7 +86,8 @@ int main(int argc, char * argv[]) {
         
         NSLog(@"Average Point of SSOD department: %@", [departments[0] departmentAveragePoint]);
         
-        [students[0] changeAveragePoint:@4.5];  //проверка изменения среднего балла кафедры при изменениии среденего балла стулента
+        Student *student = students[0];
+        student.averagePoint = @4.5;  //проверка изменения среднего балла кафедры при изменениии среденего балла стулента
         
         NSLog(@"New Average Point of SSOD department: %@", [departments[0] departmentAveragePoint]);
         

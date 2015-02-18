@@ -23,26 +23,32 @@
 - (instancetype)initTeacherWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andSalary:(NSNumber *) sal
 {
     self = [self initWithFirstName:firstName lastName:lastName andAge:age];
-    self.salary=sal;
+    if (self != nil)
+    {
+        _salary=sal;
+        _tGroups = [[NSMutableArray alloc] init];
+    }
+    
     return self;
 }
 
 - (void)addGroup:(Group *)group
 {
-    if (self.tGroups == nil)
-    {
-        _tGroups = [[NSMutableArray alloc] init];
-    }
-    
+
     [self.tGroups addObject:group];
     [group addTeacher:self];
 }
 
 - (NSArray *)superiors
 {
-    NSMutableArray *superior = [[NSMutableArray alloc]init];
-    [superior addObject:_departmentOfWork.headOfDepartment];
-    return superior;
+    if (_departmentOfWork.headOfDepartment != nil)
+    {
+        return @[self.departmentOfWork.headOfDepartment];
+    }
+    else
+    {
+        return nil;
+    }
 }
 
 - (NSArray *)inferiors

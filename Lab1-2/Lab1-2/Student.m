@@ -19,16 +19,23 @@
 
 @implementation Student
 
-- (Student *)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint
+- (instancetype)initStudentWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andAveragePoint:(NSNumber *) aPoint
 {
     self = [self initWithFirstName:firstName lastName:lastName andAge:age];
-    self.averagePoint=aPoint;
+    if (self != nil)
+    {
+        _averagePoint=aPoint;
+        _observers = [[NSMutableArray alloc]init];
+
+    }
     return self;
 }
 
-- (void)changeAveragePoint:(NSNumber *)newPoint
+
+
+- (void)setAveragePoint:(NSNumber *)averagePoint
 {
-    self.averagePoint=newPoint;
+    _averagePoint = averagePoint;
     [self notifyObservers];
 }
 
@@ -42,16 +49,13 @@
     return _group.teachers;
 }
 
-- (void)addObserverForStudent:(id<AveragePointObserver>) observer
+- (void)addObserver:(id<AveragePointObserver>) observer
 {
-    if (self.observers == nil)
-    {
-        self.observers = [[NSMutableArray alloc]init];
-    }
+
     [self.observers addObject:observer];
 }
 
-- (void)removeObserverForStudent:(id<AveragePointObserver>) observer
+- (void)removeObserver:(id<AveragePointObserver>) observer
 {
     [self.observers removeObject:observer];
 }
@@ -60,7 +64,7 @@
 {
     for (id<AveragePointObserver> observer in self.observers)
     {
-        [observer recalculateAveragePoint];
+        [observer recalculateAveragePoint:self];
     }
 }
 

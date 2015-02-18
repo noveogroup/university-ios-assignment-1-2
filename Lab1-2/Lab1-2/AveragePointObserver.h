@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+@protocol Observable;
+
 @protocol AveragePointObserver <NSObject>
 
--(void)recalculateAveragePoint;
+-(void)recalculateAveragePoint:(id<Observable>) observer;
 
 @end

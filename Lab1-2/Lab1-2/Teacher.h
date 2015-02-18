@@ -14,11 +14,11 @@
 @interface Teacher : Person <MemberOfEducationProcess>
 
 @property (nonatomic, strong) NSNumber *salary;
-@property (nonatomic) NSArray *groups;
+@property (nonatomic, strong, readonly) NSArray *groups;
 @property (nonatomic, weak) Department *departmentOfWork;
 
-@property (nonatomic, readonly) NSArray * superiors;
-@property (nonatomic, readonly) NSArray * inferiors;
+@property (nonatomic, strong, readonly) NSArray * superiors;
+@property (nonatomic, strong, readonly) NSArray * inferiors;
 
 - (instancetype)initTeacherWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSNumber *)age andSalary:(NSNumber *) sal;
 - (void)addGroup:(Group *)group;  //Также добовляет себя в список учителей группы

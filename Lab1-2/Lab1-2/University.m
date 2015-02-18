@@ -23,26 +23,6 @@
 
 - (void)addDepartment:(Department *)department
 {
-    if (self.uDepartments == nil)
-    {
-        _uDepartments = [[NSMutableArray alloc] init];
-    }
-    
-    if (self.uHeadsOfDepartments == nil)
-    {
-        _uHeadsOfDepartments = [[NSMutableArray alloc] init];
-    }
-    
-    if (self.uStudents == nil)
-    {
-        _uStudents = [[NSMutableArray alloc] init];
-    }
-    
-    if (self.uTeachers == nil)
-    {
-        _uTeachers = [[NSMutableArray alloc] init];
-    }
-    
     [self.uDepartments addObject:department];
     [_uHeadsOfDepartments addObject:department.headOfDepartment];
     [_uTeachers addObjectsFromArray:department.teachers];
@@ -75,6 +55,19 @@
     return _uHeadsOfDepartments;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self != nil)
+    {
+        _uDepartments = [[NSMutableArray alloc] init];
+        _uHeadsOfDepartments = [[NSMutableArray alloc] init];
+        _uStudents = [[NSMutableArray alloc] init];
+        _uTeachers = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 + (instancetype)sharedInstance
 {
     static University *_sharedInstance = nil;
@@ -83,6 +76,7 @@
         if (_sharedInstance == nil)
         {
             _sharedInstance = [[University alloc] init];
+            
         }
     }
     return _sharedInstance;

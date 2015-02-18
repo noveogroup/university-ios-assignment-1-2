@@ -8,20 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "AveragePointObserver.h"
+#import "Observable.h"
 @class Student;
 @class Teacher;
 @class Department;
-@interface Group : NSObject <AveragePointObserver>
+@interface Group : NSObject <AveragePointObserver, Observable>
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *groupAveragePoint;
-@property (nonatomic, strong) NSArray *students;
-@property (nonatomic) NSArray *teachers;
+@property (nonatomic, strong, readonly) NSArray *students;
+@property (nonatomic, strong, readonly) NSArray *teachers;
 
 
 - (Group *)initWithName:(NSString*)name;
 - (void)addStudent:(Student *) student;
 - (void)addTeacher:(Teacher *) teacher;
-- (void)addObserverForGroup:(id<AveragePointObserver>) observer;
+
 
 @end

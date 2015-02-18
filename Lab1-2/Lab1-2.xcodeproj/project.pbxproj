@@ -53,6 +53,7 @@
 		A8AF8F5F1A91D64D00086D28 /* AveragePointObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AveragePointObserver.h; sourceTree = "<group>"; };
 		A8AF8F601A93328700086D28 /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
 		A8AF8F611A93328700086D28 /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
+		A8AF8F631A94EAD000086D28 /* Observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 				A8AF8F4E1A90D9EE00086D28 /* Group.h */,
 				A8AF8F4F1A90D9EE00086D28 /* Group.m */,
 				A8AF8F5F1A91D64D00086D28 /* AveragePointObserver.h */,
+				A8AF8F631A94EAD000086D28 /* Observable.h */,
 				A8AF8F501A90D9EE00086D28 /* HeadOfDepartment.h */,
 				A8AF8F511A90D9EE00086D28 /* HeadOfDepartment.m */,
 				A8AF8F521A90D9EE00086D28 /* MemberOfEducationProcess.h */,

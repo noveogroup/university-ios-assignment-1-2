@@ -24,32 +24,31 @@
 - (Group *)initWithName:(NSString*)name
 {
     self = [self init];
-    _name = name;
+    if (self != nil)
+    {
+        _name = name;
+        _gStudents = [[NSMutableArray alloc] init];
+        _gTeachers = [[NSMutableArray alloc] init];
+        _observers = [[NSMutableArray alloc]init];
+    }
     return self;
 }
 
 - (void)addStudent:(Student *) student
 {
-    if (self.gStudents == nil)
-    {
-        _gStudents = [[NSMutableArray alloc] init];
-    }
     [self.gStudents addObject:student];
     student.group = self;
-    [student addObserverForStudent:self];
-    [self recalculateAveragePoint];
+    [student addObserver:self];
+    [self recalculateAveragePoint:self];
 }
 
 - (void)addTeacher:(Teacher *) teacher
 {
-    if (self.gTeachers == nil)
-    {
-        _gTeachers = [[NSMutableArray alloc] init];
-    }
+
     [self.gTeachers addObject:teacher];
 }
 
-- (void)recalculateAveragePoint
+- (void)recalculateAveragePoint:(id<Observable>)observer
 {
     if (self.students == nil)
     {
@@ -67,20 +66,22 @@
     [self notifyObservers];
 }
 
-- (void)addObserverForGroup:(id<AveragePointObserver>) observer
+- (void)addObserver:(id<AveragePointObserver>) observer
 {
-    if (self.observers == nil)
-    {
-        self.observers = [[NSMutableArray alloc]init];
-    }
+
     [self.observers addObject:observer];
+}
+
+- (void)removeObserver:(id<AveragePointObserver>) observer
+{
+    [self.observers removeObject:observer];
 }
 
 -(void)notifyObservers
 {
     for (id<AveragePointObserver> observer in self.observers)
     {
-        [observer recalculateAveragePoint];
+        [observer recalculateAveragePoint:self];
     }
 }
 

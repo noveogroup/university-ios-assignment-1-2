@@ -13,10 +13,13 @@
 - (instancetype) initWithFirstName:(NSString *)fName lastName:(NSString *)lName andAge:(NSNumber *)age
 {
     self = [self init];
-    
-    _firstName = fName;
-    _lastName = lName;
-    _age = age;
+    if (self != nil)
+    {
+        _firstName = fName;
+        _lastName = lName;
+        _age = age;
+    }
+   
     
     return self;
 }
