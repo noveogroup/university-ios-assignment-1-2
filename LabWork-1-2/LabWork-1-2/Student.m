@@ -62,7 +62,7 @@
         }
         [teachersListAsString appendString:teacher.name];
     }
-    return [NSString stringWithFormat:@"<%@: {name: %@, age: %@, GPA: %@, list of teachers: [%@]}>", [self className], self.name, self.age, self.gradePointAverage, teachersListAsString];
+    return [NSString stringWithFormat:@"<%@: {name: %@, age: %@, GPA: %@, list of teachers: [%@], department: %@}>", [self className], self.name, self.age, self.gradePointAverage, teachersListAsString, self.department];
 }
 
 - (void)setGradePointAverage:(NSNumber *)gpa {

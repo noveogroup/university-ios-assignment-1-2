@@ -7,6 +7,7 @@
 
 @property (strong, nonatomic) NSNumber *gradePointAverage;
 @property (strong, nonatomic, readonly) NSSet *teachers;
+@property (weak, nonatomic) DepartmentOfUniversity *department;
 
 - (instancetype)initWithName:(NSString *)name age:(NSNumber *)age gradePointAverage:(NSNumber *)gradePointAverage;
 

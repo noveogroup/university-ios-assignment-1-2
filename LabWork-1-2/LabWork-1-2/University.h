@@ -9,6 +9,7 @@
 @property (strong, nonatomic) NSMutableSet *headsOfTheChairs;
 @property (strong, nonatomic) NSMutableSet *teachers;
 @property (strong, nonatomic) NSMutableSet *students;
+@property (strong, nonatomic) NSMutableSet *departments;
 
 + (instancetype)sharedInstance;
 

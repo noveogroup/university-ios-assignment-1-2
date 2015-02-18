@@ -51,7 +51,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"All the created entities:\n%@\n%@\n%@", students, teachers, head);
         
         // Initialize department of university and add some entities to it
-        DepartmentOfUniversity *department = [[DepartmentOfUniversity alloc] init];
+        DepartmentOfUniversity *department = [[DepartmentOfUniversity alloc] initWithName:@"Programming and IT Technologies"];
         [department assignHeadOfTheChair:head];
         [department addTeacher:teachers[0]];
         [department addTeacher:teachers[1]];

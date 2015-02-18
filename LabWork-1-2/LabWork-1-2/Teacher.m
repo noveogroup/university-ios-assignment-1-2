@@ -68,7 +68,7 @@
         }
         [studentsListAsString appendString:student.name];
     }
-    return [NSString stringWithFormat:@"<%@: {name: %@, age: %@, salary: %@, superior: %@, list of students: [%@]}>", [self className], self.name, self.age, self.salary, self.superior.name, studentsListAsString];
+    return [NSString stringWithFormat:@"<%@: {name: %@, age: %@, salary: %@, superior: %@, list of students: [%@], department: %@}>", [self className], self.name, self.age, self.salary, self.superior.name, studentsListAsString, self.department];
 }
 
 @end

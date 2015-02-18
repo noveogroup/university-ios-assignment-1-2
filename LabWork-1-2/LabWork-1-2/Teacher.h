@@ -8,5 +8,6 @@
 
 @property (strong, nonatomic, readonly) NSSet *students;
 @property (weak, nonatomic, readonly) HeadOfTheChair *superior;
+@property (weak, nonatomic) DepartmentOfUniversity *department;
 
 @end

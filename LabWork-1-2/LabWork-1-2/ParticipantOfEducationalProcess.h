@@ -1,8 +1,11 @@
+@class DepartmentOfUniversity;
+
 @protocol ParticipantOfEducationalProcess
 
 @property (strong, nonatomic, readonly) NSSet *superiors;
 @property (strong, nonatomic, readonly) NSSet *inferiors;
 @property (strong, nonatomic, readonly) NSSet *students;
+@property (weak, nonatomic, readonly) DepartmentOfUniversity *department;
 
 @optional
 - (void)addSuperior:(id<ParticipantOfEducationalProcess>)participant;

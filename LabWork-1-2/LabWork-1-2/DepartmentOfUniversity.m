@@ -1,4 +1,5 @@
 #import "DepartmentOfUniversity.h"
+#import "HeadOfTheChair.h"
 
 @implementation DepartmentOfUniversity
 
@@ -11,6 +12,14 @@
     return self;
 }
 
+- (instancetype)initWithName:(NSString *)name {
+    self = [self init];
+    if (self != nil) {
+        _name = name;
+    }
+    return self;
+}
+
 - (void)recalculateGPA {
     double totalGPA = 0.0;
     for (Student *student in self.students) {
@@ -19,36 +28,52 @@
     self.avarageGPA = totalGPA / [self.students count];
 }
 
+// Add student to students list and assign the department to him
 - (void)addStudent:(Student *)student {
     _students = [self.students setByAddingObject:student];
+    student.department = self;
     [student addChangingGPAObserver:self];
     [self recalculateGPA];
 }
 
+// Remove student from students list and remove it's department
 - (void)removeStudent:(Student *)student {
     NSMutableSet *tempSet = [self.students mutableCopy];
     [tempSet removeObject:student];
     _students = tempSet;
+    student.department = nil;
     [student removeChangingGPAObserver:self];
     [self recalculateGPA];
 }
 
+// Add teacher to teachers list and assign the department to him
 - (void)addTeacher:(Teacher *)teacher {
     _teachers = [self.teachers setByAddingObject:teacher];
+    teacher.department = self;
 }
 
+// Remove teacher from teachers list and remove it's department
 - (void)removeTeacher:(Teacher *)teacher {
     NSMutableSet *tempSet = [self.teachers mutableCopy];
     [tempSet removeObject:teacher];
     _teachers = tempSet;
+    teacher.department = nil;
 }
 
+// Assign head of the chair and set the department to his department property
 - (void)assignHeadOfTheChair:(HeadOfTheChair *)head {
     self.head = head;
+    head.department = self;
 }
 
-- (void)removeHeadOfTheChair:head {
+// Remove head of the chair and set his department property to nil
+- (void)removeHeadOfTheChair:(HeadOfTheChair *)head {
     self.head = nil;
+    head.department = nil;
+}
+
+- (NSString *)description {
+    return self.name;
 }
 
 @end
