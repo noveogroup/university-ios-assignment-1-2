@@ -5,7 +5,7 @@
 - (NSSet *)setByRemovingObject:(id)anObject {
     NSMutableSet *tempMutableCopy = [self mutableCopy];
     [tempMutableCopy removeObject:anObject];
-    return [tempMutableCopy copy];
+    return tempMutableCopy;
 }
 
 @end
