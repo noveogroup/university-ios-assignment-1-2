@@ -14,9 +14,7 @@
     return arc4random() % 2;
 }
 
-- (NSInteger)randomAgeFromRange:(NSRange)range {
-    NSInteger max = range.location + range.length;
-    NSInteger min = range.location;
+- (NSUInteger)randomAgeFromMin:(NSUInteger)min toMax:(NSUInteger)max {
     return arc4random() % (max - min) + min;
 }
 
