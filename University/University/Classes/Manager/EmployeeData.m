@@ -11,6 +11,7 @@
 #import "Dean.h"
 #import "DepartmentHead.h"
 #import "Teacher.h"
+#import "UniversityEmployee.h"
 
 @implementation EmployeeData
 
@@ -18,7 +19,7 @@
 {
     self = [super init];
     if (self) {
-        self.subjects = [[NSMutableArray alloc] init];
+        self.subjects = [NSArray array];
     }
     return self;
 }
@@ -33,12 +34,14 @@
     return employeeData;
 }
 
-- (void)addObj:(id)obj {
-    [self.subjects addObject:obj];
+- (void)addObj:(id <UniversityEmployee>)obj {
+    NSMutableArray *tempArray = [NSMutableArray array];
+    [tempArray addObject:obj];
+    self.subjects = [tempArray copy];
 }
 
 - (void)clear {
-    self.subjects = [[NSMutableArray alloc] init];
+    self.subjects = [NSArray array];
 }
 
 - (void)changeGPAWithIndex:(CGFloat)index withIdentifier:(NSString *)identifier {

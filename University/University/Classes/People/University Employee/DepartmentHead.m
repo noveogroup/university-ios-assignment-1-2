@@ -21,12 +21,12 @@
             self.firstName = [self randomFemaleFirstName];
         }
         self.lastName = [self randomLastName];
-        NSInteger minAge = 25;
-        NSInteger maxAge = 75;
-        NSRange range = NSMakeRange(minAge, maxAge - minAge);
-        self.age = [self randomAgeFromRange:range];
+        NSUInteger minAge = 25;
+        NSUInteger maxAge = 75;
+        self.age = [self randomAgeFromMin:minAge toMax:maxAge];
         self.salary = 60000;
         self.type = @"Head of Department";
+        self.subordinates = [NSArray array];
         
         self.eData = [EmployeeData sharedInstance];
         self.eData.delegate = self;
@@ -35,15 +35,13 @@
     return self;
 }
 
-- (NSMutableArray *)subordinates {
-    if (_subordinates == nil) {
-        _subordinates = [[NSMutableArray alloc] init];
-    }
-    return _subordinates;
-}
+
 
 - (void)addSubordinate:(id<UniversityEmployee>)aSub {
-    [self.subordinates addObject:aSub];
+    NSMutableArray *tempArray = [NSMutableArray array];
+    [tempArray addObject:aSub];
+    self.subordinates = [self.subordinates arrayByAddingObjectsFromArray:[tempArray copy]];
+    
 }
 
 - (void)getSubordinatesList {

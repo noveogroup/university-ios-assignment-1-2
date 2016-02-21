@@ -8,7 +8,7 @@
 
 #import "Human.h"
 #import "UniversityEmployee.h"
-#include "EmployeeData.h"
+@class EmployeeData;
 
 
 @interface Teacher : Human <UniversityEmployee, EmployeeDataDelegate>

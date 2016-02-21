@@ -29,7 +29,6 @@
     [super viewDidLoad];
     
     EmployeeData *eData = [EmployeeData sharedInstance];
-
     
     University *university = [[University alloc] init];
     
@@ -39,17 +38,23 @@
     
     Dean *dean1 = [[Dean alloc] init];
     Dean *dean2 = [[Dean alloc] init];
-    [rector.subordinates addObjectsFromArray:@[dean1, dean2]];
+    
+    [rector addSubordinate:dean1];
+    [rector addSubordinate:dean2];
     
     DepartmentHead *dHead1 = [[DepartmentHead alloc] init];
     DepartmentHead *dHead2 = [[DepartmentHead alloc] init];
     NSString *depName = @"Computer Engineering";
     dHead1.departmentName = depName;
-    [dean1.subordinates addObjectsFromArray:@[dHead1, dHead2]];
+    
+    [dean1 addSubordinate:dHead1];
+    [dean1 addSubordinate:dHead2];
     
     DepartmentHead *dHead3 = [[DepartmentHead alloc] init];
     DepartmentHead *dHead4 = [[DepartmentHead alloc] init];
-    [dean2.subordinates addObjectsFromArray:@[dHead3, dHead4]];
+    
+    [dean2 addSubordinate:dHead3];
+    [dean2 addSubordinate:dHead4];
 
     Teacher *t1 = [[Teacher alloc] init];
     Teacher *t2 = [[Teacher alloc] init];
@@ -62,24 +67,24 @@
         stud.departmentName = depName;
         [t1 addSubordinate:stud];
     }
-    NSLog(@"\n\n\nUniversity subordinates --------------------------------------------\n\n");
+    NSLog(@"\vUniversity subordinates:\n\n");
 
     [university getSubordinatesList];
     
-    NSLog(@"\n\n\nDean subordinates --------------------------------------------\n\n");
+    NSLog(@"\vDean subordinates:\n\n");
     
     [dean2 getSubordinatesList];
     
     Student *stud = [[Student alloc] init];
     
-    NSLog(@"\n\n\nStudent detail info --------------------------------------------\n\n");
+    NSLog(@"\vStudent detail info:\n\n");
     NSLog(@"%@\n", [stud detailedDescription]);
     
-    NSLog(@"\n\n\nTeacher detail info --------------------------------------------\n\n");
+    NSLog(@"\vTeacher detail info:\n\n");
     NSLog(@"%@\n", [t1 detailedDescription]);
     
 
-    NSLog(@"\n\n\nGet info from singleton --------------------------------------------\n\n");
+    NSLog(@"\vGet info from singleton:\n\n");
     NSLog(@"%@", eData.subjects);
     
     
@@ -94,14 +99,14 @@
     student1.departmentName = depName;
     [t2 addSubordinate:student2];
     
-    NSLog(@"\n\n\nChange %@ %@ GPA --------------------------------------------\n\n", student1.firstName, student1.lastName);
+    NSLog(@"\vChange %@ %@ GPA:\n\n", student1.firstName, student1.lastName);
     [student1 changeGPAtoNewGPA:3.56 withIdentifier:student1.departmentName];
     
     [dean2 getSubordinatesList];
     
     [eData clear];
     
-    NSLog(@"\n\n\nAutogenerate University subordinates --------------------------------------------\n\n");
+    NSLog(@"\vAutogenerate University subordinates:\n\n");
     University *university2 = [[University alloc] init];
     [university2 generateUniversityEmployees];
     [university2 getSubordinatesList];

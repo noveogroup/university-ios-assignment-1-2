@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *lastName;
 @property (assign, nonatomic) Gender gender;
-@property (assign, nonatomic) NSInteger age;
+@property (assign, nonatomic) NSUInteger age;
 
 - (Gender)randomGender;
 - (NSUInteger)randomAgeFromMin:(NSUInteger)min toMax:(NSUInteger)max;

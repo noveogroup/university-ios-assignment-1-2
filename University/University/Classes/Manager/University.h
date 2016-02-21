@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "UniversityEmployee.h"
-
+@class EmployeeData;
 
 
 
 @interface University : NSObject <UniversityEmployee, EmployeeDataDelegate>
 @property (strong, nonatomic) NSArray *subordinates;
 @property (strong, nonatomic) EmployeeData *eData;
-@property (assign, nonatomic) NSInteger count;
 
 - (void)addSubordinate:(id<UniversityEmployee>)aSub;
 - (void)generateUniversityEmployees;

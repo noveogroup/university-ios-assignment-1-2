@@ -6,10 +6,10 @@
 //  Copyright © 2016 Viktor Erfilov. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "Human.h"
 #import "UniversityEmployee.h"
-#import <UIKit/UIKit.h>
-#include "EmployeeData.h"
+@class EmployeeData;
 
 @interface Student : Human <UniversityEmployee, EmployeeDataDelegate>
 

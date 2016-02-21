@@ -22,6 +22,7 @@
 {
     self = [super init];
     if (self) {
+        self.subordinates = [NSArray array];
         self.eData = [EmployeeData sharedInstance];
         self.eData.delegate = self;
     }
@@ -32,15 +33,10 @@
     return [NSString stringWithFormat:@"University:"];
 }
 
-- (NSMutableArray *)subordinates {
-    if (_subordinates == nil) {
-        _subordinates = [[NSMutableArray alloc] init];
-    }
-    return _subordinates;
-}
-
 - (void)addSubordinate:(id<UniversityEmployee>)aSub {
-    [self.subordinates addObject:aSub];
+    NSMutableArray *tempArray = [NSMutableArray array];
+    [tempArray addObject:aSub];
+    self.subordinates = [self.subordinates arrayByAddingObjectsFromArray:[tempArray copy]];
 }
 
 - (void)getSubordinatesList {

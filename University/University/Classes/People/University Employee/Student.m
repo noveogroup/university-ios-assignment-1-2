@@ -8,6 +8,7 @@
 
 #import "Student.h"
 
+
 @implementation Student
 
 - (instancetype)init
@@ -21,10 +22,9 @@
             self.firstName = [self randomFemaleFirstName];
         }
         self.lastName = [self randomLastName];
-        NSInteger minAge = 16;
-        NSInteger maxAge = 25;
-        NSRange range = NSMakeRange(minAge, maxAge - minAge);
-        self.age = [self randomAgeFromRange:range];
+        NSUInteger minAge = 16;
+        NSUInteger maxAge = 25;
+        self.age = [self randomAgeFromMin:minAge toMax:maxAge];
         self.GPA = [self randomGPA];
         self.type = @"Student";
         
@@ -70,12 +70,10 @@
 
 - (CGFloat)changeGPAtoNewGPA:(CGFloat)newGPA withIdentifier:(NSString *)identifier {
     CGFloat index = newGPA / self.GPA;
-    NSLog(@"current %f, new %f, idx %f", self.GPA, newGPA, index);
     [self.eData changeGPAWithIndex:index withIdentifier:identifier];
     self.GPA = newGPA;
     return newGPA;
 }
 
-- (void)addSubordinate:(id<UniversityEmployee>)aSub {}
 
 @end

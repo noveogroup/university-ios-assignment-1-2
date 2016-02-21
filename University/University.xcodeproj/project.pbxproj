@@ -121,8 +121,8 @@
 		84A211EE1C6E409800E6643C /* University */ = {
 			isa = PBXGroup;
 			children = (
-				843E40001C7A2A7C005588CC /* Classes */,
 				843E40021C7A2AE0005588CC /* Protocols */,
+				843E40001C7A2A7C005588CC /* Classes */,
 				84A211F21C6E409800E6643C /* AppDelegate.h */,
 				84A211F31C6E409800E6643C /* AppDelegate.m */,
 				84A211F51C6E409800E6643C /* ViewController.h */,

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UniversityEmployee.h"
-@class  Student;
+@class Human;
 
 
 @protocol EmployeeDataDelegate;
@@ -18,17 +18,18 @@
 @property (weak, nonatomic) id <EmployeeDataDelegate> delegate;
 @property (strong, nonatomic) NSArray *subjects;
 
-+ (instancetype)sharedInstance;
 
-- (void)addObj:(id)obj;
++ (instancetype)sharedInstance;
+- (void)addObj:(Human *)obj;
 - (void)changeGPAWithIndex:(CGFloat)index withIdentifier:(NSString *)identifier;
+
+
 - (void)clear;
 
 @end
 
 
 @protocol EmployeeDataDelegate <NSObject>
-
 
 
 @end
