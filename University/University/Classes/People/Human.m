@@ -10,8 +10,12 @@
 
 @implementation Human
 
-- (Gender)randomGender {
-    return arc4random() % 2;
+- (NSString *)randomFirstNameForGender:(Gender)gender {
+    if (gender == Male) {
+        return [self randomMaleFirstName];
+    } else {
+        return [self randomFemaleFirstName];
+    }
 }
 
 - (NSUInteger)randomAgeFromMin:(NSUInteger)min toMax:(NSUInteger)max {

@@ -15,12 +15,8 @@
 {
     self = [super init];
     if (self) {
-        self.gender = [self randomGender];
-        if (self.gender == Male) {
-            self.firstName = [self randomMaleFirstName];
-        } else {
-            self.firstName = [self randomFemaleFirstName];
-        }
+        self.gender = arc4random() % 2;
+        self.firstName = [self randomFirstNameForGender:self.gender];
         self.lastName = [self randomLastName];
         NSUInteger minAge = 16;
         NSUInteger maxAge = 25;
