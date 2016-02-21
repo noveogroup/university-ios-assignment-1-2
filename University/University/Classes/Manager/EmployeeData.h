@@ -16,7 +16,7 @@
 
 @interface EmployeeData : NSObject
 @property (weak, nonatomic) id <EmployeeDataDelegate> delegate;
-@property (strong, nonatomic) NSArray *subjects;
+@property (copy, nonatomic) NSArray *subjects;
 
 
 + (instancetype)sharedInstance;

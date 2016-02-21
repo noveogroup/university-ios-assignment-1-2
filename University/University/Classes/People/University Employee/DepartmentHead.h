@@ -14,10 +14,10 @@
 
 @interface DepartmentHead : Human <UniversityEmployee, EmployeeDataDelegate>
 
-@property (strong, nonatomic) NSArray *subordinates;
+@property (copy, nonatomic) NSArray *subordinates;
 @property (assign, nonatomic) NSInteger salary;
-@property (strong, nonatomic) NSString *type;
-@property (strong, nonatomic) NSString *departmentName;
+@property (copy, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString *departmentName;
 @property (strong, nonatomic) EmployeeData *eData;
 
 

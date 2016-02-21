@@ -13,7 +13,7 @@
 
 
 @interface University : NSObject <UniversityEmployee, EmployeeDataDelegate>
-@property (strong, nonatomic) NSArray *subordinates;
+@property (copy, nonatomic) NSArray *subordinates;
 @property (strong, nonatomic) EmployeeData *eData;
 
 - (void)addSubordinate:(id<UniversityEmployee>)aSub;

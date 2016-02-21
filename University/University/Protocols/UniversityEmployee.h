@@ -11,7 +11,7 @@
 
 
 @protocol UniversityEmployee <NSObject>
-@property (strong, nonatomic) NSArray *subordinates;
+@property (copy, nonatomic) NSArray *subordinates;
 
 - (void)addSubordinate:(id<UniversityEmployee>)aSub;
 

@@ -13,9 +13,9 @@
 
 @interface Teacher : Human <UniversityEmployee, EmployeeDataDelegate>
 
-@property (strong, nonatomic) NSArray *subordinates;
+@property (copy, nonatomic) NSArray *subordinates;
 @property (assign, nonatomic) NSInteger salary;
-@property (strong, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString *type;
 @property (strong, nonatomic) EmployeeData *eData;
 
 

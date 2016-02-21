@@ -14,10 +14,10 @@
 @interface Student : Human <UniversityEmployee, EmployeeDataDelegate>
 
 @property (assign, nonatomic) CGFloat GPA;
-@property (strong, nonatomic) NSString *type;
+@property (copy, nonatomic) NSString *type;
 @property (strong, nonatomic) EmployeeData *eData;
-@property (strong, nonatomic) NSString *departmentName;
-@property (strong, nonatomic) NSArray *subordinates;
+@property (copy, nonatomic) NSString *departmentName;
+@property (copy, nonatomic) NSArray *subordinates;
 
 
 - (CGFloat)changeGPAtoNewGPA:(CGFloat)newGPA withIdentifier:(NSString *)identifier;
