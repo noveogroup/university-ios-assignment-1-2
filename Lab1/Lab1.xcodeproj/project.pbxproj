@@ -26,7 +26,6 @@
 		312E919D1C7B09A5008A1010 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Internal/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		312E919E1C7B09A5008A1010 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Internal/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		312E91A01C7B09A5008A1010 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Internal/main.m; sourceTree = SOURCE_ROOT; };
-		312E91A11C7B09A5008A1010 /* participantProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = participantProtocol.h; path = Internal/participantProtocol.h; sourceTree = SOURCE_ROOT; };
 		312E91A21C7B09A5008A1010 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Internal/ViewController.h; sourceTree = SOURCE_ROOT; };
 		312E91A31C7B09A5008A1010 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Internal/ViewController.m; sourceTree = SOURCE_ROOT; };
 		312E91A91C7B09BE008A1010 /* GSFaculty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSFaculty.h; path = Internal/Models/GSFaculty.h; sourceTree = SOURCE_ROOT; };
@@ -45,6 +44,7 @@
 		312E91C71C7B0A2B008A1010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		312E91C91C7B0A2B008A1010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		312E91D11C7B0F65008A1010 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = SOURCE_ROOT; };
+		317C605E1C7B2293002EB436 /* participantProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = participantProtocol.h; path = Internal/Models/participantProtocol.h; sourceTree = SOURCE_ROOT; };
 		317E9AB11C78445A00BAF906 /* Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,9 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				312E91A81C7B09B2008A1010 /* Models */,
+				312E91A01C7B09A5008A1010 /* main.m */,
 				312E919D1C7B09A5008A1010 /* AppDelegate.h */,
 				312E919E1C7B09A5008A1010 /* AppDelegate.m */,
-				312E91A11C7B09A5008A1010 /* participantProtocol.h */,
 				312E91A21C7B09A5008A1010 /* ViewController.h */,
 				312E91A31C7B09A5008A1010 /* ViewController.m */,
 			);
@@ -75,6 +75,7 @@
 		312E91A81C7B09B2008A1010 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				317C605E1C7B2293002EB436 /* participantProtocol.h */,
 				312E91A91C7B09BE008A1010 /* GSFaculty.h */,
 				312E91AA1C7B09BE008A1010 /* GSFaculty.m */,
 				312E91AB1C7B09BE008A1010 /* GSGroup.h */,
@@ -131,7 +132,6 @@
 		317E9AB41C78445A00BAF906 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				312E91A01C7B09A5008A1010 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
