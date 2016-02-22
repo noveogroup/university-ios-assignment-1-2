@@ -8,17 +8,15 @@
 
 #import "Human.h"
 #import "UniversityEmployee.h"
-@class EmployeeData;
 
 
 
-@interface DepartmentHead : Human <UniversityEmployee, EmployeeDataDelegate>
+@interface DepartmentHead : Human <UniversityEmployee>
 
 @property (copy, nonatomic) NSArray *subordinates;
 @property (assign, nonatomic) NSInteger salary;
 @property (copy, nonatomic) NSString *type;
-@property (copy, nonatomic) NSString *departmentName;
-@property (strong, nonatomic) EmployeeData *eData;
+@property (strong, nonatomic) id<UniversityEmployee> boss;
 
 
 @end

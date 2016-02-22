@@ -11,7 +11,8 @@
 #import "Dean.h"
 #import "DepartmentHead.h"
 #import "Teacher.h"
-#import "UniversityEmployee.h"
+#import "Human.h"
+#import "University.h"
 
 @implementation EmployeeData
 
@@ -19,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        self.subjects = [NSArray array];
+        self.employees = [NSArray array];
     }
     return self;
 }
@@ -34,24 +35,46 @@
     return employeeData;
 }
 
-- (void)addObj:(id <UniversityEmployee>)obj {
+- (void)addObj:(id<UniversityEmployee>)obj {
     NSMutableArray *tempArray = [NSMutableArray array];
     [tempArray addObject:obj];
-    self.subjects = [tempArray copy];
+    self.employees = [self.employees arrayByAddingObjectsFromArray:[tempArray copy]];
 }
 
-- (void)clear {
-    self.subjects = [NSArray array];
+- (void)reset {
+    self.employees = [NSArray array];
+    self.university = nil;
 }
 
-- (void)changeGPAWithIndex:(CGFloat)index withIdentifier:(NSString *)identifier {
-    for (Student *obj in self.subjects) {
-        if ([obj isKindOfClass:[Student class]] && [obj.departmentName isEqualToString:identifier]) {
-            obj.GPA *= index;
-        }
+
+#pragma mark - Observing
+
+- (void)observing {
+    for (Student *student in self.employees) {
+        [student addObserver:self
+                  forKeyPath:@"GPA"
+                  options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+                  context:nil];
+        
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context {
+    
+    Student *student = (Student *)object;
+    NSArray *array = [self.university getStudentsOfDepartmentFromStudent:student];
+    float value = 0.f;
+    
+    for (Student *st in array) {
+        value += st.GPA;
     }
     
+    float overallGPA = value / [array count];
+    NSLog(@"Overall GPA of Department: %.2f",overallGPA);
+    
 }
-
 
 @end

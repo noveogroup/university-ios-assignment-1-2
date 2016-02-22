@@ -9,20 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Human.h"
 #import "UniversityEmployee.h"
-@class EmployeeData;
 
-@interface Student : Human <UniversityEmployee, EmployeeDataDelegate>
+@interface Student : Human <UniversityEmployee>
 
-@property (assign, nonatomic) CGFloat GPA;
+@property (assign, nonatomic) float GPA;
 @property (copy, nonatomic) NSString *type;
-@property (strong, nonatomic) EmployeeData *eData;
-@property (copy, nonatomic) NSString *departmentName;
 @property (copy, nonatomic) NSArray *subordinates;
+@property (strong, nonatomic) id<UniversityEmployee> boss;
 
 
-- (CGFloat)changeGPAtoNewGPA:(CGFloat)newGPA withIdentifier:(NSString *)identifier;
-- (CGFloat)randomGPA;
-
+float randomGPA (void);
 
 
 @end

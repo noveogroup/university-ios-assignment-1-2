@@ -9,6 +9,7 @@
 #import "Student.h"
 
 
+
 @implementation Student
 
 - (instancetype)init
@@ -18,15 +19,11 @@
         self.gender = arc4random() % 2;
         self.firstName = [self randomFirstNameForGender:self.gender];
         self.lastName = [self randomLastName];
-        NSUInteger minAge = 16;
-        NSUInteger maxAge = 25;
-        self.age = [self randomAgeFromMin:minAge toMax:maxAge];
-        self.GPA = [self randomGPA];
+        int minAge = 16;
+        int maxAge = 25;
+        self.age = randomAge(minAge, maxAge);
+        self.GPA = randomGPA();
         self.type = @"Student";
-        
-        self.eData = [EmployeeData sharedInstance];
-        self.eData.delegate = self;
-        [self.eData addObj:self];
     }
     return self;
 }
@@ -34,7 +31,8 @@
 - (NSString *)detailedDescription {
     NSString *gender = self.gender == Male ? @"Male" : @"Female";
     
-    NSString *string = [NSString stringWithFormat: @"\nStudent\n"
+    NSString *string = [NSString stringWithFormat: @"\n"
+                        "Student\n"
                         "FullName: %@ %@\n"
                         "Gender: %@\n"
                         "Age: %ld\n"
@@ -44,7 +42,7 @@
 }
 
 - (void)getSubordinatesList {
-    NSLog(@"%@", [self description]);
+    NSLog(@"%@", self);
     if ([self.subordinates count] != 0) {
         for (id <UniversityEmployee> object in self.subordinates) {
             [object getSubordinatesList];
@@ -57,19 +55,11 @@
     return [NSString stringWithFormat:@"|---- %@, %@ %@, GPA - %.2f", self.type, self.firstName, self.lastName, self.GPA];
 }
 
-- (CGFloat)randomGPA {
+float randomGPA (void) {
     NSInteger max = 500;
     NSInteger min = 100;
-    CGFloat value = (float)(arc4random() % (max - min) + min) / 100;
+    float value = (float)(arc4random() % (max - min) + min) / 100;
     return value;
 }
-
-- (CGFloat)changeGPAtoNewGPA:(CGFloat)newGPA withIdentifier:(NSString *)identifier {
-    CGFloat index = newGPA / self.GPA;
-    [self.eData changeGPAWithIndex:index withIdentifier:identifier];
-    self.GPA = newGPA;
-    return newGPA;
-}
-
 
 @end

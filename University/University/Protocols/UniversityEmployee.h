@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EmployeeData.h"
 
 
 @protocol UniversityEmployee <NSObject>
 @property (copy, nonatomic) NSArray *subordinates;
+@property (strong, nonatomic) id<UniversityEmployee> boss;
 
 - (void)addSubordinate:(id<UniversityEmployee>)aSub;
 
 @optional
+
 - (void)getSubordinatesList;
 - (NSString *)detailedDescription;
 

@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "UniversityEmployee.h"
-@class EmployeeData;
+@class Student;
 
 
 
-@interface University : NSObject <UniversityEmployee, EmployeeDataDelegate>
+@interface University : NSObject <UniversityEmployee>
 @property (copy, nonatomic) NSArray *subordinates;
-@property (strong, nonatomic) EmployeeData *eData;
+@property (strong, nonatomic) id<UniversityEmployee> boss;
+
 
 - (void)addSubordinate:(id<UniversityEmployee>)aSub;
 - (void)generateUniversityEmployees;
 - (void)getSubordinatesList;
 
-
+- (NSArray *)getStudentsOfDepartmentFromStudent:(Student *)student;
+- (float)getOverallGPAOfDepartmentWithBoss:(id<UniversityEmployee>)dHead;
 
 @end

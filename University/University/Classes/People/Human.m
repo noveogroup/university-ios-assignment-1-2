@@ -18,9 +18,11 @@
     }
 }
 
-- (NSUInteger)randomAgeFromMin:(NSUInteger)min toMax:(NSUInteger)max {
+
+int randomAge(int min, int max) {
     return arc4random() % (max - min) + min;
 }
+
 
 - (NSString *)randomFemaleFirstName {
     NSArray *firstNames = @[@"Ashly", @"Mareli",

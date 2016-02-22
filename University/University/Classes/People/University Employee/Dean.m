@@ -8,6 +8,8 @@
 
 #import "Dean.h"
 
+
+
 @implementation Dean
 
 - (instancetype)init
@@ -17,18 +19,13 @@
         self.gender = arc4random() % 2;
         self.firstName = [self randomFirstNameForGender:self.gender];
         self.lastName = [self randomLastName];
-        NSUInteger minAge = 35;
-        NSUInteger maxAge = 75;
-        self.age = [self randomAgeFromMin:minAge toMax:maxAge];
+        int minAge = 35;
+        int maxAge = 75;
+        self.age = randomAge(minAge, maxAge);
         self.salary = 70000;
         self.type = @"Dean";
         self.subordinates = [NSArray array];
         
-        self.eData = [EmployeeData sharedInstance];
-        self.eData.delegate = self;
-        [self.eData addObj:self];
-        
- 
     }
     return self;
 }
@@ -42,7 +39,7 @@
 }
 
 - (void)getSubordinatesList {
-    NSLog(@"%@", [self description]);
+    NSLog(@"%@", self);
     if ([self.subordinates count] != 0) {
         for (id <UniversityEmployee> object in self.subordinates) {
             [object getSubordinatesList];
