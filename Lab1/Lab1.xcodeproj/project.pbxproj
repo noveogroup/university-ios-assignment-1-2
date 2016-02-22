@@ -62,7 +62,7 @@
 		312E919C1C7B0994008A1010 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				312E91A81C7B09B2008A1010 /* Models */,
+				312E91A81C7B09B2008A1010 /* Model */,
 				312E91A01C7B09A5008A1010 /* main.m */,
 				312E919D1C7B09A5008A1010 /* AppDelegate.h */,
 				312E919E1C7B09A5008A1010 /* AppDelegate.m */,
@@ -72,7 +72,7 @@
 			name = Internal;
 			sourceTree = "<group>";
 		};
-		312E91A81C7B09B2008A1010 /* Models */ = {
+		312E91A81C7B09B2008A1010 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				317C605E1C7B2293002EB436 /* participantProtocol.h */,
@@ -89,7 +89,7 @@
 				312E91B31C7B09BE008A1010 /* GSTeacher.h */,
 				312E91B41C7B09BE008A1010 /* GSTeacher.m */,
 			);
-			name = Models;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		312E91BC1C7B09EB008A1010 /* Resources */ = {
