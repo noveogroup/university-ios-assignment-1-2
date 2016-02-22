@@ -7,44 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		317E9AB61C78445A00BAF906 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9AB51C78445A00BAF906 /* main.m */; };
-		317E9AB91C78445A00BAF906 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9AB81C78445A00BAF906 /* AppDelegate.m */; };
-		317E9ABC1C78445A00BAF906 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9ABB1C78445A00BAF906 /* ViewController.m */; };
-		317E9ABF1C78445A00BAF906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317E9ABD1C78445A00BAF906 /* Main.storyboard */; };
-		317E9AC11C78445A00BAF906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317E9AC01C78445A00BAF906 /* Assets.xcassets */; };
-		317E9AC41C78445A00BAF906 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317E9AC21C78445A00BAF906 /* LaunchScreen.storyboard */; };
-		317E9ACD1C78447700BAF906 /* GSHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9ACC1C78447700BAF906 /* GSHuman.m */; };
-		317E9AD01C78448A00BAF906 /* GSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9ACF1C78448A00BAF906 /* GSStudent.m */; };
-		317E9AD31C78449800BAF906 /* GSTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9AD21C78449800BAF906 /* GSTeacher.m */; };
-		317E9AD61C7844A800BAF906 /* GSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9AD51C7844A800BAF906 /* GSManager.m */; };
-		317E9AD91C7845A800BAF906 /* GSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9AD81C7845A800BAF906 /* GSGroup.m */; };
-		317E9ADC1C7845CB00BAF906 /* GSFaculty.m in Sources */ = {isa = PBXBuildFile; fileRef = 317E9ADB1C7845CB00BAF906 /* GSFaculty.m */; };
+		312E91A41C7B09A5008A1010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E919E1C7B09A5008A1010 /* AppDelegate.m */; };
+		312E91A61C7B09A5008A1010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91A01C7B09A5008A1010 /* main.m */; };
+		312E91A71C7B09A5008A1010 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91A31C7B09A5008A1010 /* ViewController.m */; };
+		312E91B51C7B09BE008A1010 /* GSFaculty.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91AA1C7B09BE008A1010 /* GSFaculty.m */; };
+		312E91B61C7B09BE008A1010 /* GSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91AC1C7B09BE008A1010 /* GSGroup.m */; };
+		312E91B71C7B09BE008A1010 /* GSHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91AE1C7B09BE008A1010 /* GSHuman.m */; };
+		312E91B81C7B09BE008A1010 /* GSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91B01C7B09BE008A1010 /* GSManager.m */; };
+		312E91B91C7B09BE008A1010 /* GSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91B21C7B09BE008A1010 /* GSStudent.m */; };
+		312E91BA1C7B09BE008A1010 /* GSTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E91B41C7B09BE008A1010 /* GSTeacher.m */; };
+		312E91C31C7B09FB008A1010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 312E91BD1C7B09FB008A1010 /* Assets.xcassets */; };
+		312E91CA1C7B0A2B008A1010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312E91C61C7B0A2B008A1010 /* LaunchScreen.storyboard */; };
+		312E91CB1C7B0A2B008A1010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312E91C81C7B0A2B008A1010 /* Main.storyboard */; };
+		312E91D21C7B0F65008A1010 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 312E91D11C7B0F65008A1010 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		312E919D1C7B09A5008A1010 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Internal/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		312E919E1C7B09A5008A1010 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Internal/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		312E91A01C7B09A5008A1010 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Internal/main.m; sourceTree = SOURCE_ROOT; };
+		312E91A11C7B09A5008A1010 /* participantProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = participantProtocol.h; path = Internal/participantProtocol.h; sourceTree = SOURCE_ROOT; };
+		312E91A21C7B09A5008A1010 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Internal/ViewController.h; sourceTree = SOURCE_ROOT; };
+		312E91A31C7B09A5008A1010 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Internal/ViewController.m; sourceTree = SOURCE_ROOT; };
+		312E91A91C7B09BE008A1010 /* GSFaculty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSFaculty.h; path = Internal/Models/GSFaculty.h; sourceTree = SOURCE_ROOT; };
+		312E91AA1C7B09BE008A1010 /* GSFaculty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSFaculty.m; path = Internal/Models/GSFaculty.m; sourceTree = SOURCE_ROOT; };
+		312E91AB1C7B09BE008A1010 /* GSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGroup.h; path = Internal/Models/GSGroup.h; sourceTree = SOURCE_ROOT; };
+		312E91AC1C7B09BE008A1010 /* GSGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGroup.m; path = Internal/Models/GSGroup.m; sourceTree = SOURCE_ROOT; };
+		312E91AD1C7B09BE008A1010 /* GSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSHuman.h; path = Internal/Models/GSHuman.h; sourceTree = SOURCE_ROOT; };
+		312E91AE1C7B09BE008A1010 /* GSHuman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSHuman.m; path = Internal/Models/GSHuman.m; sourceTree = SOURCE_ROOT; };
+		312E91AF1C7B09BE008A1010 /* GSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSManager.h; path = Internal/Models/GSManager.h; sourceTree = SOURCE_ROOT; };
+		312E91B01C7B09BE008A1010 /* GSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSManager.m; path = Internal/Models/GSManager.m; sourceTree = SOURCE_ROOT; };
+		312E91B11C7B09BE008A1010 /* GSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSStudent.h; path = Internal/Models/GSStudent.h; sourceTree = SOURCE_ROOT; };
+		312E91B21C7B09BE008A1010 /* GSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSStudent.m; path = Internal/Models/GSStudent.m; sourceTree = SOURCE_ROOT; };
+		312E91B31C7B09BE008A1010 /* GSTeacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSTeacher.h; path = Internal/Models/GSTeacher.h; sourceTree = SOURCE_ROOT; };
+		312E91B41C7B09BE008A1010 /* GSTeacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSTeacher.m; path = Internal/Models/GSTeacher.m; sourceTree = SOURCE_ROOT; };
+		312E91BD1C7B09FB008A1010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		312E91C71C7B0A2B008A1010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		312E91C91C7B0A2B008A1010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		312E91D11C7B0F65008A1010 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		317E9AB11C78445A00BAF906 /* Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		317E9AB51C78445A00BAF906 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		317E9AB71C78445A00BAF906 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		317E9AB81C78445A00BAF906 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		317E9ABA1C78445A00BAF906 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		317E9ABB1C78445A00BAF906 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		317E9ABE1C78445A00BAF906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		317E9AC01C78445A00BAF906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		317E9AC31C78445A00BAF906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		317E9AC51C78445A00BAF906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		317E9ACB1C78447700BAF906 /* GSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHuman.h; sourceTree = "<group>"; };
-		317E9ACC1C78447700BAF906 /* GSHuman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHuman.m; sourceTree = "<group>"; };
-		317E9ACE1C78448A00BAF906 /* GSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSStudent.h; sourceTree = "<group>"; };
-		317E9ACF1C78448A00BAF906 /* GSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSStudent.m; sourceTree = "<group>"; };
-		317E9AD11C78449800BAF906 /* GSTeacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTeacher.h; sourceTree = "<group>"; };
-		317E9AD21C78449800BAF906 /* GSTeacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTeacher.m; sourceTree = "<group>"; };
-		317E9AD41C7844A800BAF906 /* GSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSManager.h; sourceTree = "<group>"; };
-		317E9AD51C7844A800BAF906 /* GSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSManager.m; sourceTree = "<group>"; };
-		317E9AD71C7845A800BAF906 /* GSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGroup.h; sourceTree = "<group>"; };
-		317E9AD81C7845A800BAF906 /* GSGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGroup.m; sourceTree = "<group>"; };
-		317E9ADA1C7845CB00BAF906 /* GSFaculty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFaculty.h; sourceTree = "<group>"; };
-		317E9ADB1C7845CB00BAF906 /* GSFaculty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFaculty.m; sourceTree = "<group>"; };
-		317E9ADD1C7847DF00BAF906 /* participantProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = participantProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		312E919C1C7B0994008A1010 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				312E91A81C7B09B2008A1010 /* Models */,
+				312E919D1C7B09A5008A1010 /* AppDelegate.h */,
+				312E919E1C7B09A5008A1010 /* AppDelegate.m */,
+				312E91A11C7B09A5008A1010 /* participantProtocol.h */,
+				312E91A21C7B09A5008A1010 /* ViewController.h */,
+				312E91A31C7B09A5008A1010 /* ViewController.m */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		312E91A81C7B09B2008A1010 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				312E91A91C7B09BE008A1010 /* GSFaculty.h */,
+				312E91AA1C7B09BE008A1010 /* GSFaculty.m */,
+				312E91AB1C7B09BE008A1010 /* GSGroup.h */,
+				312E91AC1C7B09BE008A1010 /* GSGroup.m */,
+				312E91AD1C7B09BE008A1010 /* GSHuman.h */,
+				312E91AE1C7B09BE008A1010 /* GSHuman.m */,
+				312E91AF1C7B09BE008A1010 /* GSManager.h */,
+				312E91B01C7B09BE008A1010 /* GSManager.m */,
+				312E91B11C7B09BE008A1010 /* GSStudent.h */,
+				312E91B21C7B09BE008A1010 /* GSStudent.m */,
+				312E91B31C7B09BE008A1010 /* GSTeacher.h */,
+				312E91B41C7B09BE008A1010 /* GSTeacher.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		312E91BC1C7B09EB008A1010 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				312E91D11C7B0F65008A1010 /* Info.plist */,
+				312E91C61C7B0A2B008A1010 /* LaunchScreen.storyboard */,
+				312E91C81C7B0A2B008A1010 /* Main.storyboard */,
+				312E91BD1C7B09FB008A1010 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		317E9AA81C78445A00BAF906 = {
 			isa = PBXGroup;
 			children = (
@@ -77,28 +121,9 @@
 		317E9AB31C78445A00BAF906 /* Lab1 */ = {
 			isa = PBXGroup;
 			children = (
-				317E9AB71C78445A00BAF906 /* AppDelegate.h */,
-				317E9AB81C78445A00BAF906 /* AppDelegate.m */,
-				317E9ABA1C78445A00BAF906 /* ViewController.h */,
-				317E9ABB1C78445A00BAF906 /* ViewController.m */,
-				317E9ABD1C78445A00BAF906 /* Main.storyboard */,
-				317E9AC01C78445A00BAF906 /* Assets.xcassets */,
-				317E9AC21C78445A00BAF906 /* LaunchScreen.storyboard */,
-				317E9AC51C78445A00BAF906 /* Info.plist */,
+				312E91BC1C7B09EB008A1010 /* Resources */,
+				312E919C1C7B0994008A1010 /* Internal */,
 				317E9AB41C78445A00BAF906 /* Supporting Files */,
-				317E9ACB1C78447700BAF906 /* GSHuman.h */,
-				317E9ACC1C78447700BAF906 /* GSHuman.m */,
-				317E9ACE1C78448A00BAF906 /* GSStudent.h */,
-				317E9ACF1C78448A00BAF906 /* GSStudent.m */,
-				317E9AD11C78449800BAF906 /* GSTeacher.h */,
-				317E9AD21C78449800BAF906 /* GSTeacher.m */,
-				317E9AD41C7844A800BAF906 /* GSManager.h */,
-				317E9AD51C7844A800BAF906 /* GSManager.m */,
-				317E9AD71C7845A800BAF906 /* GSGroup.h */,
-				317E9AD81C7845A800BAF906 /* GSGroup.m */,
-				317E9ADA1C7845CB00BAF906 /* GSFaculty.h */,
-				317E9ADB1C7845CB00BAF906 /* GSFaculty.m */,
-				317E9ADD1C7847DF00BAF906 /* participantProtocol.h */,
 			);
 			path = Lab1;
 			sourceTree = "<group>";
@@ -106,7 +131,7 @@
 		317E9AB41C78445A00BAF906 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				317E9AB51C78445A00BAF906 /* main.m */,
+				312E91A01C7B09A5008A1010 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,9 +193,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				317E9AC41C78445A00BAF906 /* LaunchScreen.storyboard in Resources */,
-				317E9AC11C78445A00BAF906 /* Assets.xcassets in Resources */,
-				317E9ABF1C78445A00BAF906 /* Main.storyboard in Resources */,
+				312E91D21C7B0F65008A1010 /* Info.plist in Resources */,
+				312E91CA1C7B0A2B008A1010 /* LaunchScreen.storyboard in Resources */,
+				312E91C31C7B09FB008A1010 /* Assets.xcassets in Resources */,
+				312E91CB1C7B0A2B008A1010 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,35 +207,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				317E9ABC1C78445A00BAF906 /* ViewController.m in Sources */,
-				317E9AD61C7844A800BAF906 /* GSManager.m in Sources */,
-				317E9AD01C78448A00BAF906 /* GSStudent.m in Sources */,
-				317E9AD91C7845A800BAF906 /* GSGroup.m in Sources */,
-				317E9AD31C78449800BAF906 /* GSTeacher.m in Sources */,
-				317E9AB91C78445A00BAF906 /* AppDelegate.m in Sources */,
-				317E9AB61C78445A00BAF906 /* main.m in Sources */,
-				317E9ACD1C78447700BAF906 /* GSHuman.m in Sources */,
-				317E9ADC1C7845CB00BAF906 /* GSFaculty.m in Sources */,
+				312E91BA1C7B09BE008A1010 /* GSTeacher.m in Sources */,
+				312E91A41C7B09A5008A1010 /* AppDelegate.m in Sources */,
+				312E91B91C7B09BE008A1010 /* GSStudent.m in Sources */,
+				312E91A71C7B09A5008A1010 /* ViewController.m in Sources */,
+				312E91B61C7B09BE008A1010 /* GSGroup.m in Sources */,
+				312E91B51C7B09BE008A1010 /* GSFaculty.m in Sources */,
+				312E91B81C7B09BE008A1010 /* GSManager.m in Sources */,
+				312E91B71C7B09BE008A1010 /* GSHuman.m in Sources */,
+				312E91A61C7B09A5008A1010 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		317E9ABD1C78445A00BAF906 /* Main.storyboard */ = {
+		312E91C61C7B0A2B008A1010 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				317E9ABE1C78445A00BAF906 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		317E9AC21C78445A00BAF906 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				317E9AC31C78445A00BAF906 /* Base */,
+				312E91C71C7B0A2B008A1010 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		312E91C81C7B0A2B008A1010 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				312E91C91C7B0A2B008A1010 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -251,6 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -288,6 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -299,7 +327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Lab1/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Lab1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,7 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Lab1/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Lab1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,6 +364,7 @@
 				317E9ACA1C78445A00BAF906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
