@@ -70,6 +70,7 @@
 				312E91A31C7B09A5008A1010 /* ViewController.m */,
 			);
 			name = Internal;
+			path = Lab1;
 			sourceTree = "<group>";
 		};
 		312E91A81C7B09B2008A1010 /* Model */ = {
@@ -101,12 +102,14 @@
 				312E91BD1C7B09FB008A1010 /* Assets.xcassets */,
 			);
 			name = Resources;
+			path = Lab1;
 			sourceTree = "<group>";
 		};
 		317E9AA81C78445A00BAF906 = {
 			isa = PBXGroup;
 			children = (
-				317E9AB31C78445A00BAF906 /* Lab1 */,
+				312E91BC1C7B09EB008A1010 /* Resources */,
+				312E919C1C7B0994008A1010 /* Internal */,
 				317E9AB21C78445A00BAF906 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,23 +120,6 @@
 				317E9AB11C78445A00BAF906 /* Lab1.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		317E9AB31C78445A00BAF906 /* Lab1 */ = {
-			isa = PBXGroup;
-			children = (
-				312E91BC1C7B09EB008A1010 /* Resources */,
-				312E919C1C7B0994008A1010 /* Internal */,
-				317E9AB41C78445A00BAF906 /* Supporting Files */,
-			);
-			path = Lab1;
-			sourceTree = "<group>";
-		};
-		317E9AB41C78445A00BAF906 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
