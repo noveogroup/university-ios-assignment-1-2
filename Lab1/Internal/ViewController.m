@@ -27,16 +27,16 @@
     GSStudent* student4 = [[GSStudent alloc] initRand];
     GSStudent* student5 = [[GSStudent alloc] initRand];
     
-    [firstGroup addStudent:student1];
-    [firstGroup addStudent:student2];
-    [firstGroup addStudent:student3];
-    [firstGroup addStudent:student4];
-    [firstGroup addStudent:student5];
+    [firstGroup addDependent:student1];
+    [firstGroup addDependent:student2];
+    [firstGroup addDependent:student3];
+    [firstGroup addDependent:student4];
+    [firstGroup addDependent:student5];
 
     GSTeacher* teacher1 = [[GSTeacher alloc] initWithName:@"Teacher1" age:40];
-    [firstGroup addTeacher:teacher1];
+    [firstGroup addDependent:teacher1];
     
-    [faculty addGroup:firstGroup];
+    [faculty addDependent:firstGroup];
     
     //second group
     GSGroup* secondGroup = [[GSGroup alloc] init];
@@ -47,21 +47,21 @@
     GSStudent* student9 = [[GSStudent alloc] initRand];
     GSStudent* student10 = [[GSStudent alloc] initRand];
     
-    [secondGroup addStudent:student6];
-    [secondGroup addStudent:student7];
-    [secondGroup addStudent:student8];
-    [secondGroup addStudent:student9];
-    [secondGroup addStudent:student10];
+    [secondGroup addDependent:student6];
+    [secondGroup addDependent:student7];
+    [secondGroup addDependent:student8];
+    [secondGroup addDependent:student9];
+    [secondGroup addDependent:student10];
     
-    GSTeacher* teacher2 = [[GSTeacher alloc] initWithName:@"Teacher2" age:40];
-    [secondGroup addTeacher:teacher2];
+    GSTeacher* teacher2 = [[GSTeacher alloc] initRand];
+    [secondGroup addDependent:teacher2];
     
-    [faculty addGroup:secondGroup];
+    [faculty addDependent:secondGroup];
 
     //description testing
-    NSLog(@"student: %@", student3);
-    NSLog(@"teacher: %@", teacher2);
-    NSLog(@"manager: %@", manager);
+    //NSLog(@"student: %@", student3);
+    //NSLog(@"teacher: %@", teacher2);
+    //NSLog(@"manager: %@", manager);
     
     //testing of several thing from KVC
     NSArray* allStudents = [faculty valueForKeyPath:@"groups.@distinctUnionOfArrays.students"];

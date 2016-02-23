@@ -1,8 +1,9 @@
 
 #import "GSHuman.h"
 
+#import "participantProtocol.h"
 
-@interface GSStudent : GSHuman
+@interface GSStudent : GSHuman <participantInTheLearningProcess>
 
 @property (assign, nonatomic) float averageScore;
 

@@ -1,6 +1,14 @@
 
 #import "GSGroup.h"
 
+@interface GSGroup ()
+
+@property (strong, nonatomic) NSMutableArray<GSTeacher*> *teachers;
+@property (strong, nonatomic) NSMutableArray<GSStudent*> *students;
+@property (strong, nonatomic) id<participantInTheLearningProcess> master;
+
+@end
+
 @implementation GSGroup
 
 - (instancetype)init
@@ -13,40 +21,62 @@
     return self;
 }
 
-- (void) addStudent:(GSStudent*) student{
-    if (self.students && ![self.students containsObject:student]) {
-        [self.students addObject:student];
-        for (GSTeacher* teacher in self.teachers) {
-            [teacher addDependent:student];
-        }
+
+#pragma mark - participant protocol
+- (void) addDependent:(id<participantInTheLearningProcess>) dependent{
+    if ([dependent isKindOfClass:[GSStudent class]] && ![self.students containsObject:dependent]) {
+        [self.students addObject:dependent];
+        [dependent setMaster:self];
+    } else if ([dependent isKindOfClass:[GSTeacher class]] && ![self.teachers containsObject:dependent]) {
+        [self.teachers addObject:dependent];
+        [dependent setMaster:self];
     }
 }
 
-- (void) removeStudent:(GSStudent*) student{
-    if (self.students && [self.students containsObject:student]) {
-        [self.students removeObject:student];
-        for (GSTeacher* teacher in self.teachers) {
-            [teacher removeDependent:student];
-        }
+- (void) removeDependent:(id<participantInTheLearningProcess>) dependent{
+    if ([dependent isKindOfClass:[GSStudent class]] && ![self.students containsObject:dependent]) {
+        [self.students addObject:dependent];
+        [dependent removeMaster];
+    } else if ([dependent isKindOfClass:[GSTeacher class]] && ![self.teachers containsObject:dependent]) {
+        [self.teachers addObject:dependent];
+        [dependent removeMaster];
+    }
+}
+- (void) setMaster:(id<participantInTheLearningProcess>) master{
+    if (self.master) {
+        [self removeMaster];
+    }
+    
+    self.master = master;
+    [self.master addDependent:self];
+}
+
+- (void) removeMaster{
+    if (self.master) {
+        [self.master removeDependent:self];
+        self.master = nil;
     }
 }
 
-
-- (void) addTeacher:(GSTeacher*) teacher{
-    if (self.teachers && ![self.teachers containsObject:teacher]) {
-        [self.teachers addObject:teacher];
-        for (GSStudent* student in self.students) {
-            [student addMaster:teacher];
+- (NSArray*) getDependents{
+    if (self.teachers && self.students) {
+        NSArray<id<participantInTheLearningProcess>> *tempArray = [NSArray arrayWithArray:self.teachers];
+        return [tempArray arrayByAddingObjectsFromArray:self.students];
+    } else {
+        if (self.teachers) {
+            return [self.teachers copy];
+        } else {
+            return [self.students copy];
         }
+        return nil;
     }
 }
 
-- (void) removeTeacher:(GSTeacher*) teacher{
-    if (self.teachers && [self.teachers containsObject:teacher]) {
-        [self.teachers removeObject:teacher];
-        for (GSStudent* student in self.students) {
-            [student removeMaster:teacher];
-        }
+- (id<participantInTheLearningProcess>) getMaster{
+    if (self.master) {
+        return self.master;
+    } else {
+        return nil;
     }
 }
 

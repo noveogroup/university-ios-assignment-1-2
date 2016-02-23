@@ -1,6 +1,7 @@
 
 #import "GSHuman.h"
 
+//#import "participantProtocol.h"
 
 @interface GSManager : GSHuman 
 

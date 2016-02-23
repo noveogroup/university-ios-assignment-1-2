@@ -23,30 +23,6 @@
     return self;
 }
 
-- (void) addGroup:(GSGroup*) group{
-    if (self.groups && ![self.groups containsObject:group]) {
-        [self.groups addObject:group];
-        
-        if (self.manager) {
-            for (GSTeacher* teacher in group.teachers) {
-                [teacher addMaster:self.manager];
-            }
-        }
-    }
-}
-
-- (void) removeGroup:(GSGroup*) group{
-    if (self.groups && [self.groups containsObject:group]) {
-        [self.groups removeObject:group];
-        
-        if (self.manager) {
-            for (GSTeacher* teacher in group.teachers) {
-                [teacher removeMaster:self.manager];
-            }
-        }
-    }
-}
-
 - (float) getAverageScore{
     NSArray* allStudents = [self getAllStudents];
     float averageScore = [[allStudents valueForKeyPath:@"@avg.averageScore"] floatValue];
@@ -77,6 +53,33 @@
     //NSLog(@"\nobserveValueForKeyPath: %@\nofObject: %@\nchange: %@", keyPath, object, change);
     
     NSLog(@"avsc = %0.2f", [self getAverageScore]);
+}
+
+#pragma mark - participant protocol
+- (void) addDependent:(id<participantInTheLearningProcess>) dependent{
+    if ([dependent isKindOfClass:[GSGroup class]] && ![self.groups containsObject:dependent]) {
+        [self.groups addObject:dependent];
+        [dependent setMaster:self];
+    }
+}
+- (void) removeDependent:(id<participantInTheLearningProcess>) dependent{
+    if ([dependent isKindOfClass:[GSGroup class]] && [self.groups containsObject:dependent]) {
+        [self.groups removeObject:dependent];
+        [dependent removeMaster];
+    }
+}
+
+- (void) setMaster:(id<participantInTheLearningProcess>) master{
+    
+}
+- (void) removeMaster{
+}
+
+- (NSArray*) getDependents{
+    return [NSArray arrayWithArray:self.groups];
+}
+- (id<participantInTheLearningProcess>) getMaster{
+    return nil;
 }
 
 @end

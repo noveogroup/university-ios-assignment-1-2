@@ -3,17 +3,15 @@
 
 #import "GSManager.h"
 #import "GSGroup.h"
+#import "participantProtocol.h"
 
-@interface GSFaculty : NSObject
+@interface GSFaculty : NSObject <participantInTheLearningProcess>
 
 @property (strong, nonatomic) NSMutableArray <GSGroup*>* groups;
 @property (strong, nonatomic) GSManager* manager;
 
 +(GSFaculty*) sharedFaculty;
 - (instancetype)init;
-
-- (void) addGroup:(GSGroup*) group;
-- (void) removeGroup:(GSGroup*) group;
 
 - (float) getAverageScore;
 - (void) turnOnObserving;

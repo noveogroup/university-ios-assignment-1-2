@@ -1,9 +1,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "participantProtocol.h"
 
-@interface GSHuman : NSObject <participantInTheLearningProcess>
+@interface GSHuman : NSObject 
 
 @property (strong, nonatomic) NSString* name;
 @property (assign, nonatomic) NSInteger age;
