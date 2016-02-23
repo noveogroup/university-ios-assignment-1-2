@@ -10,4 +10,7 @@
 - (instancetype)initRand;
 - (instancetype)initWithName:(NSString*) name age:(NSInteger) age averageScore:(float) averageScore;
 
+@property (strong, nonatomic) id<participantInTheLearningProcess> group;
+
+
 @end

@@ -3,8 +3,6 @@
 
 @interface GSTeacher ()
 
-@property (strong, nonatomic) id<participantInTheLearningProcess> master;
-
 @end
 
 @implementation GSTeacher
@@ -13,7 +11,7 @@
 {
     self = [super initRand];
     if (self) {
-        _master = nil;
+        _group = nil;
         _salary = 20000 + arc4random()%50000;
         _expirience = arc4random()%25;
     }
@@ -28,18 +26,18 @@
 }
 
 - (void) setMaster:(id<participantInTheLearningProcess>) master{
-    if (self.master) {
+    if (self.group) {
         [self removeMaster];
     }
     
-    self.master = master;
-    [self.master addDependent:self];
+    _group = master;
+    [self.group addDependent:self];
 }
 
 - (void) removeMaster{
-    if (self.master) {
-        [self.master removeDependent:self];
-        self.master = nil;
+    if (self.group) {
+        [self.group removeDependent:self];
+        _group = nil;
     }
 }
 
@@ -48,12 +46,27 @@
 }
 
 - (id<participantInTheLearningProcess>) getMaster{
-    if (self.master) {
-        return self.master;
+    if (self.group) {
+        return self.group;
     } else {
         return nil;
     }
 }
 
+
+ #pragma mark - description
+ /*
+ - (NSString *)description
+ {
+     NSMutableString* description = [NSMutableString stringWithFormat:@"name %@", self.name];
+ 
+     [description appendString:@"\nMasters:"];
+     for (GSHuman<participantInTheLearningProcess>* master in self.masters) {
+         [description appendFormat:@"\n   %@", master.name];
+     }
+ 
+     return [NSString stringWithString:description];
+ }
+*/ 
 
 @end

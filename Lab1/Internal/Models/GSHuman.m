@@ -37,26 +37,7 @@ static int namesCount = 50;
     return self;
 }
 
-/*
-#pragma mark - description
 
-- (NSString *)description
-{
-    NSMutableString* description = [NSMutableString stringWithFormat:@"name %@", self.name];
-    
-    [description appendString:@"\nDependents:"];
-    for (GSHuman<participantInTheLearningProcess>* dependent in self.dependents) {
-        [description appendFormat:@"\n   %@", dependent.name];
-    }
-    
-    [description appendString:@"\nMasters:"];
-    for (GSHuman<participantInTheLearningProcess>* master in self.masters) {
-        [description appendFormat:@"\n   %@", master.name];
-    }
-    
-    return [NSString stringWithString:description];
-}
- */
 
 
 @end

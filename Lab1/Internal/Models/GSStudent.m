@@ -3,7 +3,6 @@
 
 @interface GSStudent ()
 
-@property (strong, nonatomic) id<participantInTheLearningProcess> master;
 
 @end
 
@@ -14,7 +13,7 @@
     self = [super initRand];
     if (self) {
         _averageScore = ((float)(arc4random()%301+200))/100;
-        _master = nil;
+        _group = nil;
     }
     return self;
 }
@@ -24,7 +23,7 @@
     self = [super initWithName:name age:age];
     if (self) {
         _averageScore = averageScore;
-        _master = nil;
+        _group = nil;
     }
     return self;
 }
@@ -37,18 +36,18 @@
 }
 
 - (void) setMaster:(id<participantInTheLearningProcess>) master{
-    if (self.master) {
+    if (self.group) {
         [self removeMaster];
     }
     
-    self.master = master;
-    [self.master addDependent:self];
+    _group = master;
+    [self.group addDependent:self];
 }
 
 - (void) removeMaster{
-    if (self.master) {
-        [self.master removeDependent:self];
-        self.master = nil;
+    if (self.group) {
+        [self.group removeDependent:self];
+        _group = nil;
     }
 }
 
@@ -57,8 +56,8 @@
 }
 
 - (id<participantInTheLearningProcess>) getMaster{
-    if (self.master) {
-        return self.master;
+    if (self.group) {
+        return self.group;
     } else {
         return nil;
     }

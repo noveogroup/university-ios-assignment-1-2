@@ -75,11 +75,4 @@
 - (void) removeMaster{
 }
 
-- (NSArray*) getDependents{
-    return [NSArray arrayWithArray:self.groups];
-}
-- (id<participantInTheLearningProcess>) getMaster{
-    return nil;
-}
-
 @end

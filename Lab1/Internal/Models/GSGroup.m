@@ -3,10 +3,6 @@
 
 @interface GSGroup ()
 
-@property (strong, nonatomic) NSMutableArray<GSTeacher*> *teachers;
-@property (strong, nonatomic) NSMutableArray<GSStudent*> *students;
-@property (strong, nonatomic) id<participantInTheLearningProcess> master;
-
 @end
 
 @implementation GSGroup
@@ -15,6 +11,7 @@
 {
     self = [super init];
     if (self) {
+        _number = arc4random()%100000;
         _students = [NSMutableArray array];
         _teachers = [NSMutableArray array];
     }
@@ -43,40 +40,18 @@
     }
 }
 - (void) setMaster:(id<participantInTheLearningProcess>) master{
-    if (self.master) {
+    if (self.faculty) {
         [self removeMaster];
     }
     
-    self.master = master;
-    [self.master addDependent:self];
+    _faculty = master;
+    [self.faculty addDependent:self];
 }
 
 - (void) removeMaster{
-    if (self.master) {
-        [self.master removeDependent:self];
-        self.master = nil;
-    }
-}
-
-- (NSArray*) getDependents{
-    if (self.teachers && self.students) {
-        NSArray<id<participantInTheLearningProcess>> *tempArray = [NSArray arrayWithArray:self.teachers];
-        return [tempArray arrayByAddingObjectsFromArray:self.students];
-    } else {
-        if (self.teachers) {
-            return [self.teachers copy];
-        } else {
-            return [self.students copy];
-        }
-        return nil;
-    }
-}
-
-- (id<participantInTheLearningProcess>) getMaster{
-    if (self.master) {
-        return self.master;
-    } else {
-        return nil;
+    if (self.faculty) {
+        [self.faculty removeDependent:self];
+        _faculty = nil;
     }
 }
 

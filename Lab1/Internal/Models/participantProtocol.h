@@ -13,7 +13,4 @@
 - (void) setMaster:(id<participantInTheLearningProcess>) master;
 - (void) removeMaster;
 
-- (NSArray*) getDependents;
-- (id<participantInTheLearningProcess>) getMaster;
-
 @end
