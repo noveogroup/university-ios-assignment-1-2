@@ -75,4 +75,28 @@
 - (void) removeMaster{
 }
 
+#pragma mark - description
+
+- (NSString *)description
+{
+    NSMutableString* description = [NSMutableString stringWithFormat:@"faculty with manager %@", self.manager.name];
+    
+    [description appendFormat:@"\ngroups"];
+    for (GSGroup* group in self.groups) {
+        [description appendFormat:@"\n    group %ld:", group.number];
+        [description appendFormat:@"\n        students:"];
+        for (GSStudent* student in group.students) {
+            [description appendFormat:@"\n            %@", student.name];
+        }
+        
+        [description appendFormat:@"\n        teachers:"];
+        for (GSStudent* teacher in group.teachers) {
+            [description appendFormat:@"\n            %@", teacher.name];
+        }
+    }
+    
+    return [NSString stringWithString:description];
+}
+
+
 @end

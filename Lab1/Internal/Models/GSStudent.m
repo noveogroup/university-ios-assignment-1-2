@@ -1,6 +1,8 @@
 
 #import "GSStudent.h"
 
+#import "GSGroup.h"
+
 @interface GSStudent ()
 
 
@@ -36,12 +38,14 @@
 }
 
 - (void) setMaster:(id<participantInTheLearningProcess>) master{
-    if (self.group) {
-        [self removeMaster];
+    if ([master isKindOfClass:[GSGroup class]]) {
+        if (self.group) {
+            [self removeMaster];
+        }
+        
+        _group = master;
+        [self.group addDependent:self];
     }
-    
-    _group = master;
-    [self.group addDependent:self];
 }
 
 - (void) removeMaster{
@@ -61,6 +65,17 @@
     } else {
         return nil;
     }
+}
+
+#pragma mark - description
+
+- (NSString *)description
+{
+    NSMutableString* description = [NSMutableString stringWithFormat:@"student %@", self.name];
+    
+    [description appendFormat:@"\n    Group: %ld", self.group.number];
+    
+    return [NSString stringWithString:description];
 }
 
 @end

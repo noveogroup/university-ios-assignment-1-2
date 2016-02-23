@@ -1,6 +1,8 @@
 
 #import "GSGroup.h"
 
+#import "GSFaculty.h"
+
 @interface GSGroup ()
 
 @end
@@ -54,5 +56,28 @@
         _faculty = nil;
     }
 }
+
+#pragma mark - description
+
+- (NSString *)description
+{
+    NSMutableString* description = [NSMutableString stringWithFormat:@"Group with number %ld", self.number];
+    
+    [description appendFormat:@"\n    students:"];
+    for (GSStudent* student in self.students) {
+        [description appendFormat:@"\n    %@", student.name];
+    }
+    
+    [description appendFormat:@"\n    teachers:"];
+    for (GSStudent* teacher in self.teachers) {
+        [description appendFormat:@"\n    %@", teacher.name];
+    }
+    
+    [description appendFormat:@"\n    faculty manager: %@", self.faculty.manager.name];
+    
+    return [NSString stringWithString:description];
+}
+
+
 
 @end

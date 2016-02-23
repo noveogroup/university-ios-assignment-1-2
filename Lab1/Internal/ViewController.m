@@ -59,9 +59,10 @@
     [faculty addDependent:secondGroup];
 
     //description testing
-    //NSLog(@"student: %@", student3);
-    //NSLog(@"teacher: %@", teacher2);
-    //NSLog(@"manager: %@", manager);
+    NSLog(@"%@", student3);
+    NSLog(@"%@", teacher2);
+    NSLog(@"%@", manager);
+    NSLog(@"%@", faculty);
     
     //testing of several thing from KVC
     NSArray* allStudents = [faculty valueForKeyPath:@"groups.@distinctUnionOfArrays.students"];

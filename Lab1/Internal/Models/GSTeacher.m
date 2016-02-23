@@ -1,6 +1,9 @@
 
 #import "GSTeacher.h"
 
+#import "GSGroup.h"
+
+
 @interface GSTeacher ()
 
 @end
@@ -26,12 +29,15 @@
 }
 
 - (void) setMaster:(id<participantInTheLearningProcess>) master{
-    if (self.group) {
-        [self removeMaster];
-    }
+    if ([master isKindOfClass:[GSGroup class]]) {
+
+        if (self.group) {
+            [self removeMaster];
+        }
     
-    _group = master;
-    [self.group addDependent:self];
+        _group = master;
+        [self.group addDependent:self];
+    }
 }
 
 - (void) removeMaster{
@@ -55,18 +61,15 @@
 
 
  #pragma mark - description
- /*
+
  - (NSString *)description
  {
-     NSMutableString* description = [NSMutableString stringWithFormat:@"name %@", self.name];
+     NSMutableString* description = [NSMutableString stringWithFormat:@"teacher %@", self.name];
  
-     [description appendString:@"\nMasters:"];
-     for (GSHuman<participantInTheLearningProcess>* master in self.masters) {
-         [description appendFormat:@"\n   %@", master.name];
-     }
+     [description appendFormat:@"\n    Group: %ld", self.group.number];
  
      return [NSString stringWithString:description];
  }
-*/ 
+
 
 @end
