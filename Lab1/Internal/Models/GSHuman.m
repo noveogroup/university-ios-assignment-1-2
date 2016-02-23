@@ -1,6 +1,13 @@
 
 #import "GSHuman.h"
 
+@interface GSHuman()
+
+@property (nonatomic) NSArray* dependents;
+@property (nonatomic) NSArray* masters;
+
+@end
+
 @implementation GSHuman
 
 static NSString* names[] = {
@@ -18,30 +25,22 @@ static NSString* names[] = {
 
 static int namesCount = 50;
 
-@synthesize masters, dependents;
+//@synthesize masters = _masters, dependents = _dependents;
 
 - (instancetype)initRand
 {
-    self = [super init];
-    if (self) {
-        self.name = names[arc4random()%namesCount];
-        self.age = arc4random()%4+17;
-        
-        self.dependents = [NSMutableArray array];
-        self.masters = [NSMutableArray array];
-    }
-    return self;
+    return [self initWithName:names[arc4random()%namesCount] age:(arc4random()%4+17)];
 }
 
 - (instancetype)initWithName:(NSString*) name age:(NSInteger) age
 {
     self = [super init];
     if (self) {
-        self.name = name;
-        self.age = age;
+        _name = name;
+        _age = age;
         
-        self.dependents = [NSMutableArray array];
-        self.masters = [NSMutableArray array];
+        self.dependents = [NSArray array];
+        self.masters = [NSArray array];
     }
     return self;
 }
@@ -50,29 +49,33 @@ static int namesCount = 50;
 #pragma mark - participantInTheLearningProcess
 
 - (void) addDependent:(id<participantInTheLearningProcess>) dependent{
-    if (self.dependents && ![self.dependents containsObject:dependent]) {
-        [self.dependents addObject:dependent];
+    if (![self.dependents containsObject:dependent]) {
+        self.dependents = [self.dependents arrayByAddingObject:dependent];
         [dependent addMaster:self];
     }
 }
 
 - (void) removeDependent:(id<participantInTheLearningProcess>) dependent{
-    if (self.dependents && [self.dependents containsObject:dependent]) {
-        [self.dependents removeObject:dependent];
+    if ([self.dependents containsObject:dependent]) {
+        NSMutableArray* newDependents = [NSMutableArray arrayWithArray:self.dependents];
+        [newDependents removeObject:dependent];
+        self.dependents = [NSArray arrayWithArray:newDependents];
         [dependent removeMaster:self];
     }
 }
 
 - (void) addMaster:(id<participantInTheLearningProcess>) master{
-    if (self.masters && ![self.masters containsObject:master]) {
-        [self.masters addObject:master];
+    if (![self.masters containsObject:master]) {
+        self.masters = [self.masters arrayByAddingObject:master];
         [master addDependent:self];
     }
 }
 
 - (void) removeMaster:(id<participantInTheLearningProcess>) master{
-    if (self.masters && [self.masters containsObject:master]) {
-        [self.masters removeObject:master];
+    if ([self.masters containsObject:master]) {
+        NSMutableArray* newMasters = [NSMutableArray arrayWithArray:self.masters];
+        [newMasters removeObject:master];
+        self.masters = [NSArray arrayWithArray:newMasters];
         [master removeDependent:self];
     }
 }

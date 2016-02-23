@@ -11,6 +11,6 @@
 - (instancetype)initRand;
 - (instancetype)initWithName:(NSString*) name age:(NSInteger) age;
 
-- (NSString *)description;
+//- (NSString *)description;
 
 @end

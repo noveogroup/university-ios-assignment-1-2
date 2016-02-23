@@ -3,8 +3,8 @@
 
 @protocol participantInTheLearningProcess <NSObject>
 
-@property (strong, nonatomic) NSMutableArray* dependents; //подчиненные
-@property (strong, nonatomic) NSMutableArray* masters; //хозяева
+@property (nonatomic, readonly) NSArray* dependents; //подчиненные
+@property (nonatomic, readonly) NSArray* masters; //хозяева
 
 @required
 - (void) addDependent:(id<participantInTheLearningProcess>) dependent;
