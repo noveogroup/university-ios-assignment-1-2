@@ -18,7 +18,7 @@
 {
     self = [super init];
     if (self) {
-        self.groups = [NSMutableArray array];
+        _groups = [NSMutableArray array];
     }
     return self;
 }

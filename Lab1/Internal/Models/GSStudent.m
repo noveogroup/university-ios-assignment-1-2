@@ -7,7 +7,7 @@
 {
     self = [super initRand];
     if (self) {
-        self.averageScore = ((float)(arc4random()%301+200))/100;
+        _averageScore = ((float)(arc4random()%301+200))/100;
     }
     return self;
 }
@@ -16,7 +16,7 @@
 {
     self = [super initWithName:name age:age];
     if (self) {
-        self.averageScore = averageScore;
+        _averageScore = averageScore;
     }
     return self;
 }

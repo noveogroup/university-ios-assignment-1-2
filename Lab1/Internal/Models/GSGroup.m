@@ -7,8 +7,8 @@
 {
     self = [super init];
     if (self) {
-        self.students = [NSMutableArray array];
-        self.teachers = [NSMutableArray array];
+        _students = [NSMutableArray array];
+        _teachers = [NSMutableArray array];
     }
     return self;
 }

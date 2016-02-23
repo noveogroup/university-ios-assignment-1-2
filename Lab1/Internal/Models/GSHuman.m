@@ -39,8 +39,8 @@ static int namesCount = 50;
         _name = name;
         _age = age;
         
-        self.dependents = [NSArray array];
-        self.masters = [NSArray array];
+        _dependents = [NSArray array];
+        _masters = [NSArray array];
     }
     return self;
 }
