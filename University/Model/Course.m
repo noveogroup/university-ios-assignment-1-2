@@ -37,7 +37,7 @@
 
 #pragma mark - Accessors
 - (NSSet<Student *> *)participants{
-    return [_participants copy];
+    return _participants;
 }
 
 

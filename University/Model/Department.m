@@ -37,7 +37,7 @@
 
 #pragma mark - Accessors
 - (NSSet<UniversityEmployee *> *)employees{
-    return [_employees copy];
+    return _employees;
 }
 
 - (void)setChief:(DepartmentChief *)chief{

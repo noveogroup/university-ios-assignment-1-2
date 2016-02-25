@@ -32,11 +32,11 @@
 
 #pragma mark - Accessors
 - (NSSet<Course *> *)courses{
-    return [_courses copy];
+    return _courses;
 }
 
 -(NSSet<Teacher *> *)teachers{
-    return [_teachers copy];
+    return _teachers;
 }
 
 
@@ -52,7 +52,7 @@
 
 #pragma mark - EducationalProcessParticipant
 - (NSSet<id<EducationalProcessParticipant>> *)supers{
-    return [_teachers copy];
+    return _teachers;
 }
 
 - (void)addSuper:(id<EducationalProcessParticipant>)sup{

@@ -37,11 +37,11 @@
 
 #pragma mark - EducationalProcessParticipant
 - (NSSet<id<EducationalProcessParticipant>> *)supers{
-    return [_supers copy];
+    return _supers;
 }
 
 - (NSSet<id<EducationalProcessParticipant>> *)subs{
-    return [_subs copy];
+    return _subs;
 }
 
 - (void)addSuper:(id<EducationalProcessParticipant>)sup{

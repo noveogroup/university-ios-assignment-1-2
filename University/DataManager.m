@@ -38,7 +38,7 @@
 
 #pragma mark - Accessors
 - (NSSet<Department *> *)departments{
-    return [_departments copy];
+    return _departments;
 }
 
 

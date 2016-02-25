@@ -31,7 +31,7 @@
 
 #pragma mark - Accessors
 - (NSSet<Course *> *)courses{
-    return [_courses copy];
+    return _courses;
 }
 
 - (NSSet<Student *> *)students{
