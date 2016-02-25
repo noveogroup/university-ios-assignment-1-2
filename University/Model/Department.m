@@ -13,6 +13,7 @@
 
 @interface Department (){
     NSMutableSet<UniversityEmployee *> *_employees;
+    NSMutableSet<Teacher *> *_teachers;
 }
 @property (nonatomic, readwrite) float meanGrade;
 
@@ -40,21 +41,15 @@
     return _employees;
 }
 
+- (NSSet<Teacher *> *)teachers{
+    return _teachers;
+}
+
 - (void)setChief:(DepartmentChief *)chief{
     _chief = chief;
     [self addEmployee:chief];
 }
 
-- (NSSet<Teacher *> *)teachers{
-    NSMutableSet *teachers = [NSMutableSet new];
-    for (UniversityEmployee *empl in _employees) {
-        if ([empl isKindOfClass:[Teacher class]]) {
-            [teachers addObject:empl];
-        }
-    }
-    
-    return teachers;
-}
 
 #pragma mark - Public
 - (NSString *)description{
@@ -66,6 +61,8 @@
     employee.department = self;
     
     if ([employee isKindOfClass:[Teacher class]]) {
+        [_teachers addObject:(Teacher *)employee];
+        
         [(Teacher *)employee addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:nil];
         [self recalculateMeanGrade];
     }
