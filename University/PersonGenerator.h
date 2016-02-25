@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Person, Student, Teacher, DepartmentChief;
+@class Person;
 
 @interface PersonGenerator : NSObject
 - (Person *)randomPerson;

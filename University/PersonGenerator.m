@@ -6,14 +6,15 @@
 //  Copyright © 2016 Oleg Sannikov. All rights reserved.
 //
 
+#import "NSArray+Random.h"
+#import "NSDate+Utilities.h"
 #import "PersonGenerator.h"
 #import "Person.h"
 
-@interface PersonGenerator (){
-    NSArray *_maleFirstNames;
-    NSArray *_femaleFirstNames;
-    NSArray *_lastNames;
-}
+@interface PersonGenerator ()
+@property (nonatomic) NSArray<NSString *> *maleFirstNames;
+@property (nonatomic) NSArray<NSString *> *femaleFirstNames;
+@property (nonatomic) NSArray<NSString *> *lastNames;
 
 @end
 
@@ -30,10 +31,13 @@
 
 - (Person *)randomPerson{
     Gender gender = arc4random_uniform(2);
-    NSString *firstName = (gender == GenderMale) ? _maleFirstNames[arc4random_uniform(_maleFirstNames.count)] : _femaleFirstNames[arc4random_uniform(_maleFirstNames.count)];
-    NSString *lastName = _lastNames[arc4random_uniform(_lastNames.count)];
-    NSTimeInterval dayInterval = 60*60*24;
-    NSDate *birthdate = [NSDate dateWithTimeIntervalSince1970:dayInterval*arc4random_uniform(365*25)];
+    
+    NSString *firstName = (gender == GenderMale) ? self.maleFirstNames.randomObject : self.femaleFirstNames.randomObject;
+    NSString *lastName = self.lastNames.randomObject;
+    
+    NSUInteger minAge = 18;
+    NSUInteger maxAge = 70;
+    NSDate *birthdate = [NSDate dateWithDaysFromNow: -(365*minAge + arc4random_uniform((unsigned int)(365*maxAge)))];
     
     Person *person = [[Person alloc] initWithFirstName:firstName lastName:lastName gender:gender andBirthdate:birthdate];
     

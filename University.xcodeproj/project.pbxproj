@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		608EBA811C7F63B200E0DF30 /* NSArray+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EBA801C7F63B200E0DF30 /* NSArray+Random.m */; };
+		608EBA871C7F6A3300E0DF30 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EBA861C7F6A3300E0DF30 /* NSDate+Utilities.m */; };
 		8DA503B51C7ABB2B0011A655 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA503B41C7ABB2B0011A655 /* DataManager.m */; };
 		8DA503B81C7AC6A20011A655 /* PersonGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA503B71C7AC6A20011A655 /* PersonGenerator.m */; };
 		8DAA6D0D1C7A06A3009D8C71 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA6D0C1C7A06A3009D8C71 /* Department.m */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		608EBA7F1C7F63B200E0DF30 /* NSArray+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Random.h"; sourceTree = "<group>"; };
+		608EBA801C7F63B200E0DF30 /* NSArray+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Random.m"; sourceTree = "<group>"; };
+		608EBA851C7F6A3300E0DF30 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		608EBA861C7F6A3300E0DF30 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		8DA503B31C7ABB2B0011A655 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		8DA503B41C7ABB2B0011A655 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		8DA503B61C7AC6A20011A655 /* PersonGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonGenerator.h; sourceTree = "<group>"; };
@@ -64,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		608EBA7E1C7F638000E0DF30 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				608EBA7F1C7F63B200E0DF30 /* NSArray+Random.h */,
+				608EBA801C7F63B200E0DF30 /* NSArray+Random.m */,
+				608EBA851C7F6A3300E0DF30 /* NSDate+Utilities.h */,
+				608EBA861C7F6A3300E0DF30 /* NSDate+Utilities.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		8DC54E3E1C706C5E000AAAF3 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +102,7 @@
 			children = (
 				8DA503B31C7ABB2B0011A655 /* DataManager.h */,
 				8DA503B41C7ABB2B0011A655 /* DataManager.m */,
+				608EBA7E1C7F638000E0DF30 /* Categories */,
 				8DC54E611C706C92000AAAF3 /* Model */,
 				8DC54E4A1C706C5E000AAAF3 /* Supporting Files */,
 			);
@@ -268,12 +286,14 @@
 				8DC54E4F1C706C5E000AAAF3 /* AppDelegate.m in Sources */,
 				8DAA6D131C7A102D009D8C71 /* Course.m in Sources */,
 				8DDB57F21C7361D600AD545C /* Student.m in Sources */,
+				608EBA811C7F63B200E0DF30 /* NSArray+Random.m in Sources */,
 				8DDB57FE1C7385B400AD545C /* Employee.m in Sources */,
 				8DC54E651C707CD9000AAAF3 /* Person.m in Sources */,
 				8DC54E4C1C706C5E000AAAF3 /* main.m in Sources */,
 				8DA503B51C7ABB2B0011A655 /* DataManager.m in Sources */,
 				8DA503B81C7AC6A20011A655 /* PersonGenerator.m in Sources */,
 				8DAA6D0D1C7A06A3009D8C71 /* Department.m in Sources */,
+				608EBA871C7F6A3300E0DF30 /* NSDate+Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
