@@ -54,11 +54,8 @@
 }
 
 - (void)addParticipants:(NSArray<Student *> *)participants{
-    [_participants addObjectsFromArray:participants];
     for (Student * participant in participants) {
-        [participant singUpForCourse:self];
-        [participant addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:nil];
-        [self recalculateMeanGrade];
+        [self addParticipant:participant];
     }
 }
 

@@ -54,13 +54,14 @@
 }
 
 - (void)addSupers:(NSArray<id<EducationalProcessParticipant>> *)supers{
-    [_supers  addObjectsFromArray:supers];
+    for (id<EducationalProcessParticipant> sup in supers) {
+        [self addSuper:sup];
+    }
 }
 
 - (void)addSubs:(NSArray<id<EducationalProcessParticipant>> *)subs{
-    [_subs addObjectsFromArray:subs];
     for (id<EducationalProcessParticipant> sub in subs) {
-        [sub addSuper:self];
+        [self addSub:sub];
     }
 }
 

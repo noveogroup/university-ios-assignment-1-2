@@ -72,14 +72,8 @@
 }
 
 - (void)addEmployees:(NSArray<UniversityEmployee *> *)employees{
-    [_employees addObjectsFromArray:employees];
     for (UniversityEmployee *employee in employees) {
-        employee.department = self;
-        
-        if ([employee isKindOfClass:[Teacher class]]) {
-            [(Teacher *)employee addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:nil];
-            [self recalculateMeanGrade];
-        }
+        [self addEmployee:employee];
     }
 }
 
