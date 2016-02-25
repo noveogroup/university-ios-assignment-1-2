@@ -12,7 +12,7 @@
 #pragma mark - Lifecycle
 - (instancetype)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName
                            gender:(Gender)gender andBirthdate:(NSDate *)birthdate{
-    self = [self init];
+    self = [super init];
     if (self) {
         _firstName = firstName;
         _lastName = lastName;
@@ -24,7 +24,7 @@
 }
 
 - (instancetype)initWithPerson:(Person *)person{
-    self = [self init];
+    self = [super init];
     if (self) {
         _firstName = person.firstName;
         _lastName = person.lastName;

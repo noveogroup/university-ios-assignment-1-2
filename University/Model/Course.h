@@ -11,8 +11,8 @@
 @class Teacher, Student;
 
 @interface Course : NSObject
-//! Designated initializer
-- (instancetype)initWithName:(NSString *)name andTeacher:(Teacher *)teacher;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithName:(NSString *)name andTeacher:(Teacher *)teacher NS_DESIGNATED_INITIALIZER;
 + (instancetype)courseWithName:(NSString *)name andTeacher:(Teacher *)teacher;
 
 @property (nonatomic, copy, readonly) NSString *name;

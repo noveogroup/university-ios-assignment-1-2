@@ -15,10 +15,10 @@ typedef NS_ENUM(NSUInteger, Gender) {
 };
 
 @interface Person : NSObject
-//! Designated initializer
+- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName
-                           gender:(Gender)gender andBirthdate:(NSDate *)birthdate;
-- (instancetype)initWithPerson:(Person *)person;
+                           gender:(Gender)gender andBirthdate:(NSDate *)birthdate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPerson:(Person *)person NS_DESIGNATED_INITIALIZER;
 
 @property (copy, nonatomic) NSString *firstName;
 @property (copy, nonatomic) NSString *lastName;
