@@ -37,7 +37,7 @@
     
     NSUInteger minAge = 18;
     NSUInteger maxAge = 70;
-    NSDate *birthdate = [NSDate dateWithDaysFromNow: -(365*minAge + arc4random_uniform((unsigned int)(365*maxAge)))];
+    NSDate *birthdate = [NSDate dateWithDaysFromNow: -(365*minAge + arc4random_uniform((unsigned int)(365*(maxAge - minAge))))];
     
     Person *person = [[Person alloc] initWithFirstName:firstName lastName:lastName gender:gender andBirthdate:birthdate];
     
