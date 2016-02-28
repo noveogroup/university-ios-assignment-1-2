@@ -11,7 +11,6 @@
 @class UniversityEmployee, DepartmentChief, Teacher;
 
 @interface Department : NSObject
-- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 + (instancetype)departmentWithName:(NSString *)name;
 

@@ -21,6 +21,14 @@
 
 @implementation Department
 #pragma mark - Lifecycle
+- (instancetype)init{
+    self = [self init];
+    if (self) {
+    }
+    
+    return self;
+}
+
 + (instancetype)departmentWithName:(NSString *)name{
     return [[self alloc] initWithName:name];
 }
@@ -30,6 +38,7 @@
     if (self) {
         _name = name;
         _employees = [NSMutableSet new];
+        _teachers = [NSMutableSet new];
     }
     
     return self;

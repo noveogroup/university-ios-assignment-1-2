@@ -10,6 +10,14 @@
 
 @implementation Person
 #pragma mark - Lifecycle
+- (instancetype)init{
+    self = [self init];
+    if (self) {
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName
                            gender:(Gender)gender andBirthdate:(NSDate *)birthdate{
     self = [super init];

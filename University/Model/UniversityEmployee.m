@@ -18,11 +18,34 @@
 
 @implementation UniversityEmployee
 #pragma mark - Lifecycle
+- (void)commonInit{
+    _supers = [NSMutableSet new];
+    _subs = [NSMutableSet new];
+}
+
 - (instancetype)init{
     self = [super init];
     if (self) {
-        _supers = [NSMutableSet new];
-        _subs = [NSMutableSet new];
+        [self commonInit];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName
+                           gender:(Gender)gender andBirthdate:(NSDate *)birthdate{
+    self = [super initWithFirstName:firstName lastName:lastName gender:gender andBirthdate:birthdate];
+    if (self) {
+        [self commonInit];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithPerson:(Person *)person{
+    self = [super initWithPerson:person];
+    if (self) {
+        [self commonInit];
     }
     
     return self;

@@ -19,6 +19,14 @@
 
 @implementation Course
 #pragma mark - Lifecycle
+- (instancetype)init{
+    self = [self init];
+    if (self) {
+    }
+    
+    return self;
+}
+
 + (instancetype)courseWithName:(NSString *)name andTeacher:(Teacher *)teacher{
     return [[self alloc] initWithName:name andTeacher:teacher];
 }
