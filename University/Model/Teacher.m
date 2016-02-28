@@ -10,6 +10,8 @@
 #import "Course.h"
 #import "Student.h"
 
+static void * CoursesKVOContext = &CoursesKVOContext;
+
 @interface Teacher (){
     NSMutableSet<Course *> *_courses;
 }
@@ -53,7 +55,7 @@
     
     newCourse.teacher = self;
     [_courses addObject:newCourse];
-    [newCourse addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:nil];
+    [newCourse addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:CoursesKVOContext];
     [self recalculateMeanGrade];
     
     return newCourse;
@@ -73,9 +75,11 @@
 
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    if ([object isKindOfClass:[Course class]]) {
-        if ([keyPath isEqualToString:@"meanGrade"]) {
-            [self recalculateMeanGrade];
+    if (context == CoursesKVOContext) {
+        if ([object isKindOfClass:[Course class]]) {
+            if ([keyPath isEqualToString:@"meanGrade"]) {
+                [self recalculateMeanGrade];
+            }
         }
     }
 }

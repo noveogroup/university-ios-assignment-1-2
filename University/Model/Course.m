@@ -9,6 +9,7 @@
 #import "Course.h"
 #import "Student.h"
 
+static void * ParticipantsKVOContext = &ParticipantsKVOContext;
 
 @interface Course (){
     NSMutableSet<Student *> *_participants;
@@ -57,7 +58,7 @@
 - (void)addParticipant:(Student *)participant{
     [_participants addObject:participant];
     [participant singUpForCourse:self];
-    [participant addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:nil];
+    [participant addObserver:self forKeyPath:@"meanGrade" options:NSKeyValueObservingOptionNew context:ParticipantsKVOContext];
     [self recalculateMeanGrade];
 }
 
@@ -81,9 +82,11 @@
 
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    if ([object isKindOfClass:[Student class]]) {
-        if ([keyPath isEqualToString:@"meanGrade"]) {
-            [self recalculateMeanGrade];
+    if (context == ParticipantsKVOContext) {
+        if ([object isKindOfClass:[Student class]]) {
+            if ([keyPath isEqualToString:@"meanGrade"]) {
+                [self recalculateMeanGrade];
+            }
         }
     }
 }
