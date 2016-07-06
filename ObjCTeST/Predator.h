@@ -10,10 +10,10 @@
 
 @interface Predator : LivingBeing <Animal>
 
+@property NSMutableArray *stomach;
 @property (readonly) float weight;
 
-- (instancetype)initWithName:(NSString *)name;
-- (instancetype)initWithName:(NSString *)name andWeight:(float)weight;
+- (instancetype)initWithName:(NSString *)name calories:(float)cal andWeight:(float)weight;
 - (BOOL) isDefending;
 - (void)eat:(LivingBeing *)livingBeing;
 

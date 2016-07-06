@@ -13,6 +13,6 @@
 @property (readonly) NSString *name;
 @property (readonly) float calories;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name andCalories:(float)cal;
 
 @end

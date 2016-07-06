@@ -40,13 +40,13 @@
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)theName andWeight:(float)theWeight {
+- (instancetype)initWithName:(NSString *)theName calories:(float)theCal andWeight:(float)theWeight {
     
-    if (self = [super initWithName:theName]) {
+    if (self = [super initWithName:theName andCalories:theCal]) {
         
-        self.calories = 100;
-        self.weight = theWeight;
-        self.stomach = [[NSMutableArray alloc] init];
+        
+        _weight = theWeight;
+        _stomach = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -63,26 +63,6 @@
     [self.stomach addObject:livingBeing];
     [[Forest sharedForest].livingBeings removeObject:livingBeing];
 }
-
-//- (void) tryToEatHerbivorous:(Herbivorous *)herb {
-//    
-//    if (![herb isHiding]) {
-//        
-//        _calories += [herb calories] / 2;
-//        [self.stomach addObject:herb];
-//        [[Forest sharedForest].livingBeings removeObject:herb];
-//    }
-//}
-//
-//- (void) tryToEatPredator:(Predator *)predator {
-//    
-//    if (self.weight > [predator weight] && ![predator isDefending]) {
-//        
-//        _calories += [predator calories] / 2;
-//        [self.stomach addObject:predator];
-//        [[Forest sharedForest].livingBeings removeObject:predator];
-//    }
-//}
 
 - (NSString *)description {
     

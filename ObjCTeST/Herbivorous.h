@@ -11,7 +11,6 @@
 
 @interface Herbivorous : LivingBeing <Animal>
 
-- (instancetype)initWithName:(NSString *)name;
 - (BOOL) isHiding;
 
 @end

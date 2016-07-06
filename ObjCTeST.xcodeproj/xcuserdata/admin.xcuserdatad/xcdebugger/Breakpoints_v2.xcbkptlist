@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ObjCTeST/LivingBeing.m"
-            timestampString = "489496631.113605"
+            filePath = "ObjCTeST/Herbivorous.m"
+            timestampString = "489500316.166117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "-initWithName:"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-stomach"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ObjCTeST/Herbivorous.m"
+            timestampString = "489500370.453273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-setStomach:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

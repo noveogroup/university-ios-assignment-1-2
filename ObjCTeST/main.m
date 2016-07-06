@@ -18,13 +18,14 @@ int main(int argc, const char * argv[]) {
         
         Forest *forest = [Forest sharedForest];
         
-        [forest.livingBeings addObject:[[Predator alloc] initWithName:@"Tiger" andWeight:100]];
+//        [forest.livingBeings addObject:[[Predator alloc] initWithName:@"Tiger" andWeight:100]];
+//        
+//        [forest.livingBeings addObject:[[Herbivorous alloc] initWithName:@"Zebra"]];
+//        
+//        [forest.livingBeings addObject:[[Grass alloc] initWithName:@"Daisy"]];
         
-        [forest.livingBeings addObject:[[Herbivorous alloc] initWithName:@"Zebra"]];
-        
-        [forest.livingBeings addObject:[[Grass alloc] initWithName:@"Daisy"]];
-        
-        [forest simulateDay];
+        Herbivorous *h = [[Herbivorous alloc] init];
+//        [forest simulateDay];
         
     }
     return 0;

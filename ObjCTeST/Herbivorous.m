@@ -11,8 +11,9 @@
 
 @interface Herbivorous ()
 
-@property NSString *name;
-@property float calories;
+@property (nonatomic) NSString *name;
+@property (nonatomic) float calories;
+@property (nonatomic) NSMutableArray *stomach;
 
 @end
 
@@ -31,13 +32,22 @@
 
 - (instancetype)initWithName:(NSString *)theName {
     
-    if (self = [super initWithName:theName]) {
+    if (self = [super initWithName:theName andCalories:50]) {
         
-        self.calories = 50;
-        self.stomach = [[NSMutableArray alloc] init];
+        stomach = [[NSMutableArray alloc] init];
     }
     
     return self;
+}
+
+- (NSMutableArray *)stomach {
+    
+    return stomach;
+}
+
+- (void)setStomach:(NSMutableArray *)theStomach {
+    
+    stomach = theStomach;
 }
 
 - (BOOL) isHiding {

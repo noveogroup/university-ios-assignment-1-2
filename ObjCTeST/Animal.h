@@ -10,8 +10,6 @@
 
 @protocol Animal <NSObject>
 
-@property NSMutableArray *stomach;
-
 - (void)eat:(LivingBeing *)livingBeing;
 
 @end

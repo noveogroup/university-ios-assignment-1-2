@@ -8,20 +8,14 @@
 
 #import "LivingBeing.h"
 
-//@interface LivingBeing ()
-//
-//@property NSString *name;
-//@property float calories;
-//
-//@end
-
 @implementation LivingBeing
 
-- (instancetype)initWithName:(NSString *)name {
+- (instancetype)initWithName:(NSString *)name andCalories:(float)cal {
     
     if (self = [super init]) {
         
         _name = name;
+        _calories = cal;
     }
     
     return self;
