@@ -12,10 +12,13 @@
 #import "Herbivorous.h"
 #import "Life.h"
 #import "RulesOfLife.h"
+#import "Garbage.h"
+#import "Animal.h"
 
 static const int nGrass = 4;
 static const int nPredator = 2;
 static const int nHerbivorous = 4;
+static const int nGarbage = 4;
 
 @implementation Forest
 
@@ -58,6 +61,13 @@ static id _instance;
             [self.forestResidents addObject:herbivorous];
 #ifdef DEBUG
             NSLog(@"%@",herbivorous);
+#endif
+        }
+        for(int i=0; i < nGarbage; i++){
+            Garbage *garbage = [[Garbage alloc]init];
+            [self.forestResidents addObject:garbage];
+#ifdef DEBUG
+            NSLog(@"%@",garbage);
 #endif
         }
         
@@ -117,14 +127,18 @@ static id _instance;
 - (void)print{
     for (Life *resident in self.forestResidents) {
         if ([resident isKindOfClass:[Predator class]]) {
-            [self outStomach];
+            [self outStomach:resident];
         }
-        NSLog(@"Survivors %@", resident.name);
+        if (![resident isKindOfClass:[Garbage class]]){
+            NSLog(@"Survivors %@", resident.name);
+        }
     }
 }
 
--(void)outStomach{
-    
+-(void)outStomach:(Life *)resident{
+    if ([resident isKindOfClass:[Predator class]] || [resident isKindOfClass:[Herbivorous class]]){
+        
+    }
 }
 
 

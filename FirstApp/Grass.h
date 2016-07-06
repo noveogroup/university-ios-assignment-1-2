@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Life.h"
 
-@interface Grass : Life
+@interface Grass : Life 
 
 -(instancetype)initWithName:(NSString *)name;
 

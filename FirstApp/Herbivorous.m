@@ -10,6 +10,7 @@
 #import "Grass.h"
 #import "Life.h"
 #import "Forest.h"
+#import "Garbage.h"
 
 @implementation Herbivorous
 
@@ -34,7 +35,12 @@
     [self.stomach addObject:food];
     [[Forest sharedInstance] deleteResident:food];
 #ifdef DEBUG
-    NSLog(@"%@ eat %@", self.name, food.name);
+    if([food isKindOfClass:[Garbage class]]){
+        NSLog(@"%@ eat garbage", self.name);
+    }else{
+        NSLog(@"%@ eat %@", self.name, food.name);
+    }
+    
 #endif
 }
 

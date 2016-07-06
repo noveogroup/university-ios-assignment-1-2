@@ -10,10 +10,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ForestEntity.h"
 
-@interface Life : NSObject
-//калории
-@property int calories;
+@interface Life : ForestEntity
 //имя
 @property (readonly) NSString *name;
 

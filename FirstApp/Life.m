@@ -12,10 +12,9 @@
 
 -(instancetype)initWithName:(NSString *)name
                 andCalories:(int)calories{
-    self = [super init];
+    self = [super initWithCalories:calories];
     if(self){
         _name = name;
-        _calories = calories;
     }
     return self;
 }

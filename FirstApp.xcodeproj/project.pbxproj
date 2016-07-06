@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		84344C001D2D0004004D06E6 /* RulesOfLife.m in Sources */ = {isa = PBXBuildFile; fileRef = 84344BFF1D2D0004004D06E6 /* RulesOfLife.m */; };
+		8451C30C1D2D633900F2F638 /* Garbage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451C30B1D2D633900F2F638 /* Garbage.m */; };
+		8451C3131D2D68A100F2F638 /* ForestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451C3121D2D68A100F2F638 /* ForestEntity.m */; };
 		849AF2D31D2BBA41001D274A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2D21D2BBA41001D274A /* main.m */; };
 		849AF2DB1D2BC937001D274A /* Grass.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2DA1D2BC937001D274A /* Grass.m */; };
 		849AF2DE1D2BC957001D274A /* Predator.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2DD1D2BC957001D274A /* Predator.m */; };
@@ -31,6 +33,10 @@
 /* Begin PBXFileReference section */
 		84344BFE1D2D0004004D06E6 /* RulesOfLife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesOfLife.h; sourceTree = "<group>"; };
 		84344BFF1D2D0004004D06E6 /* RulesOfLife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesOfLife.m; sourceTree = "<group>"; };
+		8451C30A1D2D633900F2F638 /* Garbage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Garbage.h; sourceTree = "<group>"; };
+		8451C30B1D2D633900F2F638 /* Garbage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Garbage.m; sourceTree = "<group>"; };
+		8451C3111D2D68A100F2F638 /* ForestEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForestEntity.h; sourceTree = "<group>"; };
+		8451C3121D2D68A100F2F638 /* ForestEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForestEntity.m; sourceTree = "<group>"; };
 		849AF2CF1D2BBA41001D274A /* FirstApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FirstApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		849AF2D21D2BBA41001D274A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		849AF2D91D2BC937001D274A /* Grass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grass.h; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 				849AF2E91D2BD480001D274A /* Forest.m */,
 				84344BFE1D2D0004004D06E6 /* RulesOfLife.h */,
 				84344BFF1D2D0004004D06E6 /* RulesOfLife.m */,
+				8451C30A1D2D633900F2F638 /* Garbage.h */,
+				8451C30B1D2D633900F2F638 /* Garbage.m */,
+				8451C3111D2D68A100F2F638 /* ForestEntity.h */,
+				8451C3121D2D68A100F2F638 /* ForestEntity.m */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -154,7 +164,9 @@
 				849AF2E41D2BCCCE001D274A /* Life.m in Sources */,
 				849AF2EA1D2BD480001D274A /* Forest.m in Sources */,
 				849AF2E11D2BC977001D274A /* Herbivorous.m in Sources */,
+				8451C3131D2D68A100F2F638 /* ForestEntity.m in Sources */,
 				849AF2DB1D2BC937001D274A /* Grass.m in Sources */,
+				8451C30C1D2D633900F2F638 /* Garbage.m in Sources */,
 				849AF2D31D2BBA41001D274A /* main.m in Sources */,
 				849AF2DE1D2BC957001D274A /* Predator.m in Sources */,
 			);

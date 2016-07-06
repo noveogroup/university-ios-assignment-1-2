@@ -13,6 +13,7 @@
 #import "Grass.h"
 #import "Predator.h"
 #import "Herbivorous.h"
+#import "Garbage.h"
 
 @implementation RulesOfLife
 
@@ -21,7 +22,7 @@
     if ([first isKindOfClass:[Grass class]]) {
         return NO;
     } else if ([first isKindOfClass:[Herbivorous class]]){
-        if ([second isKindOfClass:[Grass class]]) {
+        if ([second isKindOfClass:[Grass class]] || [second isKindOfClass:[Garbage class]] ) {
             return YES;
         }
     } else if ([first isKindOfClass:[Predator class]]){
@@ -35,7 +36,10 @@
             if(((Predator*)first).weight > ((Predator*)second).weight && !((Predator*)second).isProtect){
                 return YES;
             }
+        } else if ([second isKindOfClass:[Garbage class]]){
+            return YES;
         }
+
     }
     return NO;
 }
