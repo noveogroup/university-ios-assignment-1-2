@@ -14,24 +14,19 @@
 
 @interface Predator ()
 
-@property NSString *name;
-@property float calories;
-@property float weight;
+//@property (nonatomic, copy) NSString *name;
+//@property (nonatomic) float calories;
+@property (nonatomic) NSMutableArray *stomach;
+//@property (nonatomic) float weight;
 
 @end
 
 @implementation Predator
 
-@synthesize name;
-@synthesize calories;
-@synthesize weight;
-@synthesize stomach;
-
-- (instancetype)init {
-    
-    self = [self initWithName:[NSString stringWithFormat:@"Predator %@", [NSDate date]] andWeight:(MIN_WEIGHT + arc4random() % (MAX_WEIGHT - MIN_WEIGHT))];
-    return self;
-}
+//@synthesize name;
+//@synthesize calories;
+//@synthesize weight;
+//@synthesize stomach;
 
 - (instancetype)initWithName:(NSString *)theName {
     
@@ -40,11 +35,11 @@
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)theName calories:(float)theCal andWeight:(float)theWeight {
+- (instancetype)initWithName:(NSString *)theName andWeight:(float)theWeight {
     
-    if (self = [super initWithName:theName andCalories:theCal]) {
+    if (self = [super initWithName:theName]) {
         
-        
+        _calories = 100;
         _weight = theWeight;
         _stomach = [[NSMutableArray alloc] init];
     }
@@ -59,15 +54,14 @@
 
 - (void)eat:(LivingBeing *)livingBeing {
     
-    self.calories += [livingBeing calories] / 2;
+     _calories += [livingBeing calories] / 2;
     [self.stomach addObject:livingBeing];
     [[Forest sharedForest].livingBeings removeObject:livingBeing];
 }
 
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Predator %@ with weight: %f, calories: %f and stomach: %@",
-            self.name, self.weight, self.calories, self.stomach.description];
+    return [NSString stringWithFormat:@"Predator %@ with weight: %f, calories: %f and stomach: %@", self.name, self.weight, self.calories, self.stomach.description];
 }
 
 @end

@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LivingBeing : NSObject
+@interface LivingBeing : NSObject {
+    
+    NSString *_name;
+    float _calories;
+}
 
-@property (readonly) NSString *name;
-@property (readonly) float calories;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) float calories;
 
-- (instancetype)initWithName:(NSString *)name andCalories:(float)cal;
+- (instancetype)initWithName:(NSString *)name;
 
 @end

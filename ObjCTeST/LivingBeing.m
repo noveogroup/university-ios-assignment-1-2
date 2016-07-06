@@ -10,12 +10,11 @@
 
 @implementation LivingBeing
 
-- (instancetype)initWithName:(NSString *)name andCalories:(float)cal {
+- (instancetype)initWithName:(NSString *)name {
     
     if (self = [super init]) {
         
         _name = name;
-        _calories = cal;
     }
     
     return self;

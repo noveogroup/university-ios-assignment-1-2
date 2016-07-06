@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LivingBeing.h"
 
 @interface Forest : NSObject
 

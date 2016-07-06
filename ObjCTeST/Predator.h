@@ -8,13 +8,15 @@
 
 #import "Animal.h"
 
-@interface Predator : LivingBeing <Animal>
+@interface Predator : LivingBeing <Animal> {
+    
+    NSMutableArray *_stomach;
+    float _weight;
+}
 
-@property NSMutableArray *stomach;
-@property (readonly) float weight;
+@property (nonatomic, readonly) float weight;
 
-- (instancetype)initWithName:(NSString *)name calories:(float)cal andWeight:(float)weight;
+- (instancetype)initWithName:(NSString *)theName andWeight:(float)theWeight;
 - (BOOL) isDefending;
-- (void)eat:(LivingBeing *)livingBeing;
 
 @end

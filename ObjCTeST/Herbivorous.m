@@ -11,43 +11,27 @@
 
 @interface Herbivorous ()
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) float calories;
+//@property (nonatomic, copy) NSString *name;
+//@property (nonatomic) float calories;
 @property (nonatomic) NSMutableArray *stomach;
 
 @end
 
 @implementation Herbivorous
 
-@synthesize name;
-@synthesize calories;
-@synthesize stomach;
-
-- (instancetype)init {
-    
-    self = [self initWithName:[NSString stringWithFormat:
-                               @"Herbivorous %@", [NSDate date]]];
-    return self;
-}
+//@synthesize name;
+//@synthesize calories;
+//@synthesize stomach;
 
 - (instancetype)initWithName:(NSString *)theName {
     
-    if (self = [super initWithName:theName andCalories:50]) {
+    if (self = [super initWithName:theName]) {
         
-        stomach = [[NSMutableArray alloc] init];
+        _calories = 50;
+        _stomach = [[NSMutableArray alloc] init];
     }
     
     return self;
-}
-
-- (NSMutableArray *)stomach {
-    
-    return stomach;
-}
-
-- (void)setStomach:(NSMutableArray *)theStomach {
-    
-    stomach = theStomach;
 }
 
 - (BOOL) isHiding {
@@ -58,15 +42,14 @@
 
 - (void)eat:(LivingBeing *)livingBeing {
     
-    self.calories += [livingBeing calories];
+    _calories += [livingBeing calories];
     [self.stomach addObject:livingBeing];
     [[Forest sharedForest].livingBeings removeObject:livingBeing];
 }
 
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@",
-            self.name, self.calories, self.stomach.description];
+    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@", self.name, self.calories, self.stomach.description];
 }
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import "Animal.h"
-#import "Grass.h"
 
-@interface Herbivorous : LivingBeing <Animal>
+@interface Herbivorous : LivingBeing <Animal> {
+    
+    NSMutableArray *_stomach;
+}
 
 - (BOOL) isHiding;
 
