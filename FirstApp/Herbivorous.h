@@ -13,9 +13,13 @@
 #import "Life.h"
 #import "Animal.h"
 
-@interface Herbivorous : Animal
+@interface Herbivorous : Life <Animal>
+@property NSMutableArray *stomach;
+
+-(instancetype)initWithName:(NSString *)name;
 
 //прячется от хищника
 - (BOOL)isHide;
+
 
 @end

@@ -13,8 +13,9 @@
 #import "Life.h"
 #import "Animal.h"
 
-@interface Predator : Animal
+@interface Predator : Life <Animal>
 @property int weight;
+@property NSMutableArray *stomach;
 
 //Защищается от другого хищника
 - (BOOL)isProtect;

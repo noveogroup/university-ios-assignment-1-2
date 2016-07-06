@@ -11,6 +11,7 @@
 #import "Predator.h"
 #import "Herbivorous.h"
 #import "Life.h"
+#import "RulesOfLife.h"
 
 static const int nGrass = 4;
 static const int nPredator = 2;
@@ -71,14 +72,14 @@ static id _instance;
         id firstResident = self.forestResidents[ifirst];
         id secondResident = self.forestResidents[iSecond];
         if(firstResident != secondResident){
-            if ([self canEatFirst:firstResident andSecond:secondResident]) {
+            if ([RulesOfLife canEatFirst:firstResident andSecond:secondResident]) {
                 if ([firstResident respondsToSelector:@selector(eat:)]) {
                     [firstResident performSelector:@selector(eat:) withObject:secondResident];
                 }
             }
         }
     }
-    
+    [self print];
 }
 
 
@@ -111,28 +112,19 @@ static id _instance;
     }
 }
 
-- (BOOL)canEatFirst:(Life *)first
-          andSecond:(Life *)second{
-    if ([first isKindOfClass:[Grass class]]) {
-        return NO;
-    } else if ([first isKindOfClass:[Herbivorous class]]){
-        if ([second isKindOfClass:[Grass class]]) {
-            return YES;
+
+
+- (void)print{
+    for (Life *resident in self.forestResidents) {
+        if ([resident isKindOfClass:[Predator class]]) {
+            [self outStomach];
         }
-    } else if ([first isKindOfClass:[Predator class]]){
-        if ([second isKindOfClass:[Herbivorous class]]) {
-            if ([second respondsToSelector:@selector(isHide)]) {
-                if ([second performSelector:@selector(isHide)]) {
-                    return YES;
-                }
-            }
-        } else if ([second isKindOfClass:[Predator class]]){
-            if(((Predator*)first).weight > ((Predator*)second).weight && !((Predator*)second).isProtect){
-                return YES;
-            }
-        }
+        NSLog(@"Survivors %@", resident.name);
     }
-    return NO;
+}
+
+-(void)outStomach{
+    
 }
 
 

@@ -7,21 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Life.h"
 
 @interface RulesOfLife : NSObject
 
-//кто ест
-@property id eateth;
-//кого едят
-@property id eater;
-//процент калорий, если съел
-@property double percentageOfCalories;
-//массив правил
-@property NSMutableArray *rules;
++ (BOOL)canEatFirst:(Life *)first
+          andSecond:(Life *)second;
 
-+ (RulesOfLife *)sharedInstance;
-
-- (void)addNewRuleWithEateth:(Class)eateth
-                    andEater:(Class)eater
-     andPercentageOfCalories:(double)percentageOfCalories;
 @end

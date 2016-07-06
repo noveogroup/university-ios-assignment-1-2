@@ -10,36 +10,34 @@
 //
 
 #import "RulesOfLife.h"
+#import "Grass.h"
+#import "Predator.h"
+#import "Herbivorous.h"
 
 @implementation RulesOfLife
 
-+ (RulesOfLife *)sharedInstance{
-    static dispatch_once_t once;
-    static RulesOfLife *sharedInstance;
-    
-    dispatch_once(&once, ^
-                  {
-                      sharedInstance = [self new];
-                  });
-    
-    return sharedInstance;
-}
-
-- (instancetype)init{
-    self = [super init];
-    if(self){
-        self.rules = [[NSMutableArray alloc]init];
++ (BOOL)canEatFirst:(Life *)first
+          andSecond:(Life *)second{
+    if ([first isKindOfClass:[Grass class]]) {
+        return NO;
+    } else if ([first isKindOfClass:[Herbivorous class]]){
+        if ([second isKindOfClass:[Grass class]]) {
+            return YES;
+        }
+    } else if ([first isKindOfClass:[Predator class]]){
+        if ([second isKindOfClass:[Herbivorous class]]) {
+            if ([second respondsToSelector:@selector(isHide)]) {
+                if ([second performSelector:@selector(isHide)]) {
+                    return YES;
+                }
+            }
+        } else if ([second isKindOfClass:[Predator class]]){
+            if(((Predator*)first).weight > ((Predator*)second).weight && !((Predator*)second).isProtect){
+                return YES;
+            }
+        }
     }
-    return self;
+    return NO;
 }
-
-- (void)addNewRuleWithEateth:(Class)eateth
-              andEater:(Class)eater
-andPercentageOfCalories:(double)percentageOfCalories{
-    
-    
-}
-
-
 
 @end

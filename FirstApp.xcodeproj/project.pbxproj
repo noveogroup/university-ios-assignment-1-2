@@ -13,7 +13,6 @@
 		849AF2DE1D2BC957001D274A /* Predator.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2DD1D2BC957001D274A /* Predator.m */; };
 		849AF2E11D2BC977001D274A /* Herbivorous.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2E01D2BC977001D274A /* Herbivorous.m */; };
 		849AF2E41D2BCCCE001D274A /* Life.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2E31D2BCCCE001D274A /* Life.m */; };
-		849AF2E71D2BCF7A001D274A /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2E61D2BCF7A001D274A /* Animal.m */; };
 		849AF2EA1D2BD480001D274A /* Forest.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF2E91D2BD480001D274A /* Forest.m */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		849AF2E21D2BCCCE001D274A /* Life.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Life.h; sourceTree = "<group>"; };
 		849AF2E31D2BCCCE001D274A /* Life.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Life.m; sourceTree = "<group>"; };
 		849AF2E51D2BCF7A001D274A /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
-		849AF2E61D2BCF7A001D274A /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		849AF2E81D2BD480001D274A /* Forest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forest.h; sourceTree = "<group>"; };
 		849AF2E91D2BD480001D274A /* Forest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +86,6 @@
 				849AF2E21D2BCCCE001D274A /* Life.h */,
 				849AF2E31D2BCCCE001D274A /* Life.m */,
 				849AF2E51D2BCF7A001D274A /* Animal.h */,
-				849AF2E61D2BCF7A001D274A /* Animal.m */,
 				849AF2E81D2BD480001D274A /* Forest.h */,
 				849AF2E91D2BD480001D274A /* Forest.m */,
 				84344BFE1D2D0004004D06E6 /* RulesOfLife.h */,
@@ -158,7 +155,6 @@
 				849AF2EA1D2BD480001D274A /* Forest.m in Sources */,
 				849AF2E11D2BC977001D274A /* Herbivorous.m in Sources */,
 				849AF2DB1D2BC937001D274A /* Grass.m in Sources */,
-				849AF2E71D2BCF7A001D274A /* Animal.m in Sources */,
 				849AF2D31D2BBA41001D274A /* main.m in Sources */,
 				849AF2DE1D2BC957001D274A /* Predator.m in Sources */,
 			);

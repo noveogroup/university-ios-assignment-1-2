@@ -8,6 +8,7 @@
 
 #import "Predator.h"
 #import "Herbivorous.h"
+#import "Forest.h"
 
 @implementation Predator
 
@@ -16,10 +17,10 @@
 }
 
 - (instancetype)initWithWeight:(int)weight andName:(NSString *)name{
-    self = [super initWithName:name];
+    self = [super initWithName:name andCalories:50];
     if(self){
-        self.calories = 50;
-        self.weight = weight;
+        _weight = weight;
+        _stomach = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -29,13 +30,12 @@
 }
 
 -(void)eat:(Life *)food{
-    if ([food isKindOfClass:[Herbivorous class]]) {
-        self.calories +=((Herbivorous*)food).calories/2;
-        [super eat:food];
-    } else if ([food isKindOfClass:[Predator class]]){
-        self.calories +=((Predator*)food).calories/2;
-        [super eat:food];
-    }
+    self.calories += food.calories/2;
+    [self.stomach addObject:food];
+    [[Forest sharedInstance] deleteResident:food];
+#ifdef DEBUG
+    NSLog(@"%@ eat %@", self.name, food.name);
+#endif
 }
 
 

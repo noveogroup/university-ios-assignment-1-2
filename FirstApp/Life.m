@@ -10,10 +10,12 @@
 
 @implementation Life
 
--(instancetype)initWithName:(NSString *)name{
+-(instancetype)initWithName:(NSString *)name
+                andCalories:(int)calories{
     self = [super init];
     if(self){
         _name = name;
+        _calories = calories;
     }
     return self;
 }

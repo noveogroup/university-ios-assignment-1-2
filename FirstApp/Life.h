@@ -17,6 +17,7 @@
 //имя
 @property (readonly) NSString *name;
 
--(instancetype)initWithName:(NSString *)name;
+-(instancetype)initWithName:(NSString *)name
+                andCalories:(int)calories;
 
 @end

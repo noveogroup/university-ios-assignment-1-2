@@ -9,6 +9,7 @@
 #import "Herbivorous.h"
 #import "Grass.h"
 #import "Life.h"
+#import "Forest.h"
 
 @implementation Herbivorous
 
@@ -16,11 +17,10 @@
     return [NSString stringWithFormat:@"Herbivorous with name: %@ with calories: %d", self.name, self.calories];
 }
 
-- (instancetype)initWithName:(NSString *)name{
-    self = [super initWithName:name];
+-(instancetype)initWithName:(NSString *)name{
+    self = [super initWithName:name andCalories:100];
     if(self){
-        //калории в начале жизни
-        self.calories = 100;
+        _stomach = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -30,8 +30,12 @@
 }
 
 -(void)eat:(Life *)food{
-    self.calories +=((Grass*)food).calories;
-    [super eat:food];
+    self.calories +=food.calories;
+    [self.stomach addObject:food];
+    [[Forest sharedInstance] deleteResident:food];
+#ifdef DEBUG
+    NSLog(@"%@ eat %@", self.name, food.name);
+#endif
 }
 
 @end

@@ -11,10 +11,11 @@
 
 @implementation Animal
 
--(instancetype)initWithName:(NSString *)name{
-    self = [super initWithName:name];
+-(instancetype)initWithName:(NSString *)name
+                andCalories:(int)calories{
+    self = [super initWithName:name andCalories:calories];
     if(self){
-        self.stomach = [[NSMutableArray alloc]init];
+        _stomach = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -22,7 +23,9 @@
 -(void)eat:(Life *)food{
     [self.stomach addObject:food];
     [[Forest sharedInstance] deleteResident:food];
+#ifdef DEBUG
     NSLog(@"%@ eat %@", self.name, food.name);
+#endif
 }
 
 @end

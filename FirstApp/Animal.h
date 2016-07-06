@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Life.h"
 
-@interface Animal : Life
-
-@property NSMutableArray *stomach;
+@protocol Animal <NSObject>
 
 //добывает еду
 -(void)eat:(Life *)food;

@@ -16,9 +16,9 @@
 
 
 -(instancetype)initWithName:(NSString *)name{
-    self = [super initWithName:name];
+    self = [super initWithName:name andCalories:10];
     if(self){
-        self.calories = 10;
+        
     }
     return self;
 }
