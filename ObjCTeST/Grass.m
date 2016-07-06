@@ -10,15 +10,15 @@
 
 @interface Grass ()
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic) float calories;
+//@property (nonatomic, copy) NSString *name;
+//@property (nonatomic) float calories;
 
 @end
 
 @implementation Grass
 
-@synthesize name;
-@synthesize calories;
+//@synthesize name;
+//@synthesize calories;
 
 - (instancetype)initWithName:(NSString *)theName {
     

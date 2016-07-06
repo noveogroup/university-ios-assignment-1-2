@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "LivingBeing.h"
 
-@interface EatingRules : NSObject
+@interface RulesOfLife : NSObject
 
 + (BOOL)can:(LivingBeing *)firstLivingBeing eat:(LivingBeing *)secondLivingBeing;
++ (BOOL)isEnd;
 
 @end

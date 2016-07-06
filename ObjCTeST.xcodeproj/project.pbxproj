@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8430B9CF1D2CFCF800FD4309 /* EatingRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 8430B9CE1D2CFCF800FD4309 /* EatingRules.m */; };
+		8430B9CF1D2CFCF800FD4309 /* RulesOfLife.m in Sources */ = {isa = PBXBuildFile; fileRef = 8430B9CE1D2CFCF800FD4309 /* RulesOfLife.m */; };
 		843665B11D2BBA5900EAEFDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665B01D2BBA5900EAEFDE /* main.m */; };
 		843665BE1D2BCA9500EAEFDE /* Herbivorous.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665BD1D2BCA9500EAEFDE /* Herbivorous.m */; };
 		843665C11D2BCBAB00EAEFDE /* Predator.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665C01D2BCBAB00EAEFDE /* Predator.m */; };
@@ -29,8 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8430B9CD1D2CFCF800FD4309 /* EatingRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatingRules.h; sourceTree = "<group>"; };
-		8430B9CE1D2CFCF800FD4309 /* EatingRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatingRules.m; sourceTree = "<group>"; };
+		8430B9CD1D2CFCF800FD4309 /* RulesOfLife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesOfLife.h; sourceTree = "<group>"; };
+		8430B9CE1D2CFCF800FD4309 /* RulesOfLife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesOfLife.m; sourceTree = "<group>"; };
 		843665AD1D2BBA5900EAEFDE /* ObjCTeST */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjCTeST; sourceTree = BUILT_PRODUCTS_DIR; };
 		843665B01D2BBA5900EAEFDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		843665B91D2BCA7C00EAEFDE /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
@@ -86,8 +86,8 @@
 				843665BD1D2BCA9500EAEFDE /* Herbivorous.m */,
 				843665BF1D2BCBAB00EAEFDE /* Predator.h */,
 				843665C01D2BCBAB00EAEFDE /* Predator.m */,
-				8430B9CD1D2CFCF800FD4309 /* EatingRules.h */,
-				8430B9CE1D2CFCF800FD4309 /* EatingRules.m */,
+				8430B9CD1D2CFCF800FD4309 /* RulesOfLife.h */,
+				8430B9CE1D2CFCF800FD4309 /* RulesOfLife.m */,
 				843665C81D2BD7DB00EAEFDE /* Forest.h */,
 				843665C91D2BD7DB00EAEFDE /* Forest.m */,
 			);
@@ -153,7 +153,7 @@
 				843665C41D2BCCB500EAEFDE /* Grass.m in Sources */,
 				843665CA1D2BD7DB00EAEFDE /* Forest.m in Sources */,
 				843665B11D2BBA5900EAEFDE /* main.m in Sources */,
-				8430B9CF1D2CFCF800FD4309 /* EatingRules.m in Sources */,
+				8430B9CF1D2CFCF800FD4309 /* RulesOfLife.m in Sources */,
 				843665C71D2BCCF400EAEFDE /* LivingBeing.m in Sources */,
 				843665C11D2BCBAB00EAEFDE /* Predator.m in Sources */,
 				843665BE1D2BCA9500EAEFDE /* Herbivorous.m in Sources */,

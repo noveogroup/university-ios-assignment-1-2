@@ -7,8 +7,11 @@
 //
 
 #import "Forest.h"
-#import "EatingRules.h"
+#import "RulesOfLife.h"
 #import "Animal.h"
+#import "LivingBeing.h"
+#import "Predator.h"
+#import "Herbivorous.h"
 
 @implementation Forest
 
@@ -34,12 +37,12 @@
 
 - (void)simulateDay {
     
-    while ([self.livingBeings count] > 1) {
+    while (![RulesOfLife isEnd]) {
         
         u_int32_t i1 = arc4random() % [self.livingBeings count];
         u_int32_t i2 = arc4random() % [self.livingBeings count];
         
-        if ([EatingRules can:self.livingBeings[i1]
+        if ([RulesOfLife can:self.livingBeings[i1]
                          eat:self.livingBeings[i2]]) {
             
             id <Animal> eater = self.livingBeings[i1];

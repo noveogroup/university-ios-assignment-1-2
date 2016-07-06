@@ -11,7 +11,7 @@
 #import "Herbivorous.h"
 #import "Grass.h"
 #import "Forest.h"
-#import "EatingRules.h"
+#import "RulesOfLife.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
         
         [forest.livingBeings addObject:[[Grass alloc] initWithName:@"Daisy"]];
         
-//        [forest simulateDay];
+        [forest simulateDay];
         
     }
     return 0;
