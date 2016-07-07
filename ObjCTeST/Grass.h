@@ -6,8 +6,10 @@
 //  Copyright © 2016 Admin. All rights reserved.
 //
 
-#import "LivingBeing.h"
+#import "Named.h"
 
-@interface Grass : LivingBeing <Calories>
+@interface Grass : NSObject <Calories, Named>
+
+- (instancetype)initWithName:(NSString *)aName;
 
 @end

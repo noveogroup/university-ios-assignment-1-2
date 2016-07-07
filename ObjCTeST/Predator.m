@@ -10,6 +10,7 @@
 
 @interface Predator ()
 
+@property (nonatomic) NSString *name;
 @property (nonatomic) float calories;
 @property (nonatomic) NSMutableArray *stomach;
 @property (nonatomic) float weight;
@@ -18,12 +19,13 @@
 
 @implementation Predator
 
-- (instancetype)initWithName:(NSString *)theName andWeight:(float)theWeight {
+- (instancetype)initWithName:(NSString *)aName andWeight:(float)aWeight {
     
-    if (self = [super initWithName:theName]) {
+    if (self = [super init]) {
         
+        _name = aName;
         _calories = 100;
-        _weight = theWeight;
+        _weight = aWeight;
         _stomach = [[NSMutableArray alloc] init];
     }
     

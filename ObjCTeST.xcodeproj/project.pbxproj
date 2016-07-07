@@ -14,7 +14,6 @@
 		843665BE1D2BCA9500EAEFDE /* Herbivorous.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665BD1D2BCA9500EAEFDE /* Herbivorous.m */; };
 		843665C11D2BCBAB00EAEFDE /* Predator.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665C01D2BCBAB00EAEFDE /* Predator.m */; };
 		843665C41D2BCCB500EAEFDE /* Grass.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665C31D2BCCB500EAEFDE /* Grass.m */; };
-		843665C71D2BCCF400EAEFDE /* LivingBeing.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665C61D2BCCF400EAEFDE /* LivingBeing.m */; };
 		843665CA1D2BD7DB00EAEFDE /* Forest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843665C91D2BD7DB00EAEFDE /* Forest.m */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +46,7 @@
 		843665C01D2BCBAB00EAEFDE /* Predator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Predator.m; sourceTree = "<group>"; };
 		843665C21D2BCCB500EAEFDE /* Grass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grass.h; sourceTree = "<group>"; };
 		843665C31D2BCCB500EAEFDE /* Grass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grass.m; sourceTree = "<group>"; };
-		843665C51D2BCCF400EAEFDE /* LivingBeing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivingBeing.h; sourceTree = "<group>"; };
-		843665C61D2BCCF400EAEFDE /* LivingBeing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivingBeing.m; sourceTree = "<group>"; };
+		843665C51D2BCCF400EAEFDE /* Named.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Named.h; sourceTree = "<group>"; };
 		843665C81D2BD7DB00EAEFDE /* Forest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forest.h; sourceTree = "<group>"; };
 		843665C91D2BD7DB00EAEFDE /* Forest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,8 +86,7 @@
 				8422CD841D2E3DC700F6670F /* Calories.h */,
 				8422CD871D2E3E1700F6670F /* Garbage.h */,
 				8422CD881D2E3E1700F6670F /* Garbage.m */,
-				843665C51D2BCCF400EAEFDE /* LivingBeing.h */,
-				843665C61D2BCCF400EAEFDE /* LivingBeing.m */,
+				843665C51D2BCCF400EAEFDE /* Named.h */,
 				843665C21D2BCCB500EAEFDE /* Grass.h */,
 				843665C31D2BCCB500EAEFDE /* Grass.m */,
 				8422CD8B1D2E467800F6670F /* Animal.h */,
@@ -166,7 +163,6 @@
 				843665CA1D2BD7DB00EAEFDE /* Forest.m in Sources */,
 				843665B11D2BBA5900EAEFDE /* main.m in Sources */,
 				8430B9CF1D2CFCF800FD4309 /* RulesOfLife.m in Sources */,
-				843665C71D2BCCF400EAEFDE /* LivingBeing.m in Sources */,
 				843665C11D2BCBAB00EAEFDE /* Predator.m in Sources */,
 				8422CD8D1D2E467800F6670F /* Animal.m in Sources */,
 				843665BE1D2BCA9500EAEFDE /* Herbivorous.m in Sources */,

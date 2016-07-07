@@ -6,9 +6,9 @@
 //  Copyright © 2016 Admin. All rights reserved.
 //
 
-#import "LivingBeing.h"
+#import "Calories.h"
 
-@interface Animal : LivingBeing
+@interface Animal : NSObject
 
 - (void)eat:(id <Calories>)object calories:(float)cal;
 

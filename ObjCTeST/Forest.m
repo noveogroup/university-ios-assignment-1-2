@@ -9,7 +9,6 @@
 #import "Forest.h"
 #import "RulesOfLife.h"
 #import "Animal.h"
-#import "LivingBeing.h"
 #import "Predator.h"
 #import "Herbivorous.h"
 

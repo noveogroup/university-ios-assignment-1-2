@@ -10,6 +10,7 @@
 
 @interface Herbivorous ()
 
+@property (nonatomic) NSString *name;
 @property (nonatomic) float calories;
 @property (nonatomic) NSMutableArray *stomach;
 
@@ -17,10 +18,11 @@
 
 @implementation Herbivorous
 
-- (instancetype)initWithName:(NSString *)theName {
+- (instancetype)initWithName:(NSString *)aName {
     
-    if (self = [super initWithName:theName]) {
+    if (self = [super init]) {
         
+        _name = aName;
         _calories = 50;
         _stomach = [[NSMutableArray alloc] init];
     }

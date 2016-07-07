@@ -15,7 +15,9 @@ int main(int argc, const char * argv[]) {
         
         [forest.objects addObject:[[Predator alloc] initWithName:@"Lion" andWeight:120]];
         
-        [forest.objects addObject:[[Predator alloc] initWithName:@"Tiger" andWeight:100]];
+        [forest.objects addObject:[[Predator alloc] initWithName:@"Tiger01" andWeight:100]];
+        
+        [forest.objects addObject:[[Predator alloc] initWithName:@"Tiger02" andWeight:100]];
         
         [forest.objects addObject:[[Herbivorous alloc] initWithName:@"Zebra"]];
         
@@ -36,11 +38,6 @@ int main(int argc, const char * argv[]) {
         [forest.objects addObject:[[Garbage alloc] init]];
         
         [forest simulateDay];
-        
-        Predator *p = [[Predator alloc] initWithName:@"1" andWeight:2];
-        Herbivorous *h = [[Herbivorous alloc] initWithName:@"2"];
-        [p eat:h calories:[h calories]/2];
-        NSLog(@"%f", p.calories);
         
         NSLog(@"\n------------\n");
         NSLog(@"In the forest there are only %@", forest.objects);

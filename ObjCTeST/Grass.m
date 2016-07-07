@@ -8,7 +8,23 @@
 
 #import "Grass.h"
 
+@interface Grass ()
+
+@property (nonatomic) NSString *name;
+
+@end
+
 @implementation Grass
+
+- (instancetype)initWithName:(NSString *)aName {
+    
+    if (self = [super init]) {
+        
+        _name = aName;
+    }
+    
+    return self;
+}
 
 - (float)calories {
     

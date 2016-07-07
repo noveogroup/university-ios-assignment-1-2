@@ -8,11 +8,9 @@
 
 #import "Calories.h"
 
-@interface LivingBeing : NSObject
+@protocol Named <NSObject>
 
-@property (nonatomic, readonly, copy) NSString *name;
-
-- (instancetype)initWithName:(NSString *)name;
+@property (nonatomic, readonly) NSString *name;
 
 @end
 
