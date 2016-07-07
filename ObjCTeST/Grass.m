@@ -8,12 +8,12 @@
 
 #import "Grass.h"
 
-@interface Grass ()
-
+//@interface Grass ()
+//
 //@property (nonatomic, copy) NSString *name;
 //@property (nonatomic) float calories;
-
-@end
+//
+//@end
 
 @implementation Grass
 

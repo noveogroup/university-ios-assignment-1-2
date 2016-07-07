@@ -8,10 +8,7 @@
 
 #import "Animal.h"
 
-@interface Herbivorous : LivingBeing <Animal> {
-    
-    NSMutableArray *_stomach;
-}
+@interface Herbivorous : Animal
 
 - (BOOL) isHiding;
 

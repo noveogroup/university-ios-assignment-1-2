@@ -6,25 +6,39 @@
 //  Copyright © 2016 Admin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Predator.h"
-#import "Herbivorous.h"
-#import "Grass.h"
-#import "Forest.h"
-#import "RulesOfLife.h"
+#import "ForestKit.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         Forest *forest = [Forest sharedForest];
         
-        [forest.livingBeings addObject:[[Predator alloc] initWithName:@"Tiger" andWeight:100]];
+        [forest.objects addObject:[[Predator alloc] initWithName:@"Lion" andWeight:120]];
         
-        [forest.livingBeings addObject:[[Herbivorous alloc] initWithName:@"Zebra"]];
+        [forest.objects addObject:[[Predator alloc] initWithName:@"Tiger" andWeight:100]];
         
-        [forest.livingBeings addObject:[[Grass alloc] initWithName:@"Daisy"]];
+        [forest.objects addObject:[[Herbivorous alloc] initWithName:@"Zebra"]];
+        
+        [forest.objects addObject:[[Herbivorous alloc] initWithName:@"Antelope"]];
+        
+        [forest.objects addObject:[[Herbivorous alloc] initWithName:@"Pig"]];
+        
+        [forest.objects addObject:[[Grass alloc] initWithName:@"Daisy01"]];
+        
+        [forest.objects addObject:[[Grass alloc] initWithName:@"Daisy02"]];
+        
+        [forest.objects addObject:[[Grass alloc] initWithName:@"Daisy03"]];
+        
+        [forest.objects addObject:[[Grass alloc] initWithName:@"Daisy04"]];
+        
+        [forest.objects addObject:[[Garbage alloc] init]];
+        [forest.objects addObject:[[Garbage alloc] init]];
+        [forest.objects addObject:[[Garbage alloc] init]];
         
         [forest simulateDay];
+        
+        NSLog(@"\n------------\n");
+        NSLog(@"In the forest there are only %@", forest.objects);
         
     }
     return 0;

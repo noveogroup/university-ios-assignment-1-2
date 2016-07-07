@@ -7,15 +7,14 @@
 //
 
 #import "Herbivorous.h"
-#import "Forest.h"
 
-@interface Herbivorous ()
-
-//@property (nonatomic, copy) NSString *name;
-//@property (nonatomic) float calories;
-@property (nonatomic) NSMutableArray *stomach;
-
-@end
+//@interface Herbivorous ()
+//
+////@property (nonatomic, copy) NSString *name;
+////@property (nonatomic) float calories;
+//@property (nonatomic) NSMutableArray *stomach;
+//
+//@end
 
 @implementation Herbivorous
 
@@ -40,16 +39,9 @@
     
 }
 
-- (void)eat:(LivingBeing *)livingBeing {
-    
-    _calories += [livingBeing calories];
-    [self.stomach addObject:livingBeing];
-    [[Forest sharedForest].livingBeings removeObject:livingBeing];
-}
-
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@", self.name, self.calories, self.stomach.description];
+    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@", self.name, self.calories, _stomach.description];
 }
 
 @end

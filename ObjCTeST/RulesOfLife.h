@@ -6,12 +6,11 @@
 //  Copyright (c) 2016 Vladislav Librecht. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "LivingBeing.h"
+#import "ForestObject.h"
 
 @interface RulesOfLife : NSObject
 
-+ (BOOL)can:(LivingBeing *)firstLivingBeing eat:(LivingBeing *)secondLivingBeing;
++ (BOOL)can:(ForestObject *)first eat:(ForestObject *)second withCalories:(float *)cal;
 + (BOOL)isEnd;
 
 @end

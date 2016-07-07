@@ -10,7 +10,7 @@
 
 @interface Forest : NSObject
 
-@property NSMutableArray *livingBeings;
+@property NSMutableArray *objects;
 
 + (instancetype)sharedForest;
 - (void)simulateDay;

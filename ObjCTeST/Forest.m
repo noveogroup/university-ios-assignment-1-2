@@ -29,7 +29,7 @@
     
     if (self = [super init]) {
         
-        self.livingBeings = [[NSMutableArray alloc] init];
+        self.objects = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -39,17 +39,18 @@
     
     while (![RulesOfLife isEnd]) {
         
-        u_int32_t i1 = arc4random() % [self.livingBeings count];
-        u_int32_t i2 = arc4random() % [self.livingBeings count];
+        u_int32_t i1 = arc4random() % [self.objects count];
+        u_int32_t i2 = arc4random() % [self.objects count];
+        float cal;
         
-        if ([RulesOfLife can:self.livingBeings[i1]
-                         eat:self.livingBeings[i2]]) {
+        if ([RulesOfLife can:self.objects[i1]
+                         eat:self.objects[i2] withCalories:&cal]) {
             
-            id <Animal> eater = self.livingBeings[i1];
+            Animal *eater = self.objects[i1];
             
-            NSLog(@"%@ ate %@", self.livingBeings[i1], self.livingBeings[i2]);
+            NSLog(@"%@ ate %@", self.objects[i1], self.objects[i2]);
             
-            [eater eat:self.livingBeings[i2]];
+            [eater eat:self.objects[i2] calories:cal];
         }
     }
 }

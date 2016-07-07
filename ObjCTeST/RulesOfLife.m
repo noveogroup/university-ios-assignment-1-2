@@ -7,40 +7,53 @@
 //
 
 #import "RulesOfLife.h"
+#import "Garbage.h"
 #import "Grass.h"
 #import "Herbivorous.h"
 #import "Predator.h"
+#import "Animal.h"
 #import "Forest.h"
 
 @implementation RulesOfLife
 
-+ (BOOL)can:(LivingBeing *)firstLivingBeing eat:(LivingBeing *)secondLivingBeing {
++ (BOOL)can:(ForestObject *)first eat:(ForestObject *)second withCalories:(float *)cal {
     
-    if ([firstLivingBeing isKindOfClass:[Predator class]] &&
-        [secondLivingBeing isKindOfClass:[Predator class]]) {
+    if ([first respondsToSelector:@selector(eat:calories:)]) {
         
-        Predator *p1 = (Predator *)firstLivingBeing;
-        Predator *p2 = (Predator *)secondLivingBeing;
-        
-        if (p1.weight > p2.weight && ![p2 isDefending] && p1 != p2) {
+        if ([first isKindOfClass:[Predator class]] &&
+            [second isKindOfClass:[Predator class]]) {
             
+            Predator *p1 = (Predator *)first;
+            Predator *p2 = (Predator *)second;
+            
+            if (p1.weight > p2.weight && ![p2 isDefending] && p1 != p2) {
+                
+                *cal = p2.calories / 2;
+                return YES;
+            }
+            
+        } else if ([first isKindOfClass:[Predator class]] &&
+                   [second isKindOfClass:[Herbivorous class]]) {
+            
+            Herbivorous *h = (Herbivorous *)second;
+            
+            if (![h isHiding]) {
+                
+                *cal = h.calories / 2;
+                return YES;
+            }
+            
+        } else if ([first isKindOfClass:[Herbivorous class]] &&
+                   [second isKindOfClass:[Grass class]]) {
+            
+            *cal = second.calories;
+            return YES;
+            
+        } else if (([first isKindOfClass:[Predator class]] || [first isKindOfClass:[Herbivorous class]]) && [second isKindOfClass:[Garbage class]]) {
+            
+            *cal = second.calories;
             return YES;
         }
-        
-    } else if ([firstLivingBeing isKindOfClass:[Predator class]] &&
-               [secondLivingBeing isKindOfClass:[Herbivorous class]]) {
-        
-        Herbivorous *h = (Herbivorous *)secondLivingBeing;
-        
-        if (![h isHiding]) {
-            
-            return YES;
-        }
-        
-    } else if ([firstLivingBeing isKindOfClass:[Herbivorous class]] &&
-               [secondLivingBeing isKindOfClass:[Grass class]]) {
-        
-        return YES;
     }
     
     return NO;
@@ -50,20 +63,25 @@
     
     int npredators = 0;
     int nherbivorouses = 0;
+    int ngarbage = 0;
     
-    for (LivingBeing *livingBeing in [Forest sharedForest].livingBeings) {
+    for (ForestObject *object in [Forest sharedForest].objects) {
         
-        if ([livingBeing isKindOfClass:[Predator class]]) {
+        if ([object isKindOfClass:[Predator class]]) {
             
             npredators++;
         }
-        else if ([livingBeing isKindOfClass:[Herbivorous class]]) {
+        else if ([object isKindOfClass:[Herbivorous class]]) {
             
             nherbivorouses++;
         }
+        else if ([object isKindOfClass:[Garbage class]]) {
+            
+            ngarbage++;
+        }
     }
     
-    if (npredators == 1 && nherbivorouses == 0) {
+    if (npredators == 1 && nherbivorouses == 0 && ngarbage == 0) {
         
         return YES;
     }

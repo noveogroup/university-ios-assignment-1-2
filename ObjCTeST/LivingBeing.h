@@ -6,17 +6,22 @@
 //  Copyright © 2016 Admin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "ForestObject.h"
 
-@interface LivingBeing : NSObject {
+@interface LivingBeing : ForestObject {
     
     NSString *_name;
-    float _calories;
 }
 
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) float calories;
 
 - (instancetype)initWithName:(NSString *)name;
 
 @end
+
+
+
+
+
+
+

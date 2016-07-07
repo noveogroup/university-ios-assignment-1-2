@@ -8,9 +8,8 @@
 
 #import "Animal.h"
 
-@interface Predator : LivingBeing <Animal> {
+@interface Predator : Animal {
     
-    NSMutableArray *_stomach;
     float _weight;
 }
 
