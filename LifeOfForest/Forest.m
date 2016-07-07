@@ -100,6 +100,7 @@
 
 - (void)daySimulation
 {
+    NSLog(@"Begin of day");
     while ([self numberOfHerbivore]>0 || [self numberOfPredator]>1)
     {
         int forestSize = (int)[self.forestBeings count];
@@ -112,6 +113,7 @@
             if ([self can:obj1 eat:obj2])
             {
                 [obj1 eat:obj2];
+                NSLog(@"%@ eat %@", [obj1 description], [obj2 description]);
                 [self.forestBeings removeObject:obj2];
             }
         }
