@@ -6,8 +6,8 @@
 //  Copyright © 2016 Admin. All rights reserved.
 //
 
-#import "ForestObject.h"
+#import "Calories.h"
 
-@interface Garbage : ForestObject
+@interface Garbage : NSObject <Calories>
 
 @end

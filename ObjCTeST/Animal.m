@@ -11,16 +11,17 @@
 
 @interface Animal ()
 
+@property (nonatomic) float calories;
 @property (nonatomic) NSMutableArray *stomach;
 
 @end
 
 @implementation Animal
 
-- (void)eat:(ForestObject *)object calories:(float)cal {
+- (void)eat:(id <Calories>)object calories:(float)cal {
     
-    _calories += cal;
-    [_stomach addObject:object];
+    self.calories += cal;
+    [self.stomach addObject:object];
     [[Forest sharedForest].objects removeObject:object];
 }
 

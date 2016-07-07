@@ -37,6 +37,11 @@ int main(int argc, const char * argv[]) {
         
         [forest simulateDay];
         
+        Predator *p = [[Predator alloc] initWithName:@"1" andWeight:2];
+        Herbivorous *h = [[Herbivorous alloc] initWithName:@"2"];
+        [p eat:h calories:[h calories]/2];
+        NSLog(@"%f", p.calories);
+        
         NSLog(@"\n------------\n");
         NSLog(@"In the forest there are only %@", forest.objects);
         

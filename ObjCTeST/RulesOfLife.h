@@ -6,11 +6,11 @@
 //  Copyright (c) 2016 Vladislav Librecht. All rights reserved.
 //
 
-#import "ForestObject.h"
+#import "Calories.h"
 
 @interface RulesOfLife : NSObject
 
-+ (BOOL)can:(ForestObject *)first eat:(ForestObject *)second withCalories:(float *)cal;
++ (BOOL)can:(id <Calories>)first eat:(id <Calories>)second withCalories:(float *)cal;
 + (BOOL)isEnd;
 
 @end

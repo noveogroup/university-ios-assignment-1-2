@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ForestObject : NSObject {
-
-    float _calories;
-}
+@protocol Calories <NSObject>
 
 @property (nonatomic, readonly) float calories;
 
 @end
+

@@ -8,7 +8,7 @@
 
 #import "Animal.h"
 
-@interface Herbivorous : Animal
+@interface Herbivorous : Animal <Calories>
 
 - (BOOL) isHiding;
 

@@ -8,6 +8,6 @@
 
 #import "LivingBeing.h"
 
-@interface Grass : LivingBeing
+@interface Grass : LivingBeing <Calories>
 
 @end

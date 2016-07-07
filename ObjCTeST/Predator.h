@@ -8,10 +8,7 @@
 
 #import "Animal.h"
 
-@interface Predator : Animal {
-    
-    float _weight;
-}
+@interface Predator : Animal <Calories>
 
 @property (nonatomic, readonly) float weight;
 

@@ -8,21 +8,15 @@
 
 #import "Predator.h"
 
-//@interface Predator ()
-//
-////@property (nonatomic, copy) NSString *name;
-////@property (nonatomic) float calories;
-//@property (nonatomic) NSMutableArray *stomach;
-////@property (nonatomic) float weight;
-//
-//@end
+@interface Predator ()
+
+@property (nonatomic) float calories;
+@property (nonatomic) NSMutableArray *stomach;
+@property (nonatomic) float weight;
+
+@end
 
 @implementation Predator
-
-//@synthesize name;
-//@synthesize calories;
-//@synthesize weight;
-//@synthesize stomach;
 
 - (instancetype)initWithName:(NSString *)theName andWeight:(float)theWeight {
     
@@ -43,7 +37,7 @@
 
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Predator %@ with weight: %f, calories: %f and stomach: %@", self.name, self.weight, self.calories, _stomach.description];
+    return [NSString stringWithFormat:@"Predator %@ with weight: %f, calories: %f and stomach: %@", self.name, self.weight, self.calories, self.stomach.description];
 }
 
 @end

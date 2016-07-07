@@ -6,12 +6,9 @@
 //  Copyright © 2016 Admin. All rights reserved.
 //
 
-#import "ForestObject.h"
+#import "Calories.h"
 
-@interface LivingBeing : ForestObject {
-    
-    NSString *_name;
-}
+@interface LivingBeing : NSObject
 
 @property (nonatomic, readonly, copy) NSString *name;
 

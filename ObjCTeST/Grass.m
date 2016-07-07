@@ -8,26 +8,11 @@
 
 #import "Grass.h"
 
-//@interface Grass ()
-//
-//@property (nonatomic, copy) NSString *name;
-//@property (nonatomic) float calories;
-//
-//@end
-
 @implementation Grass
 
-//@synthesize name;
-//@synthesize calories;
-
-- (instancetype)initWithName:(NSString *)theName {
+- (float)calories {
     
-    if (self = [super initWithName:theName]) {
-        
-        _calories = 10;
-    }
-    
-    return self;
+    return 10;
 }
 
 - (NSString *)description {

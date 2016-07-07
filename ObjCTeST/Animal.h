@@ -7,13 +7,9 @@
 //
 
 #import "LivingBeing.h"
-#import "ForestObject.h"
 
-@interface Animal : LivingBeing {
-    
-    NSMutableArray *_stomach;
-}
+@interface Animal : LivingBeing
 
-- (void)eat:(ForestObject *)object calories:(float)cal;
+- (void)eat:(id <Calories>)object calories:(float)cal;
 
 @end

@@ -8,19 +8,14 @@
 
 #import "Herbivorous.h"
 
-//@interface Herbivorous ()
-//
-////@property (nonatomic, copy) NSString *name;
-////@property (nonatomic) float calories;
-//@property (nonatomic) NSMutableArray *stomach;
-//
-//@end
+@interface Herbivorous ()
+
+@property (nonatomic) float calories;
+@property (nonatomic) NSMutableArray *stomach;
+
+@end
 
 @implementation Herbivorous
-
-//@synthesize name;
-//@synthesize calories;
-//@synthesize stomach;
 
 - (instancetype)initWithName:(NSString *)theName {
     
@@ -41,7 +36,7 @@
 
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@", self.name, self.calories, _stomach.description];
+    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@", self.name, self.calories, self.stomach.description];
 }
 
 @end

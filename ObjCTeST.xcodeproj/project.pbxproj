@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8422CD861D2E3DC700F6670F /* ForestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422CD851D2E3DC700F6670F /* ForestObject.m */; };
 		8422CD891D2E3E1700F6670F /* Garbage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422CD881D2E3E1700F6670F /* Garbage.m */; };
 		8422CD8D1D2E467800F6670F /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422CD8C1D2E467800F6670F /* Animal.m */; };
 		8430B9CF1D2CFCF800FD4309 /* RulesOfLife.m in Sources */ = {isa = PBXBuildFile; fileRef = 8430B9CE1D2CFCF800FD4309 /* RulesOfLife.m */; };
@@ -32,8 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8422CD841D2E3DC700F6670F /* ForestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForestObject.h; sourceTree = "<group>"; };
-		8422CD851D2E3DC700F6670F /* ForestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForestObject.m; sourceTree = "<group>"; };
+		8422CD841D2E3DC700F6670F /* Calories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calories.h; sourceTree = "<group>"; };
 		8422CD871D2E3E1700F6670F /* Garbage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Garbage.h; sourceTree = "<group>"; };
 		8422CD881D2E3E1700F6670F /* Garbage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Garbage.m; sourceTree = "<group>"; };
 		8422CD8A1D2E3F5F00F6670F /* ForestKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForestKit.h; sourceTree = "<group>"; };
@@ -87,8 +85,7 @@
 			children = (
 				843665B01D2BBA5900EAEFDE /* main.m */,
 				8422CD8A1D2E3F5F00F6670F /* ForestKit.h */,
-				8422CD841D2E3DC700F6670F /* ForestObject.h */,
-				8422CD851D2E3DC700F6670F /* ForestObject.m */,
+				8422CD841D2E3DC700F6670F /* Calories.h */,
 				8422CD871D2E3E1700F6670F /* Garbage.h */,
 				8422CD881D2E3E1700F6670F /* Garbage.m */,
 				843665C51D2BCCF400EAEFDE /* LivingBeing.h */,
@@ -168,7 +165,6 @@
 				843665C41D2BCCB500EAEFDE /* Grass.m in Sources */,
 				843665CA1D2BD7DB00EAEFDE /* Forest.m in Sources */,
 				843665B11D2BBA5900EAEFDE /* main.m in Sources */,
-				8422CD861D2E3DC700F6670F /* ForestObject.m in Sources */,
 				8430B9CF1D2CFCF800FD4309 /* RulesOfLife.m in Sources */,
 				843665C71D2BCCF400EAEFDE /* LivingBeing.m in Sources */,
 				843665C11D2BCBAB00EAEFDE /* Predator.m in Sources */,

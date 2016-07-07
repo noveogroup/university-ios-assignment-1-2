@@ -16,7 +16,7 @@
 
 @implementation RulesOfLife
 
-+ (BOOL)can:(ForestObject *)first eat:(ForestObject *)second withCalories:(float *)cal {
++ (BOOL)can:(id <Calories>)first eat:(id <Calories>)second withCalories:(float *)cal {
     
     if ([first respondsToSelector:@selector(eat:calories:)]) {
         
@@ -65,7 +65,7 @@
     int nherbivorouses = 0;
     int ngarbage = 0;
     
-    for (ForestObject *object in [Forest sharedForest].objects) {
+    for (id <Calories> object in [Forest sharedForest].objects) {
         
         if ([object isKindOfClass:[Predator class]]) {
             
