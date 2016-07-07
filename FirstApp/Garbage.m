@@ -10,12 +10,12 @@
 
 @implementation Garbage
 
--(instancetype)init{
-    
-    self = [super initWithCalories:-1];
-    if(self){
-    }
-    return self;
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Garbage with calories: %.1f", self.calories];
+}
+
+-(double)calories{
+    return -1;
 }
 
 @end

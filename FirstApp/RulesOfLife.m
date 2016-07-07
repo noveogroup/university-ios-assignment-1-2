@@ -17,29 +17,33 @@
 
 @implementation RulesOfLife
 
-+ (BOOL)canEatFirst:(Life *)first
-          andSecond:(Life *)second{
-    if ([first isKindOfClass:[Grass class]]) {
-        return NO;
-    } else if ([first isKindOfClass:[Herbivorous class]]){
-        if ([second isKindOfClass:[Grass class]] || [second isKindOfClass:[Garbage class]] ) {
-            return YES;
-        }
-    } else if ([first isKindOfClass:[Predator class]]){
-        if ([second isKindOfClass:[Herbivorous class]]) {
-            if ([second respondsToSelector:@selector(isHide)]) {
-                if ([second performSelector:@selector(isHide)]) {
-                    return YES;
-                }
-            }
-        } else if ([second isKindOfClass:[Predator class]]){
-            if(((Predator*)first).weight > ((Predator*)second).weight && !((Predator*)second).isProtect){
++ (BOOL)canEatFirst:(id<Calorific>)first
+          andSecond:(id<Calorific>)second
+     andGetCalories:(double *)calories{
+    if([first respondsToSelector:@selector(eat:WithCalories:)]){
+        if ([first isKindOfClass:[Herbivorous class]]){
+            if ([second isKindOfClass:[Grass class]] || [second isKindOfClass:[Garbage class]] ) {
+                *calories = second.calories;
                 return YES;
             }
-        } else if ([second isKindOfClass:[Garbage class]]){
-            return YES;
+        } else if ([first isKindOfClass:[Predator class]]){
+            if ([second isKindOfClass:[Herbivorous class]]) {
+                if ([second respondsToSelector:@selector(isHide)]) {
+                    if ([second performSelector:@selector(isHide)]) {
+                        *calories = second.calories/2;
+                        return YES;
+                    }
+                }
+            } else if ([second isKindOfClass:[Predator class]]){
+                if(((Predator*)first).weight > ((Predator*)second).weight && !((Predator*)second).isProtect){
+                    *calories = second.calories;
+                    return YES;
+                }
+            } else if ([second isKindOfClass:[Garbage class]]){
+                *calories = second.calories;
+                return YES;
+            }
         }
-
     }
     return NO;
 }

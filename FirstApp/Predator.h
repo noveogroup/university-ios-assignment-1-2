@@ -10,12 +10,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Life.h"
 #import "Animal.h"
+#import "Calorific.h"
+#import "Naming.h"
 
-@interface Predator : Life <Animal>
-@property int weight;
-@property NSMutableArray *stomach;
+@interface Predator : Animal <Calorific, Naming>
+@property (nonatomic, readonly) int weight;
 
 //Защищается от другого хищника
 - (BOOL)isProtect;

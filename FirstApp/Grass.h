@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Life.h"
+#import "Calorific.h"
+#import "Naming.h"
 
-@interface Grass : Life 
+@interface Grass : NSObject <Calorific, Naming>
 
 -(instancetype)initWithName:(NSString *)name;
 

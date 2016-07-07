@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ForestEntity.h"
+#import "Calorific.h"
 
-@interface Garbage : ForestEntity
+@interface Garbage : NSObject <Calorific>
 
 @end

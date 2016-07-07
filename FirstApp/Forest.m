@@ -10,7 +10,6 @@
 #import "Grass.h"
 #import "Predator.h"
 #import "Herbivorous.h"
-#import "Life.h"
 #import "RulesOfLife.h"
 #import "Garbage.h"
 #import "Animal.h"
@@ -45,30 +44,30 @@ static id _instance;
         for(int i=0;i<nGrass;i++){
             Grass *grass = [[Grass alloc]initWithName:[NSString stringWithFormat:@"Grass%d",i+1]];
             [self.forestResidents addObject:grass];
-#ifdef DEBUG
-            NSLog(@"%@",grass);
-#endif
+//#ifdef DEBUG
+//            NSLog(@"%@",grass);
+//#endif
         }
         for(int i=0;i<nPredator;i++){
             Predator *predator = [[Predator alloc]initWithWeight:ABS((BOOL)arc4random()%100) + 50 andName:[NSString stringWithFormat:@"Predator%d",i+1]];
             [self.forestResidents addObject:predator];
-#ifdef DEBUG
-            NSLog(@"%@",predator);
-#endif
+//#ifdef DEBUG
+//            NSLog(@"%@",predator);
+//#endif
         }
         for(int i=0;i<nHerbivorous;i++){
             Herbivorous *herbivorous = [[Herbivorous alloc]initWithName:[NSString stringWithFormat:@"Herbivorous%d",i+1]];
             [self.forestResidents addObject:herbivorous];
-#ifdef DEBUG
-            NSLog(@"%@",herbivorous);
-#endif
+//#ifdef DEBUG
+//            NSLog(@"%@",herbivorous);
+//#endif
         }
         for(int i=0; i < nGarbage; i++){
             Garbage *garbage = [[Garbage alloc]init];
             [self.forestResidents addObject:garbage];
-#ifdef DEBUG
-            NSLog(@"%@",garbage);
-#endif
+//#ifdef DEBUG
+//            NSLog(@"%@",garbage);
+//#endif
         }
         
     }
@@ -76,26 +75,28 @@ static id _instance;
 }
 
 - (void)simulateDay{
-    while ([self hasPredator] || [self hasHerbivorous]) {
+    while ([self hasMoreThanOnePredator] || [self hasHerbivorous]) {
         int ifirst = arc4random()%[self.forestResidents count];
         int iSecond = arc4random()%[self.forestResidents count];
         id firstResident = self.forestResidents[ifirst];
         id secondResident = self.forestResidents[iSecond];
         if(firstResident != secondResident){
-            if ([RulesOfLife canEatFirst:firstResident andSecond:secondResident]) {
-                if ([firstResident respondsToSelector:@selector(eat:)]) {
-                    [firstResident performSelector:@selector(eat:) withObject:secondResident];
-                }
+            double calories;
+            if ([RulesOfLife canEatFirst:firstResident andSecond:secondResident andGetCalories:&calories]) {
+                Animal *animal = firstResident;
+                [animal eat:secondResident WithCalories:calories];
+#ifdef DEBUG
+                NSLog(@"%@ ate %@", firstResident,secondResident);
+#endif
             }
         }
     }
     [self print];
 }
 
-
-- (BOOL)hasPredator{
+- (BOOL)hasMoreThanOnePredator{
     int count = 0;
-    for(Life *resident in self.forestResidents){
+    for(id resident in self.forestResidents){
         if ([resident isKindOfClass:[Predator class]]) {
             count++;
             if(count>1){
@@ -107,7 +108,7 @@ static id _instance;
 }
 
 - (BOOL)hasHerbivorous{
-    for(Life *resident in self.forestResidents){
+    for(id resident in self.forestResidents){
         if ([resident isKindOfClass:[Herbivorous class]]) {
             return YES;
         }
@@ -115,32 +116,22 @@ static id _instance;
     return NO;
 }
 
-
 - (void)deleteResident:(id)resident{
     if([self.forestResidents containsObject:resident]){
         [self.forestResidents removeObject:resident];
     }
 }
 
-
-
 - (void)print{
-    for (Life *resident in self.forestResidents) {
+    NSLog(@"\n\nPRINT!!!!!\n\n");
+    for (id resident in self.forestResidents) {
         if ([resident isKindOfClass:[Predator class]]) {
-            [self outStomach:resident];
-        }
-        if (![resident isKindOfClass:[Garbage class]]){
-            NSLog(@"Survivors %@", resident.name);
+            [((Predator *)resident) printStomach];
+        } else if ([resident isKindOfClass:[Garbage class]]){
+            NSLog(@"Garbage");
+        } else{
+            NSLog(@"%@", resident);
         }
     }
 }
-
--(void)outStomach:(Life *)resident{
-    if ([resident isKindOfClass:[Predator class]] || [resident isKindOfClass:[Herbivorous class]]){
-        
-    }
-}
-
-
-
 @end

@@ -12,7 +12,6 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         [[Forest sharedInstance] simulateDay];
-    
     }
     return 0;
 }

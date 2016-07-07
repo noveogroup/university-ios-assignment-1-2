@@ -2,16 +2,18 @@
 //  Animal.h
 //  FirstApp
 //
-//  Created by admin on 05/07/16.
+//  Created by Admin on 07.07.16.
 //  Copyright © 2016 tanya. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Life.h"
+#import "Calorific.h"
+#import "Forest.h"
 
-@protocol Animal <NSObject>
+@interface Animal : NSObject
 
-//добывает еду
--(void)eat:(Life *)food;
+-(void)eat:(id<Calorific>)food WithCalories:(double)calories;
+
+-(void)printStomach;
 
 @end

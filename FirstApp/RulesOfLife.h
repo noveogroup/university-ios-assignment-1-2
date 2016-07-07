@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Life.h"
+#import "Calorific.h"
 
 @interface RulesOfLife : NSObject
 
-+ (BOOL)canEatFirst:(Life *)first
-          andSecond:(Life *)second;
++ (BOOL)canEatFirst:(id<Calorific>)first
+          andSecond:(id<Calorific>)second
+     andGetCalories:(double *)calories;
 
 @end

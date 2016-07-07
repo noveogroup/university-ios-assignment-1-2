@@ -10,16 +10,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Life.h"
 #import "Animal.h"
+#import "Calorific.h"
+#import "Naming.h"
 
-@interface Herbivorous : Life <Animal>
-@property NSMutableArray *stomach;
+@interface Herbivorous : Animal <Calorific, Naming>
 
 -(instancetype)initWithName:(NSString *)name;
 
 //прячется от хищника
 - (BOOL)isHide;
-
 
 @end

@@ -16,4 +16,5 @@
 + (Forest *) sharedInstance;
 - (void)simulateDay;
 - (void)deleteResident:(id)resident;
+
 @end

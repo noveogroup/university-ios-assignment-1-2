@@ -6,8 +6,11 @@
 //  Copyright © 2016 tanya. All rights reserved.
 //
 
-#ifndef Calorific_h
-#define Calorific_h
 
+#import <Foundation/Foundation.h>
 
-#endif /* Calorific_h */
+@protocol Calorific <NSObject>
+
+@property (nonatomic, readonly) double calories;
+
+@end
