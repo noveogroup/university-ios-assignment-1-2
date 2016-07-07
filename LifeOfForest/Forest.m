@@ -117,6 +117,15 @@
         }
         
     }
+    NSLog(@"End of day");
+    
+    for (id obj in self.forestBeings)
+    {
+        if ([obj isKindOfClass:[Predator class]]){
+            [obj showStomach];
+            break;
+        }
+    }
 }
 
 @end

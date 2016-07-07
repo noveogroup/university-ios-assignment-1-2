@@ -45,6 +45,22 @@
     return [NSString stringWithFormat:@"%@ with %i calories", self.name, self.calories ];
 }
 
-
+- (void)showStomach
+{
+    NSLog(@"In stomach of %@", [self description]);
+    NSLog(@"Begin");
+    if ([self.stomach count] != 0)
+    {
+        for (id obj in self.stomach)
+        {
+            NSLog(@"%@", [obj description]);
+            if ([obj respondsToSelector:@selector(showStomach)]){
+                [obj showStomach];
+            }
+        }
+    }
+    else NSLog(@"Empty");
+    NSLog(@"End");
+}
 
 @end

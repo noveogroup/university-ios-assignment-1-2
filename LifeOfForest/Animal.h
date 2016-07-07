@@ -15,5 +15,6 @@
 
 - (void)eat:(id<Eatable>)obj;
 - (instancetype)initWithName:(NSString*)name andCalories:(int)calories;
+- (void) showStomach;
 
 @end
