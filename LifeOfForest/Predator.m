@@ -13,7 +13,7 @@
 - (instancetype)init
 {
     NSString *str = [NSString stringWithFormat:@"Predator%i", arc4random()%1000];
-    self = [super initWithName:str andCalories:100];
+    self = [super initWithName:str calories:100];
     if (self){
         _weight = arc4random_uniform(100) + 1;
     }

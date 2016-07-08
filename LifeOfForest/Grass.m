@@ -11,6 +11,11 @@
 
 @implementation Grass
 
+- (NSInteger)calories
+{
+    return 10;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -20,12 +25,16 @@
     return self;
 }
 
-- (int)giveCalories
+- (instancetype)initWithName:(NSString *)name
 {
-    return 10;
+    self = [super init];
+    if (self){
+        _name = name;
+    }
+    return self;
 }
 
-- (NSString*)description
+- (NSString *)description
 {
     return [NSString stringWithFormat: @"%@", self.name];
 }

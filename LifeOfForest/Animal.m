@@ -10,7 +10,7 @@
 
 @interface Animal ()
 
-@property int calories;
+@property (nonatomic) NSInteger numberOfCalories;
 @property NSMutableArray *stomach;
 
 @end
@@ -18,12 +18,24 @@
 
 @implementation Animal
 
-- (instancetype)initWithName:(NSString*)name andCalories:(int)calories
+- (instancetype)init
+{
+    self = [self initWithName:@"" calories:0];
+    return self;
+}
+
+- (instancetype)initWithName:(NSString *)name
+{
+    self = [self initWithName:name calories:0];
+    return self;
+}
+
+- (instancetype)initWithName:(NSString*)name calories:(NSInteger)calories
 {
     self = [super init];
     if (self){
         _name = name;
-        _calories = calories;
+        _numberOfCalories = calories;
         _stomach = [[NSMutableArray alloc] init];
     }
     return self;
@@ -31,18 +43,18 @@
 
 - (void)eat:(id<Eatable>)obj
 {
-    self.calories += [obj giveCalories];
+    self.numberOfCalories += [obj calories];
     [self.stomach addObject:obj];
 }
 
-- (int)giveCalories
+- (NSInteger)calories
 {
-    return self.calories/2;
+    return self.numberOfCalories/2;
 }
 
 - (NSString*)description
 {
-    return [NSString stringWithFormat:@"%@ with %i calories", self.name, self.calories ];
+    return [NSString stringWithFormat:@"%@ with %i calories", self.name, (int)self.numberOfCalories ];
 }
 
 - (void)showStomach

@@ -12,7 +12,7 @@
 
 + (Forest*)sharedInstance;
 
-- (BOOL)can:(id)obj1 eat:(id)obj2;
+- (BOOL)canFirstCreature:(id)obj1 eatSecondCreature:(id)obj2;
 - (int)numberOfHerbivore;
 - (int)numberOfPredator;
 - (void)daySimulation;

@@ -10,7 +10,7 @@
 
 @implementation Rubbish
 
-- (int)giveCalories
+- (NSInteger)calories
 {
     return -1;
 }

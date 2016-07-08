@@ -39,7 +39,7 @@
 }
 
 
-+ (Forest*)sharedInstance
++ (Forest *)sharedInstance
 {
     static Forest* _sharedInstance = nil;
     @synchronized(self) {
@@ -52,7 +52,7 @@
 }
 
 
-- (BOOL)can:(id)obj1 eat:(id)obj2
+- (BOOL)canFirstCreature:(id)obj1 eatSecondCreature:(id)obj2
 {
     if ([obj1 isKindOfClass:[Herbivore class]] && ![obj2 respondsToSelector:@selector(eat:)]){
         return YES;
@@ -101,7 +101,7 @@
 - (void)daySimulation
 {
     NSLog(@"Begin of day");
-    while ([self numberOfHerbivore]>0 || [self numberOfPredator]>1)
+    while ([self numberOfHerbivore] > 0 || [self numberOfPredator] > 1)
     {
         int forestSize = (int)[self.forestBeings count];
         int index1 = arc4random_uniform(forestSize);
@@ -110,7 +110,7 @@
         {
             id obj1 = self.forestBeings[index1];
             id obj2 = self.forestBeings[index2];
-            if ([self can:obj1 eat:obj2])
+            if ([self canFirstCreature:obj1 eatSecondCreature:obj2])
             {
                 [obj1 eat:obj2];
                 NSLog(@"%@ eat %@", [obj1 description], [obj2 description]);
@@ -121,9 +121,8 @@
     }
     NSLog(@"End of day");
     
-    for (id obj in self.forestBeings)
-    {
-        if ([obj isKindOfClass:[Predator class]]){
+    for (id obj in self.forestBeings) {
+        if ([obj isKindOfClass:[Predator class]]) {
             [obj showStomach];
             break;
         }

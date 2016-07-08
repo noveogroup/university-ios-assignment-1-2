@@ -8,6 +8,6 @@
 
 @protocol Eatable <NSObject>
 
-- (int)giveCalories;
+- (NSInteger)calories;
 
 @end

@@ -11,10 +11,11 @@
 
 @interface Animal : NSObject <Eatable>
 
-@property (readonly) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 
 - (void)eat:(id<Eatable>)obj;
-- (instancetype)initWithName:(NSString*)name andCalories:(int)calories;
-- (void) showStomach;
+- (instancetype)initWithName:(NSString *)name calories:(NSInteger)calories NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name;
+- (void)showStomach;
 
 @end

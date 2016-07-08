@@ -13,7 +13,7 @@
 - (instancetype)init
 {
     NSString *str = [NSString stringWithFormat:@"Herbivore%i", arc4random()%1000];
-    self = [super initWithName:str andCalories:50];
+    self = [super initWithName:str calories:50];
     return self;
 }
 
