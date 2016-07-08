@@ -14,15 +14,20 @@
 #import "Garbage.h"
 #import "Animal.h"
 
-static const int nGrass = 4;
+static const int nGrass = 1;
 static const int nPredator = 2;
-static const int nHerbivorous = 4;
-static const int nGarbage = 4;
+static const int nHerbivorous = 1;
+static const int nGarbage = 1;
+
+@interface Forest ()
+
+//жители леса
+@property (nonatomic) NSMutableArray *forestResidents;
+
+@end
 
 
 @implementation Forest
-
-static id _instance;
 
 + (Forest *) sharedInstance
 {
@@ -46,27 +51,33 @@ static id _instance;
 }
 
 - (void)generate{
+    NSLog(@"Generate start");
     for(int i=0;i<nGrass;i++){
         Grass *grass = [[Grass alloc]initWithName:[NSString stringWithFormat:@"Grass%d",i+1]];
         [self.forestResidents addObject:grass];
+        NSLog(@"%@",grass);
     }
     for(int i=0;i<nPredator;i++){
         Predator *predator = [[Predator alloc]initWithWeight:ABS((BOOL)arc4random()%100) + 50 andName:[NSString stringWithFormat:@"Predator%d",i+1]];
         [self.forestResidents addObject:predator];
+        NSLog(@"%@",predator);
     }
     for(int i=0;i<nHerbivorous;i++){
         Herbivorous *herbivorous = [[Herbivorous alloc]initWithName:[NSString stringWithFormat:@"Herbivorous%d",i+1]];
         [self.forestResidents addObject:herbivorous];
+        NSLog(@"%@",herbivorous);
     }
     for(int i=0; i < nGarbage; i++){
         Garbage *garbage = [[Garbage alloc]init];
         [self.forestResidents addObject:garbage];
+        NSLog(@"%@",garbage);
     }
+    NSLog(@"Generate end\n\n");
 }
 
 - (void)simulateDay{
     [self generate];
-    while ([self hasMoreThanOnePredator] || [self hasHerbivorous]) {
+    while ([self countPredators] > 1|| [self countHerbivorous]) {
         int ifirst = arc4random()%[self.forestResidents count];
         int iSecond = arc4random()%[self.forestResidents count];
         id firstResident = self.forestResidents[ifirst];
@@ -86,32 +97,16 @@ static id _instance;
     [self print];
 }
 
-- (BOOL)hasMoreThanOnePredator{
-    int count = 0;
-    for(id resident in self.forestResidents){
-        if ([resident isKindOfClass:[Predator class]]) {
-            count++;
-            if(count>1){
-                return YES;
-            }
-        }
-    }
-    return NO;
+- (NSInteger)countPredators{
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self isKindOfClass: %@", [Predator class]];
+    NSArray* predicateResults = [self.forestResidents filteredArrayUsingPredicate:predicate];
+    return [predicateResults count];
 }
 
-- (BOOL)hasHerbivorous{
-    for(id resident in self.forestResidents){
-        if ([resident isKindOfClass:[Herbivorous class]]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-- (void)deleteResident:(id)resident{
-    if([self.forestResidents containsObject:resident]){
-        [self.forestResidents removeObject:resident];
-    }
+- (NSInteger)countHerbivorous{
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self isKindOfClass: %@", [Herbivorous class]];
+    NSArray* predicateResults = [self.forestResidents filteredArrayUsingPredicate:predicate];
+    return [predicateResults count];
 }
 
 - (void)print{

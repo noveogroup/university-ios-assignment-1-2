@@ -11,6 +11,6 @@
 
 @protocol Calorific <NSObject>
 
-@property (nonatomic, readonly) double calories;
+@property (nonatomic, readonly) double calorific;
 
 @end

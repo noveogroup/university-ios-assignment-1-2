@@ -10,17 +10,13 @@
 
 static const double kDefaultGrassCalories = 10;
 
-@interface Grass ()
-@property (nonatomic) NSString *name;
-@end
-
 @implementation Grass
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"%@ with calories: %.1f", self.name, self.calories];
+    return [NSString stringWithFormat:@"%@ with calories: %.1f", self.name, self.calorific];
 }
 
--(double)calories{
+-(double)calorific{
     return kDefaultGrassCalories;
 }
 

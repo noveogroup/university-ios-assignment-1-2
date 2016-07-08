@@ -10,7 +10,9 @@
 #import "Calorific.h"
 #import "Naming.h"
 
-@interface Grass : NSObject <Calorific, Naming>
+@interface Grass : NSObject <Calorific>
+
+@property (nonatomic, copy) NSString *name;
 
 -(instancetype)initWithName:(NSString *)name;
 

@@ -14,7 +14,6 @@
 static const double kDefaultPredatorCalories = 100;
 
 @interface Predator ()
-@property (nonatomic) NSString *name;
 @property (nonatomic) int weight;
 @end
 
@@ -27,14 +26,13 @@ static const double kDefaultPredatorCalories = 100;
 - (instancetype)initWithWeight:(int)weight andName:(NSString *)name{
     self = [super initWithName:name andCalories:kDefaultPredatorCalories];
     if(self){
-        _name = name;
         _weight = weight;
     }
     return self;
 }
 
 - (BOOL)isProtect{
-    return (BOOL)arc4random()%2;
+    return arc4random()%2 == 0;
 }
 
 @end

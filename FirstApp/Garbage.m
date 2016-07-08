@@ -13,10 +13,10 @@ static const double kDefaultGarbageCalories = -1;
 @implementation Garbage
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"Garbage with calories: %.1f", self.calories];
+    return [NSString stringWithFormat:@"Garbage with calories: %.1f", self.calorific];
 }
 
--(double)calories{
+-(double)calorific{
     return kDefaultGarbageCalories;
 }
 

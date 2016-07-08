@@ -16,7 +16,6 @@
 static const double kDefaultHerbivorousCalories = 50;
 
 @interface Herbivorous ()
-@property (nonatomic) NSString *name;
 @end
 
 @implementation Herbivorous
@@ -28,13 +27,12 @@ static const double kDefaultHerbivorousCalories = 50;
 -(instancetype)initWithName:(NSString *)name{
     self = [super initWithName:name andCalories:kDefaultHerbivorousCalories];
     if(self){
-        _name = name;
     }
     return self;
 }
 
 -(BOOL)isHide{
-    return (BOOL)arc4random()%2;
+    return arc4random()%2 == 0;
 }
 
 @end

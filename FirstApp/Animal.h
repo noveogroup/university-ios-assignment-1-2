@@ -12,6 +12,8 @@
 #import "Naming.h"
 
 @interface Animal : NSObject <Calorific>
+@property (nonatomic) NSString *name;
+@property (nonatomic) double calories;
 
 -(instancetype)initWithName:(NSString *)name
                 andCalories:(double)calories;

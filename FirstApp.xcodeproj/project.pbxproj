@@ -47,7 +47,6 @@
 		84E7D2461D2EA08600530808 /* Calorific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calorific.h; sourceTree = "<group>"; };
 		84E7D2471D2EA17A00530808 /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		84E7D2481D2EA17A00530808 /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
-		84E7D24A1D2EA4E700530808 /* Naming.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Naming.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +95,6 @@
 				8451C30B1D2D633900F2F638 /* Garbage.m */,
 				84E7D2471D2EA17A00530808 /* Animal.h */,
 				84E7D2481D2EA17A00530808 /* Animal.m */,
-				84E7D24A1D2EA4E700530808 /* Naming.h */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";

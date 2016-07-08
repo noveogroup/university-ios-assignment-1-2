@@ -9,8 +9,6 @@
 #import "Animal.h"
 
 @interface Animal ()
-@property (nonatomic) NSString *name;
-@property (nonatomic) double calories;
 @property (nonatomic) NSMutableArray *stomach;
 @end
 
@@ -46,7 +44,7 @@
     }
 }
 
--(double)calories{
+-(double)calorific{
     return _calories / 2;
 }
 
