@@ -11,10 +11,10 @@
 #import "Forest.h"
 #import "Garbage.h"
 
+static const double kDefaultPredatorCalories = 100;
+
 @interface Predator ()
 @property (nonatomic) NSString *name;
-@property (nonatomic) double calories;
-@property (nonatomic) NSMutableArray *stomach;
 @property (nonatomic) int weight;
 @end
 
@@ -25,12 +25,10 @@
 }
 
 - (instancetype)initWithWeight:(int)weight andName:(NSString *)name{
-    self = [super init];
+    self = [super initWithName:name andCalories:kDefaultPredatorCalories];
     if(self){
-        _weight = weight;
-        _stomach = [[NSMutableArray alloc]init];
         _name = name;
-        _calories = 100;
+        _weight = weight;
     }
     return self;
 }

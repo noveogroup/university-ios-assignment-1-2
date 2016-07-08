@@ -9,16 +9,27 @@
 #import "Animal.h"
 
 @interface Animal ()
+@property (nonatomic) NSString *name;
 @property (nonatomic) double calories;
 @property (nonatomic) NSMutableArray *stomach;
 @end
 
 @implementation Animal
 
--(void)eat:(id<Calorific>)food WithCalories:(double)calories{
+-(instancetype)initWithName:(NSString *)name
+                andCalories:(double)calories{
+    self = [super init];
+    if(self){
+        _name = name;
+        _stomach = [[NSMutableArray alloc]init];
+        _calories = calories;
+    }
+    return self;
+}
+
+-(void)eat:(id<Calorific>)food withCalories:(double)calories{
     self.calories += calories;
     [self.stomach addObject:food];
-    [[Forest sharedInstance].forestResidents removeObject:food];
 }
 
 -(void)printStomach{
@@ -26,13 +37,17 @@
     if([self.stomach count]){
         for (id resident in self.stomach) {
             NSLog(@"%@", resident);
-            if([resident isKindOfClass:[Animal class]]){
+            if([resident respondsToSelector:@selector(printStomach)]){
                 [resident printStomach];
             }
         }
     } else{
         NSLog(@"is empty");
     }
+}
+
+-(double)calories{
+    return _calories / 2;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "Grass.h"
 
+static const double kDefaultGrassCalories = 10;
+
 @interface Grass ()
 @property (nonatomic) NSString *name;
 @end
@@ -19,7 +21,7 @@
 }
 
 -(double)calories{
-    return 10;
+    return kDefaultGrassCalories;
 }
 
 -(instancetype)initWithName:(NSString *)name{

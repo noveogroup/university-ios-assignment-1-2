@@ -19,6 +19,7 @@ static const int nPredator = 2;
 static const int nHerbivorous = 4;
 static const int nGarbage = 4;
 
+
 @implementation Forest
 
 static id _instance;
@@ -39,42 +40,32 @@ static id _instance;
 -(instancetype)init{
     self = [super init];
     if(self){
-        self.forestResidents = [[NSMutableArray alloc] init];
-        
-        for(int i=0;i<nGrass;i++){
-            Grass *grass = [[Grass alloc]initWithName:[NSString stringWithFormat:@"Grass%d",i+1]];
-            [self.forestResidents addObject:grass];
-//#ifdef DEBUG
-//            NSLog(@"%@",grass);
-//#endif
-        }
-        for(int i=0;i<nPredator;i++){
-            Predator *predator = [[Predator alloc]initWithWeight:ABS((BOOL)arc4random()%100) + 50 andName:[NSString stringWithFormat:@"Predator%d",i+1]];
-            [self.forestResidents addObject:predator];
-//#ifdef DEBUG
-//            NSLog(@"%@",predator);
-//#endif
-        }
-        for(int i=0;i<nHerbivorous;i++){
-            Herbivorous *herbivorous = [[Herbivorous alloc]initWithName:[NSString stringWithFormat:@"Herbivorous%d",i+1]];
-            [self.forestResidents addObject:herbivorous];
-//#ifdef DEBUG
-//            NSLog(@"%@",herbivorous);
-//#endif
-        }
-        for(int i=0; i < nGarbage; i++){
-            Garbage *garbage = [[Garbage alloc]init];
-            [self.forestResidents addObject:garbage];
-//#ifdef DEBUG
-//            NSLog(@"%@",garbage);
-//#endif
-        }
-        
+        _forestResidents = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
+- (void)generate{
+    for(int i=0;i<nGrass;i++){
+        Grass *grass = [[Grass alloc]initWithName:[NSString stringWithFormat:@"Grass%d",i+1]];
+        [self.forestResidents addObject:grass];
+    }
+    for(int i=0;i<nPredator;i++){
+        Predator *predator = [[Predator alloc]initWithWeight:ABS((BOOL)arc4random()%100) + 50 andName:[NSString stringWithFormat:@"Predator%d",i+1]];
+        [self.forestResidents addObject:predator];
+    }
+    for(int i=0;i<nHerbivorous;i++){
+        Herbivorous *herbivorous = [[Herbivorous alloc]initWithName:[NSString stringWithFormat:@"Herbivorous%d",i+1]];
+        [self.forestResidents addObject:herbivorous];
+    }
+    for(int i=0; i < nGarbage; i++){
+        Garbage *garbage = [[Garbage alloc]init];
+        [self.forestResidents addObject:garbage];
+    }
+}
+
 - (void)simulateDay{
+    [self generate];
     while ([self hasMoreThanOnePredator] || [self hasHerbivorous]) {
         int ifirst = arc4random()%[self.forestResidents count];
         int iSecond = arc4random()%[self.forestResidents count];
@@ -84,7 +75,8 @@ static id _instance;
             double calories;
             if ([RulesOfLife canEatFirst:firstResident andSecond:secondResident andGetCalories:&calories]) {
                 Animal *animal = firstResident;
-                [animal eat:secondResident WithCalories:calories];
+                [animal eat:secondResident withCalories:calories];
+                [self.forestResidents removeObject:secondResident];
 #ifdef DEBUG
                 NSLog(@"%@ ate %@", firstResident,secondResident);
 #endif

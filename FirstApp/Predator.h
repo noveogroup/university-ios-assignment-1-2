@@ -14,7 +14,7 @@
 #import "Calorific.h"
 #import "Naming.h"
 
-@interface Predator : Animal <Calorific, Naming>
+@interface Predator : Animal
 @property (nonatomic, readonly) int weight;
 
 //Защищается от другого хищника

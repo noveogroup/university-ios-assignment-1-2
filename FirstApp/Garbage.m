@@ -8,6 +8,8 @@
 
 #import "Garbage.h"
 
+static const double kDefaultGarbageCalories = -1;
+
 @implementation Garbage
 
 -(NSString *)description{
@@ -15,7 +17,7 @@
 }
 
 -(double)calories{
-    return -1;
+    return kDefaultGarbageCalories;
 }
 
 @end

@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Calorific.h"
 #import "Forest.h"
+#import "Naming.h"
 
-@interface Animal : NSObject
+@interface Animal : NSObject <Calorific>
 
--(void)eat:(id<Calorific>)food WithCalories:(double)calories;
+-(instancetype)initWithName:(NSString *)name
+                andCalories:(double)calories;
+
+-(void)eat:(id<Calorific>)food withCalories:(double)calories;
 
 -(void)printStomach;
 

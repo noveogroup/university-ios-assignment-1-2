@@ -20,7 +20,7 @@
 + (BOOL)canEatFirst:(id<Calorific>)first
           andSecond:(id<Calorific>)second
      andGetCalories:(double *)calories{
-    if([first respondsToSelector:@selector(eat:WithCalories:)]){
+    if([first respondsToSelector:@selector(eat:withCalories:)]){
         if ([first isKindOfClass:[Herbivorous class]]){
             if ([second isKindOfClass:[Grass class]] || [second isKindOfClass:[Garbage class]] ) {
                 *calories = second.calories;

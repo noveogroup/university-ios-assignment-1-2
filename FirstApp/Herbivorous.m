@@ -10,11 +10,13 @@
 #import "Grass.h"
 #import "Forest.h"
 #import "Garbage.h"
+#import "Naming.h"
+
+
+static const double kDefaultHerbivorousCalories = 50;
 
 @interface Herbivorous ()
 @property (nonatomic) NSString *name;
-@property (nonatomic) double calories;
-@property (nonatomic) NSMutableArray *stomach;
 @end
 
 @implementation Herbivorous
@@ -24,11 +26,9 @@
 }
 
 -(instancetype)initWithName:(NSString *)name{
-    self = [super init];
+    self = [super initWithName:name andCalories:kDefaultHerbivorousCalories];
     if(self){
         _name = name;
-        _stomach = [[NSMutableArray alloc]init];
-        _calories = 50;
     }
     return self;
 }

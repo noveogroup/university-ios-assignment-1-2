@@ -14,7 +14,7 @@
 #import "Calorific.h"
 #import "Naming.h"
 
-@interface Herbivorous : Animal <Calorific, Naming>
+@interface Herbivorous : Animal
 
 -(instancetype)initWithName:(NSString *)name;
 

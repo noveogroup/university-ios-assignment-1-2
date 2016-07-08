@@ -11,7 +11,7 @@
 @interface Forest : NSObject
 
 //жители леса
-@property NSMutableArray *forestResidents;
+@property (nonatomic, readonly) NSMutableArray *forestResidents;
 
 + (Forest *) sharedInstance;
 - (void)simulateDay;
