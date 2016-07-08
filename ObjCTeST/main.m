@@ -1,11 +1,3 @@
-//
-//  main.m
-//  ObjCTeST
-//
-//  Created by Admin on 05/07/16.
-//  Copyright © 2016 Admin. All rights reserved.
-//
-
 #import "ForestKit.h"
 
 int main(int argc, const char * argv[]) {
@@ -41,7 +33,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"\n------------\n");
         NSLog(@"In the forest there are only one predator:");
-        [forest.objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [forest.objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * stop) {
             
             if ([obj isKindOfClass:[Animal class]]) {
                 
@@ -50,8 +42,8 @@ int main(int argc, const char * argv[]) {
                 *stop = YES;
             }
         }];
-        
     }
+    
     return 0;
 }
 

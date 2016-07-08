@@ -1,11 +1,3 @@
-//
-//  Animal.m
-//  ObjCTeST
-//
-//  Created by Admin on 07/07/16.
-//  Copyright © 2016 Admin. All rights reserved.
-//
-
 #import "Animal.h"
 
 @interface Animal ()
@@ -38,7 +30,7 @@
 
 - (void)printStomachWith:(NSString *)tab
 {
-    [self.stomach enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.stomach enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * stop) {
         
         NSLog(@"%@%@ and stomach: ", tab, obj);
         if ([obj respondsToSelector:@selector(printStomachWith:)]) {

@@ -1,14 +1,7 @@
-//
-//  Animal.h
-//  ObjCTeST
-//
-//  Created by Admin on 07/07/16.
-//  Copyright © 2016 Admin. All rights reserved.
-//
-
 #import "Calories.h"
+#import "Named.h"
 
-@interface Animal <Calories, Named> : NSObject
+@interface Animal : NSObject <Calories, Named>
 
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) float calories;

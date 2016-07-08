@@ -1,15 +1,7 @@
-//
-//  Herbivorous.h
-//  ObjCTeST
-//
-//  Created by Admin on 05/07/16.
-//  Copyright © 2016 Admin. All rights reserved.
-//
-
 #import "Animal.h"
-#import "Named.h"
+#import "RulesOfEating.h"
 
-@interface Herbivorous <RulesOfEating> : Animal
+@interface Herbivorous : Animal <RulesOfEating>
 
 - (BOOL) isHiding;
 - (instancetype)initWithName:(NSString *)name;

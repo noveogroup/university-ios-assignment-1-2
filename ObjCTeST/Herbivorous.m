@@ -1,11 +1,3 @@
-//
-//  Herbivorous.m
-//  ObjCTeST
-//
-//  Created by Admin on 05/07/16.
-//  Copyright © 2016 Admin. All rights reserved.
-//
-
 #import "Herbivorous.h"
 #import "Grass.h"
 #import "Garbage.h"

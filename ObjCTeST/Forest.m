@@ -1,11 +1,3 @@
-//
-//  Forest.m
-//  ObjCTeST
-//
-//  Created by Admin on 05/07/16.
-//  Copyright © 2016 Admin. All rights reserved.
-//
-
 #import "Forest.h"
 #import "Predator.h"
 #import "Herbivorous.h"
@@ -42,17 +34,17 @@
         u_int32_t i2 = arc4random() % [self.objects count];
         float cal;
         
-//        id <Calories> first = self.objects[i1];
-//        id <Calories> second = self.objects[i2];
+        id first = self.objects[i1];
+        id second = self.objects[i2];
         
-//        if ([first conformsToProtocol:@protocol(RulesOfEating)]) Why doesn't work? Return NO every time
-        if ([self.objects[i1] respondsToSelector:@selector(eat:calories:)]) {
+//        if ([first respondsToSelector:@selector(eat:calories:)]) {
+        if ([first conformsToProtocol:@protocol(RulesOfEating)]) {
             
-            if ([self.objects[i1] canEat:self.objects[i2] withCalories:&cal]) {
+            if ([first canEat:second withCalories:&cal]) {
                 
-                NSLog(@"%@ ate %@", self.objects[i1], self.objects[i2]);
-                [self.objects[i1] eat:self.objects[i2] calories:cal];
-                [self.objects removeObject:self.objects[i2]];
+                NSLog(@"%@ ate %@", first, second);
+                [first eat:second calories:cal];
+                [self.objects removeObject:second];
             }
         }
     }
