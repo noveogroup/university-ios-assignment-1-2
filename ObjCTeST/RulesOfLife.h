@@ -8,9 +8,8 @@
 
 #import "Calories.h"
 
-@interface RulesOfLife : NSObject
+@protocol RulesOfLife <NSObject>
 
-+ (BOOL)can:(id <Calories>)first eat:(id <Calories>)second withCalories:(float *)cal;
-+ (BOOL)isEnd;
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal;
 
 @end

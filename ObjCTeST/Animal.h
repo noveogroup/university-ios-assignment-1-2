@@ -7,9 +7,16 @@
 //
 
 #import "Calories.h"
+#import "RulesOfLife.h"
 
-@interface Animal : NSObject
+@interface Animal <Calories, Named> : NSObject
 
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) float calories;
+@property (nonatomic, readonly) NSMutableArray *stomach;
+
+- (instancetype)initWithName:(NSString *)name andCalories:(float)cal;
 - (void)eat:(id <Calories>)object calories:(float)cal;
+- (void)printStomachWith:(NSString *)tab;
 
 @end

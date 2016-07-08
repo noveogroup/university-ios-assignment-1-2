@@ -7,7 +7,10 @@
 //
 
 #import "Calories.h"
+#import "RulesOfLife.h"
 
-@interface Garbage : NSObject <Calories>
+@interface Garbage : NSObject <Calories, RulesOfLife>
+
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal;
 
 @end

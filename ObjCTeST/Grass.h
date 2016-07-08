@@ -7,9 +7,11 @@
 //
 
 #import "Named.h"
+#import "RulesOfLife.h"
 
-@interface Grass : NSObject <Calories, Named>
+@interface Grass : NSObject <Calories, Named, RulesOfLife>
 
-- (instancetype)initWithName:(NSString *)aName;
+- (instancetype)initWithName:(NSString *)name;
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal;
 
 @end

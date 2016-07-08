@@ -40,7 +40,16 @@ int main(int argc, const char * argv[]) {
         [forest simulateDay];
         
         NSLog(@"\n------------\n");
-        NSLog(@"In the forest there are only %@", forest.objects);
+        NSLog(@"In the forest there are only one predator:");
+        [forest.objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            if ([obj respondsToSelector:@selector(printStomachWith:)]) {
+                
+                NSLog(@"%@ and stomach:", obj);
+                [obj printStomachWith:@"\t"];
+                *stop = YES;
+            }
+        }];
         
     }
     return 0;

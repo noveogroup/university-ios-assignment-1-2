@@ -8,10 +8,12 @@
 
 #import "Animal.h"
 #import "Named.h"
+#import "RulesOfLife.h"
 
-@interface Herbivorous : Animal <Calories, Named>
+@interface Herbivorous <RulesOfLife> : Animal
 
 - (BOOL) isHiding;
-- (instancetype)initWithName:(NSString *)aName;
+- (instancetype)initWithName:(NSString *)name;
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal;
 
 @end

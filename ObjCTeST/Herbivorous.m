@@ -7,24 +7,17 @@
 //
 
 #import "Herbivorous.h"
+#import "Grass.h"
+#import "Garbage.h"
 
-@interface Herbivorous ()
-
-@property (nonatomic) NSString *name;
-@property (nonatomic) float calories;
-@property (nonatomic) NSMutableArray *stomach;
-
-@end
+const NSInteger kHerbivorousDefaultCalories = 50;
 
 @implementation Herbivorous
 
-- (instancetype)initWithName:(NSString *)aName {
+- (instancetype)initWithName:(NSString *)name {
     
-    if (self = [super init]) {
+    if (self = [super initWithName:name andCalories:kHerbivorousDefaultCalories]) {
         
-        _name = aName;
-        _calories = 50;
-        _stomach = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -32,13 +25,23 @@
 
 - (BOOL) isHiding {
     
-    return arc4random() % 2;
+    return arc4random() % 2 == 0;
+}
+
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal {
     
+    if ([object isKindOfClass:[Grass class]] || [object isKindOfClass:[Garbage class]]) {
+        
+        *cal = object.calories;
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %f and stomach: %@", self.name, self.calories, self.stomach.description];
+    return [NSString stringWithFormat:@"Herbivorous %@ with calories: %g", self.name, self.calories];
 }
 
 @end

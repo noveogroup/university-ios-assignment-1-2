@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RulesOfLife.h"
 
 @interface Forest : NSObject
 
@@ -14,5 +15,6 @@
 
 + (instancetype)sharedForest;
 - (void)simulateDay;
+- (BOOL)isEnd;
 
 @end

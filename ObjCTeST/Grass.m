@@ -8,6 +8,8 @@
 
 #import "Grass.h"
 
+const NSInteger kGrassDefaultCalories = 10;
+
 @interface Grass ()
 
 @property (nonatomic) NSString *name;
@@ -16,11 +18,11 @@
 
 @implementation Grass
 
-- (instancetype)initWithName:(NSString *)aName {
+- (instancetype)initWithName:(NSString *)name {
     
     if (self = [super init]) {
         
-        _name = aName;
+        _name = name;
     }
     
     return self;
@@ -28,12 +30,17 @@
 
 - (float)calories {
     
-    return 10;
+    return kGrassDefaultCalories;
+}
+
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal {
+    
+    return NO;
 }
 
 - (NSString *)description {
     
-    return [NSString stringWithFormat:@"Grass %@ with calories: %f", self.name, self.calories];
+    return [NSString stringWithFormat:@"Grass %@ with calories: %g", self.name, self.calories];
 }
 
 @end
