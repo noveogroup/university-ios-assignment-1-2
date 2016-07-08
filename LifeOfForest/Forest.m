@@ -52,33 +52,37 @@
 }
 
 
-- (BOOL)canFirstCreature:(id)obj1 eatSecondCreature:(id)obj2
+- (BOOL)canFirstCreature:(id)obj1 eatSecondCreature:(id)obj2 calories:(NSInteger *)calories
 {
-    if ([obj1 isKindOfClass:[Herbivore class]] && ![obj2 respondsToSelector:@selector(eat:)]){
+    if ([obj1 isKindOfClass:[Herbivore class]] && ![obj2 respondsToSelector:@selector(eat:getCalories:)]){
+        *calories = [obj2 calories];
         return YES;
     }
     if ([obj1 isKindOfClass:[Predator class]] && ![obj2 isKindOfClass:[Grass class]])
     {
         if ([obj2 isKindOfClass:[Rubbish class]]){
+            *calories = [obj2 calories];
             return YES;
         }
         if ([obj2 isKindOfClass:[Herbivore class]]){
             Herbivore *herbivore = obj2;
+            *calories = [herbivore calories]/2;
             return ![herbivore isHide];
         }
         if ([obj2 isKindOfClass:[Predator class]]){
             Predator *predator1 = obj1;
             Predator *predator2 = obj2;
+            *calories = [predator2 calories]/2;
             return (predator1.weight>=predator2.weight) && ![predator2 isProtected];
         }
     }
+    *calories = 0;
     return NO;
 }
 
-
-- (int)numberOfHerbivore
+- (NSInteger)numberOfHerbivore
 {
-    int num = 0;
+    NSInteger num = 0;
     for (id obj in self.forestBeings)
     {
         if ([obj isKindOfClass:[Herbivore class]]) num++;
@@ -87,9 +91,9 @@
 }
 
 
-- (int)numberOfPredator
+- (NSInteger)numberOfPredator
 {
-    int num = 0;
+    NSInteger num = 0;
     for (id obj in self.forestBeings)
     {
         if ([obj isKindOfClass:[Predator class]]) num++;
@@ -110,9 +114,10 @@
         {
             id obj1 = self.forestBeings[index1];
             id obj2 = self.forestBeings[index2];
-            if ([self canFirstCreature:obj1 eatSecondCreature:obj2])
+            NSInteger numOfCalories = 0;
+            if ([self canFirstCreature:obj1 eatSecondCreature:obj2 calories:&numOfCalories])
             {
-                [obj1 eat:obj2];
+                [obj1 eat:obj2 getCalories:numOfCalories];
                 NSLog(@"%@ eat %@", [obj1 description], [obj2 description]);
                 [self.forestBeings removeObject:obj2];
             }

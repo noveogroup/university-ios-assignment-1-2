@@ -8,25 +8,30 @@
 
 #import "Animal.h"
 
+static NSString * const kDefaultName = @"";
+const NSInteger kDefaultCalories = 0;
+
 @interface Animal ()
 
-@property (nonatomic) NSInteger numberOfCalories;
-@property NSMutableArray *stomach;
+@property (nonatomic, readwrite) NSInteger calories;
+@property (nonatomic) NSMutableArray *stomach;
 
 @end
 
 
 @implementation Animal
 
+@synthesize calories = _calories;
+
 - (instancetype)init
 {
-    self = [self initWithName:@"" calories:0];
+    self = [self initWithName:kDefaultName calories:kDefaultCalories];
     return self;
 }
 
 - (instancetype)initWithName:(NSString *)name
 {
-    self = [self initWithName:name calories:0];
+    self = [self initWithName:name calories:kDefaultCalories];
     return self;
 }
 
@@ -34,27 +39,22 @@
 {
     self = [super init];
     if (self){
-        _name = name;
-        _numberOfCalories = calories;
+        _name = [name copy];
+        _calories = calories;
         _stomach = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)eat:(id<Eatable>)obj
+- (void)eat:(id<Eatable>)obj getCalories:(NSInteger)calories
 {
-    self.numberOfCalories += [obj calories];
+    self.calories += calories;
     [self.stomach addObject:obj];
-}
-
-- (NSInteger)calories
-{
-    return self.numberOfCalories/2;
 }
 
 - (NSString*)description
 {
-    return [NSString stringWithFormat:@"%@ with %i calories", self.name, (int)self.numberOfCalories ];
+    return [NSString stringWithFormat:@"%@ with %i calories", self.name, (int)self.calories];
 }
 
 - (void)showStomach

@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Eatable.h"
 
+
 @interface Grass : NSObject <Eatable>
 
-@property (readonly) NSString *name;
+@property (copy, readonly, nonatomic) NSString *name;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
 @end

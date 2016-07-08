@@ -8,12 +8,25 @@
 
 #import "Herbivore.h"
 
+const NSInteger kHerbivoreCalories = 50;
+
 @implementation Herbivore
 
 - (instancetype)init
 {
-    NSString *str = [NSString stringWithFormat:@"Herbivore%i", arc4random()%1000];
-    self = [super initWithName:str calories:50];
+    self = [self initWithName:[NSString stringWithFormat:@"Herbivore%i", arc4random()%1000]];
+    return self;
+}
+
+- (instancetype)initWithName:(NSString *)name
+{
+    self = [super initWithName:name calories:kHerbivoreCalories];
+    return self;
+}
+
+- (instancetype)initWithName:(NSString *)name calories:(NSInteger)calories
+{
+    self = [self initWithName:name];
     return self;
 }
 

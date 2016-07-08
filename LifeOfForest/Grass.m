@@ -8,20 +8,19 @@
 
 #import "Grass.h"
 
+const NSInteger grassCalories = 10;
+
 
 @implementation Grass
 
 - (NSInteger)calories
 {
-    return 10;
+    return grassCalories;
 }
 
 - (instancetype)init
 {
-    self = [super init];
-    if (self) {
-        _name = [NSString stringWithFormat:@"Grass%i", arc4random()%1000];
-    }
+    self = [self initWithName:[NSString stringWithFormat:@"Grass%i", arc4random()%1000]];
     return self;
 }
 
@@ -29,7 +28,7 @@
 {
     self = [super init];
     if (self){
-        _name = name;
+        _name = [name copy];
     }
     return self;
 }

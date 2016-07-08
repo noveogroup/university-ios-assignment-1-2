@@ -10,7 +10,7 @@
 
 @interface Predator : Animal
 
-@property (readonly) int weight;
+@property (readonly, nonatomic) NSInteger weight;
 
 - (BOOL)isProtected;
 

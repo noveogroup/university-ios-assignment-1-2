@@ -8,16 +8,18 @@
 
 #import "Rubbish.h"
 
+const NSInteger kRubbishCalories = -1;
+
 @implementation Rubbish
 
 - (NSInteger)calories
 {
-    return -1;
+    return kRubbishCalories;
 }
 
 - (NSString*)description
 {
-    return [NSString stringWithFormat: @"Rubbish"];
+    return @"Rubbish";
 }
 
 @end

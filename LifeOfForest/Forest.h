@@ -10,11 +10,11 @@
 
 @interface Forest : NSObject
 
-+ (Forest*)sharedInstance;
++ (Forest *)sharedInstance;
 
-- (BOOL)canFirstCreature:(id)obj1 eatSecondCreature:(id)obj2;
-- (int)numberOfHerbivore;
-- (int)numberOfPredator;
+- (BOOL)canFirstCreature:(id)obj1 eatSecondCreature:(id)obj2 calories:(NSInteger *)calories;
+- (NSInteger)numberOfHerbivore;
+- (NSInteger)numberOfPredator;
 - (void)daySimulation;
 
 @end
