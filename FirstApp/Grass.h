@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Calorific.h"
-#import "Naming.h"
 
 @interface Grass : NSObject <Calorific>
 

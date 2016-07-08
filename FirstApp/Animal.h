@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Calorific.h"
 #import "Forest.h"
-#import "Naming.h"
 
 @interface Animal : NSObject <Calorific>
-@property (nonatomic) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic) double calories;
 
 -(instancetype)initWithName:(NSString *)name

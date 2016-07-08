@@ -45,7 +45,7 @@ static const int nGarbage = 1;
 -(instancetype)init{
     self = [super init];
     if(self){
-        _forestResidents = [[NSMutableArray alloc] init];
+        _forestResidents = [NSMutableArray array];
     }
     return self;
 }

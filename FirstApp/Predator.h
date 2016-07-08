@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 #import "Animal.h"
 #import "Calorific.h"
-#import "Naming.h"
 
 @interface Predator : Animal
 @property (nonatomic, readonly) int weight;

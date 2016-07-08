@@ -19,7 +19,7 @@
     self = [super init];
     if(self){
         _name = name;
-        _stomach = [[NSMutableArray alloc]init];
+        _stomach = [NSMutableArray array];
         _calories = calories;
     }
     return self;

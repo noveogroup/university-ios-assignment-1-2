@@ -10,7 +10,6 @@
 #import "Grass.h"
 #import "Forest.h"
 #import "Garbage.h"
-#import "Naming.h"
 
 
 static const double kDefaultHerbivorousCalories = 50;
