@@ -7,7 +7,6 @@
 //
 
 #import "Calories.h"
-#import "RulesOfLife.h"
 
 @interface Animal <Calories, Named> : NSObject
 

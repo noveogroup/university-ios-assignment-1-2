@@ -20,8 +20,8 @@ const NSInteger kPredatorDefaultCalories = 100;
 
 @implementation Predator
 
-- (instancetype)initWithName:(NSString *)name andWeight:(float)weight {
-    
+- (instancetype)initWithName:(NSString *)name andWeight:(float)weight
+{
     if (self = [super initWithName:name andCalories:kPredatorDefaultCalories]) {
 
         _weight = weight;
@@ -30,13 +30,13 @@ const NSInteger kPredatorDefaultCalories = 100;
     return self;
 }
 
-- (BOOL) isDefending {
-    
+- (BOOL) isDefending
+{
     return arc4random() % 2 == 0;
 }
 
-- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal {
-    
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal
+{
     if ([object isKindOfClass:[Predator class]]) {
         
         Predator *pr = (Predator *)object;
@@ -66,8 +66,8 @@ const NSInteger kPredatorDefaultCalories = 100;
     return NO;
 }
 
-- (NSString *)description {
-    
+- (NSString *)description
+{
     return [NSString stringWithFormat:@"Predator %@ with weight: %g, calories: %g", self.name, self.weight, self.calories];
 }
 

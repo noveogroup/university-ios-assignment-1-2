@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"In the forest there are only one predator:");
         [forest.objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
-            if ([obj respondsToSelector:@selector(printStomachWith:)]) {
+            if ([obj isKindOfClass:[Animal class]]) {
                 
                 NSLog(@"%@ and stomach:", obj);
                 [obj printStomachWith:@"\t"];

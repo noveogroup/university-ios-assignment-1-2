@@ -14,8 +14,8 @@ const NSInteger kHerbivorousDefaultCalories = 50;
 
 @implementation Herbivorous
 
-- (instancetype)initWithName:(NSString *)name {
-    
+- (instancetype)initWithName:(NSString *)name
+{
     if (self = [super initWithName:name andCalories:kHerbivorousDefaultCalories]) {
         
     }
@@ -23,13 +23,13 @@ const NSInteger kHerbivorousDefaultCalories = 50;
     return self;
 }
 
-- (BOOL) isHiding {
-    
+- (BOOL) isHiding
+{
     return arc4random() % 2 == 0;
 }
 
-- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal {
-    
+- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal
+{
     if ([object isKindOfClass:[Grass class]] || [object isKindOfClass:[Garbage class]]) {
         
         *cal = object.calories;
@@ -39,8 +39,8 @@ const NSInteger kHerbivorousDefaultCalories = 50;
     return NO;
 }
 
-- (NSString *)description {
-    
+- (NSString *)description
+{
     return [NSString stringWithFormat:@"Herbivorous %@ with calories: %g", self.name, self.calories];
 }
 

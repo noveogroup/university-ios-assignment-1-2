@@ -9,12 +9,11 @@
 #import "Animal.h"
 #import "Named.h"
 
-@interface Predator <RulesOfLife> : Animal
+@interface Predator <RulesOfEating> : Animal
 
 @property (nonatomic, readonly) float weight;
 
 - (instancetype)initWithName:(NSString *)name andWeight:(float)weight;
-- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal;
-- (BOOL) isDefending;
+- (BOOL)isDefending;
 
 @end

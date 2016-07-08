@@ -18,7 +18,8 @@ const NSInteger kGrassDefaultCalories = 10;
 
 @implementation Grass
 
-- (instancetype)initWithName:(NSString *)name {
+- (instancetype)initWithName:(NSString *)name
+{
     
     if (self = [super init]) {
         
@@ -28,17 +29,14 @@ const NSInteger kGrassDefaultCalories = 10;
     return self;
 }
 
-- (float)calories {
+- (float)calories
+{
     
     return kGrassDefaultCalories;
 }
 
-- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal {
-    
-    return NO;
-}
-
-- (NSString *)description {
+- (NSString *)description
+{
     
     return [NSString stringWithFormat:@"Grass %@ with calories: %g", self.name, self.calories];
 }

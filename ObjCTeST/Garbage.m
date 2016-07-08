@@ -12,17 +12,14 @@ const NSInteger kGarbageDefaultCalories = -1;
 
 @implementation Garbage
 
-- (float)calories {
+- (float)calories
+{
     
     return kGarbageDefaultCalories;
 }
 
-- (BOOL)canEat:(id <Calories>)object withCalories:(float *)cal {
-    
-    return NO;
-}
-
-- (NSString *)description {
+- (NSString *)description
+{
     
     return [NSString stringWithFormat:@"Garbage with calories: %g", self.calories];
 }

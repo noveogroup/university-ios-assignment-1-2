@@ -12,4 +12,4 @@
 #import "Grass.h"
 #import "Garbage.h"
 #import "Forest.h"
-#import "RulesOfLife.h"
+#import "RulesOfEating.h"

@@ -18,8 +18,8 @@
 
 @implementation Animal
 
-- (instancetype)initWithName:(NSString *)name andCalories:(float)cal {
-    
+- (instancetype)initWithName:(NSString *)name andCalories:(float)cal
+{
     if (self = [super init]) {
         
         _name = name;
@@ -30,14 +30,14 @@
     return self;
 }
 
-- (void)eat:(id <Calories>)object calories:(float)cal {
-    
+- (void)eat:(id <Calories>)object calories:(float)cal
+{
     self.calories += cal;
     [self.stomach addObject:object];
 }
 
-- (void)printStomachWith:(NSString *)tab {
-    
+- (void)printStomachWith:(NSString *)tab
+{
     [self.stomach enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         NSLog(@"%@%@ and stomach: ", tab, obj);

@@ -10,11 +10,12 @@
 #import "Predator.h"
 #import "Herbivorous.h"
 #import "Garbage.h"
+#import "RulesOfEating.h"
 
 @implementation Forest
 
-+ (instancetype)sharedForest {
-    
++ (instancetype)sharedForest
+{
     static Forest *forest = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -23,8 +24,8 @@
     return forest;
 }
 
-- (instancetype)init {
-    
+- (instancetype)init
+{
     if (self = [super init]) {
         
         self.objects = [[NSMutableArray alloc] init];
@@ -33,15 +34,19 @@
     return self;
 }
 
-- (void)simulateDay {
-    
+- (void)simulateDay
+{
     while (![self isEnd]) {
         
         u_int32_t i1 = arc4random() % [self.objects count];
         u_int32_t i2 = arc4random() % [self.objects count];
         float cal;
         
-        if ([self.objects[i1] respondsToSelector:@selector(canEat:withCalories:)]) {
+//        id <Calories> first = self.objects[i1];
+//        id <Calories> second = self.objects[i2];
+        
+//        if ([first conformsToProtocol:@protocol(RulesOfEating)]) Why doesn't work? Return NO every time
+        if ([self.objects[i1] respondsToSelector:@selector(eat:calories:)]) {
             
             if ([self.objects[i1] canEat:self.objects[i2] withCalories:&cal]) {
                 
@@ -53,8 +58,8 @@
     }
 }
 
-- (BOOL)isEnd {
-    
+- (BOOL)isEnd
+{
     int npredators = 0;
     int nherbivorouses = 0;
     int ngarbage = 0;
