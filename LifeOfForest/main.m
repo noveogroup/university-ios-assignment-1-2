@@ -13,10 +13,6 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
-        __unused Herbivore *h = [[Herbivore alloc] initWithName:@"" calories:50];
-        
-        
         [[Forest sharedInstance] daySimulation];
     }
     return 0;
