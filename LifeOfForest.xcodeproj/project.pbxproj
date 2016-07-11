@@ -77,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				842754431D2E154D00E49AB0 /* Eatable.h */,
-				842754381D2E146700E49AB0 /* main.m */,
 				842754471D2E16E200E49AB0 /* Animal.h */,
 				842754481D2E16E200E49AB0 /* Animal.m */,
 				842754401D2E149600E49AB0 /* Rubbish.h */,
@@ -90,6 +89,7 @@
 				8427544E1D2E204C00E49AB0 /* Predator.m */,
 				842754501D2E269800E49AB0 /* Forest.h */,
 				842754511D2E269800E49AB0 /* Forest.m */,
+				842754381D2E146700E49AB0 /* main.m */,
 			);
 			path = LifeOfForest;
 			sourceTree = "<group>";

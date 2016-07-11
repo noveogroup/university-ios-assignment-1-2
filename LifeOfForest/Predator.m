@@ -8,7 +8,7 @@
 
 #import "Predator.h"
 
-const NSInteger kPredatorCalories = 100;
+static const NSInteger kPredatorCalories = 100;
 
 @implementation Predator
 

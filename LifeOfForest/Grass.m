@@ -13,11 +13,6 @@ const NSInteger grassCalories = 10;
 
 @implementation Grass
 
-- (NSInteger)calories
-{
-    return grassCalories;
-}
-
 - (instancetype)init
 {
     self = [self initWithName:[NSString stringWithFormat:@"Grass%i", arc4random()%1000]];
@@ -31,6 +26,11 @@ const NSInteger grassCalories = 10;
         _name = [name copy];
     }
     return self;
+}
+
+- (NSInteger)calories
+{
+    return grassCalories;
 }
 
 - (NSString *)description

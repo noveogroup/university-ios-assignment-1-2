@@ -8,7 +8,7 @@
 
 #import "Rubbish.h"
 
-const NSInteger kRubbishCalories = -1;
+static const NSInteger kRubbishCalories = -1;
 
 @implementation Rubbish
 

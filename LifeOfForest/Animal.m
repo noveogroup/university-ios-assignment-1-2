@@ -8,8 +8,7 @@
 
 #import "Animal.h"
 
-static NSString * const kDefaultName = @"";
-const NSInteger kDefaultCalories = 0;
+static const NSInteger kDefaultCalories = 0;
 
 @interface Animal ()
 
@@ -23,9 +22,12 @@ const NSInteger kDefaultCalories = 0;
 
 @synthesize calories = _calories;
 
+#pragma mark - Initialization
+
 - (instancetype)init
 {
-    self = [self initWithName:kDefaultName calories:kDefaultCalories];
+    NSString *str = [NSString stringWithFormat:@"Animal%i", arc4random()%1000];
+    self = [self initWithName:str calories:kDefaultCalories];
     return self;
 }
 
@@ -38,7 +40,7 @@ const NSInteger kDefaultCalories = 0;
 - (instancetype)initWithName:(NSString*)name calories:(NSInteger)calories
 {
     self = [super init];
-    if (self){
+    if (self) {
         _name = [name copy];
         _calories = calories;
         _stomach = [[NSMutableArray alloc] init];
@@ -46,25 +48,20 @@ const NSInteger kDefaultCalories = 0;
     return self;
 }
 
+#pragma mark - Public methods
+
 - (void)eat:(id<Eatable>)obj getCalories:(NSInteger)calories
 {
     self.calories += calories;
     [self.stomach addObject:obj];
 }
 
-- (NSString*)description
-{
-    return [NSString stringWithFormat:@"%@ with %i calories", self.name, (int)self.calories];
-}
-
 - (void)showStomach
 {
     NSLog(@"In stomach of %@", [self description]);
     NSLog(@"Begin");
-    if ([self.stomach count] != 0)
-    {
-        for (id obj in self.stomach)
-        {
+    if ([self.stomach count] != 0) {
+        for (id obj in self.stomach) {
             NSLog(@"%@", [obj description]);
             if ([obj respondsToSelector:@selector(showStomach)]){
                 [obj showStomach];
@@ -73,6 +70,11 @@ const NSInteger kDefaultCalories = 0;
     }
     else NSLog(@"Empty");
     NSLog(@"End");
+}
+
+- (NSString*)description
+{
+    return [NSString stringWithFormat:@"%@ with %i calories", self.name, (int)self.calories];
 }
 
 @end

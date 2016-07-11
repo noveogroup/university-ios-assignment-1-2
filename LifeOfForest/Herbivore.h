@@ -10,8 +10,8 @@
 
 @interface Herbivore : Animal
 
-- (BOOL)isHide;
-
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
+
+- (BOOL)isHide;
 
 @end
