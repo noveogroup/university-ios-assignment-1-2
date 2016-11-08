@@ -44,6 +44,7 @@
 		113B99C4549E8B3411AEE4A1 /* Forest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forest.m; sourceTree = "<group>"; };
 		113B9AA1A5DAC72C3618987C /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		113B9AB6A8F3C01701192142 /* Garbage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Garbage.m; sourceTree = "<group>"; };
+		113B9AD42C9C094DA8641F5E /* Hide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hide.h; sourceTree = "<group>"; };
 		113B9CC62EC930BEB20CFAD7 /* Predator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predator.h; sourceTree = "<group>"; };
 		113B9E939A6203EB488B96DD /* Herbivorous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Herbivorous.h; sourceTree = "<group>"; };
 		113B9EFC46A823BB867E2A07 /* Plant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plant.h; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				113B9F5389DA3F6AEEEDF302 /* Names.h */,
 				113B9F629AD360634A43E274 /* Weight.h */,
 				113B98847296A80C8ADD0659 /* Defense.h */,
+				113B9AD42C9C094DA8641F5E /* Hide.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

@@ -23,7 +23,7 @@
 
 -(BOOL)isDefending
 {
-    return (BOOL) arc4random_uniform(2);
+    return (arc4random_uniform(3) + 1) % 3 == 0;
 }
 
 -(void)eatsAn:(Creature*)food {

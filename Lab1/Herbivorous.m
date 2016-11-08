@@ -13,7 +13,7 @@
     return  self;
 }
 
--(BOOL)isDefending
+-(BOOL)isHiding
 {
     return (BOOL) arc4random_uniform(2);
 }

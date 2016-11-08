@@ -87,7 +87,7 @@
             return (![(Predator *) creation2 isDefending]) && ([(Predator *)creation1 weight] > [(Predator *)creation2 weight]);
 
         if ([creation2 isMemberOfClass:[Herbivorous class]])
-            return ![(Herbivorous *) creation2 isDefending];
+            return ![(Herbivorous *) creation2 isHiding];
 
         return [creation2 isMemberOfClass:[Garbage class]];
     }

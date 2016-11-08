@@ -1,10 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "Creature.h"
 #import "Names.h"
-#import "Defense.h"
 
 
-@interface Animal : Creature <Names, Defense> {
+@interface Animal : Creature <Names> {
     NSMutableArray *_stomach;
 }
 
