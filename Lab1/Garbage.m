@@ -2,7 +2,13 @@
 
 @implementation Garbage
 
--(NSString *)description {
+- (float)calories
+{
+    return -1;
+}
+
+- (NSString *)description
+{
     return @"garbage";
 }
 

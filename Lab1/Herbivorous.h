@@ -1,6 +1,9 @@
 #import "Animal.h"
-#import "Hide.h"
+#import "Eater.h"
 
-@interface Herbivorous : Animal <Hide>
+@interface Herbivorous : Animal <Eater>
+
+- (instancetype)initWithId:(int)number;
+- (BOOL)isHiding;
 
 @end

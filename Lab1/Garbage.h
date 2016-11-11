@@ -1,4 +1,5 @@
-#import "Creature.h"
+#import "Calories.h"
 
-@interface Garbage : Creature
+@interface Garbage : NSObject <Calories>
+
 @end

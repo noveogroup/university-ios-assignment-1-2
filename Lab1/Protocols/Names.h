@@ -2,6 +2,6 @@
 
 @protocol Names <NSObject>
 
-    @property NSString *name;
+@property (nonatomic, readonly) NSString *name;
 
 @end

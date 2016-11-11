@@ -5,16 +5,21 @@
 
 @synthesize name = _name;
 
--(id)init
+- (float)calories
+{
+    return PLANT_CALORIES;
+}
+
+- (instancetype)initWithId:(int)number
 {
     if(self = [super init]) {
-        self.calories = @(PLANT_CALORIES);
-        self.name = @"defaultPlant";
+        _name = [NSString stringWithFormat:@"flower_%d", number];
     }
     return  self;
 }
 
--(NSString *)description {
+- (NSString *)description
+{
     return [NSString stringWithFormat:@"%@", self.name];
 }
 

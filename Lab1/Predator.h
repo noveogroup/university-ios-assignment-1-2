@@ -1,7 +1,9 @@
 #import "Animal.h"
-#import "Weight.h"
-#import "Defense.h"
+#import "Eater.h"
 
-@interface Predator : Animal <Weight, Defense>
+@interface Predator : Animal <Eater>
+
+- (id)initWithId:(int)number;
+
 
 @end

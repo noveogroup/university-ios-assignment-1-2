@@ -1,6 +1,8 @@
-#import "Creature.h"
-#import "Protocols/Names.h"
+#import "Calories.h"
+#import "Names.h"
 
-@interface Plant : Creature <Names>
+@interface Plant : NSObject <Names, Calories>
+
+- (instancetype)initWithId:(int)number;
 
 @end

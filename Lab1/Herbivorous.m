@@ -1,16 +1,13 @@
 #import "Herbivorous.h"
 #import "Constants.h"
+#import "Plant.h"
+#import "Garbage.h"
 
 @implementation Herbivorous
 
--(id)init
+- (instancetype)initWithId:(int)number
 {
-    if(self = [super init]) {
-        self.calories = @(HERBIVOROUS_CALORIES);
-        self.name = @"defaultHerbivorous";
-        _stomach = [[NSMutableArray alloc] init];
-    }
-    return  self;
+    return [super initWithName:@"Herbivorous" andId:number andCalories:HERBIVOROUS_CALORIES];
 }
 
 -(BOOL)isHiding
@@ -19,13 +16,21 @@
 }
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"%@ with %@ calories", self.name, self.calories];
+    return [NSString stringWithFormat:@"%@ with %f calories", self.name, self.calories];
 }
 
--(void)eatsAn:(Creature*)food {
-    self.calories = @([self.calories floatValue] + [food.calories floatValue]);
-    [_stomach addObject:food];
-    NSLog(@"%@ has eaten a %@ with %@ calories. And now it has %@ calories.", [self name], [food className], food.calories, self.calories);
+- (BOOL)canEat:(id<Calories>)item
+{
+    if ([item isMemberOfClass:[Plant class]]) {
+            return YES;
+    }
+    
+    return [item isMemberOfClass:[Garbage class]];
+}
+
+-(void)eatsAn:(id<Calories>)food {
+    [self addItem:food WithCalories:food.calories];
+    NSLog(@"%@ has eaten a %@ with %f calories. And now it has %f calories.", [self name], [(NSObject *)food className], food.calories, self.calories);
 
 }
 
