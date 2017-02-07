@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE04E4C119740AE500E45E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE04E4C019740AE500E45E4E /* Foundation.framework */; };
+		CE04E4C419740AE500E45E4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4C319740AE500E45E4E /* main.m */; };
+		CE04E4C819740AE500E45E4E /* NoveoHomeworkOne.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE04E4C719740AE500E45E4E /* NoveoHomeworkOne.1 */; };
+		CE04E4D219740B7400E45E4E /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4D119740B7400E45E4E /* Human.m */; };
+		CE04E4F31974406E00E45E4E /* Specialist.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4F21974406E00E45E4E /* Specialist.m */; };
+		CE04E4FB197443EC00E45E4E /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04E4FA197443EC00E45E4E /* Student.m */; };
+		CE4B130F1976E0E40015AEC2 /* UniversitySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */; };
+		CEF337A319790D4A0037B3B8 /* Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF337A219790D4A0037B3B8 /* Gender.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE04E4BA19740AE500E45E4E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				CE04E4C819740AE500E45E4E /* NoveoHomeworkOne.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE04E4BC19740AE500E45E4E /* NoveoHomeworkOne */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NoveoHomeworkOne; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE04E4C019740AE500E45E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE04E4C319740AE500E45E4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE04E4C619740AE500E45E4E /* NoveoHomeworkOne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoveoHomeworkOne-Prefix.pch"; sourceTree = "<group>"; };
+		CE04E4C719740AE500E45E4E /* NoveoHomeworkOne.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = NoveoHomeworkOne.1; sourceTree = "<group>"; };
+		CE04E4D019740B7400E45E4E /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		CE04E4D119740B7400E45E4E /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		CE04E4EC197435F500E45E4E /* EducationMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EducationMember.h; sourceTree = "<group>"; };
+		CE04E4F11974406E00E45E4E /* Specialist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specialist.h; sourceTree = "<group>"; };
+		CE04E4F21974406E00E45E4E /* Specialist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Specialist.m; sourceTree = "<group>"; };
+		CE04E4F9197443EC00E45E4E /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		CE04E4FA197443EC00E45E4E /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		CE4B1303197689E70015AEC2 /* RecalculatePointsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecalculatePointsDelegate.h; sourceTree = "<group>"; };
+		CE4B130D1976E0E40015AEC2 /* UniversitySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniversitySingleton.h; path = ../UniversitySingleton.h; sourceTree = "<group>"; };
+		CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniversitySingleton.m; path = ../UniversitySingleton.m; sourceTree = "<group>"; };
+		CEF337A119790D4A0037B3B8 /* Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gender.h; sourceTree = "<group>"; };
+		CEF337A219790D4A0037B3B8 /* Gender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gender.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE04E4B919740AE500E45E4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE04E4C119740AE500E45E4E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE04E4B119740AE500E45E4E = {
+			isa = PBXGroup;
+			children = (
+				CE04E4C219740AE500E45E4E /* NoveoHomeworkOne */,
+				CE04E4BF19740AE500E45E4E /* Frameworks */,
+				CE04E4BD19740AE500E45E4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE04E4BD19740AE500E45E4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE04E4BC19740AE500E45E4E /* NoveoHomeworkOne */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE04E4BF19740AE500E45E4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE04E4C019740AE500E45E4E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE04E4C219740AE500E45E4E /* NoveoHomeworkOne */ = {
+			isa = PBXGroup;
+			children = (
+				CE04E4CF19740B1600E45E4E /* Protocols */,
+				CE04E4CE19740AF400E45E4E /* Classes */,
+				CE04E4C319740AE500E45E4E /* main.m */,
+				CE04E4C719740AE500E45E4E /* NoveoHomeworkOne.1 */,
+				CE04E4C519740AE500E45E4E /* Supporting Files */,
+			);
+			path = NoveoHomeworkOne;
+			sourceTree = "<group>";
+		};
+		CE04E4C519740AE500E45E4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE04E4C619740AE500E45E4E /* NoveoHomeworkOne-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE04E4CE19740AF400E45E4E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CEF337A119790D4A0037B3B8 /* Gender.h */,
+				CEF337A219790D4A0037B3B8 /* Gender.m */,
+				CE04E4D019740B7400E45E4E /* Human.h */,
+				CE04E4D119740B7400E45E4E /* Human.m */,
+				CE04E4F11974406E00E45E4E /* Specialist.h */,
+				CE04E4F21974406E00E45E4E /* Specialist.m */,
+				CE04E4F9197443EC00E45E4E /* Student.h */,
+				CE04E4FA197443EC00E45E4E /* Student.m */,
+				CE4B130D1976E0E40015AEC2 /* UniversitySingleton.h */,
+				CE4B130E1976E0E40015AEC2 /* UniversitySingleton.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CE04E4CF19740B1600E45E4E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE04E4EC197435F500E45E4E /* EducationMember.h */,
+				CE4B1303197689E70015AEC2 /* RecalculatePointsDelegate.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE04E4BB19740AE500E45E4E /* NoveoHomeworkOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE04E4CB19740AE500E45E4E /* Build configuration list for PBXNativeTarget "NoveoHomeworkOne" */;
+			buildPhases = (
+				CE04E4B819740AE500E45E4E /* Sources */,
+				CE04E4B919740AE500E45E4E /* Frameworks */,
+				CE04E4BA19740AE500E45E4E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoveoHomeworkOne;
+			productName = NoveoHomeworkOne;
+			productReference = CE04E4BC19740AE500E45E4E /* NoveoHomeworkOne */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE04E4B319740AE500E45E4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Smirnov Electronics";
+			};
+			buildConfigurationList = CE04E4B619740AE500E45E4E /* Build configuration list for PBXProject "NoveoHomeworkOne" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE04E4B119740AE500E45E4E;
+			productRefGroup = CE04E4BD19740AE500E45E4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE04E4BB19740AE500E45E4E /* NoveoHomeworkOne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE04E4B819740AE500E45E4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE04E4C419740AE500E45E4E /* main.m in Sources */,
+				CE04E4D219740B7400E45E4E /* Human.m in Sources */,
+				CE04E4F31974406E00E45E4E /* Specialist.m in Sources */,
+				CE04E4FB197443EC00E45E4E /* Student.m in Sources */,
+				CEF337A319790D4A0037B3B8 /* Gender.m in Sources */,
+				CE4B130F1976E0E40015AEC2 /* UniversitySingleton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE04E4C919740AE500E45E4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CE04E4CA19740AE500E45E4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CE04E4CC19740AE500E45E4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoveoHomeworkOne/NoveoHomeworkOne-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE04E4CD19740AE500E45E4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoveoHomeworkOne/NoveoHomeworkOne-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE04E4B619740AE500E45E4E /* Build configuration list for PBXProject "NoveoHomeworkOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE04E4C919740AE500E45E4E /* Debug */,
+				CE04E4CA19740AE500E45E4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE04E4CB19740AE500E45E4E /* Build configuration list for PBXNativeTarget "NoveoHomeworkOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE04E4CC19740AE500E45E4E /* Debug */,
+				CE04E4CD19740AE500E45E4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE04E4B319740AE500E45E4E /* Project object */;
+}
